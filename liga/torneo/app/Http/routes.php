@@ -38,7 +38,8 @@ Route::get('admin/torneos/equipos','Admin\TorneosController@equipos');
 Route::post('admin/torneos/storeequipo','Admin\TorneosController@storeequipo');
 
 Route::post('admin/torneos/destroyequipo','Admin\TorneosController@destroyequipo');
-
+Route::post('admin/torneos/baja','Admin\TorneosController@baja');
+Route::post('admin/torneos/alta','Admin\TorneosController@alta');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
@@ -57,3 +58,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('fechas','FechasController');
     });
 Route::post('admin/fechas/buscar','Admin\FechasController@buscar');
+
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],
+    function(){
+        Route::resource('partidos','PartidosController');
+    });

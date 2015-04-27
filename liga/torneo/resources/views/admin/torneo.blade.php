@@ -63,8 +63,8 @@
                                 <td>{{$fecha->numero_fecha}}</td>
                                 <td>{{date('d/m/Y', strtotime($fecha->fecha))}}</td>
                                 <td>{{$fecha->observaciones}}</td>
-                                <td>{{$fecha->es_play_off}}</td>
-                                <td><a href="" class="btn btn-xs btn-primary " data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Gestionar Partidos"> <i class="fa fa-futbol-o"></i></a></td>
+                                <td>{{$fecha->esPlayOff()}}</td>
+                                <td><a href="../fechas/{{$fecha->idfecha}}" class="btn btn-xs btn-primary " data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Gestionar Partidos"> <i class="fa fa-futbol-o"></i></a></td>
                                 <td><a href="" class="btn btn-xs btn-info editarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
                                 <td><a href="" class="btn btn-xs btn-danger eliminarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                             </tr>

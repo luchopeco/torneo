@@ -82,7 +82,15 @@ class FechasController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $fecha=Fecha::findOrFail($id);
+        //dd($listArbitros);
+
+        if ($fecha->Torneo==null)
+        {
+            Session::flash('mensajeError','El Torneo se encuentra inactivo. No puede Gestionar sus partidos');
+            return redirect()->route('admin.torneos.index');
+        }
+        return view('admin.partidos', compact('fecha'));
 	}
 
 	/**

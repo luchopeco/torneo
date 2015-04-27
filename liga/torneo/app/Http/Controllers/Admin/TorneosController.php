@@ -59,7 +59,7 @@ class TorneosController extends Controller {
 
     public function buscar(Request $request)
     {
-        $ar = Torneo::findOrFail($request->idtorneo);
+        $ar = Torneo::withTrashed()->where('idtorneo', $request->idtorneo)->first();
         $response = array(
             "result" => true,
             "mensaje" => "No se pudo realizar la operacion",
@@ -78,11 +78,17 @@ class TorneosController extends Controller {
 	 */
 	public function show($id)
 	{
-        $torneo = Torneo::find($id);
+        $torneo = Torneo::withTrashed()->where('idtorneo', $id)->first();
         ///Le mando todos los equipos!!
         $listEquipos= Equipo::orderBy('nombre_equipo', 'asc')->get()->lists('nombre_equipo', 'idequipo');
         //dd($listArbitros);
+        if($torneo->Activo()=='NO')
+        {
+            Session::flash('mensajeError','El Torneo se encuentra inactivo. No puede Gestionar sus Fechas');
+            return redirect()->route('admin.torneos.index');
+        }
         return view('admin.torneo', compact('torneo','mensajeOK','listEquipos'));
+
 	}
 
 	/**
@@ -105,7 +111,7 @@ class TorneosController extends Controller {
 	public function update(Request $request)
 	{
         try {
-            $ar = Torneo::findOrFail($request->idtorneo);
+            $ar = Torneo::withTrashed()->where('idtorneo',$request->idtorneo)->first();
             $ar->nombre_torneo = $request->nombre_torneo;
             $ar->observaciones_torneo = $request->observaciones_torneo;
             $ar->idtipo_torneo = $request->idtipo_torneo;
@@ -132,7 +138,8 @@ class TorneosController extends Controller {
 	{
         try
         {
-            Torneo::destroy($request->idtorneo);
+            $tor = Torneo::withTrashed()->where('idtorneo', $request->idtorneo)->first();
+            $tor->forceDelete();
             Session::flash('mensajeOk', 'Torneo Eliminado con Exito');
             return redirect()->route('admin.torneos.index');
         }
@@ -146,7 +153,7 @@ class TorneosController extends Controller {
     public function storeequipo(Request $request)
     {
         try {
-            $torneo = Torneo::findOrFail($request->idtorneo);
+            $torneo =Torneo::withTrashed()->where('idtorneo', $request->idtorneo)->first();
             $equipo = Equipo::find($request->idequipo);
             $torneo->ListEquipos()->attach($equipo);
 
@@ -162,7 +169,7 @@ class TorneosController extends Controller {
     public function destroyequipo(Request $request)
     {
         try {
-            $torneo = Torneo::findOrFail($request->idtorneo);
+            $torneo = Torneo::withTrashed()->where('idtorneo', $request->idtorneo)->first();
             $equipo = Equipo::find($request->idequipo);
             $torneo->ListEquipos()->detach($equipo);
 
@@ -176,9 +183,37 @@ class TorneosController extends Controller {
         }
     }
 
-    public function bajatorneo($idtorneo)
+    public function baja(Request $request)
     {
 
+        try
+        {
+            Torneo::destroy($request->idtorneo);
+            Session::flash('mensajeOk', 'Torneo Dado de baja con Exito');
+            return redirect()->route('admin.torneos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.torneos.index');
+        }
+
     }
-    
+    public function alta(Request $request)
+    {
+
+        try
+        {
+            $tor = Torneo::withTrashed()->where('idtorneo', $request->idtorneo)->first();
+            $tor->restore();
+            Session::flash('mensajeOk', 'Torneo Dado de Alta con Exito');
+            return redirect()->route('admin.torneos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.torneos.index');
+        }
+
+    }
 }

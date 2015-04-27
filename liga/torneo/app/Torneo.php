@@ -36,11 +36,11 @@ class Torneo extends Model{
     {
         if($this->deleted_at ==null)
         {
-            return true;
+            return 'SI';
         }
         else
         {
-            return false;
+            return 'NO';
         }
     }
 
