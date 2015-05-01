@@ -3,6 +3,7 @@
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use torneo\Arbitro;
 use torneo\Fecha;
 use torneo\Http\Requests;
 use torneo\Http\Controllers\Controller;
@@ -90,7 +91,9 @@ class FechasController extends Controller {
             Session::flash('mensajeError','El Torneo se encuentra inactivo. No puede Gestionar sus partidos');
             return redirect()->route('admin.torneos.index');
         }
-        return view('admin.partidos', compact('fecha'));
+        $listEquipos = $fecha->Torneo->ListEquipos->lists('nombre_equipo', 'idequipo');
+        $listArbitros= Arbitro::all()->lists('nombre','idarbitro');
+        return view('admin.partidos', compact('fecha','listEquipos','listArbitros'));
 	}
 
 	/**

@@ -64,3 +64,5 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
         Route::resource('partidos','PartidosController');
     });
+Route::post('admin/partidos/buscar','Admin\PartidosController@buscar');
+Route::post('admin/partidos/resultado','Admin\PartidosController@resultado');

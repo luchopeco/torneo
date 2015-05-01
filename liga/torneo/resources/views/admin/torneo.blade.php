@@ -1,7 +1,7 @@
         @extends('admin.masterAdmin')
 
         @section('title')
-        <h1>Torneo: {{$torneo->nombre_torneo}}/{{$torneo->TipoTorneo->nombre_tipo_torneo}}<small > </small></h1>
+        <h1>Torneo: {{$torneo->nombre_torneo}} - {{$torneo->TipoTorneo->nombre_tipo_torneo}}<small > </small></h1>
         @endsection
 
         @section('breadcrumb')
