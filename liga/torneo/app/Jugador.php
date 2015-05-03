@@ -11,4 +11,13 @@ class Jugador extends Model{
 
     protected $primaryKey = 'idjugador';
 
+    public function Equipo()
+    {
+        return $this->hasOne('torneo\Equipo', 'idequipo','idequipo');
+    }
+
+    public $goles_favor;
+    public $goles_contra;
+    public $cantidad_fechas_sancion;
+
 }

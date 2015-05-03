@@ -65,7 +65,7 @@
                                  <td>{{$partido->EquipoVisitante->nombre_equipo}}</td>
                                  <td>{{$partido->goles_local}} - {{$partido->goles_visitante}}</td>
                                  <td>{{$partido->Arbitro->nombre}}</td>
-                                 <td><a href="" class="btn btn-xs btn-primary resultado" data-idpartido="{{$partido->idpartido}}"  title=" Editar Resultado"><i class="fa fa-calculator"></i></a></td>
+                                 <td><a href="../partidos/{{$partido->idpartido}}" class="btn btn-xs btn-primary" data-idpartido="{{$partido->idpartido}}"  title=" Editar Resultado"><i class="fa fa-calculator"></i></a></td>
                                  <td><a href="" class="btn btn-xs btn-info editar" data-idpartido="{{$partido->idpartido}}"  title="Modificar Partido"> <i class=" fa fa-edit"></i></a></td>
                                  <td><a href="" class="btn btn-xs btn-danger eliminar" data-idpartido="{{$partido->idpartido}}"  title="Eliminar"><i class=" fa fa-close"></i></a></td>
                             </tr>
@@ -152,44 +152,75 @@
               </div>
               <!-- /.modal-dialog -->
         </div>
-          <div class="modal fade" id="modalPartidoResultado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                            <div class="modal-content">
-                                  {!!Form::open(['url'=>'admin/partidos/resultado','method'=>'POST'])!!}
-                                      <div class="modal-header">
-                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                          <h4 class="modal-title" id="myModalLabel">Resultado Partido</h4>
-                                      </div>
-                                      <div class="modal-body"><div class=" panel panel-info">
-                                      <div class=" panel-heading">Partido</div>
-                                         <div class=" panel-body">
-                                          <div clas="row">
-                                              <div class="col-md-12">
-                                                {!!Form::Text('idpartido',null,['class'=>'hidden','id'=>'idpartidoR'])!!}
-                                                {!!Form::Text('idtorneo',null,['class'=>'hidden','id'=>'idtorneoR'])!!}
-                                                {!!Form::Text('idfecha',null,['class'=>'hidden','id'=>'idfechaR'])!!}
-                                                Hora
-                                                {!!Form::Text('hora',null,['class'=>' form-control','id'=>'horaR'])!!}
-                                                Local
-                                               {!!Form::select('idequipo_local', $listEquipos,null,array('class' => 'form-control','id'=>'idequipo_localR'))!!}
-                                                Visitante
-                                                {!!Form::select('idequipo_visitante', $listEquipos,null,array('class' => 'form-control','id'=>'idequipo_visitanteR'))!!}
-                                                Arbitro
-                                                {!!Form::select('idarbitro', $listArbitros,null,array('class' => 'form-control','id'=>'idarbitroR'))!!}
-                                              </div>
-                                           </div>
-                                      </div>
-                                 </div></div>
-                                      <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                          {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
-                                      </div>
-                                  {!! Form::close() !!}
+        <div class="modal fade" id="modalPartidoResultado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    {!!Form::open(['url'=>'admin/partidos/resultado','method'=>'POST'])!!}
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Resultado Partido</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class=" panel panel-info">
+                                <div class=" panel-heading">Partido</div>
+                                <div class=" panel-body">
+                                    <div clas="row">
+                                        {!!Form::Text('idpartido',null,['class'=>'hidden','id'=>'idpartidoR'])!!}
+                                        {!!Form::Text('idtorneo',null,['class'=>'hidden','id'=>'idtorneoR'])!!}
+                                        {!!Form::Text('idfecha',null,['class'=>'hidden','id'=>'idfechaR'])!!}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Hora
+                                            {!!Form::Text('hora',null,['class'=>' form-control','id'=>'horaR','disabled'])!!}
+                                        </div>
+                                        <div class="col-md-6">
+                                            Arbitro
+                                            {!!Form::select('idarbitro', $listArbitros,null,array('class' => 'form-control','id'=>'idarbitroR','disabled'))!!}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            Local
+                                            {!!Form::select('idequipo_local', $listEquipos,null,array('class' => 'form-control','id'=>'idequipo_localR','disabled'))!!}
+                                        </div>
+                                        <div class="col-xs-2">
+                                            .
+                                            {!!Form::Text('goles_local',null,['class'=>' form-control','id'=>'goles_localR','title'=>'Goles'])!!}
+                                        </div>
+                                        <div class="col-xs-4">
+                                            Visitante
+                                            {!!Form::select('idequipo_visitante', $listEquipos,null,array('class' => 'form-control','id'=>'idequipo_visitanteR','disabled'))!!}
+                                        </div>
+                                        <div class="col-xs-2">
+                                            .
+                                            {!!Form::Text('goles_visitante',null,['class'=>' form-control','id'=>'goles_visitanteR','title'=>'Goles'])!!}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12"><h3>Goles Jugadores</h3></div>
+                                        <div class="col-xs-4">
+                                            <div >Nombre</div>
+                                        </div>
+                                        <div class="col-xs-2"></div>
+                                        <div class="col-xs-4">
+                                            <div >Nombre</div>
+                                        </div>
+                                        <div class="col-xs-2"></div>
+                                    </div>
+                                </div>
                             </div>
-                          <!-- /.modal-content -->
-                      </div>
-                      <!-- /.modal-dialog -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                        </div>
+                    {!! Form::close() !!}
                 </div>
+                  <!-- /.modal-content -->
+            </div>
+              <!-- /.modal-dialog -->
+        </div>
         <div class="modal fade" id="modalPartidoEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">

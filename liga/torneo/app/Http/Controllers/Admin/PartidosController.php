@@ -62,9 +62,9 @@ class PartidosController extends Controller {
 	 */
 	public function show($id)
 	{
-        $fecha=Fecha::findOrFail($id);
-        //dd($listArbitros);
-        return view('admin.partidos', compact('fecha'));
+        $partido = Partido::findOrFail($id);
+
+        return view('admin.partido', compact('partido'));
 	}
 
     public function buscar(Request $request)
