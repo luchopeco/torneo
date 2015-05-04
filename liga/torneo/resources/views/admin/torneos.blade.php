@@ -81,7 +81,7 @@
         <div class="modal fade" id="modalTorneoAgregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                     <div class="modal-content">
-                          {!!Form::open(['route'=>'admin.torneos.store','method'=>'POST'])!!}
+                          {!!Form::open(['route'=>'admin.torneos.store','method'=>'POST' , 'data-toggle='>'validator'])!!}
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Torneo</h4>
@@ -91,8 +91,12 @@
                                  <div class=" panel-body">
                                   <div clas="row">
                                       <div class="col-md-12">
-                                        Nombre
-                                        {!!Form::Text('nombre_torneo',null,['class'=>' form-control'])!!}
+                                        <div class="form-group">
+                                            Nombre
+                                            {!!Form::Text('nombre_torneo',null,['class'=>' form-control','required'])!!}
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+
                                         Tipo Torneo
                                         {!!Form::select('idtipo_torneo', $listTipoToneo,null,array('class' => 'form-control'))!!}
                                         Observaciones
@@ -114,7 +118,7 @@
         <div class="modal fade" id="modalTorneoModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                    <div class="modal-content">
-                      {!!Form::open(['route'=>'admin.torneos.update','method'=>'PUT'])!!}
+                      {!!Form::open(['route'=>'admin.torneos.update','method'=>'PUT', 'data-toggle='>'validator'])!!}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             <h4 class="modal-title" id="myModalLabel">Modificando Torneo</h4>
@@ -126,8 +130,11 @@
                                          <div class="row">
                                               <div class="col-md-12">
                                                     {!!Form::Text('idtorneo',null,['class'=>' hidden form-control','id'=>'idtorneoU'])!!}
-                                                    Torneo
-                                                    {!!Form::Text('nombre_torneo',null,['class'=>' form-control','id'=>'nombre_torneoU'])!!}
+                                                    <div class="form-group">
+                                                        Torneo
+                                                        {!!Form::Text('nombre_torneo',null,['class'=>' form-control','id'=>'nombre_torneoU','required'])!!}
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
                                                     Tipo Torneo
                                                     {!!Form::select('idtipo_torneo', $listTipoToneo,null,array('class' => 'form-control','id'=>'idtipo_torneoU'))!!}
                                                     Observaciones

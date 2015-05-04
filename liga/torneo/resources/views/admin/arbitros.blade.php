@@ -67,7 +67,7 @@
         <div class="modal fade" id="modalArbitroAgregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                     <div class="modal-content">
-                          {!!Form::open(['route'=>'admin.arbitros.store','method'=>'POST'])!!}
+                          {!!Form::open(['route'=>'admin.arbitros.store','method'=>'POST', 'data-toggle='>'validator'])!!}
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Arbitro</h4>
@@ -77,8 +77,11 @@
                                  <div class=" panel-body">
                                   <div clas="row">
                                       <div class="col-md-12">
-                                              {!!Form::label('nombre','Nombre')!!}
-                                              {!!Form::Text('nombre',null,['class'=>' form-control'])!!}
+                                          <div class="form-group">
+                                                    {!!Form::label('nombre','Nombre')!!}
+                                                    {!!Form::Text('nombre',null,['class'=>' form-control','required'])!!}
+                                                <span class="help-block with-errors"></span>
+                                          </div>
                                       </div>
                                    </div>
                               </div>
@@ -96,7 +99,7 @@
         <div class="modal fade" id="modalArbitroModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                    <div class="modal-content">
-                      {!!Form::open(['route'=>'admin.arbitros.update','method'=>'PUT'])!!}
+                      {!!Form::open(['route'=>'admin.arbitros.update','method'=>'PUT','data-toggle='>'validator'])!!}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             <h4 class="modal-title" id="myModalLabel">Modificando Arbitro</h4>
@@ -107,9 +110,12 @@
                                      <div class=" panel-body">
                                          <div class="row">
                                               <div class="col-md-12">
+                                                <div class="form-group">
                                                     {!!Form::Text('idarbitro',null,['class'=>' hidden form-control','id'=>'idarbitroU'])!!}
                                                     {!!Form::label('nombre','Nombre')!!}
-                                                    {!!Form::Text('nombre',null,['class'=>' form-control','id'=>'nombreU'])!!}
+                                                    {!!Form::Text('nombre',null,['class'=>' form-control','id'=>'nombreU','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                                </div>
                                               </div>
                                          </div>
                                      </div>

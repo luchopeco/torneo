@@ -48,7 +48,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="/home" class="logo"><i class="fa fa-home fa-fw"></i><b>Wiphala</b>sistemas</a>
+        <a href="/admin/home" class="logo"><i class="fa fa-home fa-fw"></i><b>Wiphala</b>sistemas</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -133,6 +133,7 @@
     <!-- AdminLTE App -->
     <script src="/dist/js/app.min.js" type="text/javascript"></script>
 
+    <script src="/js/plugins/validator/validator.min.js" type="text/javascript"></script>
         <script>
         $(function () {
             jQuery('.datepicker').datetimepicker({

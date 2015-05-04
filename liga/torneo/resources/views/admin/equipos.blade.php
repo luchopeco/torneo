@@ -70,7 +70,7 @@
         <div class="modal fade" id="modalEquipoAgregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                     <div class="modal-content">
-                          {!!Form::open(['route'=>'admin.equipos.store','method'=>'POST'])!!}
+                          {!!Form::open(['route'=>'admin.equipos.store','method'=>'POST', 'data-toggle='>'validator'])!!}
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Equipo</h4>
@@ -80,8 +80,12 @@
                                  <div class=" panel-body">
                                   <div clas="row">
                                       <div class="col-md-12">
-                                              {!!Form::label('nombre','Nombre')!!}
-                                              {!!Form::Text('nombre_equipo',null,['class'=>' form-control'])!!}
+                                            <div class="form-group">
+                                                {!!Form::label('nombre','Nombre')!!}
+                                                {!!Form::Text('nombre_equipo',null,['class'=>' form-control','required'])!!}
+                                                <span class="help-block with-errors"></span>
+                                            </div>
+
                                       </div>
                                    </div>
                               </div>
@@ -99,7 +103,7 @@
         <div class="modal fade" id="modalEquipoModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                    <div class="modal-content">
-                      {!!Form::open(['route'=>'admin.equipos.update','method'=>'PUT'])!!}
+                      {!!Form::open(['route'=>'admin.equipos.update','method'=>'PUT', 'data-toggle='>'validator'])!!}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             <h4 class="modal-title" id="myModalLabel">Modificando Equipo</h4>
@@ -110,9 +114,13 @@
                                      <div class=" panel-body">
                                          <div class="row">
                                               <div class="col-md-12">
-                                                    {!!Form::Text('idequipo',null,['class'=>' hidden form-control','id'=>'idequipoU'])!!}
-                                                    {!!Form::label('nombre','Nombre')!!}
-                                                    {!!Form::Text('nombre_equipo',null,['class'=>' form-control','id'=>'nombre_equipoU'])!!}
+                                                    <div class="form-group">
+                                                         {!!Form::Text('idequipo',null,['class'=>' hidden form-control','id'=>'idequipoU'])!!}
+                                                         {!!Form::label('nombre','Nombre')!!}
+                                                         {!!Form::Text('nombre_equipo',null,['class'=>' form-control','id'=>'nombre_equipoU','required'])!!}
+                                                         <span class="help-block with-errors"></span>
+                                                    </div>
+
                                               </div>
                                          </div>
                                      </div>

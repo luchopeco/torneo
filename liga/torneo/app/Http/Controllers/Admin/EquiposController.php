@@ -119,9 +119,21 @@ class EquiposController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Request $request)
 	{
-		//
+        try
+        {
+
+            Equipo::destroy($request->idequipo);
+            Session::flash('mensajeOk', 'Equipo Eliminado con Exito');
+            return redirect()->route('admin.equipos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            $par = Partido::findOrFail($request->idpartido);
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.equipos.index');
+        }
 	}
 
     public function storejugador(Request $request)
