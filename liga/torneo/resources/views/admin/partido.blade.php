@@ -130,8 +130,9 @@
                                                         <tr >
                                                              <td>{{$jugador->nombre_jugador}}</td>
                                                              <td>{{$jugador->goles_favor}}</td>
-                                                             <td></td>
-                                                             <td></td>
+                                                              <td>{{$jugador->goles_contra}}</td>
+                                                              <td>{{$jugador->cantidad_fechas_sancion}}</td>
+                                                              <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                                         </tr>
                                                             @endforeach
                                                     </table>
@@ -160,8 +161,9 @@
                                                         <tr >
                                                              <td>{{$jugador->nombre_jugador}}</td>
                                                              <td>{{$jugador->goles_favor}}</td>
-                                                             <td></td>
-                                                             <td></td>
+                                                             <td>{{$jugador->goles_contra}}</td>
+                                                             <td>{{$jugador->cantidad_fechas_sancion}}</td>
+                                                             <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                                         </tr>
                                                             @endforeach
                                                     </table>
@@ -185,16 +187,36 @@
                                   <h4 class="modal-title" id="myModalLabel">Agregando Gol Local</h4>
                               </div>
                               <div class="modal-body"><div class=" panel panel-info">
-                              <div class=" panel-heading">Jugador</div>
+                              <div class=" panel-heading"> Jugador
+                                     <div class="pull-right">
+                                            <div class="btn-group">
+                                                <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                                                    <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                                </button>
+                                                <ul class="multiselect-container dropdown-menu pull-right">
+                                                    <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)</li>
+                                                </ul>
+                                            </div>
+                                     </div>
+                              </div>
                                  <div class=" panel-body">
                                   <div clas="row">
-                                      <div class="col-md-8">
+                                      <div class="col-md-6">
                                             Jugador
                                             {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
                                             {!!Form::select('idjugador', $listJugadoresLocales ,null,array('class' => 'form-control'))!!}
                                       </div>
-                                      <div class="col-md-4">
-                                       {!!Form::Text('goles_favor',null,['class'=>'form-control'])!!}
+                                      <div class="col-md-2">
+                                        GF
+                                       {!!Form::Text('goles_favor',1,['class'=>'form-control'])!!}
+                                      </div>
+                                      <div class="col-md-2">
+                                      GC
+                                         {!!Form::Text('goles_contra',0,['class'=>'form-control'])!!}
+                                      </div>
+                                      <div class="col-md-2">
+                                        FS
+                                        {!!Form::Text('cantidad_fechas_sancion',0,['class'=>'form-control'])!!}
                                       </div>
                                    </div>
                               </div>
@@ -217,13 +239,38 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Gol Visitante</h4>
                               </div>
-                              <div class="modal-body"><div class=" panel panel-info">
-                              <div class=" panel-heading">Jugador</div>
+                              <div class="modal-body">
+                              <div class=" panel panel-info">
+                              <div class=" panel-heading"> Jugador
+                                    <div class="pull-right">
+                                        <div class="btn-group">
+                                            <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                                                <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                            </button>
+                                            <ul class="multiselect-container dropdown-menu pull-right">
+                                                <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                              </div>
                                  <div class=" panel-body">
                                   <div clas="row">
-                                      <div class="col-md-12">
+                                      <div class="col-md-6">
+                                            Jugador
                                             {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
                                             {!!Form::select('idjugador', $listJugadoresVisitantes ,null,array('class' => 'form-control'))!!}
+                                      </div>
+                                      <div class="col-md-2">
+                                          GF
+                                         {!!Form::Text('goles_favor',1,['class'=>'form-control'])!!}
+                                        </div>
+                                        <div class="col-md-2">
+                                        GC
+                                           {!!Form::Text('goles_contra',0,['class'=>'form-control'])!!}
+                                        </div>
+                                        <div class="col-md-2">
+                                          FS
+                                          {!!Form::Text('cantidad_fechas_sancion',0,['class'=>'form-control'])!!}
                                       </div>
                                    </div>
                               </div>
@@ -242,7 +289,23 @@
         @endsection
         @section('script')
         <script>
-
-
-        </script>
+                $(function () {
+                    $('body').on('click', '.eliminar', function (event) {
+                        event.preventDefault();
+                        var id_partido=$(this).attr('data-idpartido');
+                        var id_jugagor=$(this).attr('data-idjugador');
+                        $.ajax({
+                             url:"partidos/goleseliminar",
+                             type: "POST",
+                             data:{'idpartido': id_partido, 'idjugador':id_jugagor}
+                            })
+                        .done(function(response){
+                        alert('caca');
+                            })
+                            .fail(function(){
+                                alert(id_articulo);
+                            });
+                    });
+                });
+                </script>
         @endsection

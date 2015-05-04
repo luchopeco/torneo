@@ -67,3 +67,4 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 Route::post('admin/partidos/buscar','Admin\PartidosController@buscar');
 Route::post('admin/partidos/resultado','Admin\PartidosController@resultado');
 Route::post('admin/partidos/goles','Admin\PartidosController@goles');
+Route::get('admin/partidos/{idpartido}/{idjugador}','Admin\PartidosController@goleseliminar');
