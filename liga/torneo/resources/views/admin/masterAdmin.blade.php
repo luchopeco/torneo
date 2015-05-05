@@ -36,6 +36,8 @@
     <link href="/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
      <link href="/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
 
+     <link href="/css/dropzone.css" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

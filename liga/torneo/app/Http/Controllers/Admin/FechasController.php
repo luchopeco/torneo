@@ -96,6 +96,42 @@ class FechasController extends Controller {
         return view('admin.partidos', compact('fecha','listEquipos','listArbitros'));
 	}
 
+    public function imagen($id)
+    {
+        $fecha=Fecha::findOrFail($id);
+        //dd($listArbitros);
+        return view('admin.fecha', compact('fecha'));
+    }
+    public function imagenguardar(Request $request)
+    {
+        try
+        {
+
+            // definiendo la ruta de la carpeta donde se van a guardar las imagenes
+            $dir = "imagenes";
+            // vamos a crear el objeto
+            $file = Request::file('file');
+            // obtenemos el nombre de la imagen original
+            $name = $file->getClientOriginalName();
+            //con esto movemos el archivo a  la carpeta antes mencionada
+            Request::file('file')->move($dir,$name);
+            //$request->file('file')->move($dir,$name);
+
+
+
+            $fecha=Fecha::findOrFail($request->idfecha);
+            $fecha->imagen_fecha= $file->getClientOriginalName();
+            $fecha->save();
+
+            // y retornamos un JSON con estatus en 200
+            return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
 	/**
 	 * Show the form for editing the specified resource.
 	 *

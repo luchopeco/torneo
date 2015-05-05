@@ -65,6 +65,7 @@
                                 <td>{{$fecha->esPlayOff()}}</td>
                                 <td><a href="../fechas/{{$fecha->idfecha}}" class="btn btn-xs btn-primary " data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Gestionar Partidos"> <i class="fa fa-futbol-o"></i></a></td>
                                 <td><a href="" class="btn btn-xs btn-info editarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                <td><a href="../fecha/{{$fecha->idfecha}}" title="Imagen Fecha" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
                                 <td><a href="" class="btn btn-xs btn-danger eliminarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                             </tr>
                                 @endforeach
@@ -292,7 +293,8 @@
              $('.datepicker').datepicker({
                  format: 'mm/dd/yyyy',
                  startDate: '-3d'
-             })
+             });
+
 
         });
 
