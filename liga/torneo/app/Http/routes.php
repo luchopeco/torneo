@@ -23,6 +23,7 @@ Route::controllers([
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
         Route::resource('arbitros','ArbitrosController');
+
     });
 
 Route::post('admin/arbitros/buscar','Admin\ArbitrosController@buscar');
@@ -49,7 +50,7 @@ Route::post('admin/equipos/buscar','Admin\EquiposController@buscar');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
-        Route::resource('jugadores','JugadoresController');
+            Route::resource('jugadores','JugadoresController');
     });
 Route::post('admin/jugadores/buscar','Admin\JugadoresController@buscar');
 
@@ -59,7 +60,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     });
 Route::post('admin/fechas/buscar','Admin\FechasController@buscar');
 Route::get('admin/fecha/{id}','Admin\FechasController@imagen');
-Route::get('admin/fecha/imagenguardar','Admin\FechasController@imagenguardar');
+Route::post('admin/fecha/imagenguardar','Admin\FechasController@imagenguardar');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){

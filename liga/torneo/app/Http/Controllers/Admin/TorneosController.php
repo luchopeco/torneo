@@ -23,9 +23,9 @@ class TorneosController extends Controller {
 	public function index()
 	{
 
-       // $user = User::find(1);
-        //$user->password = Hash::make('admin');
-        //$user->save();
+        $user = User::find(1);
+        $user->password = Hash::make('admin');
+        $user->save();
 
         $listTorneos = Torneo::withTrashed()->get();
         $listTipoToneo = TipoTorneo::lists('nombre_tipo_torneo', 'idtipo_torneo');

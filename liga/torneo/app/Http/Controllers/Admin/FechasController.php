@@ -1,6 +1,7 @@
 <?php namespace torneo\Http\Controllers\Admin;
 
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use torneo\Arbitro;
@@ -106,25 +107,19 @@ class FechasController extends Controller {
     {
         try
         {
-
-            // definiendo la ruta de la carpeta donde se van a guardar las imagenes
-            $dir = "imagenes";
-            // vamos a crear el objeto
-            $file = Request::file('file');
-            // obtenemos el nombre de la imagen original
-            $name = $file->getClientOriginalName();
-            //con esto movemos el archivo a  la carpeta antes mencionada
-            Request::file('file')->move($dir,$name);
-            //$request->file('file')->move($dir,$name);
-
-
-
             $fecha=Fecha::findOrFail($request->idfecha);
-            $fecha->imagen_fecha= $file->getClientOriginalName();
+
+            if (Input::hasFile('file')) {
+                $file = Input::file('file');
+                $fecha->imagen_fecha = $file->getClientOriginalName();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", $file->getClientOriginalName());
+                $extension = $file->getClientOriginalExtension();
+            }
             $fecha->save();
 
             // y retornamos un JSON con estatus en 200
-            return Response::json(['status'=>'true'],200);
+            //return Response::json(['status'=>'true'],200);
         }
         catch(QueryException  $ex)
         {

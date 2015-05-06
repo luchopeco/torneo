@@ -41,12 +41,19 @@
                     <div class="panel-body">
                     @if($fecha->imagen_fecha!=null)
                         <div class="col-md-12">
-                            <img src="/imagenes/fechas/{{$fecha->imagen_fecha}}" class="thumbnail">
+                            <img src="/imagenes/{{$fecha->imagen_fecha}}" class="thumbnail">
+                        </div>
+                        <div class="col-md-12">
+                             {!!Form::open(['url'=>'admin/partidos/goles','method'=>'POST', 'data-toggle='>'validator'])!!}
+                             {!!Form::Text('idfecha',$fecha->idfecha,['class'=>'hidden'])!!}
+                             {!!Form::submit('Borrar Imagen', array('class' => 'btn btn-danger'))!!}
+                             {!! Form::close() !!}
                         </div>
                     @else
                         <div class="col-md-12">
-                            <form method="POST" action="admin/fecha/imagenguardar" class="dropzone" id="upload" enctype="multipart/form-data">
-                                 <input type="hidden" value="{{ csrf_token() }}" name="_token">
+                            <form method="POST" action="../fecha/imagenguardar" class="dropzone" id="upload" enctype="multipart/form-data">
+                            <input type="hidden" value="{{ $fecha->idfecha }}" name="idfecha">
+                                 <input type="hidden" value="{{ csrf_token() }}" name="file">
                                  <div class="dz-message">
                                      Arrastra y suelta aqui tu archivo. O simplemente haz click<br />
                                  </div>
