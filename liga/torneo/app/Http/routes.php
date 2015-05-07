@@ -59,7 +59,6 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('fechas','FechasController');
     });
 Route::post('admin/fechas/buscar','Admin\FechasController@buscar');
-<<<<<<< HEAD
 Route::get('admin/fecha/{id}','Admin\FechasController@imagen');
 Route::post('admin/fecha/imagenguardar','Admin\FechasController@imagenguardar');
 
@@ -71,8 +70,6 @@ Route::post('admin/partidos/buscar','Admin\PartidosController@buscar');
 Route::post('admin/partidos/resultado','Admin\PartidosController@resultado');
 Route::post('admin/partidos/goles','Admin\PartidosController@goles');
 Route::get('admin/partidos/{idpartido}/{idjugador}','Admin\PartidosController@goleseliminar');
-=======
-
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
@@ -80,4 +77,4 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     });
 
 Route::post('admin/noticias/buscar','Admin\NoticiasController@buscar');
->>>>>>> refs/heads/pr/1
+
