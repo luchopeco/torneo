@@ -57,3 +57,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('fechas','FechasController');
     });
 Route::post('admin/fechas/buscar','Admin\FechasController@buscar');
+
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],
+    function(){
+        Route::resource('noticias','NoticiasController');
+    });
+
+Route::post('admin/noticias/buscar','Admin\NoticiasController@buscar');
