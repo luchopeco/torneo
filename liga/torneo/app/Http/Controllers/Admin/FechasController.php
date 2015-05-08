@@ -111,15 +111,32 @@ class FechasController extends Controller {
 
             if (Input::hasFile('file')) {
                 $file = Input::file('file');
-                $fecha->imagen_fecha = $file->getClientOriginalName();
+                $fecha->imagen_fecha = $fecha->idfecha.'.'.$file->getClientOriginalExtension();
                 //guardamos la imagen en public/imagenes/articulos con el nombre original
-                $file->move("imagenes", $file->getClientOriginalName());
+                $file->move("imagenes", $fecha->idfecha.'.'.$file->getClientOriginalExtension());
                 $extension = $file->getClientOriginalExtension();
             }
             $fecha->save();
 
             // y retornamos un JSON con estatus en 200
             //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+    public function imagenborrar(Request $request)
+    {
+        try
+        {
+            $fecha=Fecha::findOrFail($request->idfecha);
+            $fecha->imagen_fecha=null;
+            $fecha->save();
+
+            Session::flash('mensajeOk', 'Imagen de la fecha '.$fecha->numero_fecha.' Eliminada con exito');
+            return Redirect::route('admin.torneos.show',array($fecha->idtorneo));
         }
         catch(QueryException  $ex)
         {

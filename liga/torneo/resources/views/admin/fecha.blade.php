@@ -35,19 +35,16 @@
         @endif
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">Imagen de la fecha</div>
                     <div class="panel-body">
                     @if($fecha->imagen_fecha!=null)
                         <div class="col-md-12">
-                            <img src="/imagenes/{{$fecha->imagen_fecha}}" class="thumbnail">
+                            <a class="thumbnail" ><img src="/imagenes/{{$fecha->imagen_fecha}}" ></a>
                         </div>
                         <div class="col-md-12">
-                             {!!Form::open(['url'=>'admin/partidos/goles','method'=>'POST', 'data-toggle='>'validator'])!!}
-                             {!!Form::Text('idfecha',$fecha->idfecha,['class'=>'hidden'])!!}
-                             {!!Form::submit('Borrar Imagen', array('class' => 'btn btn-danger'))!!}
-                             {!! Form::close() !!}
+                              <a href="#" data-toggle="modal" data-target="#modalImagenEliminar" class="btn btn-danger"><i class="fa fa-close"></i>Borrar Imagen</a>
                         </div>
                     @else
                         <div class="col-md-12">
@@ -64,7 +61,37 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="modalImagenEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Eliminando la imagen de la fecha</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>¿Desea Eliminar La imagen de la fecha?</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    {!!Form::open(['url'=>'admin/fecha/imagenborrar','method'=>'POST'])!!}
+                                     {!!Form::Text('idfecha',$fecha->idfecha,['class'=>'hidden'])!!}
+                                     {!!Form::submit('Borrar Imagen', array('class' => 'btn btn-success'))!!}
+                                     {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
 
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
 
 
         @endsection

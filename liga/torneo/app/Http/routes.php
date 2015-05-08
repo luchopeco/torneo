@@ -61,6 +61,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 Route::post('admin/fechas/buscar','Admin\FechasController@buscar');
 Route::get('admin/fecha/{id}','Admin\FechasController@imagen');
 Route::post('admin/fecha/imagenguardar','Admin\FechasController@imagenguardar');
+Route::post('admin/fecha/imagenborrar','Admin\FechasController@imagenborrar');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
