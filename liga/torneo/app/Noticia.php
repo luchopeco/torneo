@@ -8,7 +8,7 @@ class Noticia extends Model{
 
     protected $fillable = ['titulo','fecha','texto','mostrar_en_home','mostrar_en_seccion'];
 
-    protected $primaryKey = 'idnoticia';
+    protected $primaryKey = 'idnoticia'; 
 
 
 }
