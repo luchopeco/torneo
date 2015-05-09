@@ -50,10 +50,23 @@
                         <table id="editar"  class=" table table-bordered table-condensed table-hover">
                             <tr>
                                 <th>Titulo</th>
+                                <th>Fecha</th>
+                                <th>Contenido</th>
+                                <th>Mostrar en Home</th>
+                                <th>Mostrar en sección</th>
+                                <th>Creado el</th>
+                                <th>Modificado el</th>
                             </tr>
                             @foreach($listNoticias as $noticia)
                                 <tr >
                                     <td>{{$noticia->titulo}}</td>
+                                    <td>{{$noticia->fecha}}</td>
+                                    <td>{{$noticia->texto}}</td>
+                                    <td>{{$noticia->mostrar_en_home}}</td>
+                                    <td>{{$noticia->mostrar_en_seccion}}</td>
+                                    <td>{{$noticia->created_at}}</td>
+                                    <td>{{$noticia->updated_at}}</td>
+
                                     <td><a href="#"  class="btn btn-xs btn-info editar" data-idnoticia="{{$noticia->idnoticia}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idnoticia="{{$noticia->idnoticia}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                 </tr>
@@ -77,10 +90,24 @@
                                  <div class=" panel-body">
                                   <div clas="row">
                                       <div class="col-md-12">
-                                              {!!Form::label('nombre','Titulo')!!}
+                                              {!!Form::label('titulo','Titulo')!!}
                                               {!!Form::Text('titulo',null,['class'=>' form-control'])!!}
                                       </div>
                                    </div>
+                                   <div clas="row">
+                                      <div class="col-md-12">
+                                              {!!Form::label('fecha','Fecha')!!}
+                                              {!!Form::Text('fecha',null,['class'=>' form-control'])!!}
+                                      </div>
+                                   </div>
+                                   <div clas="row">
+                                      <div class="col-md-12">
+                                              {!!Form::label('texto','Contenido')!!}
+                                              {!!Form::Text('texto',null,['class'=>' form-control'])!!}
+                                      </div>
+                                   </div>
+                                   
+                                   
                               </div>
                          </div></div>
                               <div class="modal-footer">
