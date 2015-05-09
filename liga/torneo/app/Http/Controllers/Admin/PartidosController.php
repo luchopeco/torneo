@@ -9,6 +9,7 @@ use torneo\Http\Requests;
 use torneo\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use torneo\Jugador;
 use torneo\Partido;
 
 class PartidosController extends Controller {
@@ -104,6 +105,22 @@ class PartidosController extends Controller {
             }
 
         };
+        $golesLocal = 0;
+        $golesVisitante = 0;
+        foreach($listGoleadoresLocal as $aux )
+        {
+            $golesLocal=$golesLocal+$aux->goles_favor;
+            $golesVisitante=$golesVisitante+$aux->goles_contra;
+        }
+        foreach($listGoleadoresVisitante as $aux )
+        {
+            $golesLocal=$golesLocal+$aux->goles_contra;
+            $golesVisitante=$golesVisitante+$aux->goles_favor;
+        }
+        if($golesLocal==$partido->goles_local && $golesVisitante==$partido->goles_visitante)
+        {
+            Session::flash('resultadoOk', 'No puede modificar un partido q ya fue jugado');
+        }
         $listJugadoresVisitantes= $equipos->ListJugadores->lists('nombre_jugador', 'idjugador');
         $listJugadoresLocales= $equipo->ListJugadores->lists('nombre_jugador', 'idjugador');
         return view('admin.partido', compact('partido','listGoleadoresLocal','listGoleadoresVisitante','listJugadoresLocales','listJugadoresVisitantes'));
@@ -173,7 +190,6 @@ class PartidosController extends Controller {
             $ar = Partido::findOrFail($request->idpartido);
             $ar->goles_local =$request->goles_local;
             $ar->goles_visitante=$request->goles_visitante;
-
             $ar->save();
 
             Session::flash('mensajeOk', 'Resultado Partido Actualizado con Exito');
@@ -193,7 +209,7 @@ class PartidosController extends Controller {
 
             $ar = Partido::findOrFail($request->idpartido);
 
-            $ar->ListGoleadores()->attach($request->idjugador,['goles_favor'=>$request->goles_favor]);
+            $ar->ListGoleadores()->attach($request->idjugador,['goles_favor'=>$request->goles_favor, 'goles_contra'=>$request->goles_contra,'cantidad_fechas_sancion'=>$request->cantidad_fechas_sancion]);
             Session::flash('mensajeOk', 'Gol Agregado con Exito');
             return Redirect::route('admin.partidos.show',$ar->idpartido);
 
@@ -203,6 +219,22 @@ class PartidosController extends Controller {
             Session::flash('mensajeError', $ex->getMessage());
             return Redirect::route('admin.partidos.show',$ar->idpartido);
 
+        }
+    }
+    public function goleseliminar($idpartido,$idjugador)
+    {
+        try {
+            $partido = Partido::findOrFail($idpartido);
+            $jugador = Jugador::find($idjugador);
+            $partido->ListGoleadores()->detach($jugador);
+
+            Session::flash('mensajeOk', 'Gol Eliminado con Exito');
+            return Redirect::route('admin.partidos.show',array($idpartido));
+
+        } catch (QueryException  $ex) {
+
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.partidos.show',array($idpartido));
         }
     }
 

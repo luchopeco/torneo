@@ -44,7 +44,6 @@
                                 </button>
                                 <ul class="multiselect-container dropdown-menu pull-right">
                                     <li>Desde Aqui Puede Agregar o eliminar Fechas de un torneo</li>
-                                     <li>En la columna es Play off ;"1" significa play off, "0" es fecha normal</li>
                                      <li>Las fechas Play Off NO SUMAN PUNTOS, SI computan goles</li>
                                 </ul>
                             </div>
@@ -66,6 +65,7 @@
                                 <td>{{$fecha->esPlayOff()}}</td>
                                 <td><a href="../fechas/{{$fecha->idfecha}}" class="btn btn-xs btn-primary " data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Gestionar Partidos"> <i class="fa fa-futbol-o"></i></a></td>
                                 <td><a href="" class="btn btn-xs btn-info editarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                <td><a href="../fecha/{{$fecha->idfecha}}" title="Imagen Fecha" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
                                 <td><a href="" class="btn btn-xs btn-danger eliminarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                             </tr>
                                 @endforeach
@@ -171,7 +171,7 @@
         <div class="modal fade" id="modalFechaAgregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                             <div class="modal-content">
-                                  {!!Form::open(['route'=>'admin.fechas.store','method'=>'POST'])!!}
+                                  {!!Form::open(['route'=>'admin.fechas.store','method'=>'POST', 'data-toggle='>'validator'])!!}
                                       <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                           <h4 class="modal-title" id="myModalLabel">Agregando Fecha</h4>
@@ -182,10 +182,16 @@
                                           <div clas="row">
                                               <div class="col-md-12">
                                                     {!!Form::Text('idtorneo',$torneo->idtorneo,['class'=>'hidden'])!!}
-                                                    Descripcion Fecha
-                                                     {!!Form::Text('numero_fecha',null,['class'=>'form-control'])!!}
-                                                    Dia
-                                                    {!!Form::Text('fecha',null,['class'=>'form-control datepicker'])!!}
+                                                    <div class="form-group">
+                                                        Descripcion Fecha
+                                                        {!!Form::Text('numero_fecha',null,['class'=>'form-control','required'])!!}
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        Dia
+                                                        {!!Form::Text('fecha',null,['class'=>'form-control datepicker','required'])!!}
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
                                                     Observaciones
                                                     {!!Form::Text('observaciones',null,['class'=>'form-control'])!!}
                                                     Es Play Off
@@ -207,7 +213,7 @@
         <div class="modal fade" id="modalFechaModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                     <div class="modal-content">
-                                          {!!Form::open(['route'=>'admin.fechas.update','method'=>'PUT'])!!}
+                                          {!!Form::open(['route'=>'admin.fechas.update','method'=>'PUT', 'data-toggle='>'validator'])!!}
                                               <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                   <h4 class="modal-title" id="myModalLabel">Modificando Fecha</h4>
@@ -218,10 +224,16 @@
                                                   <div clas="row">
                                                       <div class="col-md-12">
                                                             {!!Form::Text('idfecha',null,['class'=>'form-control hidden','id'=>'idfechaU'])!!}
-                                                            Descripcion Fecha
-                                                             {!!Form::Text('numero_fecha',null,['class'=>'form-control','id'=>'numero_fechaU'])!!}
-                                                            Dia
-                                                            {!!Form::Text('fecha',null,['class'=>'form-control datepicker','id'=>'fechaU'])!!}
+                                                            <div class="form-group">
+                                                                Descripcion Fecha
+                                                                {!!Form::Text('numero_fecha',null,['class'=>'form-control','id'=>'numero_fechaU','required'])!!}
+                                                                <span class="help-block with-errors"></span>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                Dia
+                                                                {!!Form::Text('fecha',null,['class'=>'form-control datepicker','id'=>'fechaU','required'])!!}
+                                                                <span class="help-block with-errors"></span>
+                                                            </div>
                                                             Observaciones
                                                             {!!Form::Text('observaciones',null,['class'=>'form-control','id'=>'observacionesU'])!!}
                                                             Es Play Off
@@ -281,7 +293,8 @@
              $('.datepicker').datepicker({
                  format: 'mm/dd/yyyy',
                  startDate: '-3d'
-             })
+             });
+
 
         });
 

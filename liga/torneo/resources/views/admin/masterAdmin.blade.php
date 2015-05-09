@@ -36,6 +36,8 @@
     <link href="/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
      <link href="/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
 
+     <link href="/css/dropzone.css" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,7 +50,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="/home" class="logo"><i class="fa fa-home fa-fw"></i><b>Wiphala</b>sistemas</a>
+        <a href="/admin/home" class="logo"><i class="fa fa-home fa-fw"></i><b>Wiphala</b>sistemas</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -82,6 +84,7 @@
             <li><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
             <li><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li><a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
+            <li><a href="/admin/noticias"><i class="fa fa-trophy"></i>Noticias</a></li>
             <!--<li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Important</a></li>
             <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Warning</a></li>
@@ -133,6 +136,7 @@
     <!-- AdminLTE App -->
     <script src="/dist/js/app.min.js" type="text/javascript"></script>
 
+    <script src="/js/plugins/validator/validator.min.js" type="text/javascript"></script>
         <script>
         $(function () {
             jQuery('.datepicker').datetimepicker({

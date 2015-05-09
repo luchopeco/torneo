@@ -13,7 +13,7 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('admin/home', 'Admin\HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -23,6 +23,7 @@ Route::controllers([
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
         Route::resource('arbitros','ArbitrosController');
+
     });
 
 Route::post('admin/arbitros/buscar','Admin\ArbitrosController@buscar');
@@ -49,7 +50,7 @@ Route::post('admin/equipos/buscar','Admin\EquiposController@buscar');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
-        Route::resource('jugadores','JugadoresController');
+            Route::resource('jugadores','JugadoresController');
     });
 Route::post('admin/jugadores/buscar','Admin\JugadoresController@buscar');
 
@@ -58,7 +59,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('fechas','FechasController');
     });
 Route::post('admin/fechas/buscar','Admin\FechasController@buscar');
-
+Route::get('admin/fecha/{id}','Admin\FechasController@imagen');
+Route::post('admin/fecha/imagenguardar','Admin\FechasController@imagenguardar');
+Route::post('admin/fecha/imagenborrar','Admin\FechasController@imagenborrar');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
@@ -67,3 +70,12 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 Route::post('admin/partidos/buscar','Admin\PartidosController@buscar');
 Route::post('admin/partidos/resultado','Admin\PartidosController@resultado');
 Route::post('admin/partidos/goles','Admin\PartidosController@goles');
+Route::get('admin/partidos/{idpartido}/{idjugador}','Admin\PartidosController@goleseliminar');
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],
+    function(){
+        Route::resource('noticias','NoticiasController');
+    });
+
+Route::post('admin/noticias/buscar','Admin\NoticiasController@buscar');
+

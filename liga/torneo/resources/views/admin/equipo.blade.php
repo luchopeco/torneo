@@ -1,7 +1,7 @@
         @extends('admin.masterAdmin')
 
         @section('title')
-        <h1>Equipo: {{$equipo->nombre_equipo}}<small > </small></h1>
+        <h1>Gestion de Jugadores <small >Equipo: {{$equipo->nombre_equipo}} </small></h1>
         @endsection
 
         @section('breadcrumb')
@@ -74,7 +74,7 @@
         <div class="modal fade" id="modalJugadorAgregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                     <div class="modal-content">
-                          {!!Form::open(['route'=>'admin.jugadores.store','method'=>'POST'])!!}
+                          {!!Form::open(['route'=>'admin.jugadores.store','method'=>'POST', 'data-toggle='>'validator'])!!}
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Jugador</h4>
@@ -85,8 +85,11 @@
                                   <div clas="row">
                                       <div class="col-md-12">
                                             {!!Form::Text('idequipo',$equipo->idequipo,['class'=>'hidden'])!!}
-                                            Nombre
-                                            {!!Form::Text('nombre_jugador',null,['class'=>'form-control'])!!}
+                                            <div class="form-group">
+                                                Nombre
+                                                {!!Form::Text('nombre_jugador',null,['class'=>'form-control','required'])!!}
+                                                <span class="help-block with-errors"></span>
+                                            </div>
                                             Tipo y numero Documento
                                             {!!Form::Text('dni',null,['class'=>'form-control'])!!}
                                             Observaciones
@@ -108,7 +111,7 @@
         <div class="modal fade" id="modaljugadorModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                             <div class="modal-content">
-                                  {!!Form::open(['route'=>'admin.jugadores.update','method'=>'PUT'])!!}
+                                  {!!Form::open(['route'=>'admin.jugadores.update','method'=>'PUT', 'data-toggle='>'validator'])!!}
                                       <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                           <h4 class="modal-title" id="myModalLabel">Modificando Jugador</h4>
@@ -120,8 +123,12 @@
                                               <div class="col-md-12">
                                                     {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoU'])!!}
                                                     {!!Form::Text('idjugador',null,['class'=>'hidden','id'=>'idjugadorU'])!!}
-                                                    Nombre
-                                                    {!!Form::Text('nombre_jugador',null,['class'=>'form-control','id'=>'nombre_jugadorU'])!!}
+                                                    <div class="form-group">
+                                                        Nombre
+                                                        {!!Form::Text('nombre_jugador',null,['class'=>'form-control','id'=>'nombre_jugadorU','required'])!!}
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+
                                                     Tipo y numero Documento
                                                     {!!Form::Text('dni',null,['class'=>'form-control','id'=>'dniU'])!!}
                                                     Observaciones

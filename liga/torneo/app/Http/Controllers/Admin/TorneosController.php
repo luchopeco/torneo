@@ -1,6 +1,7 @@
 <?php namespace torneo\Http\Controllers\Admin;
 
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use torneo\Equipo;
@@ -10,6 +11,7 @@ use torneo\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use torneo\TipoTorneo;
 use torneo\Torneo;
+use torneo\User;
 
 class TorneosController extends Controller {
 
@@ -20,6 +22,11 @@ class TorneosController extends Controller {
 	 */
 	public function index()
 	{
+
+        $user = User::find(1);
+        $user->password = Hash::make('admin');
+        $user->save();
+
         $listTorneos = Torneo::withTrashed()->get();
         $listTipoToneo = TipoTorneo::lists('nombre_tipo_torneo', 'idtipo_torneo');
         //dd($listArbitros);
