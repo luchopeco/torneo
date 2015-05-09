@@ -125,7 +125,7 @@ class NoticiasController extends Controller {
 	{
         try
         {
-            Arbitro::destroy($request->idarbitro);
+            Arbitro::destroy($request->idnoticia);
             Session::flash('mensajeOk', 'Noticia Eliminado con Exito');
             return redirect()->route('admin.noticias.index');
         }
