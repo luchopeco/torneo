@@ -19,11 +19,11 @@ class Torneo extends Model{
     }
     public function ListEquipos()
     {
-        return $this->belongsToMany('torneo\Equipo','torneo_equipo','torneo_idtorneo','equipo_idequipo');
+        return $this->belongsToMany('torneo\Equipo','torneo_equipo','torneo_idtorneo','equipo_idequipo')->orderBy('nombre_equipo');
     }
     public function ListFechas()
     {
-        return $this->hasMany('torneo\Fecha','idtorneo','idtorneo');
+        return $this->hasMany('torneo\Fecha','idtorneo','idtorneo')->orderBy('fecha')->orderBy('numero_fecha');
     }
 
 

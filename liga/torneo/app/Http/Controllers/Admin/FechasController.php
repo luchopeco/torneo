@@ -144,6 +144,92 @@ class FechasController extends Controller {
             return Redirect::route('admin.torneos.show',array($request->idtorneo));
         }
     }
+
+    public function imagenequipoguardar(Request $request)
+    {
+        try
+        {
+            $fecha=Fecha::findOrFail($request->idfecha);
+
+            if (Input::hasFile('file')) {
+                $file = Input::file('file');
+                $fecha->imagen_equipo_ideal ='equipo-ideal-'. $fecha->idfecha.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'equipo-ideal-'.$fecha->idfecha.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $fecha->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+    public function imagenequipoborrar(Request $request)
+    {
+        try
+        {
+            $fecha=Fecha::findOrFail($request->idfecha);
+            $fecha->imagen_equipo_ideal=null;
+            $fecha->save();
+
+            Session::flash('mensajeOk', 'Imagen del equipo ideal de la fecha '.$fecha->numero_fecha.' Eliminada con exito');
+            return Redirect::route('admin.torneos.show',array($fecha->idtorneo));
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+
+    public function imagenfiguraguardar(Request $request)
+    {
+        try
+        {
+            $fecha=Fecha::findOrFail($request->idfecha);
+
+            if (Input::hasFile('file')) {
+                $file = Input::file('file');
+                $fecha->imagen_figura_fecha ='figura-'. $fecha->idfecha.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'figura-'.$fecha->idfecha.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $fecha->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+    public function imagenfiguraborrar(Request $request)
+    {
+        try
+        {
+            $fecha=Fecha::findOrFail($request->idfecha);
+            $fecha->imagen_figura_fecha=null;
+            $fecha->save();
+
+            Session::flash('mensajeOk', 'Imagen de la figura de la fecha '.$fecha->numero_fecha.' Eliminada con exito');
+            return Redirect::route('admin.torneos.show',array($fecha->idtorneo));
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *

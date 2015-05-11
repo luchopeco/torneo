@@ -63,6 +63,12 @@ Route::get('admin/fecha/{id}','Admin\FechasController@imagen');
 Route::post('admin/fecha/imagenguardar','Admin\FechasController@imagenguardar');
 Route::post('admin/fecha/imagenborrar','Admin\FechasController@imagenborrar');
 
+Route::post('admin/fecha/imagenequipoguardar','Admin\FechasController@imagenequipoguardar');
+Route::post('admin/fecha/imagenequipoborrar','Admin\FechasController@imagenequipoborrar');
+
+Route::post('admin/fecha/imagenfiguraguardar','Admin\FechasController@imagenfiguraguardar');
+Route::post('admin/fecha/imagenfiguraborrar','Admin\FechasController@imagenfiguraborrar');
+
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
         Route::resource('partidos','PartidosController');
