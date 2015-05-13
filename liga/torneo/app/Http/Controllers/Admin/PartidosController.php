@@ -190,6 +190,22 @@ class PartidosController extends Controller {
             $ar = Partido::findOrFail($request->idpartido);
             $ar->goles_local =$request->goles_local;
             $ar->goles_visitante=$request->goles_visitante;
+            $ar->fue_jugado=1;
+            if($ar->goles_local > $ar->goles_visitante)
+            {
+                $ar->puntos_local=3;
+                $ar->puntos_visitante = 0;
+            }
+            else if ($ar->goles_visitante > $ar->goles_local )
+            {
+                $ar->puntos_visitante=3;
+                $ar->puntos_local=0;
+            }
+            else if($ar->goles_visitante == $ar->goles_local )
+            {
+                $ar->puntos_visitante=0;
+                $ar->puntos_local=0;
+            }
             $ar->save();
 
             Session::flash('mensajeOk', 'Resultado Partido Actualizado con Exito');
