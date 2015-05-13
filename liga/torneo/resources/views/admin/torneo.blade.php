@@ -102,6 +102,33 @@
                         </table>
                     </div>
                </div>
+
+               <div class=" panel panel-default">
+                       <div class=" panel-heading"><strong>Tabla de Posiciones</strong>
+                       </div>
+                       <div class=" panel-body">
+                           <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                               <tr>
+                                   <th>Equipo</th>
+                                   <th>Pts</th>
+                                   <th>Pj</th>
+                                   <th>Gf</th>
+                                   <th>GC</th>
+                                   <th>Df</th>
+                               </tr>
+                               @foreach($torneo->TablaPosiciones() as $tabla)
+                                   <tr >
+                                       <td>{{$tabla->nombre_equipo}}</td>
+                                       <td>{{$tabla->pun}}</td>
+                                       <td>{{$tabla->pj}}</td>
+                                       <td>{{$tabla->gf}}</td>
+                                       <td>{{$tabla->gc}}</td>
+                                       <td>{{$tabla->df}}</td>
+                                   </tr>
+                               @endforeach
+                           </table>
+                       </div>
+                  </div>
             </div>
         </div>
 
