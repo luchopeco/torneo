@@ -62,6 +62,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('noticias','NoticiasController');
         Route::post('noticias/buscar','NoticiasController@buscar');
 
+        Route::resource('pagina-inicio','PaginaIncioController');
+        Route::post('pagina-inicio/buscar','PaginaIncioController@buscar');
 });
 
 
