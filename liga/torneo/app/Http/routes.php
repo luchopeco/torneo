@@ -37,6 +37,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::get('equipoimagen/{id}','EquiposController@equipoimagen');
         Route::post('equipoimagen/equipofotoborrar','EquiposController@equipofotoborrar');
         Route::post('equipoimagen/equipofotoguardar','EquiposController@equipofotoguardar');
+        Route::post('equipoimagen/equipoescudoborrar','EquiposController@equipoescudoborrar');
+        Route::post('equipoimagen/equipoescudoguardar','EquiposController@equipoescudoguardar');
 
         Route::resource('jugadores','JugadoresController');
         Route::post('jugadores/buscar','JugadoresController@buscar');

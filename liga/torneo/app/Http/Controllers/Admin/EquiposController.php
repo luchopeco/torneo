@@ -1,6 +1,7 @@
 <?php namespace torneo\Http\Controllers\Admin;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use torneo\Equipo;
 use torneo\Http\Requests;
@@ -195,7 +196,7 @@ class EquiposController extends Controller {
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+            return Redirect::route('admin.equipos.index' );
         }
     }
     public function equipofotoborrar(Request $request)
@@ -207,12 +208,54 @@ class EquiposController extends Controller {
             $equipo->save();
 
             Session::flash('mensajeOk', 'Foto del Equipo '.$equipo->nombre_equipo.' Eliminada con exito');
-            return Redirect::route('admin.equipos');
+            return  Redirect::route('admin.equipos.index');
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+            return Redirect::route('admin.equipos.index');
+        }
+    }
+
+    public function equipoescudoguardar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $equipo->escudo = 'escudo-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'escudo-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $equipo->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.equipos');
+        }
+    }
+    public function equipoescudoborrar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+            $equipo->escudo=null;
+            $equipo->save();
+
+            Session::flash('mensajeOk', 'Escudo del Equipo '.$equipo->nombre_equipo.' Eliminada con exito');
+            return Redirect::route('admin.equipos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.equipos.index');
         }
     }
 

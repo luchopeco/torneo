@@ -34,7 +34,7 @@
         @endif
 
         <div class="row">
-            <div class="col-md-46">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">Foto del Equipo</div>
                     <div class="panel-body">
@@ -47,8 +47,8 @@
                         </div>
                     @else
                         <div class="col-md-12">
-                            <form method="POST" action="../fecha/imagenguardar" class="dropzone" id="upload" enctype="multipart/form-data">
-                            <input type="hidden" value="{{ $equipo->idequipo }}" name="idfecha">
+                            <form method="POST" action="equipofotoguardar" class="dropzone" id="upload" enctype="multipart/form-data">
+                            <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipo">
                                  <input type="hidden" value="{{ csrf_token() }}" name="file">
                                  <div class="dz-message">
                                      Arrastra y suelta aqui tu archivo. O simplemente haz click<br />
@@ -72,7 +72,7 @@
                         </div>
                     @else
                         <div class="col-md-12">
-                            <form method="POST" action="equipofotoguardar" class="dropzone" id="upload" enctype="multipart/form-data">
+                            <form method="POST" action="equipoescudoguardar" class="dropzone" id="upload" enctype="multipart/form-data">
                             <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipo">
                                  <input type="hidden" value="{{ csrf_token() }}" name="file">
                                  <div class="dz-message">
@@ -119,6 +119,37 @@
             <!-- /.modal-dialog -->
         </div>
 
+        <div class="modal fade" id="modalEscudoEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Eliminando el Escudo Del Equipo</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>¿Desea Eliminar el escudo del  equipo?</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    {!!Form::open(['url'=>'admin/equipoimagen/equipoescudoborrar','method'=>'POST'])!!}
+                                     {!!Form::Text('idequipo',$equipo->idequipo,['class'=>'hidden'])!!}
+                                     {!!Form::submit('Borrar Escudo', array('class' => 'btn btn-success'))!!}
+                                     {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
 
 
         @endsection
