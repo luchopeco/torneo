@@ -1,5 +1,6 @@
 <?php namespace torneo\Http\Controllers\Admin;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use torneo\Equipo;
 use torneo\Http\Requests;
@@ -17,7 +18,8 @@ class EquiposController extends Controller {
 	 */
 	public function index()
 	{
-        $listEquipos = Equipo::all();
+        $listEquipos = Equipo::orderBy('nombre_equipo','asc')->get();
+        //$listEquipos= Equipo::orderBy('nombre_equipo', 'asc')->get()->lists('nombre_equipo', 'idequipo');
         //dd($listArbitros);
         return view('admin.equipos', compact('listTorneos','mensajeOK','listEquipos'));
 	}
@@ -41,6 +43,11 @@ class EquiposController extends Controller {
 	{
         try{
             $torneo = new Equipo($request->all());
+            if ($request->es_libre<> null) {
+                $torneo->es_libre = 1;
+            } else {
+                $torneo->es_libre = 0;
+            }
             $torneo->save();
 
             Session::flash('mensajeOk', 'Equipo Agregado con Exito');
@@ -74,7 +81,6 @@ class EquiposController extends Controller {
 	 */
 	public function show($id)
 	{
-
         $equipo = Equipo::find($id);
         return view('admin.equipo', compact('equipo'));
 	}
@@ -101,6 +107,11 @@ class EquiposController extends Controller {
         try {
             $ar = Equipo::findOrFail($request->idequipo);
             $ar->nombre_equipo = $request->nombre_equipo;
+            if ($request->es_libre <> null) {
+                $ar->es_libre = 1;
+            } else {
+                $ar->es_libre = 0;
+            }
             $ar->save();
 
             Session::flash('mensajeOk', 'Equipo Modificado con Exito');
@@ -130,7 +141,7 @@ class EquiposController extends Controller {
         }
         catch(QueryException  $ex)
         {
-            $par = Partido::findOrFail($request->idpartido);
+            $par = Equipo::findOrFail($request->idequipo);
             Session::flash('mensajeError', $ex->getMessage());
             return redirect()->route('admin.equipos.index');
         }
@@ -152,6 +163,54 @@ class EquiposController extends Controller {
 
         } catch (QueryException  $ex) {
 
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+
+    public function equipoimagen($id)
+    {
+        $equipo = Equipo::find($id);
+        return view('admin.equipoimagen', compact('equipo'));
+    }
+
+    public function equipofotoguardar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $equipo->foto = 'foto-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'foto-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $equipo->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+    public function equipofotoborrar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+            $equipo->foto=null;
+            $equipo->save();
+
+            Session::flash('mensajeOk', 'Foto del Equipo '.$equipo->nombre_equipo.' Eliminada con exito');
+            return Redirect::route('admin.equipos');
+        }
+        catch(QueryException  $ex)
+        {
             Session::flash('mensajeError', $ex->getMessage());
             return Redirect::route('admin.torneos.show',array($request->idtorneo));
         }

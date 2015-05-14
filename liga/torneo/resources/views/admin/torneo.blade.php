@@ -131,7 +131,30 @@
                   </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-8">
+            <div class=" panel panel-default">
+                   <div class=" panel-heading"><strong>Goleadores</strong>
+                   </div>
+                   <div class=" panel-body">
+                       <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                           <tr>
+                               <th>Jugador</th>
+                               <th>Equipo</th>
+                               <th>Goles</th>
+                           </tr>
+                           @foreach($torneo->Goleadores() as $goleador)
+                               <tr >
+                                   <td>{{$goleador->nombre_jugador}}</td>
+                                   <td>{{$goleador->nombre_equipo}}</td>
+                                   <td>{{$goleador->goles}}</td>
+                               </tr>
+                           @endforeach
+                       </table>
+                   </div>
+              </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="modalEquipoAgregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">

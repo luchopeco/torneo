@@ -84,7 +84,7 @@
             <li><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
             <li><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li><a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
-            <li><a href="/admin/noticias"><i class="fa fa-trophy"></i>Noticias</a></li>
+            <li><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
             <!--<li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Important</a></li>
             <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Warning</a></li>

@@ -43,6 +43,8 @@
                                 <ul class="multiselect-container dropdown-menu pull-right">
                                     <li>Desde Aqui Puede Agregar, editar o eliminar un Equipo</li>
                                     <li>Tambien Puede Agregar sus jugadores</li>
+                                    <li>Agregue un equipo "Libre" En caso de necesitarlo.
+                                    El equipo indicado como libre no suma puntos</li>
                                 </ul>
                             </div>
                         </div>
@@ -51,12 +53,15 @@
                         <table id="editar"  class=" table table-bordered table-condensed table-hover">
                             <tr>
                                 <th>Equipo</th>
+                                <th>Libre</th>
                             </tr>
                             @foreach($listEquipos as $equipo)
                                 <tr >
                                     <td>{{$equipo->nombre_equipo}}</td>
+                                    <td>{{$equipo->esLibre()}}</td>
                                     <td><a href="equipos/{{$equipo->idequipo}}"  class="btn btn-xs btn-primary " data-idequipo="{{$equipo->idequipo}}"  title="Editar Jugadores"> <i class="fa fa-user"></i></a></td>
                                     <td><a href="#"  class="btn btn-xs btn-info editar" data-idequipo="{{$equipo->idequipo}}"  title="Editar Nombre Equipo"> <i class=" fa fa-edit"></i></a></td>
+                                    <td><a href="equipoimagen/{{$equipo->idequipo}}" title="Foto y Escudo Del Equipo" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                 </tr>
                             @endforeach
@@ -83,6 +88,8 @@
                                             <div class="form-group">
                                                 {!!Form::label('nombre','Nombre')!!}
                                                 {!!Form::Text('nombre_equipo',null,['class'=>' form-control','required'])!!}
+                                                Es Libre
+                                                 {!!Form::checkbox('es_libre','0',false,['class'=>' form-control '])!!}
                                                 <span class="help-block with-errors"></span>
                                             </div>
 
@@ -118,6 +125,8 @@
                                                          {!!Form::Text('idequipo',null,['class'=>' hidden form-control','id'=>'idequipoU'])!!}
                                                          {!!Form::label('nombre','Nombre')!!}
                                                          {!!Form::Text('nombre_equipo',null,['class'=>' form-control','id'=>'nombre_equipoU','required'])!!}
+                                                         Es Libre
+                                                         {!!Form::checkbox('es_libre','0',false,['class'=>' form-control','id'=>'es_libreU'])!!}
                                                          <span class="help-block with-errors"></span>
                                                     </div>
 
@@ -146,7 +155,7 @@
                               {!!Form::open(['route'=>['admin.equipos.destroy'],'method'=>'DELETE'])!!}
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h4 class="modal-title" id="myModalLabel">Eliminando Arbitro</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Eliminando Equipo</h4>
                                 </div>
                                 <div class="modal-body">
                                        <div class="row">
@@ -189,6 +198,12 @@
                         //alert(response.datos.titulo);
                         $('#nombre_equipoU').val(response.datos.nombre_equipo);
                         $('#idequipoU').val(response.datos.idequipo);
+                        if(response.datos.es_libre==1){
+                        $('#es_libreU').prop('checked',true);
+                        }
+                        else{
+                        $('#es_libreU').prop('checked',false);
+                        }
                         $("#modalEquipoModificar").modal("show");
                     })
                     .fail(function(){
