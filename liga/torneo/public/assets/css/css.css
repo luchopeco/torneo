@@ -6,47 +6,35 @@
     line-height: 20px;
 }
 
+.social-buton {
+    color: #ffffff;
+    position: fixed;
+    right: 0px;
+    height: 40px;
+    display: block;
+    border-radius: 0px 2px 2px 0px;
+    background: #444 none no-repeat scroll center center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    width: 40px;
+    text-align: center;
+    padding: 5px 0 0 0;
+    cursor: pointer;
+}
+.social-buton a {
+    color: #fff;
 
+}
+.social-buton a:hover {
+    color: rgb(228, 79, 79);
+
+}
 
 .social-buton-f {
-    color: #ffffff;
-    position: fixed;
     top: 160px;
-    right: 0px;
-    height: 40px;
-    display: block;
-    border-radius: 0px 2px 2px 0px;
-    background: #444 none no-repeat scroll center center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-    width: 40px;
-    text-align: center;
-    padding: 5px 0 0 0;
 }
 .social-buton-t {
-    color: #ffffff;
-    position: fixed;
     top: 210px;
-    right: 0px;
-    height: 40px;
-    display: block;
-    border-radius: 0px 2px 2px 0px;
-    background: #444 none no-repeat scroll center center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-    width: 40px;
-    text-align: center;
-    padding: 5px 0 0 0;
 }
 .social-buton-g {
-    color: #ffffff;
-    position: fixed;
     top: 260px;
-    right: 0px;
-    height: 40px;
-    display: block;
-    border-radius: 0px 2px 2px 0px;
-    background: #444 none no-repeat scroll center center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-    width: 40px;
-    text-align: center;
-    padding: 5px 0 0 0;
 }

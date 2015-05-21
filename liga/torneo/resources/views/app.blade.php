@@ -730,14 +730,14 @@ consectetur tellus nec, porttitor nulla.
 <!--CONTACT SECTION END-->
 
 <!--Social-->
-<div class="social-buton-f">
-    <i class="fa fa-facebook fa-2x"></i>
+<div class="social-buton social-buton-f">
+    <a href="" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 </div>
-<div class="social-buton-t">
-    <i class="fa fa-twitter fa-2x"></i>
+<div class="social-buton social-buton-t">
+    <a href="" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
 </div>
-<div class="social-buton-g">
-    <i class="fa fa-google-plus fa-2x"></i>
+<div class=" social-buton social-buton-g">
+   <a href="" target="_blank"> <i class="fa fa-google-plus fa-2x"></i></a>
 </div>
 <!--Social Fin-->
 
