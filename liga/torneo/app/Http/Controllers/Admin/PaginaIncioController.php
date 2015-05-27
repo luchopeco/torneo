@@ -1,6 +1,7 @@
 <?php namespace torneo\Http\Controllers\Admin;
 
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use torneo\Http\Requests;
 use torneo\Http\Controllers\Controller;
@@ -150,7 +151,7 @@ class PaginaIncioController extends Controller {
             $slider=SliderHome::findOrFail($request->idslider_home);
 
             if ( Input::hasFile('file')) {
-                $file = Input::file('file');
+                $file =  Input::file('file');
                 $slider->imagen = 'imagen-slider'.$slider->idslider_home.'.'.$file->getClientOriginalExtension();
                 //guardamos la imagen en public/imagenes/articulos con el nombre original
                 $file->move("imagenes", 'imagen-slider'.$slider->idslider_home.'.'.$file->getClientOriginalExtension());

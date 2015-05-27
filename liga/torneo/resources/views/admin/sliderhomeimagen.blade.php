@@ -6,7 +6,7 @@
 
         @section('breadcrumb')
         <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
-               <li><a href="/admin/pagina-inicio"> <i class="fa fa-futbol-o"></i>Inicio</a></li>
+               <li><a href="/admin/pagina-inicio"> <i class="fa fa-sliders"></i>Gestion Slider</a></li>
         @endsection
 
         @section('content')
