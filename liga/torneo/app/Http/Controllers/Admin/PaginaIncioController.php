@@ -135,4 +135,99 @@ class PaginaIncioController extends Controller {
         }
 	}
 
+	 public function sliderhomeimagen($id)
+    {
+        $slider = SliderHome::find($id);
+        return view('admin.sliderhomeimagen', compact('slider'));
+    }
+
+
+
+	 public function sliderfotoguardar(Request $request)
+    {
+        try
+        {
+            $slider=SliderHome::findOrFail($request->idslider_home);
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $slider->imagen = 'imagen-slider'.$slider->idslider_home.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'imagen-slider'.$slider->idslider_home.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $slider->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.paginainicio.index' );
+        }
+    }
+    public function sliderfotoborrar(Request $request)
+    {
+        try
+        {
+            $slider=SliderHome::findOrFail($request->idslider_home);
+            $slider->imagen=null;
+            $slider->save();
+
+            Session::flash('mensajeOk', 'Imagen del slider  '.$slider->titulo.' Eliminada con exito');
+            return  Redirect::route('admin.paginainicio.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.paginainicio.index');
+        }
+    }
+
+	/*
+    public function equipoescudoguardar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $equipo->escudo = 'escudo-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'escudo-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $equipo->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.equipos');
+        }
+    }
+    public function equipoescudoborrar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+            $equipo->escudo=null;
+            $equipo->save();
+
+            Session::flash('mensajeOk', 'Escudo del Equipo '.$equipo->nombre_equipo.' Eliminada con exito');
+            return Redirect::route('admin.equipos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.equipos.index');
+        }
+    }
+
+    */
+
 }

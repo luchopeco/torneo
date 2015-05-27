@@ -59,7 +59,7 @@
                                     <td>{{$slider->Activo()}}</td>
                                     <td>{{$slider->imagen}}</td>
                                     <td><a href="#"  class="btn btn-xs btn-info editar" data-idslider="{{$slider->idslider_home}}"  title="Editar Datos Slider"> <i class=" fa fa-edit"></i></a></td>
-                                    <td><a href="{{$slider->idslider_home}}" title="Editar Imagen Slider" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
+                                    <td><a href="sliderhomeimagen/{{$slider->idslider_home}}" title="Editar Imagen Slider" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idslider="{{$slider->idslider_home}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                 </tr>
                             @endforeach

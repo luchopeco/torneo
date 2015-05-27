@@ -64,6 +64,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 
         Route::resource('pagina-inicio','PaginaIncioController');
         Route::post('pagina-inicio/buscar','PaginaIncioController@buscar');
+
+        Route::get('sliderhomeimagen/{id}','PaginaIncioController@sliderhomeimagen');
+        Route::post('sliderhomeimagen/sliderfotoborrar','PaginaIncioController@sliderfotoborrar');
+        Route::post('sliderhomeimagen/sliderfotoguardar','PaginaIncioController@sliderfotoguardar');
 });
 
 
