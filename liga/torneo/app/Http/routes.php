@@ -68,6 +68,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::get('sliderhomeimagen/{id}','PaginaIncioController@sliderhomeimagen');
         Route::post('sliderhomeimagen/sliderfotoborrar','PaginaIncioController@sliderfotoborrar');
         Route::post('sliderhomeimagen/sliderfotoguardar','PaginaIncioController@sliderfotoguardar');
+
+         Route::get('noticiaimagen/{id}','NoticiasController@noticiaimagen');
+        Route::post('noticiaimagen/noticiaimagenborrar','NoticiasController@noticiaimagenborrar');
+        Route::post('noticiaimagen/noticiaimagenguardar','NoticiasController@noticiaimagenborrar');
 });
 
 

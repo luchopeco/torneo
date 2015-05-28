@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 
+
 class NoticiasController extends Controller {
 
 	/**
@@ -137,5 +138,57 @@ class NoticiasController extends Controller {
 
 
 	}
+
+	 public function noticiaimagen($id)
+    {
+        $noticia = Noticia::find($id);
+        return view('admin.noticiaimagen', compact('noticia'));
+    }
+
+
+
+	 public function noticiaimmagenguardar(Request $request)
+    {
+        try
+        {
+            $noticia=Noticia::findOrFail($request->idnoticia);
+
+          
+
+            if ( Input::hasFile('file')) {
+                $file =  Input::file('file');
+                $noticia->imagen = 'imagen-noticia'.$noticia->idnoticia.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'imagen-noticia'.$noticia->idnoticia.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $noticia->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.noticias.index' );
+        }
+    }
+    public function noticiaimagenborrar(Request $request)
+    {
+        try
+        {
+            $noticia=Noticia::findOrFail($request->idnoticia);
+            $noticia->imagen=null;
+            $noticia->save();
+
+            Session::flash('mensajeOk', 'Imagen de la noticia  '.$noticia->titulo.' Eliminada con exito');
+            return  Redirect::route('admin.noticias.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.noticias.index');
+        }
+    }
 
 }

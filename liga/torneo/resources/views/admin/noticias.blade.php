@@ -52,6 +52,7 @@
                                 <th>Titulo</th>
                                 <th>Fecha</th>
                                 <th>Contenido</th>
+                                <th>Imagen</th>
                                 <th>Mostrar en Home</th>
                                 <th>Mostrar en sección</th>
                                 <th>Creado el</th>
@@ -62,12 +63,14 @@
                                     <td>{{$noticia->titulo}}</td>
                                     <td>{{$noticia->fecha}}</td>
                                     <td>{{$noticia->texto}}</td>
+                                    <td>{{$noticia->imagen}}</td>
                                     <td>{{$noticia->mostrar_en_home}}</td>
                                     <td>{{$noticia->mostrar_en_seccion}}</td>
                                     <td>{{$noticia->created_at}}</td>
                                     <td>{{$noticia->updated_at}}</td>
 
                                     <td><a href="#"  class="btn btn-xs btn-info editar" data-idnoticia="{{$noticia->idnoticia}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                   <td><a href="noticiaimagen/{{$noticia->idnoticia}}" title="Editar Imagen " class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idnoticia="{{$noticia->idnoticia}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                 </tr>
                             @endforeach
