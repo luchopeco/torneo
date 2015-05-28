@@ -2,14 +2,16 @@
 
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use torneo\Http\Requests;
 use torneo\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use torneo\SliderHome;
+use torneo\Imagen;
+use torneo\TipoImagen;
 
-class PaginaIncioController extends Controller {
+class ImagenesController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -18,8 +20,9 @@ class PaginaIncioController extends Controller {
 	 */
 	public function index()
 	{
-        $listSlider = SliderHome::all();
-        return view('admin.paginainicio', compact('listSlider'));
+        $listTipoImagen = TipoImagen::lists('descripcion', 'idtipo_imagen');
+        $listSlider = Imagen::all();
+        return view('admin.paginainicio', compact('listSlider','listTipoImagen'));
 	}
 
 	/**
@@ -40,21 +43,21 @@ class PaginaIncioController extends Controller {
 	public function store(Request $request)
 	{
         try{
-            $slider = new SliderHome($request->all());
+            $slider = new Imagen($request->all());
             $slider->save();
 
-            Session::flash('mensajeOk', 'Slider Agregado con Exito');
-            return redirect()->route('admin.pagina-inicio.index');
+            Session::flash('mensajeOk', 'Imagen Agregada con Exito');
+            return redirect()->route('admin.imagenes.index');
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.pagina-inicio.index');
+            return redirect()->route('admin.imagenes.index');
         }
 	}
     public function buscar(Request $request)
     {
-        $ar = SliderHome::findOrFail($request->idslider);
+        $ar = Imagen::findOrFail($request->idimagen);
         $response = array(
             "result" => true,
             "mensaje" => "No se pudo realizar la operacion",
@@ -73,7 +76,8 @@ class PaginaIncioController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $slider = Imagen::find($id);
+        return view('admin.imagenes', compact('slider'));
 	}
 
 	/**
@@ -96,7 +100,7 @@ class PaginaIncioController extends Controller {
 	public function update(Request $request)
 	{
         try {
-            $ar = SliderHome::findOrFail($request->idslider_home);
+            $ar = Imagen::findOrFail($request->idimagen);
             $ar->titulo = $request->titulo;
             if ($request->mostrar <> null) {
                 $ar->mostrar = 1;
@@ -105,13 +109,13 @@ class PaginaIncioController extends Controller {
             }
             $ar->save();
 
-            Session::flash('mensajeOk', 'Slider Modificado con Exito');
-            return redirect()->route('admin.pagina-inicio.index');
+            Session::flash('mensajeOk', 'Imagen Modificada con Exito');
+            return redirect()->route('admin.imagenes.index');
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.pagina-inicio.index');
+            return redirect()->route('admin.imagenes.index');
         }
 	}
 
@@ -125,37 +129,36 @@ class PaginaIncioController extends Controller {
 	{
         try
         {
-            SliderHome::destroy($request->idslider_home);
-            Session::flash('mensajeOk', 'Slider Eliminado con Exito');
-            return redirect()->route('admin.pagina-inicio.index');
+            Imagen::destroy($request->idimagen);
+            Session::flash('mensajeOk', 'Imagen Eliminada con Exito');
+            return redirect()->route('admin.imagenes.index');
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.pagina-inicio.index');
+            return redirect()->route('admin.imagenes.index');
         }
 	}
 
-	 public function sliderhomeimagen($id)
+	 public function imagenshow($id)
     {
-        $slider = SliderHome::find($id);
-        return view('admin.sliderhomeimagen', compact('slider'));
+        $slider = Imagen::find($id);
+        return view('admin.imagenes', compact('slider'));
     }
 
 
 
-	 public function sliderfotoguardar(Request $request)
+	 public function imagenguardar(Request $request)
     {
         try
         {
-            $slider=SliderHome::findOrFail($request->idslider_home);
+            $slider=Imagen::findOrFail($request->idimagen);
 
             if ( Input::hasFile('file')) {
                 $file =  Input::file('file');
-                $slider->imagen = 'imagen-slider'.$slider->idslider_home.'.'.$file->getClientOriginalExtension();
+                $slider->imagen = $slider->TipoImagen->descripcion.'-'.$slider->idimagen.'.'.$file->getClientOriginalExtension();
                 //guardamos la imagen en public/imagenes/articulos con el nombre original
-                $file->move("imagenes", 'imagen-slider'.$slider->idslider_home.'.'.$file->getClientOriginalExtension());
-                $extension = $file->getClientOriginalExtension();
+                $file->move("imagenes", $slider->imagen);
             }
             $slider->save();
 
@@ -168,16 +171,16 @@ class PaginaIncioController extends Controller {
             return Redirect::route('admin.paginainicio.index' );
         }
     }
-    public function sliderfotoborrar(Request $request)
+    public function imagenborrar(Request $request)
     {
         try
         {
-            $slider=SliderHome::findOrFail($request->idslider_home);
+            $slider=Imagen::findOrFail($request->idimagen);
             $slider->imagen=null;
             $slider->save();
 
-            Session::flash('mensajeOk', 'Imagen del slider  '.$slider->titulo.' Eliminada con exito');
-            return  Redirect::route('admin.paginainicio.index');
+            Session::flash('mensajeOk', 'Imagen  '.$slider->titulo.' Eliminada con exito');
+            return  Redirect::route('admin.imagenes.index');
         }
         catch(QueryException  $ex)
         {

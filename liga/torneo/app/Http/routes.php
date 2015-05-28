@@ -62,12 +62,12 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('noticias','NoticiasController');
         Route::post('noticias/buscar','NoticiasController@buscar');
 
-        Route::resource('pagina-inicio','PaginaIncioController');
-        Route::post('pagina-inicio/buscar','PaginaIncioController@buscar');
+        Route::resource('imagenes','ImagenesController');
+        Route::post('imagenes/buscar','ImagenesController@buscar');
 
-        Route::get('sliderhomeimagen/{id}','PaginaIncioController@sliderhomeimagen');
-        Route::post('sliderhomeimagen/sliderfotoborrar','PaginaIncioController@sliderfotoborrar');
-        Route::post('sliderhomeimagen/sliderfotoguardar','PaginaIncioController@sliderfotoguardar');
+        //Route::get('imagenes/{id}','ImagenesController@imagenshow');
+        Route::post('imagenes/imagenborrar','ImagenesController@imagenborrar');
+        Route::post('imagenes/imagenguardar','ImagenesController@imagenguardar');
 });
 
 

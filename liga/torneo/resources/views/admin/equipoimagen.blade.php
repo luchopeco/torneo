@@ -73,7 +73,7 @@
                     @else
                         <div class="col-md-12">
                             <form method="POST" action="equipoescudoguardar" class="dropzone" id="upload" enctype="multipart/form-data">
-                            <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipo">
+                                 <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipo">
                                  <input type="hidden" value="{{ csrf_token() }}" name="file">
                                  <div class="dz-message">
                                      Arrastra y suelta aqui tu archivo. O simplemente haz click<br />

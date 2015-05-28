@@ -81,7 +81,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">Menu Navegacion</li>
-            <li><a href="/admin/pagina-inicio"><i class="fa fa-sliders"></i>Slider Home</a></li>
+            <li><a href="/admin/imagenes"><i class="fa fa-picture-o"></i>Imagenes</a></li>
             <li><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
             <li><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li><a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>

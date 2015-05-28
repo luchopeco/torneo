@@ -1,12 +1,12 @@
         @extends('admin.masterAdmin')
 
         @section('title')
-        <h1>Gestion De imagenes<small >Slider: {{$slider->titulo}} </small></h1>
+        <h1>Gestion De imagenes<small >Imagen: {{$slider->TipoImagen->descripcion}} - {{$slider->titulo}} </small></h1>
         @endsection
 
         @section('breadcrumb')
-        <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
-               <li><a href="/admin/pagina-inicio"> <i class="fa fa-sliders"></i>Gestion Slider</a></li>
+        <li><a href="/admin/home"><i class="fa fa-home"></i> Home</a></li>
+               <li><a href="/admin/imagenes"><i class="fa fa-picture-o"></i>Gestion Imagenes</a></li>
         @endsection
 
         @section('content')
@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Foto del Slider</div>
+                    <div class="panel-heading">Imagen</div>
                     <div class="panel-body">
                     @if($slider->imagen!=null)
                         <div class="col-md-12">
@@ -47,8 +47,8 @@
                         </div>
                     @else
                         <div class="col-md-12">
-                            <form method="POST" action="sliderfotoguardar" class="dropzone" id="upload" enctype="multipart/form-data">
-                            <input type="hidden" value="{{ $slider->idslider_home }}" name="idslider_home">
+                            <form method="POST" action="imagenguardar" class="dropzone" id="upload" enctype="multipart/form-data">
+                            <input type="hidden" value="{{ $slider->idimagen }}" name="idimagen">
                                  <input type="hidden" value="{{ csrf_token() }}" name="file">
                                  <div class="dz-message">
                                      Arrastra y suelta aqui tu archivo. O simplemente haz click<br />
@@ -68,12 +68,12 @@
                 <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">Eliminando la Foto Del slider</h4>
+                            <h4 class="modal-title" id="myModalLabel">Eliminando la imagen</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3>¿Desea Eliminar La Foto del  slider?</h3>
+                                    <h3>¿Desea Eliminar La imagen?</h3>
                                 </div>
                             </div>
                         </div>
@@ -81,8 +81,8 @@
                             <div class="row ">
                                 <div class="col-md-12">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                    {!!Form::open(['url'=>'admin/sliderhomeimagen/sliderfotoborrar','method'=>'POST'])!!}
-                                     {!!Form::Text('idslider_home',$slider->idslider_home,['class'=>'hidden'])!!}
+                                    {!!Form::open(['url'=>'admin/imagenes/imagenborrar','method'=>'POST'])!!}
+                                     {!!Form::Text('idimagen',$slider->idimagen,['class'=>'hidden'])!!}
                                      {!!Form::submit('Borrar Foto', array('class' => 'btn btn-success'))!!}
                                      {!! Form::close() !!}
                                 </div>

@@ -82,8 +82,8 @@ class EquiposController extends Controller {
 	 */
 	public function show($id)
 	{
-        $equipo = Equipo::find($id);
-        return view('admin.equipo', compact('equipo'));
+            $equipo = Equipo::findOrFail($id);
+            return view('admin.equipo', compact('equipo'));
 	}
 
 	/**

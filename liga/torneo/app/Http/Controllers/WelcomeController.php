@@ -1,5 +1,7 @@
 <?php namespace torneo\Http\Controllers;
 
+use torneo\Imagen;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,6 +32,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+
 		return view('welcome');
 	}
 
