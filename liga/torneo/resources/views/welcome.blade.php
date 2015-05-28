@@ -33,6 +33,40 @@
     </div>
 </div>
 <!--HOME SECTION END-->
+
+<section id="services">
+    <div class="container">
+        <div class="row text-center header">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" data-anim-type="fade-in-up">
+                <h3>DATOS DE LA ULTIMA FECHA</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row" data-anim-type="fade-in-up">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="services-wrapper">
+                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="services-wrapper">
+                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
+                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="services-wrapper">
+                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="services-wrapper">
+                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
 @section('script')
 

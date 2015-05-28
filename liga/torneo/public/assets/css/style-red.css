@@ -29,6 +29,7 @@ GENERAL STYLES
 body {
 font-family: 'Ubuntu', sans-serif;
 color: #fff;
+    background: #000000;
 }
 
 section {
