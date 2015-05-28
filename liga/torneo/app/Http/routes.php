@@ -65,9 +65,19 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::resource('imagenes','ImagenesController');
         Route::post('imagenes/buscar','ImagenesController@buscar');
 
+<<<<<<< HEAD
         //Route::get('imagenes/{id}','ImagenesController@imagenshow');
         Route::post('imagenes/imagenborrar','ImagenesController@imagenborrar');
         Route::post('imagenes/imagenguardar','ImagenesController@imagenguardar');
+=======
+        Route::get('sliderhomeimagen/{id}','PaginaIncioController@sliderhomeimagen');
+        Route::post('sliderhomeimagen/sliderfotoborrar','PaginaIncioController@sliderfotoborrar');
+        Route::post('sliderhomeimagen/sliderfotoguardar','PaginaIncioController@sliderfotoguardar');
+
+         Route::get('noticiaimagen/{id}','NoticiasController@noticiaimagen');
+        Route::post('noticiaimagen/noticiaimagenborrar','NoticiasController@noticiaimagenborrar');
+        Route::post('noticiaimagen/noticiaimagenguardar','NoticiasController@noticiaimagenborrar');
+>>>>>>> 45c484b70043b7a4a5c2e9067e58a221f59ea29b
 });
 
 
