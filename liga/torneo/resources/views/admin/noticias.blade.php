@@ -47,6 +47,10 @@
                         </div>
                     </div>
                     <div class=" panel-body">
+
+                  
+
+                    
                         <table id="editar"  class=" table table-bordered table-condensed table-hover">
                             <tr>
                                 <th>Titulo</th>

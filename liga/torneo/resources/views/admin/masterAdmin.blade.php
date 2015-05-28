@@ -86,6 +86,23 @@
             <li><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li><a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
             <li><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
+            
+            <li><a href="#">
+
+            ACA ENCONTRE EL METODO DE LARAVEL QUE ENCUENTRA EL CONTROLADOR: <BR>
+
+ Route::currentRouteAction(); <BR><br>
+
+                  <?php echo Route::currentRouteAction(); ?>
+                  <br>
+                  <?php echo Route::current()->getName(); ?>
+
+
+            </a>
+              
+            </li>
+
+
             <!--<li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Important</a></li>
             <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Warning</a></li>
