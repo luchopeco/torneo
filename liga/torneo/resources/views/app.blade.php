@@ -1,3 +1,6 @@
+<?php
+$ruta= Route::currentRouteAction();
+?>
 <!DOCTYPE html>
 <html lang="es" class="no-js" >
 <head>
@@ -47,14 +50,21 @@
 </div>
 <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
-<li><a href="#home">HOME</a></li>
-<li><a href="#services">INSTALACIONES</a></li>
-<li><a href="#pricing">INSCRIPCION</a></li>
-<li><a href="#work">FIXTURE</a></li>
-<li><a href="#team">ESTADISTICAS</a></li>
-<li><a href="#grid">SANCIONES</a></li>
-<li><a href="#contact">MEDIA</a></li>
-<li><a href="#contact">CONTACTO</a></li>
+@if($ruta=='torneo\Http\Controllers\WelcomeController@index')
+<li class="active"><a href="/">HOME</a></li>
+@else
+<li><a href="/">HOME</a></li>
+@endif
+<li><a href="#">INSTALACIONES</a></li>
+<li><a href="#">INSCRIPCION</a></li>
+@if($ruta=='torneo\Http\Controllers\WelcomeController@fixture')
+<li class="active"><a href="/fixture">FIXTURE</a></li>
+@else
+<li><a href="/fixture">FIXTURE</a></li>
+@endif
+<li><a href="#">ESTADISTICAS</a></li>
+<li><a href="#">SANCIONES</a></li>
+<li><a href="#">MEDIA</a></li>
 </ul>
 </div>
 
@@ -64,58 +74,59 @@
 @yield('content')
 <!--CONTACT SECTION START-->
 <section id="contact" >
-<div class="container">
-<div class="row text-center header animate-in" data-anim-type="fade-in-up">
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="contacto">
+        <div class="container">
+            <div class="row text-center header animate-in" data-anim-type="fade-in-up">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3>Contacto</h3>
+                    <hr />
+                </div>
+            </div>
+            <div class="row animate-in" data-anim-type="fade-in-up">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="contact-wrapper text-center">
+                        <h3>COMPLETE NUESTRO FORMULARIO</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {!!Form::Text('nombre',null,['class'=>' form-control','required','placeholder'=>'NOMBRE Y APELLIDO'])!!}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {!!Form::Text('mail',null,['class'=>' form-control','required','placeholder'=>'MAIL'])!!}
+                            </div>
+                            <div class="col-md-6">
+                                {!!Form::Text('ciudad',null,['class'=>' form-control','required','placeholder'=>'CIUDAD'])!!}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
+                            </div>
+                        </div>
 
-<h3>Contact Details </h3>
-<hr />
-
-</div>
-</div>
-
-<div class="row animate-in" data-anim-type="fade-in-up">
-
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<div class="contact-wrapper">
-<h3>We Are Social</h3>
-<p>
-Aliquam tempus ante placerat,
-consectetur tellus nec, porttitor nulla.
-</p>
-<div class="social-below">
-<a href="#" class="btn button-custom btn-custom-two" > Facebook</a>
-<a href="#" class="btn button-custom btn-custom-two" > Twitter</a>
-<a href="#" class="btn button-custom btn-custom-two" > Google +</a>
-</div>
-</div>
-
-</div>
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<div class="contact-wrapper">
-<h3>Quick Contact</h3>
-<h4><strong>Email : </strong> info@yuordomain.com </h4>
-<h4><strong>Call : </strong> +09-88-99-77-55 </h4>
-<h4><strong>Skype : </strong> Yujhaeu78 </h4>
-</div>
-
-</div>
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<div class="contact-wrapper">
-<h3>Address : </h3>
-<h4>230/45 , New way Lane , </h4>
-<h4>United States</h4>
-<div class="footer-div" >
-&copy; 2015 YourDomain | <a href="http://www.designbootstrap.com/" target="_blank" >by DesignBootstrp</a>
-</div>
-</div>
-
-</div>
-
-</div>
-
-
-</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="contact-wrapper">
+                        <h3>Contacto Rapido</h3>
+                        <h4><strong>Email : </strong> liga@tifosi.com.ar</h4>
+                        <h4><strong>Tel : </strong> (0341) 467 0934</h4>
+                        <h3>Datos Personales</h3>
+                        <h4><strong>Cordoba 4556. CP 2000 </strong></h4>
+                        <h4><strong>Rosario</strong></h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="contact-wrapper" style="padding: 35px">
+                         <img class="img-responsive text-center" src="/imagenes/footer/gatorade.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!--CONTACT SECTION END-->
 
@@ -151,20 +162,21 @@ consectetur tellus nec, porttitor nulla.
 <script src="assets/js/custom.js"></script>
 
 <script>
-       $(function () {
-            $.vegas('slideshow', {
-            backgrounds: [
-                <?php $listImagen=\torneo\Imagen::all()->where('idtipo_imagen', 1)->where('mostrar',1); ?>
-                @foreach($listImagen as $imagen)
-               { src: 'imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
-                @endforeach
-            //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
-            ]
-            })('overlay', {
-            /** SLIDESHOW OVERLAY IMAGE **/
-            src: 'assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
-            });
-     });
+  $(function () {
+       $.vegas('slideshow', {
+       backgrounds: [
+           <?php $listImagen=\torneo\Imagen::all()->where('idtipo_imagen', 1)->where('mostrar',1); ?>
+           @foreach($listImagen as $imagen)
+          { src: 'imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
+           @endforeach
+       //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
+       ]
+       })('overlay', {
+       /** SLIDESHOW OVERLAY IMAGE **/
+       src: 'assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+       });
+});
+
 </script>
 
     @yield('script')

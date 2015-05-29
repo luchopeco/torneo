@@ -37,33 +37,69 @@
 <section id="services">
     <div class="container">
         <div class="row text-center header">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" data-anim-type="fade-in-up">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
                 <h3>DATOS DE LA ULTIMA FECHA</h3>
                 <hr>
             </div>
         </div>
-        <div class="row" data-anim-type="fade-in-up">
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="row animate-in" data-anim-type="fade-in-up">
+            @foreach($listFiguras as $fig)
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="services-wrapper">
-                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
+                <a class="fancybox-media" href="/imagenes/{{$fig->imagen}}">
+                    <img class="img-responsive" src="/imagenes/{{$fig->imagen}}">
+                </a>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <div class="services-wrapper">
-                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
-                 </div>
+            @endforeach
+
+        </div>
+    </div>
+</section>
+
+<section id="grid">
+    <div class="container">
+        <div class="col-md-6 col-xs-12">
+            <div class="row text-center header" >
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
+                      <h3>Equipo Ideal</h3>
+                      <hr>
+                  </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <div class="services-wrapper">
-                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <div class="services-wrapper">
-                    <img class="img-responsive" src="/imagenes/imagen-slider4.jpg">
+            <div class="row pad-bottom animate-in" data-anim-type="fade-in-up">
+                <div class="col-xs-12">
+                    <div class="col-xs-12">
+                        <div class="col-xs-12">
+                            <div class="col-xs-12">
+                               @foreach($listEquipoIdeal as $fig)
+                                <a class="fancybox-media" href="/imagenes/{{$fig->imagen}}">
+                                    <img class="img-responsive" src="/imagenes/{{$fig->imagen}}">
+                                </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+         <div class="col-md-6 col-xs-12">
+                <div class="row text-center header" >
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
+                          <h3>Pronostico Proxima Fecha</h3>
+                          <hr>
+                      </div>
+                </div>
+                <div class="row pad-bottom animate-in" data-anim-type="fade-in-up">
+
+                    <div class="services-wrapper">
+                   <!-- www.TuTiempo.net - Ancho:206px - Alto:238px -->
+                   <div id="TT_tBsAbBYxt2IKdFxAjAzzzjzDDWaA1EClbtEd1syoKkz"><a href="http://www.tutiempo.net">El Tiempo</a></div>
+                   <script type="text/javascript" src="http://www.tutiempo.net/widget/eltiempo_tBsAbBYxt2IKdFxAjAzzzjzDDWaA1EClbtEd1syoKkz"></script>
+
+                </div>
+
+             </div>
+          </div>
     </div>
 </section>
 

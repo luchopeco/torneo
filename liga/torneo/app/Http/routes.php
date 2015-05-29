@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/fixture', 'WelcomeController@fixture');
 
 Route::get('admin/home', 'Admin\HomeController@index');
 
@@ -64,7 +65,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 
         Route::resource('imagenes','ImagenesController');
         Route::post('imagenes/buscar','ImagenesController@buscar');
-        
+
         //Route::get('imagenes/{id}','ImagenesController@imagenshow');
         Route::post('imagenes/imagenborrar','ImagenesController@imagenborrar');
         Route::post('imagenes/imagenguardar','ImagenesController@imagenguardar');
