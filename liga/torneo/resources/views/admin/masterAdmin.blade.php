@@ -81,21 +81,25 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">Menu Navegacion</li>
-            <li><a href="/admin/imagenes"><i class="fa fa-picture-o"></i>Imagenes</a></li>
-            <li><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
-            <li><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
-            <li><a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
-            <li><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
+
+
+            <li <?php if('admin.imagenes.index'== Route::current()->getName()||'admin.imagenes.show'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/imagenes"><i class="fa fa-picture-o"></i>Imagenes</a></li>
+            <li <?php if('admin.arbitros.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
+            <li <?php if('admin.equipos.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
+            <li <?php if('admin.torneos.index'== Route::current()->getName()){echo 'class="active"';} ?>> <a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
+            <li <?php if('admin.noticias.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
             
             <li><a href="#">
 
-            ACA ENCONTRE EL METODO DE LARAVEL QUE ENCUENTRA EL CONTROLADOR: <BR>
+            
 
- Route::currentRouteAction(); <BR><br>
+ 
+ <?php /*  PROBAR CON ESTOS MÉTODOS TAMBIEN 
 
-                  <?php echo Route::currentRouteAction(); ?>
-                  <br>
-                  <?php echo Route::current()->getName(); ?>
+ Route::currentRouteAction();
+Route::current()->getName(); 
+  */ ?>
+                  
 
 
             </a>
