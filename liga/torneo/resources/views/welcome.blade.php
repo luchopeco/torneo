@@ -10,7 +10,8 @@
             <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
                   <div id="carousel-slider" data-ride="carousel" class="carousel slide  animate-in" data-anim-type="fade-in-up">
                       <div class="carousel-inner">
-                          <div class="item active">
+                          <div class="item active ">
+                                <img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png">
                               <h1>
                               <strong>EL NUEVO COMPLEJO EN FUNES EQUIPADO PARA LA MEJOR LIGA DE FUTBOL 5 DEL GRAN ROSARIO</strong>
                               </h1>

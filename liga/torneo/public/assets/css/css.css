@@ -38,3 +38,11 @@
 .social-buton-g {
     top: 260px;
 }
+#fixture select{
+    background-color: rgba(0,0,0,0.3);
+    color: rgb(228, 79, 79);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: none;
+}
