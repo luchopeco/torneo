@@ -68,7 +68,6 @@ $ruta= Route::currentRouteAction();
 @else
 <li><a href="/estadisticas">ESTADISTICAS</a></li>
 @endif
-<li><a href="#">SANCIONES</a></li>
 <li><a href="#">MEDIA</a></li>
 </ul>
 </div>

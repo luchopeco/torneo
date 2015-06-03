@@ -25,76 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="estadisticas.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="estadisticas.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/include/estadisticas.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="697">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.45535713" vertical-offset="357" max-vertical-offset="1003">
+              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estadisticas.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/estadisticas.blade.php">
+      <file leaf-file-name="torneo.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/torneo.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1139">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="css.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="939" max-vertical-offset="1462">
-              <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="1258" max-vertical-offset="2788">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-              <folding>
-                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#section#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.769231" vertical-offset="697" max-vertical-offset="1394">
-              <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImagenesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ImagenesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5506692" vertical-offset="2653" max-vertical-offset="4131">
-              <caret line="173" column="12" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="12" />
-              <folding>
-                <element signature="e#48#87#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style-red.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/style-red.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7960" max-vertical-offset="8891">
-              <caret line="431" column="10" selection-start-line="431" selection-start-column="10" selection-end-line="431" selection-end-column="10" />
+            <state vertical-scroll-proportion="-18.76923" vertical-offset="2096" max-vertical-offset="6086">
+              <caret line="152" column="31" selection-start-line="139" selection-start-column="22" selection-end-line="152" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -154,10 +99,10 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PartidosController.php" />
         <option value="$PROJECT_DIR$/app/Torneo.php" />
-        <option value="$PROJECT_DIR$/resources/views/include/estadisticas.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/estadisticas.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/css.css" />
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/include/estadisticas.blade.php" />
       </list>
     </option>
   </component>
@@ -258,6 +203,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,22 +461,22 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27912253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2881997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -825,19 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/torneo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3846154" vertical-offset="1739" max-vertical-offset="6086">
-          <caret line="109" column="27" selection-start-line="109" selection-start-column="27" selection-end-line="128" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/include/fixture.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769" vertical-offset="51" max-vertical-offset="782">
           <caret line="24" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,13 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3470483" vertical-offset="129" max-vertical-offset="714">
           <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding>
-            <element signature="e#128#524#0#PHP" expanded="false" />
-            <element signature="e#527#594#0#PHP" expanded="false" />
-            <element signature="e#596#661#0#PHP" expanded="false" />
-            <element signature="e#664#750#0#PHP" expanded="false" />
-            <element signature="e#752#1016#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -867,46 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50915754" vertical-offset="521" max-vertical-offset="1309">
           <caret line="203" column="40" selection-start-line="203" selection-start-column="40" selection-end-line="203" selection-end-column="40" />
-          <folding>
-            <element signature="e#391#463#0#PHP" expanded="false" />
-            <element signature="e#465#495#0#PHP" expanded="false" />
-            <element signature="e#498#578#0#PHP" expanded="false" />
-            <element signature="e#580#615#0#PHP" expanded="false" />
-            <element signature="e#618#698#0#PHP" expanded="false" />
-            <element signature="e#700#1192#0#PHP" expanded="false" />
-            <element signature="e#751#1189#0#PHP" expanded="false" />
-            <element signature="e#1005#1189#0#PHP" expanded="false" />
-            <element signature="e#1195#1285#0#PHP" expanded="false" />
-            <element signature="e#1287#3928#0#PHP" expanded="false" />
-            <element signature="e#1552#2142#0#PHP" expanded="false" />
-            <element signature="e#1618#2131#0#PHP" expanded="false" />
-            <element signature="e#1695#2117#0#PHP" expanded="false" />
-            <element signature="e#2347#2942#0#PHP" expanded="false" />
-            <element signature="e#2414#2931#0#PHP" expanded="false" />
-            <element signature="e#2491#2917#0#PHP" expanded="false" />
-            <element signature="e#3006#3183#0#PHP" expanded="false" />
-            <element signature="e#3192#3373#0#PHP" expanded="false" />
-            <element signature="e#3382#3578#0#PHP" expanded="false" />
-            <element signature="e#3934#4319#0#PHP" expanded="false" />
-            <element signature="e#4057#4191#0#PHP" expanded="false" />
-            <element signature="e#4322#4430#0#PHP" expanded="false" />
-            <element signature="e#4432#4468#0#PHP" expanded="false" />
-            <element signature="e#4471#4571#0#PHP" expanded="false" />
-            <element signature="e#4625#5513#0#PHP" expanded="false" />
-            <element signature="e#4704#4929#0#PHP" expanded="false" />
-            <element signature="e#5334#5513#0#PHP" expanded="false" />
-            <element signature="e#6655#6839#0#PHP" expanded="false" />
-            <element signature="e#6850#7526#0#PHP" expanded="false" />
-            <element signature="e#6904#7520#0#PHP" expanded="false" />
-            <element signature="e#7336#7520#0#PHP" expanded="false" />
-            <element signature="e#7531#8111#0#PHP" expanded="false" />
-            <element signature="e#7598#8105#0#PHP" expanded="false" />
-            <element signature="e#7925#8105#0#PHP" expanded="false" />
-            <element signature="e#8114#8216#0#PHP" expanded="false" />
-            <element signature="e#8218#8802#0#PHP" expanded="false" />
-            <element signature="e#8271#8799#0#PHP" expanded="false" />
-            <element signature="e#8558#8799#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,18 +825,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693" vertical-offset="442" max-vertical-offset="1649">
           <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-          <folding>
-            <marker date="1433288226067" expanded="true" signature="-1:-1" placeholder="SELECT sum(e..sum..." />
-            <marker date="1433288226067" expanded="true" signature="-1:-1" placeholder="SELECT sum(p..partidos..." />
-            <marker date="1433288226067" expanded="true" signature="-1:-1" placeholder="SELECT sum(p..partidos..." />
-            <marker date="1433288226067" expanded="true" signature="-1:-1" placeholder="SELECT sum(p..partido_has_jugador..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/estadisticas.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1139">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1139">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
@@ -933,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style-red.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7960" max-vertical-offset="8891">
+        <state vertical-scroll-proportion="-1.104712" vertical-offset="7960" max-vertical-offset="8891">
           <caret line="431" column="10" selection-start-line="431" selection-start-column="10" selection-end-line="431" selection-end-column="10" />
           <folding />
         </state>
@@ -947,28 +852,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/include/estadisticas.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="697">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="1258" max-vertical-offset="2788">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#section#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.769231" vertical-offset="697" max-vertical-offset="1394">
+        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1428">
           <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
           <folding />
         </state>
@@ -976,11 +862,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ImagenesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5506692" vertical-offset="2653" max-vertical-offset="4131">
+        <state vertical-scroll-proportion="0.5265082" vertical-offset="2653" max-vertical-offset="4131">
           <caret line="173" column="12" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="12" />
           <folding>
-            <element signature="e#48#87#0#PHP" expanded="true" />
+            <element signature="e#48#87#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77696526" vertical-offset="748" max-vertical-offset="3485">
+          <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/torneo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.76923" vertical-offset="2096" max-vertical-offset="6086">
+          <caret line="152" column="31" selection-start-line="139" selection-start-column="22" selection-end-line="152" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/include/estadisticas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45535713" vertical-offset="357" max-vertical-offset="1003">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
