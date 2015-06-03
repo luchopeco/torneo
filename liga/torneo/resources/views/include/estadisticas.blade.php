@@ -36,7 +36,7 @@
            <tr>
                <th>Goleador</th>
                <th>Equipo</th>
-               <th>Goles</th>
+               <th>G</th>
            </tr>
            @foreach($torneo->Goleadores() as $goleador)
                <tr >
@@ -48,6 +48,24 @@
        </table>
     </div>
 </div>
-<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+    <div class="fechas-wrapper col-fechas">
+         <table class=" table table-hover">
+           <tr>
+               <th>Sancionado</th>
+               <th>Equipo</th>
+               <th>F</th>
+           </tr>
+           @foreach($torneo->Sancionados() as $goleador)
+               <tr >
+                   <td>{{$goleador->jugador}}</td>
+                   <td>{{$goleador->nombre_equipo}}</td>
+                   <td>{{$goleador->fechas_restantes}}</td>
+               </tr>
+           @endforeach
+       </table>
+    </div>
+     <div>F-> Fechas a Cumplir</div>
+</div>
 
 

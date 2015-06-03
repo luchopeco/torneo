@@ -5,7 +5,7 @@
         @endsection
 
         @section('breadcrumb')
-        <li><a href="/home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
         @endsection
 
         @section('content')
