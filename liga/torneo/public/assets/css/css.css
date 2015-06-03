@@ -67,6 +67,6 @@
 #estadisticas .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
-#estadisticas .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+#estadisticas .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th, .table-hover>tbody>tr:hover {
     background: url("../img/fondo-rojo-transparente.png") repeat;
 }
