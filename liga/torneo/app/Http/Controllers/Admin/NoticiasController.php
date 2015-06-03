@@ -102,7 +102,7 @@ class NoticiasController extends Controller {
 	{
         try {
             $ar = Noticia::findOrFail($request->idnoticia);
-            $ar->nombre = $request->nombre;
+            $ar->titulo = $request->titulo;
             $ar->save();
 
             Session::flash('mensajeOk', 'Noticia Modificada con Exito');
@@ -147,7 +147,7 @@ class NoticiasController extends Controller {
 
 
 
-	 public function noticiaimmagenguardar(Request $request)
+	 public function noticiaimagenguardar(Request $request)
     {
         try
         {

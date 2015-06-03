@@ -76,7 +76,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 
          Route::get('noticiaimagen/{id}','NoticiasController@noticiaimagen');
         Route::post('noticiaimagen/noticiaimagenborrar','NoticiasController@noticiaimagenborrar');
-        Route::post('noticiaimagen/noticiaimagenguardar','NoticiasController@noticiaimagenborrar');
+        Route::post('noticiaimagen/noticiaimagenguardar','NoticiasController@noticiaimagenguardar');
+
+        
 
 });
 
