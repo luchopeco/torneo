@@ -13,16 +13,16 @@
             </div>
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
-             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="fechas-wrapper  text-center">
                     <div class="row">
                         <div class=" col-sm-2 col-xs-12">
                             <img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png">
                         </div>
-                        <div class="col-sm-4 col-xs-12">
+                        <div class="col-sm-4 col-xs-12 text-center">
                             <h3>ELEGIR CATEGORIA</h3>
                         </div>
-                        <div class="col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-xs-12">
                            {!!Form::select('idtorneo', $listTorneosCombo,null,array('class' => 'form-control','onchange'=>'buscarEstadisticaXTorneo()','id'=>'idtorneo'))!!}
                         </div>
                     </div>

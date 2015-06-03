@@ -130,6 +130,16 @@ $ruta= Route::currentRouteAction();
                     </div>
                 </div>
             </div>
+             <div class="row animate-in" data-anim-type="fade-in-up">
+                <div class="col-xs-12">
+                    <div class="powerby text-center">
+                        <div class="row">
+                            <div class="col-md-6"> <h3><a target="_blank" href="http://www.shoutside.com.ar">ShoutSide Studio</a></h3></div>
+                            <div class="col-md-6"> <h3><a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a></h3></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
