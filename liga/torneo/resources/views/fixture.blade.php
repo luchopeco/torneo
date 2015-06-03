@@ -13,8 +13,8 @@
             </div>
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="fechas-wrapper  text-center col-fechas">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+                <div class="fechas-wrapper  text-center col-sel-fechas">
                     <div class="center-block">
                         <img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png">
                     </div>
@@ -25,6 +25,8 @@
                     {!!Form::select('idtorneo', $listTorneosCombo,null,array('class' => 'form-control','onchange'=>'buscarFixtureXTorneo()','id'=>'idtorneo'))!!}
                 </div>
              </div>
+        </div>
+        <div class="row animate-in" data-anim-type="fade-in-up">
              <div id="contenidoFixture">
 
              </div>

@@ -62,7 +62,12 @@ $ruta= Route::currentRouteAction();
 @else
 <li><a href="/fixture">FIXTURE</a></li>
 @endif
-<li><a href="#">ESTADISTICAS</a></li>
+
+@if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
+<li class="active"><a href="/estadisticas">ESTADISTICAS</a></li>
+@else
+<li><a href="/estadisticas">ESTADISTICAS</a></li>
+@endif
 <li><a href="#">SANCIONES</a></li>
 <li><a href="#">MEDIA</a></li>
 </ul>

@@ -454,10 +454,14 @@ text-decoration:none;
  }
 
 /*Ficture*/
-.col-fechas{
-    min-height: 300px;
+.col-sel-fechas{
+    min-height: 250px;
     overflow: hidden;
 }
+.col-fechas{
+     min-height: 300px;
+     overflow: hidden;
+ }
 .col-resultado{
     background-color: #000000;
     border: 1px solid #f5f5f5;

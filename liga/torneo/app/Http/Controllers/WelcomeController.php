@@ -40,13 +40,23 @@ class WelcomeController extends Controller {
 
     public function fixture()
     {
-        $listTorneos = Torneo::all();
         $listTorneosCombo = Torneo::all()->lists('nombre_torneo', 'idtorneo');
-        return view('fixture',compact('listTorneos','listTorneosCombo'));
+        return view('fixture',compact('listTorneosCombo'));
     }
     public function fixturetorneo($id)
     {
         $torneo = Torneo::findOrFail($id);
         return view('include.fixture',compact('torneo'));
+    }
+
+    public function estadisticas()
+    {
+        $listTorneosCombo = Torneo::all()->lists('nombre_torneo', 'idtorneo');
+        return view('estadisticas',compact('listTorneosCombo'));
+    }
+    public function estadisticastorneo($id)
+    {
+        $torneo = Torneo::findOrFail($id);
+        return view('include.estadisticas',compact('torneo'));
     }
 }

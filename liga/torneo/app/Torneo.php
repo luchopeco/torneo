@@ -30,30 +30,30 @@ class Torneo extends Model{
     public function TablaPosiciones()
     {
 
-        $tabla =  DB::select(DB::raw("SELECT sum(puntos) pun, sum(gf) gf, sum(gc) gc , sum(df) df, sum(pj) pj, id, nombre_equipo FROM
-                                    (
-                                    (SELECT sum(p.puntos_local) puntos, sum(p.goles_local) gf , sum(p.goles_visitante) gc,
-                                    sum(p.goles_local) - sum(p.goles_visitante) df , p.idequipo_local id , e.nombre_equipo, count(*) pj
-                                      FROM partidos p
-                                      INNER JOIN equipos e ON p.idequipo_local = e.idequipo
-                                      INNER JOIN fechas f ON f.idfecha = p.idfecha
-                                    WHERE p.fue_jugado=1 AND p.idtorneo = :p1
-                                    AND f.es_play_off =0
-                                    GROUP BY p.idequipo_local)
+        $tabla =  DB::select(DB::raw("SELECT sum(emp) emp,sum(gan) gan,sum(per) per, sum(puntos) pun, sum(gf) gf, sum(gc) gc , sum(df) df, sum(pj) pj, id, nombre_equipo FROM
+                            (
+                            (SELECT sum(p.empatado_local) emp ,sum(p.ganado_local) gan,sum(p.perdido_local) per , sum(p.puntos_local) puntos, sum(p.goles_local) gf , sum(p.goles_visitante) gc,
+                            sum(p.goles_local) - sum(p.goles_visitante) df , p.idequipo_local id , e.nombre_equipo, count(*) pj
+                              FROM partidos p
+                              INNER JOIN equipos e ON p.idequipo_local = e.idequipo
+                              INNER JOIN fechas f ON f.idfecha = p.idfecha
+                            WHERE p.fue_jugado=1 AND p.idtorneo = :p1
+                            AND f.es_play_off =0
+                            GROUP BY p.idequipo_local)
 
-                                    UNION  all
+                            UNION  all
 
-                                    (SELECT sum(p.puntos_visitante) puntos , sum(p.goles_visitante) gf, sum(p.goles_local) gc,
-                                    sum(p.goles_visitante) - sum(p.goles_local) df , p.idequipo_visitante id , e.nombre_equipo, count(*) pj
-                                      FROM partidos p
-                                      INNER JOIN equipos e ON p.idequipo_visitante = e.idequipo
-                                      INNER JOIN fechas f ON f.idfecha = p.idfecha
-                                    WHERE p.fue_jugado=1 AND p.idtorneo = :p2
-                                    AND f.es_play_off=0
-                                    GROUP BY  p.idequipo_visitante)
-                                    ) AS tabla
-                                    GROUP BY id, nombre_equipo
-                                    ORDER BY pun desc, gf  DESC"), array(
+                            (SELECT sum(p.empatado_visitante) emp,sum(p.ganado_visitante) gan,sum(p.perdido_visitante) per , sum(p.puntos_visitante) puntos , sum(p.goles_visitante) gf, sum(p.goles_local) gc,
+                            sum(p.goles_visitante) - sum(p.goles_local) df , p.idequipo_visitante id , e.nombre_equipo, count(*) pj
+                              FROM partidos p
+                              INNER JOIN equipos e ON p.idequipo_visitante = e.idequipo
+                              INNER JOIN fechas f ON f.idfecha = p.idfecha
+                            WHERE p.fue_jugado=1 AND p.idtorneo = :p2
+                            AND f.es_play_off=0
+                            GROUP BY  p.idequipo_visitante)
+                            ) AS tabla
+                            GROUP BY id, nombre_equipo
+                            ORDER BY pun desc, gf  DESC"), array(
                                             'p1' => $this->idtorneo,'p2' => $this->idtorneo));
         return $tabla;
     }

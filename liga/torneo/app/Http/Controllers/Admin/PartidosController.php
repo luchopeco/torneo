@@ -195,16 +195,20 @@ class PartidosController extends Controller {
             {
                 $ar->puntos_local=3;
                 $ar->puntos_visitante = 0;
+                $ar->ganado_local=1;
             }
             else if ($ar->goles_visitante > $ar->goles_local )
             {
                 $ar->puntos_visitante=3;
                 $ar->puntos_local=0;
+                $ar->ganado_visitante=1;
             }
             else if($ar->goles_visitante == $ar->goles_local )
             {
                 $ar->puntos_visitante=1;
                 $ar->puntos_local=1;
+                $ar->empatado_local=1;
+                $ar->empatado_visitante=1;
             }
             $ar->save();
 
