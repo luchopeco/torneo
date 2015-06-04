@@ -1,5 +1,5 @@
 <?php
- $listImagen=\torneo\Imagen::where('idtipo_imagen', 1)->where('mostrar',1)->get();
+$listImagen=\torneo\Imagen::where('idtipo_imagen', 1)->where('mostrar',1)->get();
 $ruta= Route::currentRouteAction();
 ?>
 <!DOCTYPE html>
@@ -125,8 +125,8 @@ $ruta= Route::currentRouteAction();
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <div class="contact-wrapper" style="padding: 35px">
-                         <img class="img-responsive text-center" src="/imagenes/footer/gatorade.png">
+                    <div class="contact-wrapper" >
+                         <img class="img-responsive center-block " src="/imagenes/footer/gatorade.png">
                     </div>
                 </div>
             </div>

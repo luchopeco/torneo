@@ -46,54 +46,54 @@
                 <hr>
             </div>
         </div>
-        <div class="row animate-in" data-anim-type="fade-in-up">
+        <div class="row animate-in text-center" data-anim-type="fade-in-up">
            
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="services-wrapper">
+                <div class="work-wrapper">
                 <a class="fancybox-media" href="/imagenes/home/001grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/001.jpg">
+                    <img class="img-responsive" src="/imagenes/home/001grande.jpg">
                 </a>
-                PARRILLEROS CON MESAS
+                <h4>PARRILLEROS CON MESAS</h4>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 
-                <div class="services-wrapper">
+                <div class="work-wrapper">
                     <H4>TIFOSI CUENTA CON UN COMPLEJO TOTALMENTE EQUIPADO, CON CANCHAS DE 5 Y 7.</H4>
                 </div>
             </div>
 
              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="services-wrapper">
+                <div class="work-wrapper">
                 <a class="fancybox-media" href="/imagenes/home/002grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/002.jpg">
+                    <img class="img-responsive" src="/imagenes/home/002grande.jpg">
                 </a>
-                CANCHAS DE 5 Y 7
+                <h4>CANCHAS DE 5 Y 7</h4>
                 </div>
             </div>
             
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="services-wrapper">
+                <div class="work-wrapper">
                 <a class="fancybox-media" href="/imagenes/home/003grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/003.jpg">
+                    <img class="img-responsive" src="/imagenes/home/003grande.jpg">
                 </a>
-                VESTUARIOS LOCAL Y VISITANTE
+                <h4>VESTUARIOS LOCAL Y VISITANTE</h4>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="services-wrapper">
+                <div class="work-wrapper">
                 <a class="fancybox-media" href="/imagenes/home/005grande.jpg">
                     <img class="img-responsive" src="/imagenes/home/005.jpg">
                 </a>
-                LUGAR AL AIRE LIBRE
+                <h4>LUGAR AL AIRE LIBRE</h4>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="services-wrapper">
+                <div class="work-wrapper">
                 <a class="fancybox-media" href="/imagenes/home/004grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/004.jpg">
+                    <img class="img-responsive" src="/imagenes/home/004grande.jpg">
                 </a>
-                SALÓN PARA EVENTOS Y CUMPLEAÑOS
+                <h4>SALÓN PARA EVENTOS Y CUMPLEAÑOS</h4>
                 </div>
             </div>
             
@@ -182,10 +182,10 @@
                   <!-- meteored-->
 
 
-                  <div id="cont_fe28998c7a8055ebe65097374bb3389b">
-  <span id="h_fe28998c7a8055ebe65097374bb3389b"><a href="http://www.meteored.com.ar/tiempo-en_Rosario-America+Sur-Argentina-Santa+Fe--1-13586.html" target="_blank" style="color:#656565; font-family:Arial; font-size:14px;">Rosario Pron&oacute;stico</a></span>
-  <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/fe28998c7a8055ebe65097374bb3389b"></script>
-</div>
+                  <div id="cont_05141d85783d163d304e277dd8545eaf" class="center-block">
+                    <span id="h_05141d85783d163d304e277dd8545eaf"><a href="http://www.meteored.com.ar/tiempo-en_Rosario-America+Sur-Argentina-Santa+Fe--1-13586.html" target="_blank" style="color:#808080; font-family:7; font-size:14px;"></a></span>
+                    <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/05141d85783d163d304e277dd8545eaf"></script>
+                  </div>
                  
 
                 </div>

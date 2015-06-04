@@ -78,3 +78,19 @@
 #estadisticas .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th, .table-hover>tbody>tr:hover {
     background: url("../img/fondo-rojo-transparente.png") repeat;
 }
+
+.work-wrapper {
+    padding: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid rgba(255,255,255,0.5);
+    min-height: 240px;
+}
