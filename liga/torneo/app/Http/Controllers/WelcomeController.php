@@ -33,8 +33,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        $listEquipoIdeal=Imagen::all()->where('idtipo_imagen',3)->where('mostrar',1);
-        $listFiguras=Imagen::all()->where('idtipo_imagen',2)->where('mostrar',1);
+        $listEquipoIdeal=Imagen::where('idtipo_imagen',3)->get();
+        $listFiguras=Imagen::where('idtipo_imagen',2)->get();
 		return view('welcome',compact('listFiguras','listEquipoIdeal'));
 	}
 

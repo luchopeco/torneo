@@ -1,4 +1,5 @@
 <?php
+ $listImagen=\torneo\Imagen::where('idtipo_imagen', 1)->where('mostrar',1)->get();
 $ruta= Route::currentRouteAction();
 ?>
 <!DOCTYPE html>
@@ -179,7 +180,6 @@ $ruta= Route::currentRouteAction();
   $(function () {
        $.vegas('slideshow', {
        backgrounds: [
-           <?php $listImagen=\torneo\Imagen::all()->where('idtipo_imagen', 1)->where('mostrar',1); ?>
            @foreach($listImagen as $imagen)
           { src: 'imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
            @endforeach
