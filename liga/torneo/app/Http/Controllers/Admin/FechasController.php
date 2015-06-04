@@ -278,9 +278,19 @@ class FechasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Request $request)
 	{
-		//
+        try
+        {
+            Fecha::destroy($request->idfecha);
+            Session::flash('mensajeOk', 'Fecha Eliminada con Exito');
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
 	}
 
 }

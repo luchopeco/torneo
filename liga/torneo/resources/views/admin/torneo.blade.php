@@ -303,6 +303,36 @@
                               <!-- /.modal-dialog -->
                         </div>
 
+        <div class="modal fade" id="modalFechaEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                    <div class="modal-content">
+                          {!!Form::open(['route'=>'admin.fechas.destroy','method'=>'DELETE'])!!}
+                              <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myModalLabel">Eliminando Fecha</h4>
+                              </div>
+                              <div class="modal-body"><div class=" panel panel-info">
+                              <div class=" panel-heading">Eliminar Fecha</div>
+                                 <div class=" panel-body">
+                                  <div clas="row">
+                                      <div class="col-md-12">
+                                            {!!Form::Text('idfecha',null,['class'=>'form-control hidden','id'=>'idfechaD'])!!}
+                                            {!!Form::Text('idtorneo',null,['class'=>'form-control hidden','id'=>'idtorneoD'])!!}
+                                           ¿Desea Eliminar La Fecha?
+                                      </div>
+                                   </div>
+                              </div>
+                         </div></div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                  {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                              </div>
+                          {!! Form::close() !!}
+                    </div>
+                  <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+        </div>
         @endsection
         @section('script')
         <script>
@@ -334,13 +364,33 @@
                                         alert(id_articulo);
                                     });
                             });
-            $('body').on('click', '.eliminar', function (event) {
+                $('body').on('click', '.eliminarfecha', function (event) {
+                    event.preventDefault();
+                    var id_articulo=$(this).attr('data-idfecha');
+                    $.ajax({
+                         url:"../fechas/buscar",
+                         type: "POST",
+                         dataType: "json",
+                        data:{'idfecha': id_articulo}
+                        })
+                    .done(function(response){
+                            //alert(response.datos.titulo);
+                            $('#idfechaD').val(response.datos.idfecha);
+                            $('#idtorneoD').val(response.datos.idtorneo);
+                            $("#modalFechaEliminar").modal("show");
+                        })
+                        .fail(function(){
+                            alert(id_articulo);
+                        });
+                });
+
+                $('body').on('click', '.eliminar', function (event) {
                 event.preventDefault();
                 var id_equipo=$(this).attr('data-idequipo');
                 $("#idequipoD").val(id_equipo);
                 $("#modalEquipoEliminar").modal("show");
             });
-             $('.datepicker').datepicker({
+                $('.datepicker').datepicker({
                  format: 'mm/dd/yyyy',
                  startDate: '-3d'
              });
