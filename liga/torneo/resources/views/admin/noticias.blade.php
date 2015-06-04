@@ -110,7 +110,10 @@
                                    <div clas="row">
                                       <div class="col-md-12">
                                               {!!Form::label('texto','Contenido')!!}
-                                              {!!Form::Text('texto',null,['class'=>' form-control'])!!}
+                                              <!-- {!!Form::Text('texto',null,['class'=>' form-control'])!!} -->
+
+                                              <textarea id="texto" name="texto" class="form-control" rows="3"></textarea>
+
                                       </div>
                                    </div>
                                    
@@ -146,6 +149,20 @@
                                                     {!!Form::Text('titulo',null,['class'=>' form-control','id'=>'tituloU'])!!}
                                               </div>
                                          </div>
+                                     <div clas="row">
+                                        <div class="col-md-12">
+                                                {!!Form::label('fecha','Fecha')!!}
+                                                {!!Form::Text('fecha',null,['class'=>' form-control','id'=>'fechaU'])!!}
+                                        </div>
+                                     </div>
+                                     <div clas="row">
+                                        <div class="col-md-12">
+                                                {!!Form::label('texto','Contenido')!!}                                                
+
+                                                <textarea id="textoU" name="texto" class="form-control" rows="3"></textarea>
+
+                                        </div>
+                                    </div>
                                      </div>
                                 </div>
                         <div class="modal-footer">
@@ -211,7 +228,12 @@
                 .done(function(response){
                         //alert(response.datos.titulo);
                         $('#tituloU').val(response.datos.titulo);
+                        $('#fechaU').val(response.datos.fecha);
+                        $('#textoU').val(response.datos.texto);
+
                         $('#idnoticiaU').val(response.datos.idnoticia);
+
+
                         $("#modalNoticiaModificar").modal("show");
                     })
                     .fail(function(){

@@ -103,6 +103,8 @@ class NoticiasController extends Controller {
         try {
             $ar = Noticia::findOrFail($request->idnoticia);
             $ar->titulo = $request->titulo;
+             $ar->fecha = $request->fecha;
+              $ar->texto = $request->texto;
             $ar->save();
 
             Session::flash('mensajeOk', 'Noticia Modificada con Exito');
