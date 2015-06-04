@@ -59,4 +59,8 @@ class WelcomeController extends Controller {
         $torneo = Torneo::findOrFail($id);
         return view('include.estadisticas',compact('torneo'));
     }
+    public function instalaciones()
+    {
+        return view('instalaciones');
+    }
 }

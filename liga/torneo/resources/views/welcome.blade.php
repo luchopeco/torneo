@@ -28,88 +28,18 @@
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
             <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 scroll-me">
-                <a href="#instalaciones" class=" btn button-custom btn-custom-two">CONOCE LAS INSTALACIONES </a>
+                <a href="/instalaciones" class=" btn button-custom btn-custom-two">CONOCE LAS INSTALACIONES </a>
             </div>
         </div>
     </div>
 </div>
 <!--HOME SECTION END-->
 
-
-<!-- seccion instalaciones -->
-
-<section id="instalaciones">
-    <div class="container">
-        <div class="row text-center header">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
-                <h3>INSTALACIONES</h3>
-                <hr>
-            </div>
-        </div>
-        <div class="row animate-in text-center" data-anim-type="fade-in-up">
-           
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="work-wrapper">
-                <a class="fancybox-media" href="/imagenes/home/001grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/001grande.jpg">
-                </a>
-                <h4>PARRILLEROS CON MESAS</h4>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                
-                <div class="work-wrapper">
-                    <H4>TIFOSI CUENTA CON UN COMPLEJO TOTALMENTE EQUIPADO, CON CANCHAS DE 5 Y 7.</H4>
-                </div>
-            </div>
-
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="work-wrapper">
-                <a class="fancybox-media" href="/imagenes/home/002grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/002grande.jpg">
-                </a>
-                <h4>CANCHAS DE 5 Y 7</h4>
-                </div>
-            </div>
-            
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="work-wrapper">
-                <a class="fancybox-media" href="/imagenes/home/003grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/003grande.jpg">
-                </a>
-                <h4>VESTUARIOS LOCAL Y VISITANTE</h4>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="work-wrapper">
-                <a class="fancybox-media" href="/imagenes/home/005grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/005.jpg">
-                </a>
-                <h4>LUGAR AL AIRE LIBRE</h4>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="work-wrapper">
-                <a class="fancybox-media" href="/imagenes/home/004grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/004grande.jpg">
-                </a>
-                <h4>SALÓN PARA EVENTOS Y CUMPLEAÑOS</h4>
-                </div>
-            </div>
-            
-
-        </div>
-    </div>
-</section>
-
-
-<!-- seccion instalaciones -->
-
 <section id="services">
     <div class="container">
         <div class="row text-center header">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
-                <h3>DATOS DE LA ULTIMA FECHA</h3>
+                <h3> JUGADORES DE LA ULTIMA FECHA</h3>
                 <hr>
             </div>
         </div>
@@ -164,6 +94,7 @@
 
                     <div class="services-wrapper">
 
+
 <!-- yr.no -->
 <!--
 <script src="http://www.yr.no/place/Argentina/Santa_Fe/Rosario/external_box_three_days.js"></script><noscript><a href="http://www.yr.no/place/Argentina/Santa_Fe/Rosario/">yr.no: Clima en  Rosario</a></noscript>
@@ -182,11 +113,13 @@
                   <!-- meteored-->
 
 
-                  <div id="cont_05141d85783d163d304e277dd8545eaf" class="center-block">
-                    <span id="h_05141d85783d163d304e277dd8545eaf"><a href="http://www.meteored.com.ar/tiempo-en_Rosario-America+Sur-Argentina-Santa+Fe--1-13586.html" target="_blank" style="color:#808080; font-family:7; font-size:14px;"></a></span>
-                    <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/05141d85783d163d304e277dd8545eaf"></script>
-                  </div>
-                 
+
+
+              <div id="cont_ade9062ccc1b67e7b6b7d24660c317a5" class="center-block">
+                <span id="h_ade9062ccc1b67e7b6b7d24660c317a5"><a id="a_ade9062ccc1b67e7b6b7d24660c317a5" href="http://www.meteored.com.ar/" target="_blank" style="color:#808080;font-family:Helvetica;font-size:14px;">Clima 14 d&iacute;as</a></span>
+                <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/ade9062ccc1b67e7b6b7d24660c317a5"></script>
+              </div>
+
 
                 </div>
 

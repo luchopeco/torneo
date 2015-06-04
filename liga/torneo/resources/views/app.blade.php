@@ -56,7 +56,12 @@ $ruta= Route::currentRouteAction();
 @else
 <li><a href="/">HOME</a></li>
 @endif
-<li><a href="#instalaciones">INSTALACIONES</a></li>
+@if($ruta=='torneo\Http\Controllers\WelcomeController@instalaciones')
+<li class="active" ><a href="/instalaciones">INSTALACIONES</a></li>
+@else
+<li><a href="/instalaciones">INSTALACIONES</a></li>
+@endif
+
 <li><a href="#">INSCRIPCION</a></li>
 @if($ruta=='torneo\Http\Controllers\WelcomeController@fixture')
 <li class="active"><a href="/fixture">FIXTURE</a></li>
@@ -69,7 +74,6 @@ $ruta= Route::currentRouteAction();
 @else
 <li><a href="/estadisticas">ESTADISTICAS</a></li>
 @endif
-<li><a href="#">MEDIA</a></li>
 </ul>
 </div>
 
