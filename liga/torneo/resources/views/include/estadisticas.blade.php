@@ -1,7 +1,7 @@
 
  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
     <div  class="fechas-wrapper col-fechas">
-    <table class=" table table-hover">
+    <table class=" table table-hover table-responsive">
        <tr >
            <th>EQUIPO</th>
            <th>PTS</th>
@@ -32,7 +32,7 @@
  </div>
 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
     <div class="fechas-wrapper col-fechas">
-         <table class=" table table-hover">
+         <table class=" table table-hover table-responsive">
            <tr>
                <th>Goleador</th>
                <th>Equipo</th>
@@ -50,7 +50,7 @@
 </div>
 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
     <div class="fechas-wrapper col-fechas">
-         <table class=" table table-hover">
+         <table class=" table table-hover table-responsive">
            <tr>
                <th>Sancionado</th>
                <th>Equipo</th>
