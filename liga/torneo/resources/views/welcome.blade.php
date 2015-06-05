@@ -41,7 +41,11 @@
 <div class="row text-center header animate-in" data-anim-type="fade-in-up">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 <h3>Noticias </h3>
+
 <hr />
+
+
+<!-- boton facebook para compartir una web <div class="fb-share-button" data-href="#team" data-layout="icon_link"></div>-->
 </div>
 </div>
 <div class="row animate-in" data-anim-type="fade-in-up">
@@ -49,7 +53,17 @@
 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 <div class="team-wrapper">
 <div class="team-inner" style="background-image: url('/imagenes/{{$noticia->imagen}}')" >
-<a href="#" target="_blank" >  <i class="fa fa-facebook-f" ></i></a>
+<a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.torneo.com/#team" href="#" target="_blank" > 
+   <i class="fa fa-facebook-f" ></i>
+</a>
+
+<!--<div class="fb-share-button" data-href="#team" data-layout="icon_link"></div>-->
+
+
+
+
+
+
 </div>
 <div class="description">
 <h3> {{$noticia->titulo}}</h3>
