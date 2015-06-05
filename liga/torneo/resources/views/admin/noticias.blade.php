@@ -171,6 +171,18 @@
 
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                         Mostrar en home
+                                         {!!Form::checkbox('mostrar_en_home','0',false,['class'=>' form-control','id'=>'mostrar_en_homeU'])!!}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                         Mostrar en Seccion
+                                         {!!Form::checkbox('mostrar_en_seccion','0',false,['class'=>' form-control','id'=>'mostrar_en_seccionU'])!!}
+                                        </div>
+                                    </div>
                                      </div>
                                 </div>
                         <div class="modal-footer">
@@ -240,8 +252,18 @@
                         $('#textoU').val(response.datos.texto);
                         $('#linkU').val(response.datos.link);
                         $('#idnoticiaU').val(response.datos.idnoticia);
-
-
+                        if(response.datos.mostrar_en_home==1){
+                        $('#mostrar_en_homeU').prop('checked',true);
+                        }
+                        else{
+                        $('#mostrar_en_homeU').prop('checked',false);
+                        }
+                        if(response.datos.mostrar_en_seccion==1){
+                        $('#mostrar_en_seccionU').prop('checked',true);
+                        }
+                        else{
+                        $('#mostrar_en_seccionU').prop('checked',false);
+                        }
                         $("#modalNoticiaModificar").modal("show");
                     })
                     .fail(function(){

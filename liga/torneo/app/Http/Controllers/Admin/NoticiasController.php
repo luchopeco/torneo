@@ -45,6 +45,8 @@ class NoticiasController extends Controller {
 	{
         try{
             $noticia = new Noticia($request->all());
+            $noticia->mostrar_en_home=1;
+            $noticia->mostrar_en_seccion=1;
             $noticia->save();
 
             Session::flash('mensajeOk', 'Noticia Agregada con Exito');
@@ -106,6 +108,19 @@ class NoticiasController extends Controller {
              $ar->fecha = $request->fecha;
               $ar->texto = $request->texto;
             $ar->link=$request->link;
+            if ($request->mostrar_en_home <> null) {
+                $ar->mostrar_en_home=1;
+            } else {
+                $ar->mostrar_en_home=0;
+            }
+            if ($request->mostrar_en_seccion <> null) {
+                $ar->mostrar_en_seccion=1;
+            } else {
+                $ar->mostrar_en_seccion=0;
+            }
+
+
+
             $ar->save();
 
             Session::flash('mensajeOk', 'Noticia Modificada con Exito');
