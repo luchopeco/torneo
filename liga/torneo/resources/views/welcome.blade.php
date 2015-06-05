@@ -35,6 +35,38 @@
 </div>
 <!--HOME SECTION END-->
 
+<!--Noticias SECTION START-->
+<section id="team" >
+<div class="container">
+<div class="row text-center header animate-in" data-anim-type="fade-in-up">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<h3>Noticias </h3>
+<hr />
+</div>
+</div>
+<div class="row animate-in" data-anim-type="fade-in-up">
+@foreach($listNoticias as $noticia)
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+<div class="team-wrapper">
+<div class="team-inner" style="background-image: url('/imagenes/{{$noticia->imagen}}')" >
+<a href="#" target="_blank" >  <i class="fa fa-facebook-f" ></i></a>
+</div>
+<div class="description">
+<h3> {{$noticia->titulo}}</h3>
+<h5> <strong> Developer & Designer </strong></h5>
+<p>
+{{$noticia->titulo}}
+</p>
+</div>
+</div>
+</div>
+@endforeach
+</div>
+</div>
+</section>
+<!--NoticiasSECTION END-->
+
+
 <section id="services">
     <div class="container">
         <div class="row text-center header">
@@ -86,13 +118,13 @@
          <div class="col-md-6 col-xs-12">
                 <div class="row text-center header" >
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
-                          <h3>Pronostico Proxima Fecha</h3>
+                          <h3>Pronostico</h3>
                           <hr>
                       </div>
                 </div>
                 <div class="row pad-bottom animate-in" data-anim-type="fade-in-up">
 
-                    <div class="services-wrapper">
+                    <div class="pronostico-wrapper">
 
 
 <!-- yr.no -->
@@ -116,7 +148,7 @@
 
 
               <div id="cont_ade9062ccc1b67e7b6b7d24660c317a5" class="center-block">
-                <span id="h_ade9062ccc1b67e7b6b7d24660c317a5"><a id="a_ade9062ccc1b67e7b6b7d24660c317a5" href="http://www.meteored.com.ar/" target="_blank" style="color:#808080;font-family:Helvetica;font-size:14px;">Clima 14 d&iacute;as</a></span>
+                <span id="h_ade9062ccc1b67e7b6b7d24660c317a5"><a id="a_ade9062ccc1b67e7b6b7d24660c317a5" href="http://www.meteored.com.ar/" target="_blank" style="color:#808080;font-family:Helvetica;font-size:14px;"></a></span>
                 <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/ade9062ccc1b67e7b6b7d24660c317a5"></script>
               </div>
 

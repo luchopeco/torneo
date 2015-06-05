@@ -94,3 +94,23 @@
     border: 2px solid rgba(255,255,255,0.5);
     min-height: 240px;
 }
+
+.pronostico-wrapper {
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.07);
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.team-wrapper
+{
+    max-height: 600px;
+    overflow: hidden;
+}

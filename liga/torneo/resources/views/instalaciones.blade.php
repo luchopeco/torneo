@@ -24,7 +24,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 
                 <div class="work-wrapper">
-                    <H4>TIFOSI CUENTA CON UN COMPLEJO TOTALMENTE EQUIPADO, CON CANCHAS DE 5 Y 7.</H4>
+                    <H3>TIFOSI CUENTA CON UN COMPLEJO TOTALMENTE EQUIPADO, CON CANCHAS DE 5 Y 7.</H3>
                 </div>
             </div>
 

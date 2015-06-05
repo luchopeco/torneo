@@ -105,6 +105,7 @@ class NoticiasController extends Controller {
             $ar->titulo = $request->titulo;
              $ar->fecha = $request->fecha;
               $ar->texto = $request->texto;
+            $ar->link=$request->link;
             $ar->save();
 
             Session::flash('mensajeOk', 'Noticia Modificada con Exito');

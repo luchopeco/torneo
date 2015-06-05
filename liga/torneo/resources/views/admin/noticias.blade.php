@@ -59,8 +59,7 @@
                                 <th>Imagen</th>
                                 <th>Mostrar en Home</th>
                                 <th>Mostrar en sección</th>
-                                <th>Creado el</th>
-                                <th>Modificado el</th>
+                                <th>Link</th>
                             </tr>
                             @foreach($listNoticias as $noticia)
                                 <tr >
@@ -70,9 +69,7 @@
                                     <td>{{$noticia->imagen}}</td>
                                     <td>{{$noticia->mostrar_en_home}}</td>
                                     <td>{{$noticia->mostrar_en_seccion}}</td>
-                                    <td>{{$noticia->created_at}}</td>
-                                    <td>{{$noticia->updated_at}}</td>
-
+                                    <td>{{$noticia->link}}</td>
                                     <td><a href="#"  class="btn btn-xs btn-info editar" data-idnoticia="{{$noticia->idnoticia}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
                                    <td><a href="noticiaimagen/{{$noticia->idnoticia}}" title="Editar Imagen " class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idnoticia="{{$noticia->idnoticia}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
@@ -107,6 +104,12 @@
                                               {!!Form::Text('fecha',null,['class'=>' form-control'])!!}
                                       </div>
                                    </div>
+                                   <div clas="row">
+                                     <div class="col-md-12">
+                                             {!!Form::label('link','Link')!!}
+                                             {!!Form::Text('link',null,['class'=>' form-control'])!!}
+                                     </div>
+                                  </div>
                                    <div clas="row">
                                       <div class="col-md-12">
                                               {!!Form::label('texto','Contenido')!!}
@@ -149,16 +152,21 @@
                                                     {!!Form::Text('titulo',null,['class'=>' form-control','id'=>'tituloU'])!!}
                                               </div>
                                          </div>
-                                     <div clas="row">
+                                     <div class="row">
                                         <div class="col-md-12">
                                                 {!!Form::label('fecha','Fecha')!!}
                                                 {!!Form::Text('fecha',null,['class'=>' form-control','id'=>'fechaU'])!!}
                                         </div>
                                      </div>
-                                     <div clas="row">
+                                     <div class="row">
+                                         <div class="col-md-12">
+                                                 {!!Form::label('link','Link')!!}
+                                                 {!!Form::Text('link',null,['class'=>' form-control','id'=>'linkU'])!!}
+                                         </div>
+                                      </div>
+                                     <div class="row">
                                         <div class="col-md-12">
-                                                {!!Form::label('texto','Contenido')!!}                                                
-
+                                                {!!Form::label('texto','Contenido')!!}
                                                 <textarea id="textoU" name="texto" class="form-control" rows="3"></textarea>
 
                                         </div>
@@ -230,7 +238,7 @@
                         $('#tituloU').val(response.datos.titulo);
                         $('#fechaU').val(response.datos.fecha);
                         $('#textoU').val(response.datos.texto);
-
+                        $('#linkU').val(response.datos.link);
                         $('#idnoticiaU').val(response.datos.idnoticia);
 
 

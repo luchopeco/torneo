@@ -1,6 +1,7 @@
 <?php namespace torneo\Http\Controllers;
 
 use torneo\Imagen;
+use torneo\Noticia;
 use torneo\Torneo;
 
 class WelcomeController extends Controller {
@@ -33,9 +34,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+        $listNoticias = Noticia::where('mostrar_en_home',1)->get();
         $listEquipoIdeal=Imagen::where('idtipo_imagen',3)->get();
         $listFiguras=Imagen::where('idtipo_imagen',2)->get();
-		return view('welcome',compact('listFiguras','listEquipoIdeal'));
+		return view('welcome',compact('listFiguras','listEquipoIdeal','listNoticias'));
 	}
 
     public function fixture()

@@ -43,7 +43,7 @@ $ruta= Route::currentRouteAction();
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="#">
+<a class="navbar-brand" href="/">
 
 <img src="/imagenes/logo.png">
 
@@ -138,8 +138,8 @@ $ruta= Route::currentRouteAction();
                 <div class="col-xs-12">
                     <div class="powerby text-center">
                         <div class="row">
-                            <div class="col-md-6"> <h3><a target="_blank" href="http://www.shoutside.com.ar">ShoutSide Studio</a></h3></div>
-                            <div class="col-md-6"> <h3><a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a></h3></div>
+                            <div class="col-md-6"> <h4><a target="_blank" href="http://www.shoutside.com.ar">ShoutSide Studio</a></h4></div>
+                            <div class="col-md-6"> <h4><a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a></h4></div>
                         </div>
                     </div>
                 </div>
