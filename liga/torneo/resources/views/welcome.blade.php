@@ -50,7 +50,7 @@
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
         @foreach($listNoticias as $noticia)
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4 col-md-3 col-lg-3">
                 <div class="team-wrapper">
                    <div class="team-inner" style="background-image: url('/imagenes/{{$noticia->imagen}}')" >
                     <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.torneo.com/#team" href="#" target="_blank" >
