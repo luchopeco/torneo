@@ -49,30 +49,32 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Torneo</th>
-                                <th>Tipo Torneo</th>
-                                  <th>Observaciones</th>
-                                  <th>Activo</th>
-                            </tr>
-                            @foreach($listTorneos as $torneo)
-                                <tr >
-                                    <td>{{$torneo->nombre_torneo}}</td>
-                                    <td>{{$torneo->TipoTorneo->nombre_tipo_torneo}}</td>
-                                    <td>{{$torneo->observaciones_torneo}}</td>
-                                    <td>{{$torneo->Activo()}}</td>
-                                    <td><a href="torneos/{{$torneo->idtorneo}}"  class="btn btn-xs btn-primary" data-idtorneo="{{$torneo->idtorneo}}"  title="Configurar Torneo"><i class="fa fa-cog"></i></a></td>
-                                    <td><a href="#"  class="btn btn-xs btn-info editar" data-idtorneo="{{$torneo->idtorneo}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
-                                    @if($torneo->deleted_at==null)
-                                    <td><a href="#"  class="btn btn-xs btn-warning baja" data-idtorneo="{{$torneo->idtorneo}}"  title="Dar de Baja"><i class="fa fa-thumbs-down"></i></a></td>
-                                    @else
-                                    <td><a href="#"  class="btn btn-xs btn-warning alta" data-idtorneo="{{$torneo->idtorneo}}"  title="Dar de Alta"><i class="fa fa-thumbs-up"></i></a></td>
-                                    @endif
-                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idtorneo="{{$torneo->idtorneo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Torneo</th>
+                                    <th>Tipo Torneo</th>
+                                      <th>Observaciones</th>
+                                      <th>Activo</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($listTorneos as $torneo)
+                                    <tr >
+                                        <td>{{$torneo->nombre_torneo}}</td>
+                                        <td>{{$torneo->TipoTorneo->nombre_tipo_torneo}}</td>
+                                        <td>{{$torneo->observaciones_torneo}}</td>
+                                        <td>{{$torneo->Activo()}}</td>
+                                        <td><a href="torneos/{{$torneo->idtorneo}}"  class="btn btn-xs btn-primary" data-idtorneo="{{$torneo->idtorneo}}"  title="Configurar Torneo"><i class="fa fa-cog"></i></a></td>
+                                        <td><a href="#"  class="btn btn-xs btn-info editar" data-idtorneo="{{$torneo->idtorneo}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                        @if($torneo->deleted_at==null)
+                                        <td><a href="#"  class="btn btn-xs btn-warning baja" data-idtorneo="{{$torneo->idtorneo}}"  title="Dar de Baja"><i class="fa fa-thumbs-down"></i></a></td>
+                                        @else
+                                        <td><a href="#"  class="btn btn-xs btn-warning alta" data-idtorneo="{{$torneo->idtorneo}}"  title="Dar de Alta"><i class="fa fa-thumbs-up"></i></a></td>
+                                        @endif
+                                        <td><a href="" class="btn btn-xs btn-danger eliminar" data-idtorneo="{{$torneo->idtorneo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                </div>
             </div>

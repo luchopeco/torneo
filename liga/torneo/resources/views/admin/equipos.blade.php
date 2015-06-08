@@ -50,22 +50,24 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Equipo</th>
-                                <th>Libre</th>
-                            </tr>
-                            @foreach($listEquipos as $equipo)
-                                <tr >
-                                    <td>{{$equipo->nombre_equipo}}</td>
-                                    <td>{{$equipo->esLibre()}}</td>
-                                    <td><a href="equipos/{{$equipo->idequipo}}"  class="btn btn-xs btn-primary " data-idequipo="{{$equipo->idequipo}}"  title="Editar Jugadores"> <i class="fa fa-user"></i></a></td>
-                                    <td><a href="#"  class="btn btn-xs btn-info editar" data-idequipo="{{$equipo->idequipo}}"  title="Editar Nombre Equipo"> <i class=" fa fa-edit"></i></a></td>
-                                    <td><a href="equipoimagen/{{$equipo->idequipo}}" title="Foto y Escudo Del Equipo" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
-                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Equipo</th>
+                                    <th>Libre</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($listEquipos as $equipo)
+                                    <tr >
+                                        <td>{{$equipo->nombre_equipo}}</td>
+                                        <td>{{$equipo->esLibre()}}</td>
+                                        <td><a href="equipos/{{$equipo->idequipo}}"  class="btn btn-xs btn-primary " data-idequipo="{{$equipo->idequipo}}"  title="Editar Jugadores"> <i class="fa fa-user"></i></a></td>
+                                        <td><a href="#"  class="btn btn-xs btn-info editar" data-idequipo="{{$equipo->idequipo}}"  title="Editar Nombre Equipo"> <i class=" fa fa-edit"></i></a></td>
+                                        <td><a href="equipoimagen/{{$equipo->idequipo}}" title="Foto y Escudo Del Equipo" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
+                                        <td><a href="" class="btn btn-xs btn-danger eliminar" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                </div>
             </div>

@@ -47,18 +47,20 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Nombre</th>
-                            </tr>
-                            @foreach($listArbitros as $arbitro)
-                                <tr >
-                                    <td>{{$arbitro->nombre}}</td>
-                                    <td><a href="#"  class="btn btn-xs btn-info editar" data-idarbitro="{{$arbitro->idarbitro}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
-                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idarbitro="{{$arbitro->idarbitro}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover table-responsive">
+                                <tr>
+                                    <th>Nombre</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($listArbitros as $arbitro)
+                                    <tr >
+                                        <td>{{$arbitro->nombre}}</td>
+                                        <td><a href="#"  class="btn btn-xs btn-info editar" data-idarbitro="{{$arbitro->idarbitro}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                        <td><a href="" class="btn btn-xs btn-danger eliminar" data-idarbitro="{{$arbitro->idarbitro}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                </div>
             </div>

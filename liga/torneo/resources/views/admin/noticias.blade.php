@@ -47,35 +47,33 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-
-                  
-
-                    
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Titulo</th>
-                                <th>Fecha</th>
-                                <th>Contenido</th>
-                                <th>Imagen</th>
-                                <th>Mostrar en Home</th>
-                                <th>Mostrar en sección</th>
-                                <th>Link</th>
-                            </tr>
-                            @foreach($listNoticias as $noticia)
-                                <tr >
-                                    <td>{{$noticia->titulo}}</td>
-                                    <td>{{$noticia->fecha}}</td>
-                                    <td>{{$noticia->texto}}</td>
-                                    <td>{{$noticia->imagen}}</td>
-                                    <td>{{$noticia->mostrar_en_home}}</td>
-                                    <td>{{$noticia->mostrar_en_seccion}}</td>
-                                    <td>{{$noticia->link}}</td>
-                                    <td><a href="#"  class="btn btn-xs btn-info editar" data-idnoticia="{{$noticia->idnoticia}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
-                                   <td><a href="noticiaimagen/{{$noticia->idnoticia}}" title="Editar Imagen " class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
-                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idnoticia="{{$noticia->idnoticia}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover ">
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Fecha</th>
+                                    <th>Contenido</th>
+                                    <th>Imagen</th>
+                                    <th>Mostrar en Home</th>
+                                    <th>Mostrar en sección</th>
+                                    <th>Link</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($listNoticias as $noticia)
+                                    <tr >
+                                        <td>{{$noticia->titulo}}</td>
+                                        <td>{{$noticia->fecha}}</td>
+                                        <td>{{$noticia->texto}}</td>
+                                        <td>{{$noticia->imagen}}</td>
+                                        <td>{{$noticia->mostrar_en_home}}</td>
+                                        <td>{{$noticia->mostrar_en_seccion}}</td>
+                                        <td>{{$noticia->link}}</td>
+                                        <td><a href="#"  class="btn btn-xs btn-info editar" data-idnoticia="{{$noticia->idnoticia}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                       <td><a href="noticiaimagen/{{$noticia->idnoticia}}" title="Editar Imagen " class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
+                                        <td><a href="" class="btn btn-xs btn-danger eliminar" data-idnoticia="{{$noticia->idnoticia}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                </div>
             </div>

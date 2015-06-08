@@ -50,27 +50,29 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Hora</th>
-                                <th>Local</th>
-                                <th>Visitante</th>
-                                <th>Resultado</th>
-                                <th>Arbitro</th>
-                            </tr>
-                            @foreach($fecha->ListPartidos as $partido)
-                            <tr >
-                                 <td>{{$partido->hora}}</td>
-                                 <td>{{$partido->EquipoLocal->nombre_equipo}}</td>
-                                 <td>{{$partido->EquipoVisitante->nombre_equipo}}</td>
-                                 <td>{{$partido->goles_local}} - {{$partido->goles_visitante}}</td>
-                                 <td>{{$partido->Arbitro->nombre}}</td>
-                                 <td><a href="../partidos/{{$partido->idpartido}}" class="btn btn-xs btn-primary" data-idpartido="{{$partido->idpartido}}"  title=" Editar Resultado"><i class="fa fa-calculator"></i></a></td>
-                                 <td><a href="" class="btn btn-xs btn-info editar" data-idpartido="{{$partido->idpartido}}"  title="Modificar Partido"> <i class=" fa fa-edit"></i></a></td>
-                                 <td><a href="" class="btn btn-xs btn-danger eliminar" data-idpartido="{{$partido->idpartido}}"  title="Eliminar"><i class=" fa fa-close"></i></a></td>
-                            </tr>
-                            @endforeach
-                        </table>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Hora</th>
+                                    <th>Local</th>
+                                    <th>Visitante</th>
+                                    <th>Resultado</th>
+                                    <th>Arbitro</th>
+                                </tr>
+                                @foreach($fecha->ListPartidos as $partido)
+                                <tr >
+                                     <td>{{$partido->hora}}</td>
+                                     <td>{{$partido->EquipoLocal->nombre_equipo}}</td>
+                                     <td>{{$partido->EquipoVisitante->nombre_equipo}}</td>
+                                     <td>{{$partido->goles_local}} - {{$partido->goles_visitante}}</td>
+                                     <td>{{$partido->Arbitro->nombre}}</td>
+                                     <td><a href="../partidos/{{$partido->idpartido}}" class="btn btn-xs btn-primary" data-idpartido="{{$partido->idpartido}}"  title=" Editar Resultado"><i class="fa fa-calculator"></i></a></td>
+                                     <td><a href="" class="btn btn-xs btn-info editar" data-idpartido="{{$partido->idpartido}}"  title="Modificar Partido"> <i class=" fa fa-edit"></i></a></td>
+                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idpartido="{{$partido->idpartido}}"  title="Eliminar"><i class=" fa fa-close"></i></a></td>
+                                </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -50,26 +50,28 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Fecha</th>
-                                 <th>Dia</th>
-                                 <th>Observaciones</th>
-                                  <th>Es Play Off</th>
-                            </tr>
-                                @foreach($torneo->ListFechas as $fecha)
-                            <tr >
-                                <td>{{$fecha->numero_fecha}}</td>
-                                <td>{{date('d/m/Y', strtotime($fecha->fecha))}}</td>
-                                <td>{{$fecha->observaciones}}</td>
-                                <td>{{$fecha->esPlayOff()}}</td>
-                                <td><a href="../fechas/{{$fecha->idfecha}}" class="btn btn-xs btn-primary " data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Gestionar Partidos"> <i class="fa fa-futbol-o"></i></a></td>
-                                <td><a href="" class="btn btn-xs btn-info editarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
-                                <td><a href="../fecha/{{$fecha->idfecha}}" title="Imagenes de la  Fecha" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
-                                <td><a href="" class="btn btn-xs btn-danger eliminarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
-                            </tr>
-                                @endforeach
-                        </table>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Fecha</th>
+                                     <th>Dia</th>
+                                     <th>Observaciones</th>
+                                      <th>Es Play Off</th>
+                                </tr>
+                                    @foreach($torneo->ListFechas as $fecha)
+                                <tr >
+                                    <td>{{$fecha->numero_fecha}}</td>
+                                    <td>{{date('d/m/Y', strtotime($fecha->fecha))}}</td>
+                                    <td>{{$fecha->observaciones}}</td>
+                                    <td>{{$fecha->esPlayOff()}}</td>
+                                    <td><a href="../fechas/{{$fecha->idfecha}}" class="btn btn-xs btn-primary " data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Gestionar Partidos"> <i class="fa fa-futbol-o"></i></a></td>
+                                    <td><a href="" class="btn btn-xs btn-info editarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Editar"> <i class=" fa fa-edit"></i></a></td>
+                                    <td><a href="../fecha/{{$fecha->idfecha}}" title="Imagenes de la  Fecha" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
+                                    <td><a href="" class="btn btn-xs btn-danger eliminarfecha" data-idtorneo="{{$fecha->idtorneo}}" data-idfecha="{{$fecha->idfecha}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                </tr>
+                                    @endforeach
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,17 +91,19 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Equipos</th>
-                            </tr>
-                            @foreach($torneo->ListEquipos as $equipo)
-                                <tr >
-                                    <td>{{$equipo->nombre_equipo}}</td>
-                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idtorneo="{{$torneo->idtorneo}}" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Equipos</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($torneo->ListEquipos as $equipo)
+                                    <tr >
+                                        <td>{{$equipo->nombre_equipo}}</td>
+                                        <td><a href="" class="btn btn-xs btn-danger eliminar" data-idtorneo="{{$torneo->idtorneo}}" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                </div>
 
@@ -107,26 +111,28 @@
                        <div class=" panel-heading"><strong>Tabla de Posiciones</strong>
                        </div>
                        <div class=" panel-body">
-                           <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                               <tr>
-                                   <th>Equipo</th>
-                                   <th>Pts</th>
-                                   <th>Pj</th>
-                                   <th>Gf</th>
-                                   <th>GC</th>
-                                   <th>Df</th>
-                               </tr>
-                               @foreach($torneo->TablaPosiciones() as $tabla)
-                                   <tr >
-                                       <td>{{$tabla->nombre_equipo}}</td>
-                                       <td>{{$tabla->pun}}</td>
-                                       <td>{{$tabla->pj}}</td>
-                                       <td>{{$tabla->gf}}</td>
-                                       <td>{{$tabla->gc}}</td>
-                                       <td>{{$tabla->df}}</td>
+                           <div class="table-responsive">
+                               <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                   <tr>
+                                       <th>Equipo</th>
+                                       <th>Pts</th>
+                                       <th>Pj</th>
+                                       <th>Gf</th>
+                                       <th>GC</th>
+                                       <th>Df</th>
                                    </tr>
-                               @endforeach
-                           </table>
+                                   @foreach($torneo->TablaPosiciones() as $tabla)
+                                       <tr >
+                                           <td>{{$tabla->nombre_equipo}}</td>
+                                           <td>{{$tabla->pun}}</td>
+                                           <td>{{$tabla->pj}}</td>
+                                           <td>{{$tabla->gf}}</td>
+                                           <td>{{$tabla->gc}}</td>
+                                           <td>{{$tabla->df}}</td>
+                                       </tr>
+                                   @endforeach
+                               </table>
+                           </div>
                        </div>
                   </div>
             </div>
@@ -137,20 +143,22 @@
                    <div class=" panel-heading"><strong>Goleadores</strong>
                    </div>
                    <div class=" panel-body">
-                       <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                           <tr>
-                               <th>Jugador</th>
-                               <th>Equipo</th>
-                               <th>Goles</th>
-                           </tr>
-                           @foreach($torneo->Goleadores() as $goleador)
-                               <tr >
-                                   <td>{{$goleador->nombre_jugador}}</td>
-                                   <td>{{$goleador->nombre_equipo}}</td>
-                                   <td>{{$goleador->goles}}</td>
+                        <div class="table-responsive">
+                           <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                               <tr>
+                                   <th>Jugador</th>
+                                   <th>Equipo</th>
+                                   <th>Goles</th>
                                </tr>
-                           @endforeach
-                       </table>
+                               @foreach($torneo->Goleadores() as $goleador)
+                                   <tr >
+                                       <td>{{$goleador->nombre_jugador}}</td>
+                                       <td>{{$goleador->nombre_equipo}}</td>
+                                       <td>{{$goleador->goles}}</td>
+                                   </tr>
+                               @endforeach
+                           </table>
+                        </div>
                    </div>
               </div>
             </div>

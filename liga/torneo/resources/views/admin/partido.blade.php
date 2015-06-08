@@ -136,23 +136,25 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                 <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                                                        <tr>
-                                                            <th>Jugador</th>
-                                                            <th>Goles favor</th>
-                                                            <th>Goles en contra</th>
-                                                            <th>Sancion</th>
-                                                        </tr>
-                                                            @foreach($listGoleadoresLocal as $jugador)
-                                                        <tr >
-                                                             <td>{{$jugador->nombre_jugador}}</td>
-                                                             <td>{{$jugador->goles_favor}}</td>
-                                                              <td>{{$jugador->goles_contra}}</td>
-                                                              <td>{{$jugador->cantidad_fechas_sancion}}</td>
-                                                              <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
-                                                        </tr>
-                                                            @endforeach
-                                                    </table>
+                                                <div class="table-responsive">
+                                                     <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                                            <tr>
+                                                                <th>Jugador</th>
+                                                                <th>Goles favor</th>
+                                                                <th>Goles en contra</th>
+                                                                <th>Sancion</th>
+                                                            </tr>
+                                                                @foreach($listGoleadoresLocal as $jugador)
+                                                            <tr >
+                                                                 <td>{{$jugador->nombre_jugador}}</td>
+                                                                 <td>{{$jugador->goles_favor}}</td>
+                                                                  <td>{{$jugador->goles_contra}}</td>
+                                                                  <td>{{$jugador->cantidad_fechas_sancion}}</td>
+                                                                  <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                                            </tr>
+                                                                @endforeach
+                                                        </table>
+                                                 </div>
                                             </div>
                                         </div>
                                     </div>
@@ -167,23 +169,25 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                 <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                                                        <tr>
-                                                            <th>Jugador</th>
-                                                            <th>Goles Favor</th>
-                                                            <th>Goles en contra</th>
-                                                            <th>Sancion</th>
-                                                        </tr>
-                                                            @foreach($listGoleadoresVisitante as $jugador)
-                                                        <tr >
-                                                             <td>{{$jugador->nombre_jugador}}</td>
-                                                             <td>{{$jugador->goles_favor}}</td>
-                                                             <td>{{$jugador->goles_contra}}</td>
-                                                             <td>{{$jugador->cantidad_fechas_sancion}}</td>
-                                                             <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
-                                                        </tr>
-                                                            @endforeach
-                                                    </table>
+                                                <div class="table-responsive">
+                                                     <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                                            <tr>
+                                                                <th>Jugador</th>
+                                                                <th>Goles Favor</th>
+                                                                <th>Goles en contra</th>
+                                                                <th>Sancion</th>
+                                                            </tr>
+                                                                @foreach($listGoleadoresVisitante as $jugador)
+                                                            <tr >
+                                                                 <td>{{$jugador->nombre_jugador}}</td>
+                                                                 <td>{{$jugador->goles_favor}}</td>
+                                                                 <td>{{$jugador->goles_contra}}</td>
+                                                                 <td>{{$jugador->cantidad_fechas_sancion}}</td>
+                                                                 <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                                            </tr>
+                                                                @endforeach
+                                                     </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

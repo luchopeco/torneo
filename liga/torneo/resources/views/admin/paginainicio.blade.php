@@ -47,25 +47,27 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Titulo</th>
-                                <th>Tipo Imagen</th>
-                                <th>Activo</th>
-                                <th>Imagen</th>
-                            </tr>
-                            @foreach($listSlider as $slider)
-                                <tr >
-                                    <td>{{$slider->titulo}}</td>
-                                    <td>{{$slider->TipoImagen->descripcion}}</td>
-                                    <td>{{$slider->Activo()}}</td>
-                                    <td>{{$slider->imagen}}</td>
-                                    <td><a href="#"  class="btn btn-xs btn-info editar" data-idslider="{{$slider->idimagen}}"  title="Editar Datos Slider"> <i class=" fa fa-edit"></i></a></td>
-                                    <td><a href="imagenes/{{$slider->idimagen}}" title="Editar Imagen Slider" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
-                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idslider="{{$slider->idimagen}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Tipo Imagen</th>
+                                    <th>Activo</th>
+                                    <th>Imagen</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($listSlider as $slider)
+                                    <tr >
+                                        <td>{{$slider->titulo}}</td>
+                                        <td>{{$slider->TipoImagen->descripcion}}</td>
+                                        <td>{{$slider->Activo()}}</td>
+                                        <td>{{$slider->imagen}}</td>
+                                        <td><a href="#"  class="btn btn-xs btn-info editar" data-idslider="{{$slider->idimagen}}"  title="Editar Datos Slider"> <i class=" fa fa-edit"></i></a></td>
+                                        <td><a href="imagenes/{{$slider->idimagen}}" title="Editar Imagen Slider" class=" btn-xs btn btn-success" ><i class=" fa fa-image"></i></a></td>
+                                        <td><a href="" class="btn btn-xs btn-danger eliminar" data-idslider="{{$slider->idimagen}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                </div>
             </div>

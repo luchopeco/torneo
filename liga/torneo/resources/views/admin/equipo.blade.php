@@ -49,22 +49,24 @@
                         </div>
                     </div>
                     <div class=" panel-body">
-                        <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Documento</th>
-                                <th>Observaciones</th>
-                            </tr>
-                                @foreach($equipo->ListJugadores as $jugador)
-                            <tr >
-                                <td>{{$jugador->nombre_jugador}}</td>
-                                <td>{{$jugador->dni}}</td>
-                                <td>{{$jugador->observaciones}}</td>
-                                <td><a href="" class="btn btn-xs btn-info editar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Modificar"> <i class=" fa fa-edit"></i></a></td>
-                                <td><a href="" class="btn btn-xs btn-danger eliminar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
-                            </tr>
-                                @endforeach
-                        </table>
+                        <div class="table-responsive">
+                            <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Documento</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                    @foreach($equipo->ListJugadores as $jugador)
+                                <tr >
+                                    <td>{{$jugador->nombre_jugador}}</td>
+                                    <td>{{$jugador->dni}}</td>
+                                    <td>{{$jugador->observaciones}}</td>
+                                    <td><a href="" class="btn btn-xs btn-info editar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Modificar"> <i class=" fa fa-edit"></i></a></td>
+                                    <td><a href="" class="btn btn-xs btn-danger eliminar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                </tr>
+                                    @endforeach
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
