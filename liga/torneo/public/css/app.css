@@ -6231,3 +6231,24 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+
+
+@media (min-width: 280px) and (max-width: 470px) {
+  #climaVertical {
+    display: block !important;
+  }
+  #climaHorizontal{
+    display: none !important;
+  }
+
+}
+
+@media (min-width: 471px){
+  #climaVertical {
+    display: none !important;
+  }
+  #climaHorizontal{
+    display: block !important;
+  }
+
+}

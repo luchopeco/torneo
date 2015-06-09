@@ -179,12 +179,21 @@
 
 
 
-
+<div id="climaHorizontal">
               <div id="cont_ade9062ccc1b67e7b6b7d24660c317a5" class="center-block">
                 <span id="h_ade9062ccc1b67e7b6b7d24660c317a5"><a id="a_ade9062ccc1b67e7b6b7d24660c317a5" href="http://www.meteored.com.ar/" target="_blank" style="color:#808080;font-family:Helvetica;font-size:14px;"></a></span>
                 <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/ade9062ccc1b67e7b6b7d24660c317a5"></script>
               </div>
-
+</div>
+  
+              <div id="climaVertical" style="">
+                <div id="cont_bebe897a70ed6e5e81b85b96d28fa5c9">
+                  <span id="h_bebe897a70ed6e5e81b85b96d28fa5c9"><a href="http://www.meteored.com.ar/tiempo-en_Rosario-America+Sur-Argentina-Santa+Fe--1-13586.html" target="_blank" style="color:#ffffff; font-family:Times New Roman; font-size:14px;"></a></span>
+                  <script type="text/javascript" async src="http://www.meteored.com.ar/wid_loader/bebe897a70ed6e5e81b85b96d28fa5c9"></script>
+                </div>
+  
+              </div>
+              
 
                 </div>
 
