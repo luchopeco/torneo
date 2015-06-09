@@ -3,7 +3,7 @@
 ..::Tifosi::..
 @endsection
 @section('content')
-<div id="estadisticas">
+<div id="estadisticas" class="margin-top">
 <section id="services">
     <div class="container">
         <div class="row text-center header">

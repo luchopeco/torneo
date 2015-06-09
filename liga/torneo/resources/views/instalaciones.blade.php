@@ -3,7 +3,7 @@
 ..::Tifosi::..
 @endsection
 @section('content')
-    <section id="instalaciones">
+    <section id="instalaciones" class="margin-top">
     <div class="container">
         <div class="row text-center header">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
@@ -48,7 +48,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="work-wrapper">
                 <a class="fancybox-media" href="/imagenes/home/005grande.jpg">
-                    <img class="img-responsive" src="/imagenes/home/005.jpg">
+                    <img class="img-responsive" src="/imagenes/home/005grande.jpg">
                 </a>
                 <h4>LUGAR AL AIRE LIBRE</h4>
                 </div>

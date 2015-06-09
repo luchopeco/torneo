@@ -148,3 +148,14 @@
   }
 
 }
+
+.margin-top{
+    padding-top: 90px !important;
+}
+/*table {border-collapse:collapse; table-layout:fixed;}
+
+.table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td {*/
+    /*overflow:hidden;*/
+    /*white-space:nowrap;*/
+
+/*}*/

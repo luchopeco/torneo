@@ -33,8 +33,8 @@ color: #fff;
 }
 
 section {
-padding-top: 80px;
-padding-bottom: 40px;
+padding-top: 20px;
+padding-bottom: 0px;
 }
 
 .pad-bottom {
@@ -139,8 +139,8 @@ HOME SECTION STYLES
 
 #home {
 text-align: center;
-padding-top: 120px;
-padding-bottom: 60px;
+padding-top: 70px;
+padding-bottom: 30px;
 }
 
 #home .social {
