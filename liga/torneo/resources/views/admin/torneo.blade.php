@@ -138,7 +138,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
             <div class=" panel panel-default">
                    <div class=" panel-heading"><strong>Goleadores</strong>
                    </div>
@@ -155,6 +155,30 @@
                                        <td>{{$goleador->nombre_jugador}}</td>
                                        <td>{{$goleador->nombre_equipo}}</td>
                                        <td>{{$goleador->goles}}</td>
+                                   </tr>
+                               @endforeach
+                           </table>
+                        </div>
+                   </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+            <div class=" panel panel-default">
+                   <div class=" panel-heading"><strong>Tarjetas Amarillas</strong>
+                   </div>
+                   <div class=" panel-body">
+                        <div class="table-responsive">
+                           <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                               <tr>
+                                   <th>Jugador</th>
+                                   <th>Equipo</th>
+                                   <th>Tarjetas Amarillas</th>
+                               </tr>
+                               @foreach($torneo->TarjetasAmarillas() as $goleador)
+                                   <tr >
+                                       <td>{{$goleador->nombre_jugador}}</td>
+                                       <td>{{$goleador->nombre_equipo}}</td>
+                                       <td>{{$goleador->ta}}</td>
                                    </tr>
                                @endforeach
                            </table>

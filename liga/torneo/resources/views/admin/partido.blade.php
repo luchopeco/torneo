@@ -140,8 +140,9 @@
                                                      <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                                             <tr>
                                                                 <th>Jugador</th>
-                                                                <th>Goles favor</th>
-                                                                <th>Goles en contra</th>
+                                                                <th>Gol. Favor</th>
+                                                                <th>Gol. Contra</th>
+                                                                <th>Tarj. Amarila</th>
                                                                 <th>Sancion</th>
                                                             </tr>
                                                                 @foreach($listGoleadoresLocal as $jugador)
@@ -149,6 +150,7 @@
                                                                  <td>{{$jugador->nombre_jugador}}</td>
                                                                  <td>{{$jugador->goles_favor}}</td>
                                                                   <td>{{$jugador->goles_contra}}</td>
+                                                                  <td>{{$jugador->tarjeta_amarilla}}</td>
                                                                   <td>{{$jugador->cantidad_fechas_sancion}}</td>
                                                                   <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                                             </tr>
@@ -173,8 +175,9 @@
                                                      <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                                             <tr>
                                                                 <th>Jugador</th>
-                                                                <th>Goles Favor</th>
-                                                                <th>Goles en contra</th>
+                                                                <th>Gol. Favor</th>
+                                                                <th>Gol. Contra</th>
+                                                                <th>Tarj. Amarila</th>
                                                                 <th>Sancion</th>
                                                             </tr>
                                                                 @foreach($listGoleadoresVisitante as $jugador)
@@ -182,6 +185,7 @@
                                                                  <td>{{$jugador->nombre_jugador}}</td>
                                                                  <td>{{$jugador->goles_favor}}</td>
                                                                  <td>{{$jugador->goles_contra}}</td>
+                                                                 <td>{{$jugador->tarjeta_amarilla}}</td>
                                                                  <td>{{$jugador->cantidad_fechas_sancion}}</td>
                                                                  <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                                             </tr>
@@ -215,14 +219,15 @@
                                                     <i class="fa fa-question-circle"></i><b class="caret"></b>
                                                 </button>
                                                 <ul class="multiselect-container dropdown-menu pull-right">
-                                                    <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)</li>
+                                                    <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)/
+                                                    (TA=Tarjeta amarilla, ingrese 0 o 1)</li>
                                                 </ul>
                                             </div>
                                      </div>
                               </div>
                                  <div class=" panel-body">
                                   <div clas="row">
-                                      <div class="col-md-6">
+                                      <div class="col-md-4">
                                             Jugador
                                             {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
                                             {!!Form::select('idjugador', $listJugadoresLocales ,null,array('class' => 'form-control'))!!}
@@ -241,6 +246,13 @@
                                                   <span class="help-block with-errors"></span>
                                            </div>
                                       </div>
+                                      <div class="col-md-2">
+                                            <div class="form-group">
+                                                    TA
+                                                   {!!Form::Number('tarjeta_amarilla',0,['class'=>'form-control','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                             </div>
+                                        </div>
                                       <div class="col-md-2">
                                               <div class="form-group">
                                                       FS
@@ -278,14 +290,15 @@
                                                 <i class="fa fa-question-circle"></i><b class="caret"></b>
                                             </button>
                                             <ul class="multiselect-container dropdown-menu pull-right">
-                                                <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)</li>
+                                                <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)
+                                                (TA=Tarjeta amarilla, ingrese 0 o 1)</li>
                                             </ul>
                                         </div>
                                     </div>
                               </div>
                                  <div class=" panel-body">
                                   <div clas="row">
-                                      <div class="col-md-6">
+                                      <div class="col-md-4">
                                             Jugador
                                             {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
                                             {!!Form::select('idjugador', $listJugadoresVisitantes ,null,array('class' => 'form-control'))!!}
@@ -303,6 +316,13 @@
                                                    {!!Form::Number('goles_contra',0,['class'=>'form-control','required'])!!}
                                                     <span class="help-block with-errors"></span>
                                             </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                    TA
+                                                   {!!Form::Number('tarjeta_amarilla',0,['class'=>'form-control','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">

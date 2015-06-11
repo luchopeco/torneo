@@ -36,7 +36,7 @@ class Partido extends Model{
     }
     public function ListGoleadores()
     {
-        return $this->belongsToMany('torneo\Jugador','partido_has_jugador','idpartido','idjugador')->withPivot('goles_favor', 'goles_contra','cantidad_fechas_sancion');
+        return $this->belongsToMany('torneo\Jugador','partido_has_jugador','idpartido','idjugador')->withPivot('goles_favor', 'goles_contra','cantidad_fechas_sancion','tarjeta_amarilla');
     }
 
 }

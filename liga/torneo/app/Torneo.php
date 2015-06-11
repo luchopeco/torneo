@@ -77,6 +77,23 @@ class Torneo extends Model{
 
     }
 
+    public function TarjetasAmarillas()
+    {
+        $amonestados =  DB::select(DB::raw("SELECT sum(phj.tarjeta_amarilla) ta,j.nombre_jugador, e.nombre_equipo
+                              FROM partido_has_jugador phj
+                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                            WHERE f.idtorneo= :p1
+                            AND e.es_libre=0
+                            GROUP BY j.nombre_jugador, e.nombre_equipo
+							HAVING sum(phj.tarjeta_amarilla) >0
+                            ORDER BY ta DESC"), array(
+            'p1' => $this->idtorneo));
+        return $amonestados;
+    }
+
     public function Sancionados()
     {
 
