@@ -165,6 +165,16 @@
             <div class="col-md-6">
             <div class=" panel panel-default">
                    <div class=" panel-heading"><strong>Tarjetas Amarillas</strong>
+                   <div class="pull-right">
+                       <div class="btn-group">
+                           <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                               <i class="fa fa-question-circle"></i><b class="caret"></b>
+                           </button>
+                           <ul class="multiselect-container dropdown-menu pull-right">
+                               <li>Ultima Fecha, indica la ultima fecha en la que el jugador fue amonestado.</li>
+                           </ul>
+                       </div>
+                   </div>
                    </div>
                    <div class=" panel-body">
                         <div class="table-responsive">
@@ -172,12 +182,14 @@
                                <tr>
                                    <th>Jugador</th>
                                    <th>Equipo</th>
+                                   <th>Ultima Fecha</th>
                                    <th>Tarjetas Amarillas</th>
                                </tr>
                                @foreach($torneo->TarjetasAmarillas() as $goleador)
-                                   <tr >
+                                   <tr @if($goleador->ta % 4 ==0) class="danger" @endif >
                                        <td>{{$goleador->nombre_jugador}}</td>
                                        <td>{{$goleador->nombre_equipo}}</td>
+                                       <td>{{date('d/m/Y', strtotime($goleador->fecha))}}</td>
                                        <td>{{$goleador->ta}}</td>
                                    </tr>
                                @endforeach
