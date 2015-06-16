@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" col-md-6">
+            <div class="col-md-6">
                <div class=" panel panel-default">
                     <div class=" panel-heading"><strong>Equipos</strong> <a href="" id="btnNuevoEquipo" title="Agregar equipo al torneo" class=" btn-xs btn btn-success" data-toggle="modal" data-target="#modalEquipoAgregar"><i class=" fa fa-plus"></i></a>
                         <div class="pull-right">
@@ -136,8 +136,6 @@
                        </div>
                   </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
             <div class=" panel panel-default">
                    <div class=" panel-heading"><strong>Goleadores</strong>
@@ -162,41 +160,51 @@
                    </div>
               </div>
             </div>
-            <div class="col-md-6">
-            <div class=" panel panel-default">
-                   <div class=" panel-heading"><strong>Tarjetas Amarillas</strong>
-                   <div class="pull-right">
-                       <div class="btn-group">
-                           <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
-                               <i class="fa fa-question-circle"></i><b class="caret"></b>
-                           </button>
-                           <ul class="multiselect-container dropdown-menu pull-right">
-                               <li>Ultima Fecha, indica la ultima fecha en la que el jugador fue amonestado.</li>
-                           </ul>
-                       </div>
-                   </div>
-                   </div>
-                   <div class=" panel-body">
-                        <div class="table-responsive">
-                           <table id="editar"  class=" table table-bordered table-condensed table-hover">
-                               <tr>
-                                   <th>Jugador</th>
-                                   <th>Equipo</th>
-                                   <th>Ultima Fecha</th>
-                                   <th>Tarjetas Amarillas</th>
-                               </tr>
-                               @foreach($torneo->TarjetasAmarillas() as $goleador)
-                                   <tr @if($goleador->ta % 4 ==0) class="danger" @endif >
-                                       <td>{{$goleador->nombre_jugador}}</td>
-                                       <td>{{$goleador->nombre_equipo}}</td>
-                                       <td>{{date('d/m/Y', strtotime($goleador->fecha))}}</td>
-                                       <td>{{$goleador->ta}}</td>
-                                   </tr>
-                               @endforeach
-                           </table>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                 <div class=" panel panel-default">
+                        <div class=" panel-heading"><strong>Tarjetas</strong>
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                                    <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                </button>
+                                <ul class="multiselect-container dropdown-menu pull-right">
+                                    <li>Ultima Fecha, indica la ultima fecha en la que el jugador fue apercibido por la respectiva tarjeta.</li>
+                                </ul>
+                            </div>
                         </div>
-                   </div>
-              </div>
+                        </div>
+                        <div class=" panel-body">
+                             <div class="table-responsive">
+                                <table id="editar"  class=" table table-bordered table-condensed table-hover">
+                                    <tr>
+                                        <th>Jugador</th>
+                                        <th>Equipo</th>
+                                        <th>Ult. Fecha Am.</th>
+                                        <th>Tar. Amarillas</th>
+                                        <th>Ult. Fecha Az.</th>
+                                        <th>Tar. Azules</th>
+                                        <th>Ult. Fecha Ro.</th>
+                                        <th>Tar. Rojas</th>
+                                    </tr>
+                                    @foreach($torneo->Tarjetas() as $goleador)
+                                        <tr >
+                                            <td>{{$goleador->nombre_jugador}}</td>
+                                            <td>{{$goleador->nombre_equipo}}</td>
+                                            <td @if($goleador->ta % 4 ==0 && $goleador->ta!=null) class="danger" @endif >@if($goleador->fecha_ta!=null) {{date('d/m/Y', strtotime($goleador->fecha_ta))}}@endif</td>
+                                            <td @if($goleador->ta % 4 ==0 && $goleador->ta!=null) class="danger" @endif >{{$goleador->ta}}</td>
+                                            <td @if($goleador->taz % 2 ==0 && $goleador->taz!=null) class="danger" @endif >@if($goleador->fecha_taz!=null)  {{date('d/m/Y', strtotime($goleador->fecha_taz))}} @endif</td>
+                                            <td @if($goleador->taz % 2 ==0 && $goleador->taz!=null) class="danger" @endif >{{$goleador->taz}}</td>
+                                            <td @if($goleador->tar!=null) class="danger" @endif >@if($goleador->fecha_tr!=null)  {{date('d/m/Y', strtotime($goleador->fecha_tr))}} @endif</td>
+                                            <td @if($goleador->tar!=null) class="danger" @endif >{{$goleador->tar}}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                             </div>
+                        </div>
+                 </div>
             </div>
         </div>
 

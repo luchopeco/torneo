@@ -80,6 +80,8 @@ class PartidosController extends Controller {
                     $jugador->goles_contra=$goleador->pivot->goles_contra;
                     $jugador->cantidad_fechas_sancion=$goleador->pivot->cantidad_fechas_sancion;
                     $jugador->tarjeta_amarilla=$goleador->pivot->tarjeta_amarilla;
+                    $jugador->tarjeta_azul=$goleador->pivot->tarjeta_azul;
+                    $jugador->tarjeta_roja=$goleador->pivot->tarjeta_roja;
                     $listGoleadoresLocal[$sum] = $jugador;
                     $sum=$sum+1;
                 }
@@ -101,6 +103,8 @@ class PartidosController extends Controller {
                     $jugador->goles_contra=$goleador->pivot->goles_contra;
                     $jugador->cantidad_fechas_sancion=$goleador->pivot->cantidad_fechas_sancion;
                     $jugador->tarjeta_amarilla=$goleador->pivot->tarjeta_amarilla;
+                    $jugador->tarjeta_azul=$goleador->pivot->tarjeta_azul;
+                    $jugador->tarjeta_roja=$goleador->pivot->tarjeta_roja;
                     $listGoleadoresVisitante[$sum] = $jugador;
                     $sum=$sum+1;
                 }
@@ -233,7 +237,8 @@ class PartidosController extends Controller {
 
             $ar = Partido::findOrFail($request->idpartido);
 
-            $ar->ListGoleadores()->attach($request->idjugador,['goles_favor'=>$request->goles_favor, 'goles_contra'=>$request->goles_contra,'cantidad_fechas_sancion'=>$request->cantidad_fechas_sancion,'tarjeta_amarilla'=>$request->tarjeta_amarilla]);
+            $ar->ListGoleadores()->attach($request->idjugador,['goles_favor'=>$request->goles_favor, 'goles_contra'=>$request->goles_contra,'cantidad_fechas_sancion'=>$request->cantidad_fechas_sancion,'tarjeta_amarilla'=>$request->tarjeta_amarilla,
+                'tarjeta_azul'=>$request->tarjeta_azul,'tarjeta_roja'=>$request->tarjeta_roja]);
             Session::flash('mensajeOk', 'Gol Agregado con Exito');
             return Redirect::route('admin.partidos.show',$ar->idpartido);
 

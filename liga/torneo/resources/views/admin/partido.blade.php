@@ -142,7 +142,9 @@
                                                                 <th>Jugador</th>
                                                                 <th>Gol. Favor</th>
                                                                 <th>Gol. Contra</th>
-                                                                <th>Tarj. Amarila</th>
+                                                                <th>T. Amarila</th>
+                                                                <th>T. Azul</th>
+                                                                <th>T. Roja</th>
                                                                 <th>Sancion</th>
                                                             </tr>
                                                                 @foreach($listGoleadoresLocal as $jugador)
@@ -151,6 +153,8 @@
                                                                  <td>{{$jugador->goles_favor}}</td>
                                                                   <td>{{$jugador->goles_contra}}</td>
                                                                   <td>{{$jugador->tarjeta_amarilla}}</td>
+                                                                  <td>{{$jugador->tarjeta_azul}}</td>
+                                                                  <td>{{$jugador->tarjeta_roja}}</td>
                                                                   <td>{{$jugador->cantidad_fechas_sancion}}</td>
                                                                   <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                                             </tr>
@@ -177,7 +181,9 @@
                                                                 <th>Jugador</th>
                                                                 <th>Gol. Favor</th>
                                                                 <th>Gol. Contra</th>
-                                                                <th>Tarj. Amarila</th>
+                                                                <th>T. Amarila</th>
+                                                                <th>T. Azul</th>
+                                                                <th>T. Roja</th>
                                                                 <th>Sancion</th>
                                                             </tr>
                                                                 @foreach($listGoleadoresVisitante as $jugador)
@@ -186,6 +192,8 @@
                                                                  <td>{{$jugador->goles_favor}}</td>
                                                                  <td>{{$jugador->goles_contra}}</td>
                                                                  <td>{{$jugador->tarjeta_amarilla}}</td>
+                                                                 <td>{{$jugador->tarjeta_azul}}</td>
+                                                                 <td>{{$jugador->tarjeta_roja}}</td>
                                                                  <td>{{$jugador->cantidad_fechas_sancion}}</td>
                                                                  <td><a href="/admin/partidos/{{$partido->idpartido}}/{{$jugador->idjugador}}" class="btn btn-xs btn-danger" title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                                             </tr>
@@ -211,58 +219,76 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Gol Local</h4>
                               </div>
-                              <div class="modal-body"><div class=" panel panel-info">
-                              <div class=" panel-heading"> Jugador
-                                     <div class="pull-right">
-                                            <div class="btn-group">
-                                                <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
-                                                    <i class="fa fa-question-circle"></i><b class="caret"></b>
-                                                </button>
-                                                <ul class="multiselect-container dropdown-menu pull-right">
-                                                    <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)/
-                                                    (TA=Tarjeta amarilla, ingrese 0 o 1)</li>
-                                                </ul>
-                                            </div>
-                                     </div>
-                              </div>
-                                 <div class=" panel-body">
-                                  <div clas="row">
-                                      <div class="col-md-4">
-                                            Jugador
-                                            {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
-                                            {!!Form::select('idjugador', $listJugadoresLocales ,null,array('class' => 'form-control'))!!}
-                                      </div>
-                                      <div class="col-md-2">
-                                          <div class="form-group">
-                                                GF
-                                                {!!Form::Number('goles_favor',1,['class'=>'form-control','required'])!!}
-                                                <span class="help-block with-errors"></span>
+                              <div class="modal-body">
+                                      <div class=" panel panel-info">
+                                          <div class=" panel-heading"> Jugador
+                                                 <div class="pull-right">
+                                                        <div class="btn-group">
+                                                            <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                                                                <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                                            </button>
+                                                            <ul class="multiselect-container dropdown-menu pull-right">
+                                                                <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)/
+                                                                (TA=Tarjeta amarilla, ingrese 0 o 1)</li>
+                                                            </ul>
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                          <div class=" panel-body">
+                                              <div clas="row">
+                                                  <div class="col-md-6">
+                                                        Jugador
+                                                        {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
+                                                        {!!Form::select('idjugador', $listJugadoresLocales ,null,array('class' => 'form-control'))!!}
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                            GF
+                                                            {!!Form::Number('goles_favor',1,['class'=>'form-control','required'])!!}
+                                                            <span class="help-block with-errors"></span>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <div class="form-group">
+                                                              GC
+                                                              {!!Form::Number('goles_contra',0,['class'=>'form-control','required'])!!}
+                                                              <span class="help-block with-errors"></span>
+                                                       </div>
+                                                  </div>
+                                               </div>
+                                              <div class="row">
+                                                     <div class="col-md-3">
+                                                           <div class="form-group">
+                                                                   T. Amarilla
+                                                                  {!!Form::Number('tarjeta_amarilla',0,['class'=>'form-control','required'])!!}
+                                                                   <span class="help-block with-errors"></span>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3">
+                                                          <div class="form-group">
+                                                                  T. Azul
+                                                                 {!!Form::Number('tarjeta_azul',0,['class'=>'form-control','required'])!!}
+                                                                  <span class="help-block with-errors"></span>
+                                                           </div>
+                                                          </div>
+                                                          <div class="col-md-3">
+                                                             <div class="form-group">
+                                                                     T.Roja
+                                                                    {!!Form::Number('tarjeta_roja',0,['class'=>'form-control','required'])!!}
+                                                                     <span class="help-block with-errors"></span>
+                                                              </div>
+                                                         </div>
+                                                     <div class="col-md-3">
+                                                         <div class="form-group">
+                                                                 FS
+                                                                {!!Form::Number('cantidad_fechas_sancion',0,['class'=>'form-control','required'])!!}
+                                                                 <span class="help-block with-errors"></span>
+                                                          </div>
+                                                     </div>
+                                               </div>
                                           </div>
                                       </div>
-                                      <div class="col-md-2">
-                                           <div class="form-group">
-                                                  GC
-                                                  {!!Form::Number('goles_contra',0,['class'=>'form-control','required'])!!}
-                                                  <span class="help-block with-errors"></span>
-                                           </div>
-                                      </div>
-                                      <div class="col-md-2">
-                                            <div class="form-group">
-                                                    TA
-                                                   {!!Form::Number('tarjeta_amarilla',0,['class'=>'form-control','required'])!!}
-                                                    <span class="help-block with-errors"></span>
-                                             </div>
-                                        </div>
-                                      <div class="col-md-2">
-                                              <div class="form-group">
-                                                      FS
-                                                     {!!Form::Number('cantidad_fechas_sancion',0,['class'=>'form-control','required'])!!}
-                                                      <span class="help-block with-errors"></span>
-                                               </div>
-                                      </div>
-                                   </div>
                               </div>
-                         </div></div>
                               <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                   {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
@@ -282,59 +308,75 @@
                                   <h4 class="modal-title" id="myModalLabel">Agregando Gol Visitante</h4>
                               </div>
                               <div class="modal-body">
-                              <div class=" panel panel-info">
-                              <div class=" panel-heading"> Jugador
-                                    <div class="pull-right">
-                                        <div class="btn-group">
-                                            <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
-                                                <i class="fa fa-question-circle"></i><b class="caret"></b>
-                                            </button>
-                                            <ul class="multiselect-container dropdown-menu pull-right">
-                                                <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)
-                                                (TA=Tarjeta amarilla, ingrese 0 o 1)</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                  <div class=" panel panel-info">
+                                         <div class=" panel-heading"> Jugador
+                                                <div class="pull-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                                                            <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                                        </button>
+                                                        <ul class="multiselect-container dropdown-menu pull-right">
+                                                            <li>(GF = Goles a Favor) / (GC = Goles en Contra) / (FS = Cantidad de Fechas de Suspencion)
+                                                            (TA=Tarjeta amarilla, ingrese 0 o 1)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                         </div>
+                                         <div class=" panel-body">
+                                             <div clas="row">
+                                                  <div class="col-md-6">
+                                                        Jugador
+                                                        {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
+                                                        {!!Form::select('idjugador', $listJugadoresVisitantes ,null,array('class' => 'form-control'))!!}
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            GF
+                                                            {!!Form::Number('goles_favor',1,['class'=>'form-control','required'])!!}
+                                                            <span class="help-block with-errors"></span>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-md-3">
+                                                        <div class=" form-group">
+                                                                GC
+                                                               {!!Form::Number('goles_contra',0,['class'=>'form-control','required'])!!}
+                                                                <span class="help-block with-errors"></span>
+                                                        </div>
+                                                  </div>
+                                               </div>
+                                             <div class="row">
+                                                    <div class="col-md-3">
+                                                          <div class="form-group">
+                                                                  T. Amarilla
+                                                                 {!!Form::Number('tarjeta_amarilla',0,['class'=>'form-control','required'])!!}
+                                                                  <span class="help-block with-errors"></span>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                         <div class="form-group">
+                                                                 T. Azul
+                                                                {!!Form::Number('tarjeta_azul',0,['class'=>'form-control','required'])!!}
+                                                                 <span class="help-block with-errors"></span>
+                                                         </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                         <div class="form-group">
+                                                                    T.Roja
+                                                                   {!!Form::Number('tarjeta_roja',0,['class'=>'form-control','required'])!!}
+                                                                    <span class="help-block with-errors"></span>
+                                                         </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                                FS
+                                                               {!!Form::Number('cantidad_fechas_sancion',0,['class'=>'form-control','required'])!!}
+                                                                <span class="help-block with-errors"></span>
+                                                         </div>
+                                                    </div>
+                                              </div>
+                                         </div>
+                                  </div>
                               </div>
-                                 <div class=" panel-body">
-                                  <div clas="row">
-                                      <div class="col-md-4">
-                                            Jugador
-                                            {!!Form::Text('idpartido',$partido->idpartido,['class'=>'hidden'])!!}
-                                            {!!Form::select('idjugador', $listJugadoresVisitantes ,null,array('class' => 'form-control'))!!}
-                                      </div>
-                                      <div class="col-md-2">
-                                            <div class="form-group">
-                                                GF
-                                                {!!Form::Number('goles_favor',1,['class'=>'form-control','required'])!!}
-                                                <span class="help-block with-errors"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class=" form-group">
-                                                    GC
-                                                   {!!Form::Number('goles_contra',0,['class'=>'form-control','required'])!!}
-                                                    <span class="help-block with-errors"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                    TA
-                                                   {!!Form::Number('tarjeta_amarilla',0,['class'=>'form-control','required'])!!}
-                                                    <span class="help-block with-errors"></span>
-                                             </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                FS
-                                                {!!Form::Number('cantidad_fechas_sancion',0,['class'=>'form-control','required'])!!}
-                                                <span class="help-block with-errors"></span>
-                                            </div>
-
-                                      </div>
-                                   </div>
-                              </div>
-                         </div></div>
                               <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                   {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}

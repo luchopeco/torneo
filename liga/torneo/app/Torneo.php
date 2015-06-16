@@ -90,8 +90,7 @@ class Torneo extends Model{
                             AND phj.tarjeta_amarilla<>0
                             GROUP BY j.nombre_jugador, e.nombre_equipo
 							HAVING sum(phj.tarjeta_amarilla) >0
-                            ORDER BY ta DESC"), array(
-            'p1' => $this->idtorneo));
+                            ORDER BY ta DESC"), array('p1' => $this->idtorneo));
         return $amonestados;
     }
 
@@ -133,6 +132,160 @@ class Torneo extends Model{
         {
             return 'NO';
         }
+    }
+
+    public function Tarjetas()
+    {
+        $tarjetas =  DB::select(DB::raw("SELECT DISTINCT tamtaz.idjugador, tamtaz.nombre_jugador, tamtaz.nombre_equipo,  tamtaz.fecha_ta, tamtaz.ta ,tamtaz.fecha_taz, tamtaz.taz ,
+                                            tar.fecha_tr, tar.tar
+                                            FROM
+                                            (SELECT DISTINCT tam.fecha_ta, tam.ta ,taz.fecha_taz, taz.taz ,tam.nombre_jugador, tam.nombre_equipo, tam.idjugador FROM
+                                            (SELECT max(f.fecha)fecha_ta, sum(phj.tarjeta_amarilla) ta,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p1
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_amarilla<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_amarilla) >0) AS tam
+                                            LEFT JOIN
+                                            (SELECT max(f.fecha)fecha_taz, sum(phj.tarjeta_azul) taz,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p2
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_azul<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_azul) >0) AS taz
+                                            ON tam.idjugador = taz.idjugador
+
+                                            UNION ALL
+
+                                            SELECT DISTINCT tam.fecha_ta, tam.ta ,taz.fecha_taz, taz.taz ,taz.nombre_jugador, taz.nombre_equipo, taz.idjugador FROM
+                                            (SELECT max(f.fecha)fecha_ta, sum(phj.tarjeta_amarilla) ta,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p3
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_amarilla<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_amarilla) >0) AS tam
+                                            RIGHT JOIN
+                                            (SELECT max(f.fecha)fecha_taz, sum(phj.tarjeta_azul) taz,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p4
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_azul<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_azul) >0) AS taz
+                                            ON tam.idjugador = taz.idjugador) AS tamtaz
+
+                                            LEFT JOIN
+
+                                            (SELECT max(f.fecha)fecha_tr, sum(phj.tarjeta_roja) tar,j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p5
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_azul<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_roja) >0) AS tar
+                                            ON  tamtaz.idjugador = tar.idjugador
+
+                                            UNION
+
+
+                                            SELECT DISTINCT tar.idjugador, tar.nombre_jugador, tar.nombre_equipo,  tamtaz.fecha_ta, tamtaz.ta ,tamtaz.fecha_taz, tamtaz.taz ,
+                                            tar.fecha_tr, tar.tar
+                                            FROM
+                                            (SELECT DISTINCT tam.fecha_ta, tam.ta ,taz.fecha_taz, taz.taz ,tam.nombre_jugador, tam.nombre_equipo, tam.idjugador FROM
+                                            (SELECT max(f.fecha)fecha_ta, sum(phj.tarjeta_amarilla) ta,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p6
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_amarilla<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_amarilla) >0) AS tam
+                                            LEFT JOIN
+                                            (SELECT max(f.fecha)fecha_taz, sum(phj.tarjeta_azul) taz,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p7
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_azul<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_azul) >0) AS taz
+                                            ON tam.idjugador = taz.idjugador
+
+                                            UNION ALL
+
+                                            SELECT DISTINCT tam.fecha_ta, tam.ta ,taz.fecha_taz, taz.taz ,taz.nombre_jugador, taz.nombre_equipo, taz.idjugador FROM
+                                            (SELECT max(f.fecha)fecha_ta, sum(phj.tarjeta_amarilla) ta,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p8
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_amarilla<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_amarilla) >0) AS tam
+                                            RIGHT JOIN
+                                            (SELECT max(f.fecha)fecha_taz, sum(phj.tarjeta_azul) taz,j.nombre_jugador, e.nombre_equipo, j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p9
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_azul<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_azul) >0) AS taz
+                                            ON tam.idjugador = taz.idjugador) AS tamtaz
+
+                                            RIGHT JOIN
+
+                                            (SELECT max(f.fecha)fecha_tr, sum(phj.tarjeta_roja) tar,j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            FROM partido_has_jugador phj
+                                            INNER JOIN jugadores j ON j.idjugador = phj.idjugador
+                                            INNER JOIN partidos p ON p.idpartido = phj.idpartido
+                                            INNER JOIN fechas f ON f.idfecha = p.idfecha
+                                            INNER JOIN equipos e ON e.idequipo = j.idequipo
+                                            WHERE f.idtorneo= :p10
+                                            AND e.es_libre=0
+                                            AND phj.tarjeta_roja<>0
+                                            GROUP BY j.nombre_jugador, e.nombre_equipo,j.idjugador
+                                            HAVING sum(phj.tarjeta_roja) >0) AS tar
+                                            ON  tar.idjugador =tamtaz.idjugador
+
+                                            ORDER BY ta DESC, taz DESC, tar DESC  "), array('p1' => $this->idtorneo,'p2' => $this->idtorneo,'p3' => $this->idtorneo,'p4' => $this->idtorneo,'p5' => $this->idtorneo,
+                                                                                        'p6' => $this->idtorneo,'p7' => $this->idtorneo,'p8' => $this->idtorneo,'p9' => $this->idtorneo,'p10' => $this->idtorneo));
+                return $tarjetas;
     }
 
 
