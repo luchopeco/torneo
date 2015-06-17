@@ -69,9 +69,9 @@ $ruta= Route::currentRouteAction();
 <li><a href="/">HOME</a></li>
 @endif
 @if($ruta=='torneo\Http\Controllers\WelcomeController@instalaciones')
-<li class="active" ><a href="/instalaciones">INSTALACIONES</a></li>
+<li class="active" ><a href="/instalaciones">SUCURSALES</a></li>
 @else
-<li><a href="/instalaciones">INSTALACIONES</a></li>
+<li><a href="/instalaciones">SUCURSALES</a></li>
 @endif
 
 <li><a href="#">INSCRIPCION</a></li>
@@ -86,6 +86,19 @@ $ruta= Route::currentRouteAction();
 @else
 <li><a href="/estadisticas">ESTADISTICAS</a></li>
 @endif
+
+@if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
+<li class="active"><a href="#">NOTICIAS</a></li>
+@else
+<li><a href="#">NOTICIAS</a></li>
+@endif
+
+@if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
+<li class="active"><a href="#">EQUIPOS</a></li>
+@else
+<li><a href="#">EQUIPOS</a></li>
+@endif
+
 </ul>
 </div>
 
@@ -130,29 +143,42 @@ $ruta= Route::currentRouteAction();
 
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="contact-wrapper">
                         <h3>Contacto Rapido</h3>
-                        <h4><strong>Email : </strong> liga@tifosi.com.ar</h4>
-                        <h4><strong>Tel : </strong> (0341) 467 0934</h4>
+                        <h4><strong>Email : </strong> ligatifosi@hotmail.com</h4>
+                        <h4><strong>Tel : </strong>(0341)-156 56 3365/153 43 0596</h4>
                         <h3>Datos Personales</h3>
-                        <h4><strong>Cordoba 4556. CP 2000 </strong></h4>
-                        <h4><strong>Rosario</strong></h4>
+                        <h4><strong>ZONA NORTE: Don Orione 690</strong></h4>
+                        <h4><strong>FUNES CITY: Rondeau 591</strong></h4>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                     <div class="contact-wrapper" >
                          <img class="img-responsive center-block " src="/imagenes/footer/gatorade.png">
+                    </div>
+                </div>
+            </div>
+            <div class="row animate-in" data-anim-type="fade-in-up">
+                <div class="col-xs-12">
+                    <div class="marcas row">
+                        <div class=" col-sm-2 col-xs-offset-0"></div>
+                        <div class="col-xs-3 col-sm-1"><img src="imagenes/logo.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-xs-3 col-sm-1"><img src="imagenes/footer/sts.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/quilmes.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/pepsi.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/auckland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/photoclub.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
+                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
+
                     </div>
                 </div>
             </div>
              <div class="row animate-in" data-anim-type="fade-in-up">
                 <div class="col-xs-12">
                     <div class="powerby text-center">
-                        <div class="row">
-                            <div class="col-md-6"> <h4><a target="_blank" href="http://www.shoutside.com.ar">ShoutSide Studio</a></h4></div>
-                            <div class="col-md-6"> <h4><a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a></h4></div>
-                        </div>
+                    2015-TODOS LOS DERECHOS RESERVADOS -DISEÑO <a target="_blank" href="#">FABRICA</a> // DESARROLLO <a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a>
                     </div>
                 </div>
             </div>

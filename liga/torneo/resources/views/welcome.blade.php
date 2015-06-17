@@ -11,15 +11,21 @@
                   <div id="carousel-slider" data-ride="carousel" class="carousel slide  animate-in" data-anim-type="fade-in-up">
                       <div class="carousel-inner">
                           <div class="item active ">
-                                <img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png">
+                                <div class="row">
+                                    <div class="col-xs-6"><img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png"></div>
+                                    <div class="col-xs-6"><img class="img-responsive center-block" src="/imagenes/home/ragazza02.png"></div>
+
+                                </div>
                               <h1>
-                              <strong>EL NUEVO COMPLEJO EN FUNES EQUIPADO PARA LA MEJOR LIGA DE FUTBOL 5 DEL GRAN ROSARIO</strong>
+                              <strong>10 AÑOS DE EXPERIENCIA VINCULANDO
+                                      EL ENTRETENIMIENTO Y EL DEPORTE
+                                      EN LA CIUDAD DE ROSARIO.</strong>
                               </h1>
                               <p>
-                              Lorem ipsumdolor sitamet, consect adipiscing elit
-                              Lorem ipsumdolor sitamet, consect adipiscing elit.
-                              Lorem ipsumdolor sitamet, consect adipiscing elit
-                              Lorem ipsumdolor sitamet, consect adipiscing elit.
+                              En nuestros complejos vas a poder encontrar instalaciones pensadas y preparadas
+                              profesionalmente, con cocheras privadas, vestuarios personalizados, canchas con
+                              medidas reglamentarias, una zona de bufete y parrilleros al aire libre y techados
+                              equipados para disfrutar entre amigos un agradable tercer tiempo.
                               </p>
                           </div>
                       </div>
@@ -28,7 +34,7 @@
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
             <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 scroll-me">
-                <a href="/instalaciones" class=" btn button-custom btn-custom-two">CONOCE LAS INSTALACIONES </a>
+                <a href="/instalaciones" class=" btn button-custom btn-custom-two">CONOCE NUESTRAS SUCURSALES</a>
             </div>
         </div>
     </div>

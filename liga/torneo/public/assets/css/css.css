@@ -64,13 +64,22 @@
     font-size: 20px;
 }
 #contact .powerby {
+    /*background-color: rgba(255, 255, 255, 0.1);*/
+    padding: 30px;
+    font-size: 12px;
+  border-radius: 5px;
+    margin-bottom: 40px;
+
+}
+
+#contact .powerby a {
+    color: rgb(228, 79, 79);
+}
+#contact .marcas {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 5px;
-    margin-bottom: 40px;
-}
-#contact .powerby a {
-    color: rgb(228, 79, 79);
+    /*margin-bottom: 40px;*/
 }
 #estadisticas .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border-top: 2px solid rgba(255, 255, 255, 0.3);

@@ -2,7 +2,9 @@
 
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use PhpSpec\Exception\Exception;
 use torneo\Arbitro;
 use torneo\Http\Requests;
 use torneo\Http\Controllers\Controller;
@@ -137,5 +139,25 @@ class ArbitrosController extends Controller {
 
 
 	}
+    public function  mail()
+    {
+        try{
+            Mail::raw('Mail de ejemplo', function($message)
+            {
+                $message->from('contacto@wiphalasistemas.com.ar', 'Wiphala');
+
+                $message->to('caca');
+            });
+
+            Session::flash('mensajeOk', 'Mail enviado con exito');
+            return redirect()->route('admin.arbitros.index');
+        }
+        catch(\Exception $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.arbitros.index');
+        }
+
+    }
 
 }

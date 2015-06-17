@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
         Route::resource('arbitros','ArbitrosController');
         Route::post('arbitros/buscar','ArbitrosController@buscar');
+        Route::post('arbitros/mail','ArbitrosController@mail');
 
         Route::resource('torneos','TorneosController');
         Route::post('torneos/buscar','TorneosController@buscar');
