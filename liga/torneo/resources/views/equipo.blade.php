@@ -28,7 +28,7 @@
                 <div class="equipos-wrapper-redondo alto50">
                     <div class="row">
                         <div class="col-xs-9"> BIENVENIDO: <span>LOS RAMONES</span> </div>
-                        <div class="col-xs-3"> <a href="" class=" btn btn-danger btn-block">SALIR</a></div>
+                        <div class="col-xs-3"> <a href="/equiposalir" class=" btn btn-danger btn-block">SALIR</a></div>
                     </div>
                  </div>
                 <div class="row estadistica">

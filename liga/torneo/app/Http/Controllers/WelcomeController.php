@@ -71,12 +71,22 @@ class WelcomeController extends Controller {
     {
         if (Session::has('equipo'))
         {
-            //
+            return view('equipo');
         }
         else
         {
-            return view('equipo');
+           // return view('equipo');
             return view('login');
         }
+    }
+    public function equiposalir()
+    {
+        Session::forget('equipo');
+        return view('login');
+    }
+    public function loginequipo()
+    {
+        Session::put('equipo','caca');
+        return view('equipo');
     }
 }
