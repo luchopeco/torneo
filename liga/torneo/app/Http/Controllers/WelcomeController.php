@@ -1,5 +1,6 @@
 <?php namespace torneo\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use torneo\Imagen;
 use torneo\Noticia;
 use torneo\Torneo;
@@ -64,5 +65,18 @@ class WelcomeController extends Controller {
     public function instalaciones()
     {
         return view('instalaciones');
+    }
+
+    public function equipo()
+    {
+        if (Session::has('equipo'))
+        {
+            //
+        }
+        else
+        {
+            return view('equipo');
+            return view('login');
+        }
     }
 }

@@ -168,3 +168,105 @@
     /*white-space:nowrap;*/
 
 /*}*/
+
+/*-------------------LOGIN---------------------------*/
+#login .contact-wrapper {
+    background-color:rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 40px;
+    min-height:280px;
+}
+#login .contact-wrapper h3 {
+    color:rgb(228, 79, 79);
+}
+
+#equipo .equipos-wrapper {
+    padding: 5px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    margin-bottom: 10px;
+    background-color: rgba(0,0, 0, 0.3);
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border:   2px solid rgba(255, 255, 255, 0.3);
+    background-clip: padding-box;
+
+
+}
+#equipo .equipos-wrapper .row{
+    margin: 0px ;
+}
+#equipo .equipos-wrapper-redondo {
+    padding: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    margin-bottom: 10px;
+    background-color: rgba(0,0, 0, 0.3);
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border:   2px solid rgba(255, 255, 255, 0.3);
+    background-clip: padding-box;
+
+
+}
+#equipo .equipos-wrapper-redondo span {
+    color:rgb(228, 79, 79);
+}
+#equipo .equipos-wrapper-redondo .row{
+    margin: 0px ;
+}
+#equipo a {
+    color: #FFFFFF;
+}
+#equipo h1{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#equipo .alto50{
+    height: 50px;
+    overflow: hidden;
+}
+#equipo .col-estadistica{
+    background-color: rgba(0,0, 0, 0.3);
+    border: 1px solid #f5f5f5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    color:rgb(228, 79, 79);
+    overflow: hidden;
+}
+#equipo .estadistica{
+
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    margin: 10px;
+}

@@ -93,10 +93,10 @@ $ruta= Route::currentRouteAction();
 <li><a href="#">NOTICIAS</a></li>
 @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
-<li class="active"><a href="#">EQUIPOS</a></li>
+@if($ruta=='torneo\Http\Controllers\WelcomeController@equipo')
+<li class="active"><a href="/equipo">EQUIPOS</a></li>
 @else
-<li><a href="#">EQUIPOS</a></li>
+<li><a href="/equipo">EQUIPOS</a></li>
 @endif
 
 </ul>

@@ -17,6 +17,7 @@ Route::get('/fixturetorneo/{id}', 'WelcomeController@fixturetorneo');
 Route::get('/estadisticas', 'WelcomeController@estadisticas');
 Route::get('/estadisticastorneo/{id}', 'WelcomeController@estadisticastorneo');
 Route::get('/instalaciones', 'WelcomeController@instalaciones');
+Route::get('/equipo', 'WelcomeController@equipo');
 
 Route::get('admin/home', 'Admin\HomeController@index');
 
