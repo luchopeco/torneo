@@ -89,4 +89,10 @@ class WelcomeController extends Controller {
         Session::put('equipo','caca');
         return view('equipo');
     }
+
+
+     public function inscripcion()
+    {
+        return view('inscripcion');
+    }
 }

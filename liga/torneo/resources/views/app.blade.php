@@ -74,7 +74,7 @@ $ruta= Route::currentRouteAction();
 <li><a href="/instalaciones">SUCURSALES</a></li>
 @endif
 
-<li><a href="#">INSCRIPCION</a></li>
+<li><a href="inscripcion">INSCRIPCION</a></li>
 @if($ruta=='torneo\Http\Controllers\WelcomeController@fixture')
 <li class="active"><a href="/fixture">FIXTURE</a></li>
 @else
