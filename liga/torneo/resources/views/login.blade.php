@@ -13,6 +13,17 @@
                     <hr />
                 </div>
             </div>
+             @if(Session::has('mensajeError'))
+                    <div class="row">
+                        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                   {{Session::get('mensajeError')}}
+                            </div>
+                        </div>
+                    </div>
+                    </hr>
+            @endif
             <div class="row animate-in" data-anim-type="fade-in-up">
                 <div class=" col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                     {!!Form::open(['url'=>'/loginequipo','method'=>'POST'])!!}
@@ -21,14 +32,14 @@
                         <div class="row">
                             <div class="col-md-12">
                             NOMBRE DE USUARIO
-                                {!!Form::Text('nombre',null,['class'=>' form-control','placeholder'=>'NOMBRE DE USUARIO '])!!}
+                                {!!Form::Text('nombre_usuario',null,['class'=>' form-control','placeholder'=>'NOMBRE DE USUARIO '])!!}
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-12">
                             Clave
-                                {!!Form::Text('mail',null,['class'=>' form-control','placeholder'=>'CLAVE'])!!}
+                               <input type="password" class="form-control" name="clave">
                             </div>
                         </div>
                         <hr>

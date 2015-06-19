@@ -74,7 +74,12 @@ $ruta= Route::currentRouteAction();
 <li><a href="/instalaciones">SUCURSALES</a></li>
 @endif
 
-<li><a href="inscripcion">INSCRIPCION</a></li>
+@if($ruta=='torneo\Http\Controllers\WelcomeController@inscripcion')
+<li class="active"><a href="/inscripcion">INSCRIPCION</a></li>
+@else
+<li><a href="/inscripcion">INSCRIPCION</a></li>
+@endif
+
 @if($ruta=='torneo\Http\Controllers\WelcomeController@fixture')
 <li class="active"><a href="/fixture">FIXTURE</a></li>
 @else
@@ -162,16 +167,22 @@ $ruta= Route::currentRouteAction();
             <div class="row animate-in" data-anim-type="fade-in-up">
                 <div class="col-xs-12">
                     <div class="marcas row">
-                        <div class=" col-sm-2 col-xs-offset-0"></div>
-                        <div class="col-xs-3 col-sm-1"><img src="imagenes/logo.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-xs-3 col-sm-1"><img src="imagenes/footer/sts.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/quilmes.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/pepsi.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/auckland.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/photoclub.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
-                        <div class="col-sm-1 col-xs-3"><img src="imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
-
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-3"><img src="imagenes/logo.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="imagenes/footer/sts.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="imagenes/footer/quilmes.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="imagenes/footer/pepsi.png" class="img-responsive inline" alt="Responsive image"/></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-3"><img src="imagenes/footer/auckland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="imagenes/footer/photoclub.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

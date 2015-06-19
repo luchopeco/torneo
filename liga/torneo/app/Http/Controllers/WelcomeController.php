@@ -1,6 +1,10 @@
 <?php namespace torneo\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
+use torneo\Equipo;
 use torneo\Imagen;
 use torneo\Noticia;
 use torneo\Torneo;
@@ -86,8 +90,29 @@ class WelcomeController extends Controller {
     }
     public function loginequipo()
     {
-        Session::put('equipo','caca');
-        return view('equipo');
+        try {
+
+            //$user = Equipo::find(23);
+            //$user->clave = Hash::make('admin');
+            //$user->save();
+            $eq = Equipo::where('nombre_usuario',  Request::input('nombre_usuario'))->firstOrFail();
+            if (Hash::check(Request::input('clave'),$eq->clave))
+            {
+                Session::put('equipo', $eq->idequipo);
+                return redirect()->action('WelcomeController@equipo');
+            }
+            else
+            {
+                Session::flash('mensajeError', 'Usuario y/o clave incorrecta');
+                return redirect()->action('WelcomeController@equipo');
+            }
+        }
+        catch(\Exception $e)
+        {
+            Session::flash('mensajeError', 'Usuario y/o clave incorrecta');
+            return redirect()->action('WelcomeController@equipo');
+        }
+
     }
 
 
