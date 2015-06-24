@@ -1,12 +1,14 @@
 <?php namespace torneo\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use torneo\Equipo;
 use torneo\Imagen;
 use torneo\Noticia;
+use torneo\TipoTorneo;
 use torneo\Torneo;
 
 class WelcomeController extends Controller {
@@ -47,8 +49,8 @@ class WelcomeController extends Controller {
 
     public function fixture()
     {
-        $listTorneosCombo = Torneo::all()->lists('nombre_torneo', 'idtorneo');
-        return view('fixture',compact('listTorneosCombo'));
+        $listTiposTorneosCombo = TipoTorneo::all()->lists('nombre_tipo_torneo', 'idtipo_torneo');
+        return view('fixture',compact('listTiposTorneosCombo'));
     }
     public function fixturetorneo($id)
     {
@@ -58,13 +60,24 @@ class WelcomeController extends Controller {
 
     public function estadisticas()
     {
-        $listTorneosCombo = Torneo::all()->lists('nombre_torneo', 'idtorneo');
-        return view('estadisticas',compact('listTorneosCombo'));
+
+        $listTiposTorneosCombo = TipoTorneo::all()->lists('nombre_tipo_torneo', 'idtipo_torneo');
+        return view('estadisticas',compact('listTiposTorneosCombo'));
     }
     public function estadisticastorneo($id)
     {
         $torneo = Torneo::findOrFail($id);
         return view('include.estadisticas',compact('torneo'));
+    }
+    public function torneoportipotorneo($id)
+    {
+        $listtorneos = Torneo::where('idtipo_torneo',$id)->lists('nombre_torneo', 'idtorneo');
+        return view('include.combotorneoestadisticas',compact('listtorneos'));
+    }
+    public function torneoportipotorneofixture($id)
+    {
+        $listtorneos = Torneo::where('idtipo_torneo',$id)->lists('nombre_torneo', 'idtorneo');
+        return view('include.combotorneosfixture',compact('listtorneos'));
     }
     public function instalaciones()
     {
@@ -73,15 +86,24 @@ class WelcomeController extends Controller {
 
     public function equipo()
     {
-        if (Session::has('equipo'))
+        try
         {
-            return view('equipo');
+            if (Session::has('equipo'))
+            {
+                $equipo=  Equipo::findOrFail(Session::get('equipo'));
+                return view('equipo',compact('equipo'));
+            }
+            else
+            {
+                // return view('equipo');
+                return view('login');
+            }
         }
-        else
+        catch(\Exception $ex )
         {
-           // return view('equipo');
             return view('login');
         }
+
     }
     public function equiposalir()
     {
@@ -119,5 +141,54 @@ class WelcomeController extends Controller {
      public function inscripcion()
     {
         return view('inscripcion');
+    }
+
+    public function equipoescudoguardar(Request $request)
+    {
+        try
+        {
+
+            $equipo=Equipo::findOrFail(Input::get('idequipo'));
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $equipo->escudo = 'escudo-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'escudo-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $equipo->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+
+        }
+    }
+
+    public function equipofotoguardar(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail(Input::get('idequipof'));
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $equipo->foto = 'foto-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'foto-equipo'.$equipo->idequipo.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $equipo->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+
+        }
     }
 }

@@ -54,12 +54,16 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Documento</th>
+                                    <th>Es Delegado</th>
+                                    <th>Entrego Certificado</th>
                                     <th>Observaciones</th>
                                 </tr>
                                     @foreach($equipo->ListJugadores as $jugador)
                                 <tr >
                                     <td>{{$jugador->nombre_jugador}}</td>
                                     <td>{{$jugador->dni}}</td>
+                                    <td>{{$jugador->esDelegado()}}</td>
+                                    <td>{{$jugador->entregoCertificado()}}</td>
                                     <td>{{$jugador->observaciones}}</td>
                                     <td><a href="" class="btn btn-xs btn-info editar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Modificar"> <i class=" fa fa-edit"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
@@ -81,25 +85,56 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                   <h4 class="modal-title" id="myModalLabel">Agregando Jugador</h4>
                               </div>
-                              <div class="modal-body"><div class=" panel panel-info">
-                              <div class=" panel-heading">Jugador</div>
-                                 <div class=" panel-body">
-                                  <div clas="row">
-                                      <div class="col-md-12">
-                                            {!!Form::Text('idequipo',$equipo->idequipo,['class'=>'hidden'])!!}
-                                            <div class="form-group">
-                                                Nombre
-                                                {!!Form::Text('nombre_jugador',null,['class'=>'form-control','required'])!!}
-                                                <span class="help-block with-errors"></span>
-                                            </div>
-                                            Tipo y numero Documento
-                                            {!!Form::Text('dni',null,['class'=>'form-control'])!!}
-                                            Observaciones
-                                            {!!Form::Text('observaciones',null,['class'=>'form-control'])!!}
-                                      </div>
-                                   </div>
+                              <div class="modal-body">
+                                <div class=" panel panel-info">
+                                    <div class=" panel-heading">Jugador</div>
+                                    <div class=" panel-body">
+                                      <div clas="row">
+                                          <div class="col-md-12">
+                                                {!!Form::Text('idequipo',$equipo->idequipo,['class'=>'hidden'])!!}
+                                                <div class="form-group">
+                                                    Nombre
+                                                    {!!Form::Text('nombre_jugador',null,['class'=>'form-control','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                     Documento
+                                                     {!!Form::Text('dni',null,['class'=>'form-control','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                                </div>
+                                                Es Delegado
+                                                <div>{!!Form::checkbox('delegado','0',false)!!}</div>
+                                                Entrego Certificado
+                                                <div>{!!Form::checkbox('certificado','0',false)!!}</div>
+                                                <div class="form-group">
+                                                     Tel/Cel
+                                                     {!!Form::Text('telefono',null,['class'=>'form-control','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                     Grupo Sanguineo
+                                                     {!!Form::Text('grupo_sanguineo',null,['class'=>'form-control','required'])!!}
+                                                    <span class="help-block with-errors"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                     Mail
+                                                     {!!Form::Text('mail',null,['class'=>'form-control'])!!}
+                                                </div>
+                                                <div class="form-group">
+                                                     Direccion
+                                                     {!!Form::Text('direccion',null,['class'=>'form-control'])!!}
+                                                </div>
+                                                <div class="form-group">
+                                                     Obra Social
+                                                     {!!Form::Text('obra_social',null,['class'=>'form-control'])!!}
+                                                </div>
+                                                Observaciones
+                                                {!!Form::Text('observaciones',null,['class'=>'form-control'])!!}
+                                          </div>
+                                       </div>
                               </div>
-                         </div></div>
+                                </div>
+                              </div>
                               <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                   {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
@@ -130,9 +165,34 @@
                                                         {!!Form::Text('nombre_jugador',null,['class'=>'form-control','id'=>'nombre_jugadorU','required'])!!}
                                                         <span class="help-block with-errors"></span>
                                                     </div>
-
-                                                    Tipo y numero Documento
+                                                    Documento
                                                     {!!Form::Text('dni',null,['class'=>'form-control','id'=>'dniU'])!!}
+                                                    Es Delegado
+                                                    <div>{!!Form::checkbox('delegado','0',false,['id'=>'delegadoU'])!!}</div>
+                                                    Entrego Certificado
+                                                    <div>{!!Form::checkbox('certificado','0',false,['id'=>'certificadoU'])!!}</div>
+                                                    <div class="form-group">
+                                                         Tel/Cel
+                                                         {!!Form::Text('telefono',null,['class'=>'form-control','required','id'=>'telefonoU'])!!}
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         Grupo Sanguineo
+                                                         {!!Form::Text('grupo_sanguineo',null,['class'=>'form-control','required','id'=>'grupo_sanguineoU'])!!}
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         Mail
+                                                         {!!Form::Text('mail',null,['class'=>'form-control','id'=>'mailU'])!!}
+                                                    </div>
+                                                    <div class="form-group">
+                                                         Direccion
+                                                         {!!Form::Text('direccion',null,['class'=>'form-control','id'=>'direccionU'])!!}
+                                                    </div>
+                                                    <div class="form-group">
+                                                         Obra Social
+                                                         {!!Form::Text('obra_social',null,['class'=>'form-control','id'=>'obra_socialU'])!!}
+                                                    </div>
                                                     Observaciones
                                                     {!!Form::Text('observaciones',null,['class'=>'form-control','id'=>'observacionesU'])!!}
                                               </div>
@@ -202,6 +262,28 @@
                                 $('#observacionesU').val(response.datos.observaciones);
                                 $('#idequipoU').val(response.datos.idequipo);
                                 $('#idjugadorU').val(response.datos.idjugador);
+
+                                $('#telefonoU').val(response.datos.telefono);
+                                $('#grupo_sanguineoU').val(response.datos.grupo_sanguineo);
+                                $('#mailU').val(response.datos.mail);
+                                $('#direccionU').val(response.datos.direccion);
+                                 $('#obra_socialU').val(response.datos.obra_social);
+
+
+                                if(response.datos.delegado==1){
+                                    $('#delegadoU').prop('checked',true);
+                                    }
+                                    else{
+                                    $('#delegadoU').prop('checked',false);
+                                    }
+
+                                 if(response.datos.certificado==1){
+                                    $('#certificadoU').prop('checked',true);
+                                    }
+                                    else{
+                                    $('#certificadoU').prop('checked',false);
+                                    }
+
                                 $("#modaljugadorModificar").modal("show");
                             })
                             .fail(function(){

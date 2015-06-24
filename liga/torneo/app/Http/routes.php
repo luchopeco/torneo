@@ -16,6 +16,12 @@ Route::get('/fixture', 'WelcomeController@fixture');
 Route::get('/fixturetorneo/{id}', 'WelcomeController@fixturetorneo');
 Route::get('/estadisticas', 'WelcomeController@estadisticas');
 Route::get('/estadisticastorneo/{id}', 'WelcomeController@estadisticastorneo');
+Route::get('/torneoportipotorneo/{id}', 'WelcomeController@torneoportipotorneo');
+Route::get('/torneoportipotorneofixture/{id}', 'WelcomeController@torneoportipotorneofixture');
+Route::post('/equipoescudoguardar', 'WelcomeController@equipoescudoguardar');
+Route::post('/equipofotoguardar', 'WelcomeController@equipofotoguardar');
+
+
 Route::get('/instalaciones', 'WelcomeController@instalaciones');
 Route::get('/inscripcion', 'WelcomeController@inscripcion');
 Route::get('/equipo', 'WelcomeController@equipo');
@@ -41,9 +47,13 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::post('torneos/destroyequipo','TorneosController@destroyequipo');
         Route::post('torneos/baja','TorneosController@baja');
         Route::post('torneos/alta','TorneosController@alta');
+        Route::post('torneos/torneoimagenguardar','TorneosController@torneoimagenguardar');
+        Route::post('torneos/torneoimagenborrar','TorneosController@torneoimagenborrar');
 
         Route::resource('equipos','EquiposController');
         Route::post('equipos/buscar','EquiposController@buscar');
+        Route::post('equipos/resetearclave','EquiposController@resetearclave');
+
         Route::get('equipoimagen/{id}','EquiposController@equipoimagen');
         Route::post('equipoimagen/equipofotoborrar','EquiposController@equipofotoborrar');
         Route::post('equipoimagen/equipofotoguardar','EquiposController@equipofotoguardar');

@@ -27,6 +27,11 @@ $ruta= Route::currentRouteAction();
 <!-- CUSTOM CSS -->
 <link href="assets/css/style-red.css" rel="stylesheet" />
 <link href="assets/css/css.css" rel="stylesheet" />
+
+
+@yield('css')
+
+
 <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -92,7 +97,7 @@ $ruta= Route::currentRouteAction();
 <li><a href="/estadisticas">ESTADISTICAS</a></li>
 @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
+@if($ruta=='torneo\Http\Controllers\WelcomeController@noticias')
 <li class="active"><a href="#">NOTICIAS</a></li>
 @else
 <li><a href="#">NOTICIAS</a></li>

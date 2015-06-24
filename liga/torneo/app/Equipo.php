@@ -28,4 +28,9 @@ class Equipo extends Model{
         return $this->hasMany('torneo\Jugador','idequipo', 'idequipo');
     }
 
+    public function ListTorneos()
+    {
+        return $this->belongsToMany('torneo\Torneo','torneo_equipo','equipo_idequipo','torneo_idtorneo');
+    }
+
 }

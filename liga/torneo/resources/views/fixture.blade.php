@@ -13,16 +13,34 @@
             </div>
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
-                <div class="fechas-wrapper  text-center col-sel-fechas">
-                    <div class="center-block">
-                        <img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="fechas-wrapper  text-center">
+                        <div class="row">
+                            <div class=" col-sm-2 col-xs-12">
+                            <div id="imagentorneo"></div>
+
+                            </div>
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <h3 class="text-center">ELEGIR TORNEO</h3>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                               {!!Form::select('idtipo_torneo', $listTiposTorneosCombo,null,array('class' => 'form-control','onchange'=>'buscarTorneoXTipoTorneo()','id'=>'idtipo_torneo'))!!}
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                     <h3>ELEGIR CATEGORIA</h3>
-                     <p>Elige tu categoria para poder mostrarte todo el fixture</p>
+              </div>
+
+             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="fechas-wrapper  text-center">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 text-center">
+                            <h3 class="text-cener">ELEGIR CATEGORIA</h3>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                        <div id="combotorneo"></div>
+
+                        </div>
                     </div>
-                    {!!Form::select('idtorneo', $listTorneosCombo,null,array('class' => 'form-control','onchange'=>'buscarFixtureXTorneo()','id'=>'idtorneo'))!!}
                 </div>
              </div>
         </div>
@@ -34,9 +52,46 @@
     </div>
 </section>
 </div>
+<div id="modalMensaje"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+                <h3 class="text-danger">No se ha encontrado una Categoria </h3>
+            </div>
+            <div class=" modal-body ">
+            </div>
+        </div>
+    </div>
 @endsection
 @section('script')
 <script type="text/javascript">
+function buscarTorneoXTipoTorneo()
+ {
+    var id_articulo=$("#idtipo_torneo").val();
+    $.ajax({
+         url:"/torneoportipotorneofixture/"+id_articulo,
+         type: "GET",
+         dataType: "HTML"
+        })
+    .done(function(response){
+           $("#combotorneo").html(response);
+           if(id_articulo==1)
+           {
+                $("#imagentorneo").html("<img class='img-responsive center-block' src='/imagenes/home/escudotifosi.png'>");
+           }
+           else if(id_articulo==2)
+           {
+               $("#imagentorneo").html("<img class='img-responsive center-block' style='padding-top: 5px' src='/imagenes/home/ragazza02.png'>");
+           }
+           buscarFixtureXTorneo();
+        })
+        .fail(function(){
+            alert(id_articulo);
+        });
+
+ }
 function buscarFixtureXTorneo()
  {
     var id_articulo=$("#idtorneo").val();
@@ -49,11 +104,13 @@ function buscarFixtureXTorneo()
            $("#contenidoFixture").html(response);
         })
         .fail(function(){
-            alert(id_articulo);
+            //alert(id_articulo);
+             $("#contenidoFixture").html('');
+              $("#modalMensaje").modal("show");
         });
  }
  $(function() {
-   buscarFixtureXTorneo();
+   buscarTorneoXTipoTorneo();
  });
  </script>
 @endsection

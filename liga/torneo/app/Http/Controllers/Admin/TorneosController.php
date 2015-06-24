@@ -2,6 +2,7 @@
 
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use torneo\Equipo;
@@ -222,5 +223,49 @@ class TorneosController extends Controller {
             return redirect()->route('admin.torneos.index');
         }
 
+    }
+
+
+    public function torneoimagenguardar(Request $request)
+    {
+        try
+        {
+            $tor = Torneo::withTrashed()->where('idtorneo',$request->idtorneo)->first();
+
+            if ( Input::hasFile('file')) {
+                $file = Input::file('file');
+                $tor->imagen = 'imagen-torneo'.$tor->idtorneo.'.'.$file->getClientOriginalExtension();
+                //guardamos la imagen en public/imagenes/articulos con el nombre original
+                $file->move("imagenes", 'imagen-torneo'.$tor->idtorneo.'.'.$file->getClientOriginalExtension());
+                $extension = $file->getClientOriginalExtension();
+            }
+            $tor->save();
+
+            // y retornamos un JSON con estatus en 200
+            //return Response::json(['status'=>'true'],200);
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+    }
+
+    public function torneoimagenborrar(Request $request)
+    {
+        try
+        {
+            $tor = Torneo::withTrashed()->where('idtorneo',$request->idtorneo)->first();
+            $tor ->imagen=null;
+            $tor ->save();
+
+            Session::flash('mensajeOk', 'Imagen del torneo Eliminada con exito');
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return Redirect::route('admin.torneos.show',array($request->idtorneo));
+        }
     }
 }

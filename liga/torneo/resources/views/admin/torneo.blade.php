@@ -162,7 +162,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                  <div class=" panel panel-default">
                         <div class=" panel-heading"><strong>Tarjetas</strong>
                         <div class="pull-right">
@@ -205,6 +205,43 @@
                              </div>
                         </div>
                  </div>
+            </div>
+            <div class="col-md-4">
+                   <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Imagen del Torneo
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
+                                        <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                    </button>
+                                    <ul class="multiselect-container dropdown-menu pull-right">
+                                        <li>Imagen q se vera en la seccion fixture o estadisticas. Deberia usarse en el momento de existir los play off</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                        @if($torneo->imagen!=null)
+                            <div class="col-md-12">
+                                <a class="thumbnail" ><img src="/imagenes/{{$torneo->imagen}}" ></a>
+                            </div>
+                            <div class="col-md-12">
+                                  <a href="#" data-toggle="modal" data-target="#modalFotoEliminar" class="btn btn-danger"><i class="fa fa-close"></i>Borrar Imagen</a>
+                            </div>
+                        @else
+                            <div class="col-md-12">
+                                <form method="POST" action="torneoimagenguardar" class="dropzone" id="upload" enctype="multipart/form-data">
+                                <input type="hidden" value="{{ $torneo->idtorneo }}" name="idtorneo">
+                                     <input type="hidden" value="{{ csrf_token() }}" name="file">
+                                     <div class="dz-message">
+                                         Arrastra y suelta aqui tu archivo. O simplemente haz click<br />
+                                     </div>
+                                  </form>
+                            </div>
+                        @endif
+                        </div>
+                    </div>
             </div>
         </div>
 
@@ -385,8 +422,41 @@
               </div>
               <!-- /.modal-dialog -->
         </div>
+
+        <div class="modal fade" id="modalFotoEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Eliminando la Imagen Del Torneo</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>¿Desea Eliminar La Imagen del  Torneo?</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    {!!Form::open(['url'=>'admin/torneos/torneoimagenborrar','method'=>'POST'])!!}
+                                     {!!Form::Text('idtorneo',$torneo->idtorneo,['class'=>'hidden'])!!}
+                                     {!!Form::submit('Borrar imagen', array('class' => 'btn btn-success'))!!}
+                                     {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
         @endsection
         @section('script')
+        <script src="/js/dropzone.js" type="text/javascript"></script>
         <script>
         $(function () {
                 $('body').on('click', '.editarfecha', function (event) {

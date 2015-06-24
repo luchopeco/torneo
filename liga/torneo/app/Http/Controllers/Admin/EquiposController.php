@@ -1,5 +1,6 @@
 <?php namespace torneo\Http\Controllers\Admin;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -106,19 +107,39 @@ class EquiposController extends Controller {
 	public function update(Request $request)
 	{
         try {
-            $ar = Equipo::findOrFail($request->idequipo);
-            $ar->nombre_equipo = $request->nombre_equipo;
-            $ar->mensaje = $request->mensaje;
-            $ar->observaciones = $request->observaciones;
-            if ($request->es_libre <> null) {
-                $ar->es_libre = 1;
-            } else {
-                $ar->es_libre = 0;
-            }
-            $ar->save();
 
-            Session::flash('mensajeOk', 'Equipo Modificado con Exito');
-            return redirect()->route('admin.equipos.index');
+            $espacios = substr_count($request->nombre_usuario, " ");
+            if($request->nombre_usuario!='' && $espacios>0)
+            {
+                Session::flash('mensajeError','EL nombre de usuario no puede tener espacios en blanco');
+                return redirect()->route('admin.equipos.index');
+            }
+            else{
+                $ar = Equipo::findOrFail($request->idequipo);
+                $ar->nombre_equipo = $request->nombre_equipo;
+                $ar->mensaje = $request->mensaje;
+                $ar->observaciones = $request->observaciones;
+                if ($request->nombre_usuario=='')
+                {
+                    $ar->nombre_usuario=null;
+                }
+                else{
+                    $ar->nombre_usuario = strtolower( $request->nombre_usuario);
+                }
+
+
+                if ($request->es_libre <> null) {
+                    $ar->es_libre = 1;
+                } else {
+                    $ar->es_libre = 0;
+                }
+                $ar->save();
+
+                Session::flash('mensajeOk', 'Equipo Modificado con Exito');
+                return redirect()->route('admin.equipos.index');
+
+            }
+
         }
         catch(QueryException  $ex)
         {
@@ -127,7 +148,8 @@ class EquiposController extends Controller {
         }
 	}
 
-	/**
+
+    /**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id
@@ -260,5 +282,24 @@ class EquiposController extends Controller {
             return Redirect::route('admin.equipos.index');
         }
     }
+    public function resetearclave(Request $request)
+    {
+        try
+        {
+            $equipo=Equipo::findOrFail($request->idequipo);
+            $equipo->clave=Hash::make('12345678');
+            $equipo->save();
+
+            Session::flash('mensajeOk', 'Clave reseteada con Exito');
+            return redirect()->route('admin.equipos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.equipos.index');
+        }
+    }
+
+
 
 }

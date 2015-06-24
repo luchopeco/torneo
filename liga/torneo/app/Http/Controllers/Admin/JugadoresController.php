@@ -52,6 +52,19 @@ class JugadoresController extends Controller {
 	{
         try{
             $jugador = new Jugador($request->all());
+
+            if ($request->delegado <> null) {
+                $jugador->delegado = 1;
+            } else {
+                $jugador->delegado = 0;
+            }
+
+            if ($request->certificado <> null) {
+                $jugador->certificado = 1;
+            } else {
+                $jugador->certificado = 0;
+            }
+
             $jugador->save();
 
             Session::flash('mensajeOk', 'Jugador Agregado con Exito');
@@ -100,6 +113,27 @@ class JugadoresController extends Controller {
             $ar->nombre_jugador = $request->nombre_jugador;
             $ar->dni=$request->dni;
             $ar->observaciones=$request->observaciones;
+
+            $ar->telefono = $request->telefono;
+            $ar->grupo_sanguineo= $request->grupo_sanguineo;
+            $ar->mail =$request->mail;
+            $ar->direccion=$request->direccion;
+            $ar->obra_social=$request->obra_social;
+
+            if ($request->delegado <> null) {
+                $ar->delegado = 1;
+            } else {
+                $ar->delegado = 0;
+            }
+
+            if ($request->certificado <> null) {
+                $ar->certificado = 1;
+            } else {
+                $ar->certificado = 0;
+            }
+
+
+
             $ar->save();
 
             Session::flash('mensajeOk', 'Jugador Modificado con Exito');

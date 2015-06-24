@@ -7,7 +7,7 @@ class Jugador extends Model{
 
     protected $table='jugadores';
 
-    protected $fillable = ['nombre_jugador','dni','pathfoto','idequipo','observaciones'];
+    protected $fillable = ['nombre_jugador','dni','pathfoto','idequipo','observaciones','certificado','delegado','direccion','mail','obra_social','telefono','grupo_sanguineo'];
 
     protected $primaryKey = 'idjugador';
 
@@ -20,4 +20,26 @@ class Jugador extends Model{
     public $goles_contra;
     public $cantidad_fechas_sancion;
 
+    public function esDelegado()
+    {
+        if($this->delegado ==1)
+        {
+            return 'SI';
+        }
+        else
+        {
+            return 'NO';
+        }
+    }
+    public function entregoCertificado()
+    {
+        if($this->certificado ==1)
+        {
+            return 'SI';
+        }
+        else
+        {
+            return 'NO';
+        }
+    }
 }
