@@ -42,12 +42,20 @@ CREATE TABLE `equipos` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `es_libre` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idequipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+  `nombre_usuario` varchar(255) DEFAULT NULL,
+  `clave` varchar(60) DEFAULT NULL,
+  `observaciones` text,
+  `mensaje` text,
+  `aprobado` tinyint(4) NOT NULL DEFAULT '0',
+  `autogestion` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`idequipo`),
+  UNIQUE KEY `NewIndex1` (`nombre_usuario`),
+  UNIQUE KEY `NewIndex2` (`nombre_equipo`)
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 /*Data for the table `equipos` */
 
-insert  into `equipos`(`idequipo`,`nombre_equipo`,`escudo`,`foto`,`updated_at`,`created_at`,`es_libre`) values (14,'NARICES BLANCAS F.C','naricesblancas.jpg','NARICES BLANCAS FC.jpg','2015-04-11 02:40:57',NULL,0),(15,'ASTON BIRRA F.C','juventudunida.jpg','JUVENTUD UNIDA.jpg',NULL,NULL,0),(16,'LOS GUSANOS F.C','losgusanosfc.jpg','LOS GUSANOS FC.jpg',NULL,NULL,0),(17,'HAWAII','otroequipo.jpg','OTRO EQUIPO.jpg','2015-04-10 22:22:37',NULL,0),(21,'SUDACA F.C','tirutiru.jpg','TIRU TIRU.jpg',NULL,NULL,0),(22,'ESQUINE F.C','esquinefc.jpg','ESQUINE FC.jpg',NULL,NULL,0),(23,'BERRACO F.C','lajauria.jpg','LA JAURIA.jpg',NULL,NULL,0),(25,'BARRIO PARQUE','velezgarfield.jpg','VELEZ GARFIELD.jpg',NULL,NULL,0),(27,'(LIBRE)','escudo-equipo27.PNG','foto-equipo27.PNG','2015-05-26 23:28:03',NULL,1),(28,'DEP. CRUCE ALBERDI','crucealberdi.jpg','DEP. CRUCE ALBERDI.jpg',NULL,NULL,0),(29,'TINTURAZO','tinturazo.jpg','TINTURAZO.jpg',NULL,NULL,0),(30,'MEMISTONE','vilazar.jpg','VILAZAR.jpg',NULL,NULL,0),(32,'DOCK SUD','docksud.jpg','DOCK SUD.jpg',NULL,NULL,0),(33,'SUC TEAM F.C','sucteamfc.jpg','SUC TEAM FC.jpg',NULL,NULL,0),(36,'EL SOGAN',NULL,NULL,NULL,NULL,0),(38,'GALATASARAY',NULL,NULL,NULL,NULL,0),(41,'SANJO',NULL,NULL,NULL,NULL,0),(43,'SIN FIERRO F.C',NULL,NULL,NULL,NULL,0),(46,'FILIPO Y SUS PICHONES',NULL,NULL,NULL,NULL,0),(47,'DRINK TEAM',NULL,NULL,NULL,NULL,0),(48,'MARCELONA',NULL,NULL,NULL,NULL,0),(49,'SPARTA F.C',NULL,NULL,NULL,NULL,0),(50,'THE REAL TEAM F.C',NULL,NULL,NULL,NULL,0),(51,'EL ALMA F.C',NULL,NULL,NULL,NULL,0),(52,'ARIZONA',NULL,NULL,NULL,NULL,0),(53,'ANCHA BANDA F.C',NULL,NULL,NULL,NULL,0),(54,'DEP. FAUSTINO',NULL,NULL,NULL,NULL,0),(56,'LA POCHI',NULL,NULL,NULL,NULL,0),(57,'REAL BAÑIL',NULL,NULL,'2015-05-13 22:24:27',NULL,0),(58,'LOS ZARATE F.C',NULL,NULL,NULL,NULL,0),(59,'TORO F.C',NULL,NULL,'2015-05-13 22:19:39',NULL,0),(60,'POPOVACH',NULL,NULL,NULL,NULL,0),(63,'Nuevo Equipo',NULL,NULL,'2015-04-10 22:30:15','2015-04-10 22:30:15',0);
+insert  into `equipos`(`idequipo`,`nombre_equipo`,`escudo`,`foto`,`updated_at`,`created_at`,`es_libre`,`nombre_usuario`,`clave`,`observaciones`,`mensaje`,`aprobado`,`autogestion`) values (14,'NARICES BLANCAS F.C','naricesblancas.jpg','NARICES BLANCAS FC.jpg','2015-04-11 02:40:57',NULL,0,NULL,NULL,NULL,NULL,0,0),(15,'ASTON BIRRA F.C','juventudunida.jpg','JUVENTUD UNIDA.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(16,'LOS GUSANOS F.C','losgusanosfc.jpg','LOS GUSANOS FC.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(17,'HAWAII','otroequipo.jpg','OTRO EQUIPO.jpg','2015-04-10 22:22:37',NULL,0,NULL,NULL,NULL,NULL,0,0),(21,'SUDACA F.C','tirutiru.jpg','TIRU TIRU.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(22,'ESQUINE F.C','esquinefc.jpg','ESQUINE FC.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(23,'BERRACO F.C','lajauria.jpg','LA JAURIA.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(25,'BARRIO PARQUE','velezgarfield.jpg','VELEZ GARFIELD.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(27,'(LIBRE)','escudo-equipo27.PNG','foto-equipo27.PNG','2015-06-23 23:32:32',NULL,1,NULL,NULL,'Equipo Libre q no suma puntos ni resta','Sin Mensaje Pendiente',0,0),(28,'DEP. CRUCE ALBERDI','crucealberdi.jpg','DEP. CRUCE ALBERDI.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(29,'TINTURAZO','tinturazo.jpg','TINTURAZO.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(30,'MEMISTONE','vilazar.jpg','VILAZAR.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(32,'DOCK SUD','docksud.jpg','DOCK SUD.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(33,'SUC TEAM F.C','sucteamfc.jpg','SUC TEAM FC.jpg',NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(36,'EL SOGAN',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(38,'GALATASARAY',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(41,'SANJO',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(43,'SIN FIERRO F.C',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(46,'FILIPO Y SUS PICHONES',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(47,'DRINK TEAM',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(48,'MARCELONA',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(49,'SPARTA F.C',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(50,'THE REAL TEAM F.C',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(51,'EL ALMA F.C',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(52,'ARIZONA',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(53,'ANCHA BANDA F.C',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(54,'DEP. FAUSTINO',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(56,'LA POCHI',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(57,'REAL BAÑIL',NULL,NULL,'2015-05-13 22:24:27',NULL,0,NULL,NULL,NULL,NULL,0,0),(58,'LOS ZARATE F.C',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0),(59,'TORO F.C',NULL,NULL,'2015-05-13 22:19:39',NULL,0,NULL,NULL,NULL,NULL,0,0),(60,'POPOVACH',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0);
 
 /*Table structure for table `fechas` */
 
@@ -68,11 +76,11 @@ CREATE TABLE `fechas` (
   PRIMARY KEY (`idfecha`),
   KEY `fk_fecha_torneo1_idx` (`idtorneo`),
   CONSTRAINT `fk_fecha_torneo1` FOREIGN KEY (`idtorneo`) REFERENCES `torneos` (`idtorneo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8;
 
 /*Data for the table `fechas` */
 
-insert  into `fechas`(`idfecha`,`fecha`,`observaciones`,`idtorneo`,`numero_fecha`,`imagen_equipo_ideal`,`imagen_figura_fecha`,`imagen_fecha`,`created_at`,`updated_at`,`es_play_off`) values (128,'2015-03-14','Obs',7,'1',NULL,NULL,NULL,NULL,'2015-05-26 22:29:27',0),(147,'2015-03-28',' ',7,'2',NULL,NULL,NULL,NULL,NULL,0),(149,'2015-04-04',' ',7,'3',NULL,NULL,NULL,NULL,NULL,0),(150,'2015-04-11',' ',7,'4',NULL,NULL,NULL,NULL,NULL,0),(151,'2015-04-18',' ',7,'5',NULL,NULL,NULL,NULL,NULL,0),(152,'2015-04-25',' ',7,'6',NULL,NULL,NULL,NULL,NULL,0),(153,'2015-05-02',' ',7,'7',NULL,NULL,NULL,NULL,NULL,0),(154,'2015-05-09',' ',7,'8',NULL,NULL,NULL,NULL,NULL,0),(155,'2015-05-16',' ',7,'9',NULL,NULL,NULL,NULL,NULL,0),(156,'2015-05-23',' ',7,'10',NULL,NULL,NULL,NULL,NULL,0),(157,'2015-05-30',' ',7,'11',NULL,NULL,NULL,NULL,NULL,0),(158,'2015-06-06',' ',7,'12',NULL,NULL,NULL,NULL,NULL,0),(159,'2015-06-13',' ',7,'13',NULL,NULL,NULL,NULL,NULL,0),(160,'2015-06-20',' ',7,'14',NULL,NULL,NULL,NULL,NULL,0),(161,'2015-06-27',' ',7,'15',NULL,NULL,NULL,NULL,NULL,0),(166,'0000-00-00','',7,'Cuartos de Final',NULL,NULL,NULL,'2015-04-11 03:18:07','2015-05-26 22:35:44',1),(167,'1970-01-01','',7,'12',NULL,NULL,NULL,'2015-04-11 03:20:59','2015-04-11 03:20:59',1),(168,'1970-01-01','asd',7,'ssssssss',NULL,NULL,NULL,'2015-04-11 03:21:51','2015-04-11 03:21:51',1),(178,'2015-04-26','',15,'1|',NULL,NULL,NULL,'2015-04-26 21:03:40','2015-04-26 21:03:40',0);
+insert  into `fechas`(`idfecha`,`fecha`,`observaciones`,`idtorneo`,`numero_fecha`,`imagen_equipo_ideal`,`imagen_figura_fecha`,`imagen_fecha`,`created_at`,`updated_at`,`es_play_off`) values (128,'2015-03-14','Obs',7,'1',NULL,NULL,NULL,NULL,'2015-05-26 22:29:27',0),(147,'2015-03-28',' ',7,'2',NULL,NULL,NULL,NULL,NULL,0),(149,'2015-04-04',' ',7,'3',NULL,NULL,NULL,NULL,NULL,0),(150,'2015-04-11',' ',7,'4',NULL,NULL,NULL,NULL,NULL,0),(151,'2015-04-18',' ',7,'5',NULL,NULL,NULL,NULL,NULL,0),(152,'2015-04-25',' ',7,'6',NULL,NULL,NULL,NULL,NULL,0),(153,'2015-05-02',' ',7,'7',NULL,NULL,NULL,NULL,NULL,0),(154,'2015-05-09',' ',7,'8',NULL,NULL,NULL,NULL,NULL,0),(155,'2015-05-16',' ',7,'9',NULL,NULL,NULL,NULL,NULL,0),(156,'2015-05-23',' ',7,'10',NULL,NULL,NULL,NULL,NULL,0),(157,'2015-05-30',' ',7,'11',NULL,NULL,NULL,NULL,NULL,0),(158,'2015-06-06',' ',7,'12',NULL,NULL,NULL,NULL,NULL,0),(159,'2015-06-13',' ',7,'13',NULL,NULL,NULL,NULL,NULL,0),(160,'2015-06-20',' ',7,'14',NULL,NULL,NULL,NULL,NULL,0),(161,'2015-06-27',' ',7,'15',NULL,NULL,NULL,NULL,NULL,0),(166,'2015-06-02','',7,'Cuartos de Final',NULL,NULL,NULL,'2015-04-11 03:18:07','2015-06-02 23:08:37',0),(167,'1970-01-01','',7,'12',NULL,NULL,NULL,'2015-04-11 03:20:59','2015-06-02 23:08:10',0),(168,'1970-01-01','asd',7,'ssssssss',NULL,NULL,NULL,'2015-04-11 03:21:51','2015-06-02 23:08:15',0),(178,'2015-04-26','',15,'1',NULL,NULL,NULL,'2015-04-26 21:03:40','2015-06-02 23:11:39',0),(179,'2015-06-02','',15,'2',NULL,NULL,NULL,'2015-06-02 23:11:48','2015-06-02 23:11:48',0),(180,'2015-06-06','',15,'3',NULL,NULL,NULL,'2015-06-02 23:11:56','2015-06-02 23:11:56',0);
 
 /*Table structure for table `imagenes` */
 
@@ -90,11 +98,11 @@ CREATE TABLE `imagenes` (
   UNIQUE KEY `titulo_UNIQUE` (`titulo`),
   KEY `FK_imagenes` (`idtipo_imagen`),
   CONSTRAINT `FK_imagenes` FOREIGN KEY (`idtipo_imagen`) REFERENCES `tipo_imagenes` (`idtipo_imagen`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 /*Data for the table `imagenes` */
 
-insert  into `imagenes`(`idimagen`,`titulo`,`imagen`,`mostrar`,`created_at`,`updated_at`,`idtipo_imagen`) values (8,'Sider1','Slider Home-8.jpg',1,'2015-05-28 03:33:30','2015-05-28 03:33:49',1),(9,'Slider2','Slider Home-9.jpg',1,'2015-05-28 03:34:03','2015-05-28 03:34:09',1),(10,'Slider3','Slider Home-10.jpg',1,'2015-05-28 03:34:21','2015-05-28 03:35:14',1);
+insert  into `imagenes`(`idimagen`,`titulo`,`imagen`,`mostrar`,`created_at`,`updated_at`,`idtipo_imagen`) values (8,'Sider1','Slider Home-8.jpg',0,'2015-05-28 03:33:30','2015-05-28 21:44:03',1),(9,'Slider2','Slider Home-9.jpg',1,'2015-05-28 03:34:03','2015-05-28 03:34:09',1),(10,'Slider3','Slider Home-10.jpg',1,'2015-05-28 03:34:21','2015-05-28 03:35:14',1),(13,'Equipo Ideal','Equipo Ideal-13.PNG',1,'2015-05-28 21:11:09','2015-05-28 21:20:26',3),(17,'1','Figuras Fecha-17.jpg',1,'2015-05-28 22:35:29','2015-06-03 03:13:22',2),(19,'2','Figuras Fecha-19.jpg',1,'2015-05-28 22:35:51','2015-05-28 22:35:57',2),(20,'3','Figuras Fecha-20.jpg',1,'2015-05-28 22:36:05','2015-05-28 22:36:11',2);
 
 /*Table structure for table `jugadores` */
 
@@ -109,6 +117,13 @@ CREATE TABLE `jugadores` (
   `observaciones` varchar(200) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `telefono` varchar(255) DEFAULT NULL,
+  `grupo_sanguineo` varchar(255) DEFAULT NULL,
+  `mail` varchar(255) DEFAULT NULL,
+  `direccion` varchar(255) DEFAULT NULL,
+  `obra_social` varchar(255) DEFAULT NULL,
+  `certificado` tinyint(4) DEFAULT NULL,
+  `delegado` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idjugador`),
   KEY `FK_jugador` (`idequipo`),
   CONSTRAINT `FK_jugador` FOREIGN KEY (`idequipo`) REFERENCES `equipos` (`idequipo`) ON UPDATE CASCADE
@@ -116,7 +131,7 @@ CREATE TABLE `jugadores` (
 
 /*Data for the table `jugadores` */
 
-insert  into `jugadores`(`idjugador`,`nombre_jugador`,`dni`,`pathfoto`,`idequipo`,`observaciones`,`created_at`,`updated_at`) values (1,'LUCIANOS','31787301',NULL,14,'Delegado',NULL,'2015-04-11 02:43:16'),(808,'Mariano','DNI:31787300',NULL,14,'CACA','2015-04-11 00:56:02','2015-04-11 00:56:02'),(809,'Pedro','qdasd',NULL,14,'asdasd','2015-04-11 00:56:30','2015-04-11 00:56:30'),(810,'PEPE','a',NULL,14,'','2015-04-11 00:56:49','2015-04-11 01:38:27'),(811,'pepe','',NULL,36,'','2015-05-04 02:08:56','2015-05-04 02:08:56'),(812,'manuel','',NULL,36,'','2015-05-04 02:09:01','2015-05-04 02:09:01'),(813,'eee','',NULL,51,'','2015-05-04 03:25:20','2015-05-04 03:25:20'),(814,'QQQQ','',NULL,25,'','2015-05-04 03:31:05','2015-05-04 03:31:05'),(815,'qqqq','',NULL,25,'','2015-05-13 21:55:30','2015-05-13 21:55:30'),(816,'ffff','',NULL,25,'','2015-05-13 21:55:35','2015-05-13 21:55:35'),(817,'ffff','',NULL,54,'','2015-05-13 21:55:50','2015-05-13 21:55:50'),(818,'asdasd','',NULL,54,'','2015-05-13 21:55:54','2015-05-13 21:55:54'),(819,'asdasd','asd',NULL,46,'','2015-05-26 22:33:06','2015-05-26 22:33:06');
+insert  into `jugadores`(`idjugador`,`nombre_jugador`,`dni`,`pathfoto`,`idequipo`,`observaciones`,`created_at`,`updated_at`,`telefono`,`grupo_sanguineo`,`mail`,`direccion`,`obra_social`,`certificado`,`delegado`) values (1,'LUCIANOS','31787301',NULL,14,'Delegado',NULL,'2015-04-11 02:43:16',NULL,NULL,NULL,NULL,NULL,NULL,0),(808,'Mariano','DNI:31787300',NULL,14,'CACA','2015-04-11 00:56:02','2015-04-11 00:56:02',NULL,NULL,NULL,NULL,NULL,NULL,0),(809,'Pedro','qdasd',NULL,14,'asdasd','2015-04-11 00:56:30','2015-04-11 00:56:30',NULL,NULL,NULL,NULL,NULL,NULL,0),(810,'PEPE','a',NULL,14,'','2015-04-11 00:56:49','2015-04-11 01:38:27',NULL,NULL,NULL,NULL,NULL,NULL,0),(811,'pepe','',NULL,36,'','2015-05-04 02:08:56','2015-05-04 02:08:56',NULL,NULL,NULL,NULL,NULL,NULL,0),(812,'manuel','',NULL,36,'','2015-05-04 02:09:01','2015-05-04 02:09:01',NULL,NULL,NULL,NULL,NULL,NULL,0),(813,'eee','',NULL,51,'','2015-05-04 03:25:20','2015-05-04 03:25:20',NULL,NULL,NULL,NULL,NULL,NULL,0),(814,'QQQQ asdads asd ads ','',NULL,25,'','2015-05-04 03:31:05','2015-06-09 21:42:42',NULL,NULL,NULL,NULL,NULL,NULL,0),(815,'qqqq','',NULL,25,'','2015-05-13 21:55:30','2015-05-13 21:55:30',NULL,NULL,NULL,NULL,NULL,NULL,0),(816,'ffff','',NULL,25,'','2015-05-13 21:55:35','2015-05-13 21:55:35',NULL,NULL,NULL,NULL,NULL,NULL,0),(817,'ffff','',NULL,54,'','2015-05-13 21:55:50','2015-05-13 21:55:50',NULL,NULL,NULL,NULL,NULL,NULL,0),(818,'asdasd','',NULL,54,'','2015-05-13 21:55:54','2015-05-13 21:55:54',NULL,NULL,NULL,NULL,NULL,NULL,0),(819,'asdasd','asd',NULL,46,'','2015-05-26 22:33:06','2015-05-26 22:33:06',NULL,NULL,NULL,NULL,NULL,NULL,0);
 
 /*Table structure for table `noticias` */
 
@@ -127,16 +142,18 @@ CREATE TABLE `noticias` (
   `titulo` varchar(45) DEFAULT NULL,
   `fecha` varchar(45) DEFAULT NULL,
   `texto` text,
-  `mostrar_en_home` tinyint(4) NOT NULL DEFAULT '0',
-  `mostrar_en_seccion` tinyint(4) NOT NULL DEFAULT '0',
+  `mostrar_en_home` tinyint(4) NOT NULL DEFAULT '1',
+  `mostrar_en_seccion` tinyint(4) NOT NULL DEFAULT '1',
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idnoticia`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `noticias` */
 
-insert  into `noticias`(`idnoticia`,`titulo`,`fecha`,`texto`,`mostrar_en_home`,`mostrar_en_seccion`,`updated_at`,`created_at`) values (1,'Nueva Noticia',NULL,NULL,0,0,'2015-05-07 02:47:09','2015-05-07 02:47:09');
+insert  into `noticias`(`idnoticia`,`titulo`,`fecha`,`texto`,`mostrar_en_home`,`mostrar_en_seccion`,`updated_at`,`created_at`,`imagen`,`link`) values (1,'Nueva Noticia',NULL,NULL,1,1,'2015-06-05 00:00:02','2015-05-07 02:47:09','imagen-noticia1.jpg',NULL),(2,'Nueva','','asdasdasdasd',1,1,'2015-06-05 00:00:19','2015-06-04 23:17:03','imagen-noticia2.jpg','ssssssssss');
 
 /*Table structure for table `partido_has_jugador` */
 
@@ -148,6 +165,9 @@ CREATE TABLE `partido_has_jugador` (
   `goles_favor` int(11) DEFAULT '0',
   `goles_contra` int(11) DEFAULT '0',
   `cantidad_fechas_sancion` int(11) NOT NULL DEFAULT '0',
+  `tarjeta_amarilla` int(11) NOT NULL DEFAULT '0',
+  `tarjeta_azul` int(11) NOT NULL DEFAULT '0',
+  `tarjeta_roja` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idpartido`,`idjugador`),
   KEY `fk_partido_has_jugador_jugador1` (`idjugador`),
   CONSTRAINT `FK_partido_has_jugador` FOREIGN KEY (`idpartido`) REFERENCES `partidos` (`idpartido`) ON DELETE CASCADE,
@@ -156,7 +176,7 @@ CREATE TABLE `partido_has_jugador` (
 
 /*Data for the table `partido_has_jugador` */
 
-insert  into `partido_has_jugador`(`idpartido`,`idjugador`,`goles_favor`,`goles_contra`,`cantidad_fechas_sancion`) values (8,814,1,0,0),(8,815,1,0,1),(8,817,1,0,0),(9,813,1,0,0);
+insert  into `partido_has_jugador`(`idpartido`,`idjugador`,`goles_favor`,`goles_contra`,`cantidad_fechas_sancion`,`tarjeta_amarilla`,`tarjeta_azul`,`tarjeta_roja`) values (8,814,1,0,0,0,0,0),(8,815,1,0,1,0,0,0),(8,817,1,0,0,0,0,0),(9,813,1,0,0,0,0,0),(14,814,1,0,0,1,0,0),(14,815,1,0,0,0,0,0),(14,816,0,0,0,1,0,0),(19,814,0,0,0,1,0,0),(19,816,0,0,0,4,0,0);
 
 /*Table structure for table `partidos` */
 
@@ -178,6 +198,12 @@ CREATE TABLE `partidos` (
   `puntos_visitante` int(11) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `empatado_local` int(1) DEFAULT '0',
+  `ganado_local` int(1) DEFAULT '0',
+  `perdido_local` int(1) DEFAULT '0',
+  `empatado_visitante` int(1) DEFAULT '0',
+  `ganado_visitante` int(1) DEFAULT '0',
+  `perdido_visitante` int(1) DEFAULT '0',
   PRIMARY KEY (`idpartido`),
   UNIQUE KEY `NewIndex1` (`idfecha`,`idequipo_local`),
   UNIQUE KEY `NewIndex2` (`idfecha`,`idequipo_visitante`),
@@ -194,11 +220,11 @@ CREATE TABLE `partidos` (
   CONSTRAINT `FK_partidos_torneo` FOREIGN KEY (`idtorneo`) REFERENCES `torneos` (`idtorneo`) ON DELETE CASCADE,
   CONSTRAINT `fk_partido_equipo1` FOREIGN KEY (`idequipo_local`, `idtorneo`) REFERENCES `torneo_equipo` (`equipo_idequipo`, `torneo_idtorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_partido_fecha1` FOREIGN KEY (`idfecha`) REFERENCES `fechas` (`idfecha`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 /*Data for the table `partidos` */
 
-insert  into `partidos`(`idpartido`,`idfecha`,`idequipo_local`,`idequipo_visitante`,`goles_local`,`goles_visitante`,`hora`,`orden_mostrar`,`idarbitro`,`idtorneo`,`fue_jugado`,`puntos_local`,`puntos_visitante`,`created_at`,`updated_at`) values (7,128,27,46,0,0,'14',NULL,6,7,1,1,1,'2015-04-30 23:21:24','2015-05-26 22:36:05'),(8,166,25,54,2,1,'',NULL,6,7,1,3,0,'2015-05-13 21:42:23','2015-05-26 21:20:30'),(9,166,51,46,1,0,'13:13',NULL,6,7,1,3,0,'2015-05-26 22:30:31','2015-05-26 22:31:58');
+insert  into `partidos`(`idpartido`,`idfecha`,`idequipo_local`,`idequipo_visitante`,`goles_local`,`goles_visitante`,`hora`,`orden_mostrar`,`idarbitro`,`idtorneo`,`fue_jugado`,`puntos_local`,`puntos_visitante`,`created_at`,`updated_at`,`empatado_local`,`ganado_local`,`perdido_local`,`empatado_visitante`,`ganado_visitante`,`perdido_visitante`) values (7,128,27,46,0,0,'14',NULL,6,7,1,1,1,'2015-04-30 23:21:24','2015-05-26 22:36:05',0,0,0,0,0,0),(8,166,25,54,2,1,'',NULL,6,7,1,3,0,'2015-05-13 21:42:23','2015-05-26 21:20:30',0,0,0,0,0,0),(9,166,51,46,1,0,'13:13',NULL,6,7,1,3,0,'2015-05-26 22:30:31','2015-05-26 22:31:58',0,0,0,0,0,0),(10,166,27,27,NULL,NULL,'',NULL,6,7,0,0,0,'2015-06-02 03:11:11','2015-06-02 03:11:11',0,0,0,0,0,0),(11,166,36,36,NULL,NULL,'',NULL,6,7,0,0,0,'2015-06-02 03:11:17','2015-06-02 03:11:17',0,0,0,0,0,0),(12,168,27,27,NULL,NULL,'',NULL,6,7,0,0,0,'2015-06-02 03:15:02','2015-06-02 03:15:02',0,0,0,0,0,0),(13,178,53,52,2,3,'12:15',NULL,6,15,1,0,3,'2015-06-02 23:12:12','2015-06-02 23:13:10',0,0,0,0,0,0),(14,178,15,25,1,2,'14:50',NULL,6,15,1,0,3,'2015-06-02 23:12:31','2015-06-02 23:12:47',0,0,0,0,0,0),(15,178,23,28,1,1,'16',NULL,6,15,1,1,1,'2015-06-02 23:12:41','2015-06-02 23:12:55',0,0,0,0,0,0),(16,179,53,28,1,0,'12',NULL,6,15,1,3,0,'2015-06-02 23:14:33','2015-06-02 23:15:38',0,0,0,0,0,0),(17,179,15,23,1,1,'',NULL,6,15,1,1,1,'2015-06-02 23:14:46','2015-06-02 23:32:13',1,0,0,1,0,0),(18,179,25,52,3,2,'',NULL,6,15,1,3,0,'2015-06-02 23:15:04','2015-06-02 23:15:28',0,0,0,0,0,0),(19,167,25,51,0,0,'',NULL,6,7,1,1,1,'2015-06-11 23:45:22','2015-06-11 23:45:27',1,0,0,1,0,0);
 
 /*Table structure for table `sanciones` */
 
@@ -266,7 +292,7 @@ CREATE TABLE `torneo_equipo` (
 
 /*Data for the table `torneo_equipo` */
 
-insert  into `torneo_equipo`(`torneo_idtorneo`,`equipo_idequipo`) values (7,25),(7,27),(7,36),(7,46),(7,51),(15,53),(7,54),(7,58);
+insert  into `torneo_equipo`(`torneo_idtorneo`,`equipo_idequipo`) values (15,15),(15,23),(7,25),(15,25),(7,27),(15,28),(7,36),(7,46),(15,48),(7,51),(15,52),(15,53),(7,54),(7,58);
 
 /*Table structure for table `torneos` */
 
@@ -281,6 +307,7 @@ CREATE TABLE `torneos` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `deleted_at` date DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idtorneo`),
   KEY `idtipo_torneo_fk_idx` (`idtipo_torneo`),
   CONSTRAINT `idtipo_torneo_fk` FOREIGN KEY (`idtipo_torneo`) REFERENCES `tipos_torneos` (`idtipo_torneo`) ON UPDATE NO ACTION
@@ -288,7 +315,7 @@ CREATE TABLE `torneos` (
 
 /*Data for the table `torneos` */
 
-insert  into `torneos`(`idtorneo`,`nombre_torneo`,`observaciones_torneo`,`idtipo_torneo`,`fecha_baja`,`updated_at`,`created_at`,`deleted_at`) values (7,'Primera División','obs',1,NULL,'2015-04-26 21:13:58',NULL,NULL),(15,'Nuevo Torneo','',1,NULL,'2015-04-27 01:08:56','2015-04-26 21:03:13','2015-04-27');
+insert  into `torneos`(`idtorneo`,`nombre_torneo`,`observaciones_torneo`,`idtipo_torneo`,`fecha_baja`,`updated_at`,`created_at`,`deleted_at`,`imagen`) values (7,'Primera División','obs',1,NULL,'2015-04-26 21:13:58',NULL,NULL,NULL),(15,'Nuevo Torneo','',1,NULL,'2015-06-02 21:57:30','2015-04-26 21:03:13',NULL,NULL);
 
 /*Table structure for table `users` */
 

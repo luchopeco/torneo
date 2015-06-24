@@ -45,6 +45,7 @@
                                     <li>Tambien Puede Agregar sus jugadores</li>
                                     <li>Agregue un equipo "Libre" En caso de necesitarlo.
                                     El equipo indicado como libre no suma puntos</li>
+                                    <li>El mensaje se mostrara cuando el equipo inicie session</li>
                                 </ul>
                             </div>
                         </div>
@@ -54,11 +55,15 @@
                             <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                 <tr>
                                     <th>Equipo</th>
+                                    <th>Observaciones</th>
+                                    <th>Mensaje</th>
                                     <th>Libre</th>
                                 </tr>
                                 @foreach($listEquipos as $equipo)
                                     <tr >
                                         <td>{{$equipo->nombre_equipo}}</td>
+                                        <td>{{Illuminate\Support\Str::limit($equipo->observaciones,20, '...')}}</td>
+                                         <td>{{Illuminate\Support\Str::limit($equipo->mensaje,20, '...')}}</td>
                                         <td>{{$equipo->esLibre()}}</td>
                                         <td><a href="equipos/{{$equipo->idequipo}}"  class="btn btn-xs btn-primary " data-idequipo="{{$equipo->idequipo}}"  title="Editar Jugadores"> <i class="fa fa-user"></i></a></td>
                                         <td><a href="#"  class="btn btn-xs btn-info editar" data-idequipo="{{$equipo->idequipo}}"  title="Editar Nombre Equipo"> <i class=" fa fa-edit"></i></a></td>
@@ -91,7 +96,11 @@
                                                 {!!Form::label('nombre','Nombre')!!}
                                                 {!!Form::Text('nombre_equipo',null,['class'=>' form-control','required'])!!}
                                                 Es Libre
-                                                 {!!Form::checkbox('es_libre','0',false,['class'=>' form-control '])!!}
+                                                 <div>{!!Form::checkbox('es_libre','0',false)!!}</div>
+                                                 Observaciones
+                                                 {!!Form::Textarea('observaciones',null,['class'=>' form-control'])!!}
+                                                 Mensaje
+                                                 {!!Form::Text('mensaje',null,['class'=>' form-control','required'])!!}
                                                 <span class="help-block with-errors"></span>
                                             </div>
 
@@ -128,7 +137,11 @@
                                                          {!!Form::label('nombre','Nombre')!!}
                                                          {!!Form::Text('nombre_equipo',null,['class'=>' form-control','id'=>'nombre_equipoU','required'])!!}
                                                          Es Libre
-                                                         {!!Form::checkbox('es_libre','0',false,['class'=>' form-control','id'=>'es_libreU'])!!}
+                                                         <div>{!!Form::checkbox('es_libre','0',false,['id'=>'es_libreU'])!!}</div>
+                                                         Observaciones
+                                                          {!!Form::Textarea('observaciones',null,['class'=>' form-control','id'=>'observacionesU'])!!}
+                                                          Mensaje
+                                                          {!!Form::Text('mensaje',null,['class'=>' form-control','required','id'=>'mensajeU'])!!}
                                                          <span class="help-block with-errors"></span>
                                                     </div>
 
@@ -200,6 +213,8 @@
                         //alert(response.datos.titulo);
                         $('#nombre_equipoU').val(response.datos.nombre_equipo);
                         $('#idequipoU').val(response.datos.idequipo);
+                        $('#mensajeU').val(response.datos.mensaje);
+                        $('#observacionesU').val(response.datos.observaciones);
                         if(response.datos.es_libre==1){
                         $('#es_libreU').prop('checked',true);
                         }
@@ -207,6 +222,7 @@
                         $('#es_libreU').prop('checked',false);
                         }
                         $("#modalEquipoModificar").modal("show");
+
                     })
                     .fail(function(){
                         alert(id_articulo);

@@ -7,7 +7,7 @@ class Equipo extends Model{
 
     protected $table='equipos';
 
-    protected $fillable = ['nombre_equipo','escudo','foto','es_libre','nombre_usuario','clave'];
+    protected $fillable = ['nombre_equipo','escudo','foto','es_libre','nombre_usuario','clave','observaciones','mensaje'];
 
     protected $primaryKey = 'idequipo';
 

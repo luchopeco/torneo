@@ -19,7 +19,7 @@ class EquiposController extends Controller {
 	 */
 	public function index()
 	{
-        $listEquipos = Equipo::orderBy('nombre_equipo','asc')->get();
+        $listEquipos = Equipo::where('aprobado','0')->orderBy('nombre_equipo','asc')->get();
         //$listEquipos= Equipo::orderBy('nombre_equipo', 'asc')->get()->lists('nombre_equipo', 'idequipo');
         //dd($listArbitros);
         return view('admin.equipos', compact('listTorneos','mensajeOK','listEquipos'));
@@ -108,6 +108,8 @@ class EquiposController extends Controller {
         try {
             $ar = Equipo::findOrFail($request->idequipo);
             $ar->nombre_equipo = $request->nombre_equipo;
+            $ar->mensaje = $request->mensaje;
+            $ar->observaciones = $request->observaciones;
             if ($request->es_libre <> null) {
                 $ar->es_libre = 1;
             } else {

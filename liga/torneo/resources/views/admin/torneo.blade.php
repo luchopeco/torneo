@@ -297,7 +297,7 @@
                                                     Observaciones
                                                     {!!Form::Text('observaciones',null,['class'=>'form-control'])!!}
                                                     Es Play Off
-                                                    {!!Form::checkbox('es_play_off','0',false,['class'=>' form-control '])!!}
+                                                    <div>{!!Form::checkbox('es_play_off','0',false)!!}</div>
                                               </div>
                                            </div>
                                       </div>
@@ -339,7 +339,7 @@
                                                             Observaciones
                                                             {!!Form::Text('observaciones',null,['class'=>'form-control','id'=>'observacionesU'])!!}
                                                             Es Play Off
-                                                            {!!Form::checkbox('es_play_off','0',false,['class'=>' form-control','id'=>'es_play_offU'])!!}
+                                                           <div> {!!Form::checkbox('es_play_off','0',false,['id'=>'es_play_offU'])!!}</div>
                                                       </div>
                                                    </div>
                                               </div>
