@@ -48,14 +48,16 @@
                             <hr />
                         </div>
 
-                        <div class="col-xs-12 col-sm-10 col-md-12 col-lg-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                            
 
                             <div class="row" style="height:40px;">
                                 <div class="col-md-6">                 
                                    <select name="torneo" style="color:black">
-                                       <option value="0" selected="selected"> TOrneo a inscribirse </option>                                        
-                                       <option value="1">torneo 1</option>
+                                       <option value="0" selected="selected"> Torneo a inscribirse </option>                                        
+                                       <option value="Tifossi">Tifossi</option>
+                                       <option value="Ragazza">Ragazza</option>
+                                       <option value="Nocturno">Nocturno</option>
                                         
                                    </select>   
                                 </div>
@@ -64,7 +66,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                                 <h3>Datos delegado</h3>
                                 <hr />
                             </div>
@@ -80,17 +82,23 @@
                                     {!!Form::Text('dni',null,['class'=>' form-control','required','placeholder'=>'DNI'])!!}
                                 </div>
                                 <div class="col-md-6">
-                                    {!!Form::Text('celular',null,['class'=>' form-control','required','placeholder'=>'Celular'])!!}
+                                    {!!Form::Text('celular',null,['class'=>' form-control','required','placeholder'=>'CELULAR'])!!}
                                 </div>
                             </div>
                             
                             <div class="row">
                                 <div class="col-md-6">
-                                    {!!Form::Text('email',null,['class'=>' form-control','required','placeholder'=>'Email'])!!}
+                                    {!!Form::Text('email',null,['class'=>' form-control','required','placeholder'=>'EMAIL'])!!}
                                 </div>
                                 <div class="col-md-6">
-                                    {!!Form::Text('domicilio',null,['class'=>' form-control','required','placeholder'=>'Domicilio'])!!}
+                                    {!!Form::Text('domicilio',null,['class'=>' form-control','required','placeholder'=>'DOMICILIO'])!!}
                                 </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-12">
+                                    {!!Form::Text('telefono_alternativo',null,['class'=>' form-control','required','placeholder'=>'TELÉFONO ALTERNATIVO'])!!}
+                                </div>
+                                
                             </div>
 
                             <div class="row">
