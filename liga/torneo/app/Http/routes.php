@@ -20,6 +20,8 @@ Route::get('/torneoportipotorneo/{id}', 'WelcomeController@torneoportipotorneo')
 Route::get('/torneoportipotorneofixture/{id}', 'WelcomeController@torneoportipotorneofixture');
 Route::post('/equipoescudoguardar', 'WelcomeController@equipoescudoguardar');
 Route::post('/equipofotoguardar', 'WelcomeController@equipofotoguardar');
+Route::post('/modificarclave', 'WelcomeController@modificarclave');
+Route::get('/equipotorneo/{idtorneo}', 'WelcomeController@equipotorneo');
 
 
 Route::get('/instalaciones', 'WelcomeController@instalaciones');

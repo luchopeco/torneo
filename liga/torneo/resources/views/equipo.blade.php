@@ -9,10 +9,70 @@
 <div id="" class="margin-top">
 <section id="equipo">
     <div class="container">
+        @if(Session::has('mensajeOk'))
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                {{Session::get('mensajeOk')}}
+                        </div>
+                    </div>
+                </div>
+                </hr>
+         @endif
+        @if(Session::has('mensajeError'))
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                               {{Session::get('mensajeError')}}
+                        </div>
+                    </div>
+                </div>
+                </hr>
+        @endif
         <div class="row animate-in" data-anim-type="fade-in-up">
              <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-3 col-md-offset-0 ">
                <div><h1>{{$equipo->nombre_equipo}}</h1></div>
+             </div>
+             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-6 col-md-offset-0">
+                <div class="equipos-wrapper-redondo alto50">
+                    LIGA TIFOSI TE INFORMA:
+                    <span>{{$equipo->mensaje}}
+                    </span>
+                </div>
+             </div>
+             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-3 col-md-offset-0">
+                <div class="equipos-wrapper-redondo alto50-o ">
+                    <div class="row">
+                        <div class="col-xs-10"> BIENVENIDO: <span>{{$equipo->nombre_equipo}}</span> </div>
+                        <div class="col-xs-2">
+                               <div class="btn-group">
+                                     <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-danger" data-toggle="dropdown" title="Ayuda">
+                                         <i class="fa fa-user fa-lg"></i><b class="caret"></b>
+                                     </button>
+                                     <ul class="multiselect-container dropdown-menu pull-right">
+                                         <li><a href="/equiposalir" class=" btn btn-danger btn-block"><i class="fa fa-times"></i> SALIR</a></li>
+                                         <li><a href="#" data-toggle="modal" data-target="#modalClave" class=" btn btn-warning btn-block"><i class="fa fa-pencil-square-o"></i> Modificar Clave</a></li>
+                                     </ul>
+                               </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+        </div>
+
+         <div class="row animate-in" data-anim-type="fade-in-up">
+             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-3 col-md-offset-0 ">
                <div class="equipos-wrapper">
+                    <div class="row">
+                        <h3 class="text-center">TORNEO</h3>
+                        <select class="form-control" onchange="buscarEquipoXTorneo()" id="idtorneo">
+                            @foreach($equipo->ListTorneosParaCombo() as $torneo)
+                            <option value="{{$torneo->idtorneo}}">{{$torneo->nombre_torneo}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                    <div class="row">
                        @if($equipo->escudo=='')
                             <img class="img-responsive center-block" style="max-height: 200px" src="imagenes/escudo-generico.png">
@@ -30,67 +90,10 @@
                </div>
 
              </div>
-             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-6 col-md-offset-0">
-                <div class="equipos-wrapper-redondo alto50">
-                    LIGA TIFOSI TE INFORMA:
-                    <span>{{$equipo->mensaje}}
-                        @foreach($equipo->ListTorneos as $torneo)
-                            {{$torneo->nombre_torneo}}
-                        @endforeach
-                    </span>
-                </div>
+             <div id="equipo-torneo">
+
              </div>
-             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-3 col-md-offset-0">
-                <div class="equipos-wrapper-redondo alto50">
-                    <div class="row">
-                        <div class="col-xs-9"> BIENVENIDO: <span>{{$equipo->nombre_equipo}}</span> </div>
-                        <div class="col-xs-3"> <a href="/equiposalir" class=" btn btn-danger btn-block">SALIR</a></div>
-                    </div>
-                 </div>
-                <div class="row estadistica">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    1
-                    </div>
-                    <div class="col-xs-10"> POSICION</div>
-                </div>
-                <div class="row estadistica ">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    12
-                    </div>
-                    <div class="col-xs-10"> PARTIDOS</div>
-                </div>
-                 <div class="row estadistica ">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    8
-                    </div>
-                    <div class="col-xs-10"> GANADOS</div>
-                </div>
-                <div class="row estadistica ">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    10
-                    </div>
-                    <div class="col-xs-10"> EMPATADOS</div>
-                </div>
-                <div class="row estadistica ">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    10
-                    </div>
-                    <div class="col-xs-10"> PERDIDOS</div>
-                </div>
-                <div class="row estadistica ">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    10
-                    </div>
-                    <div class="col-xs-10"> GOLES FAVOR</div>
-                </div>
-                <div class="row estadistica ">
-                    <div class="col-xs-2 col-estadistica text-center">
-                    10
-                    </div>
-                    <div class="col-xs-10"> GOLES CONTRA</div>
-                </div>
-             </div>
-        </div>
+         </div>
     </div>
 </section>
 </div>
@@ -147,10 +150,136 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modalJugador" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+            <div class="modal-content">
+                  {!!Form::open(['route'=>'admin.jugadores.store','method'=>'POST', 'data-toggle='>'validator'])!!}
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                          <h4 class="modal-title" id="myModalLabel">Agregando Jugador</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class=" panel panel-default">
+                            <div class=" panel-heading">Jugador</div>
+                            <div class=" panel-body">
+                              <div clas="row">
+                                  <div class="col-md-12">
+                                        <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipoJ">
+                                        <div class="form-group">
+                                            Nombre
+                                            {!!Form::Text('nombre_jugador',null,['class'=>'form-control','required'])!!}
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             Documento
+                                             {!!Form::Text('dni',null,['class'=>'form-control','required'])!!}
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             Tel/Cel
+                                             {!!Form::Text('telefono',null,['class'=>'form-control','required'])!!}
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             Grupo Sanguineo
+                                             {!!Form::Text('grupo_sanguineo',null,['class'=>'form-control','required'])!!}
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             Mail
+                                             {!!Form::Text('mail',null,['class'=>'form-control'])!!}
+                                        </div>
+                                        <div class="form-group">
+                                             Direccion
+                                             {!!Form::Text('direccion',null,['class'=>'form-control'])!!}
+                                        </div>
+                                        <div class="form-group">
+                                             Obra Social
+                                             {!!Form::Text('obra_social',null,['class'=>'form-control'])!!}
+                                        </div>
+                                  </div>
+                               </div>
+                      </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                          {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                      </div>
+                  {!! Form::close() !!}
+            </div>
+          <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="modalClave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+            <div class="modal-content">
+                  {!!Form::open(['url'=>'/modificarclave','method'=>'POST', 'data-toggle='>'validator'])!!}
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                          <h4 class="modal-title" id="myModalLabel">Modificando Clave</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class=" panel panel-default">
+                            <div class=" panel-heading">Clave</div>
+                            <div class=" panel-body">
+                              <div clas="row">
+                                  <div class="col-md-12">
+                                        <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipoC">
+                                        <div class="form-group">
+                                            Clave Actual
+                                            <input type="password" class="form-control" name="clave-actual">
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             Clave Nueva
+                                             <input type="password" class="form-control" name="clave-nueva">
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             Reingresar Clave Nueva
+                                             <input type="password" class="form-control" name="clave-nueva-2">
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                  </div>
+                               </div>
+                      </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                          {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                      </div>
+                  {!! Form::close() !!}
+            </div>
+          <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+</div>
 @endsection
 @section('script')
 <script src="/js/dropzone.js" type="text/javascript"></script>
 <script type="text/javascript">
+function buscarEquipoXTorneo()
+ {
+    var id_articulo=$("#idtorneo").val();
+    $.ajax({
+         url:"/equipotorneo/"+id_articulo,
+         type: "GET",
+         dataType: "HTML"
+        })
+    .done(function(response){
+           $("#equipo-torneo").html(response);
+        })
+        .fail(function(){
+            alert(id_articulo);
+        });
 
+ }
+  $(function() {
+     buscarEquipoXTorneo();
+
+  });
  </script>
 @endsection

@@ -91,7 +91,8 @@ class WelcomeController extends Controller {
             if (Session::has('equipo'))
             {
                 $equipo=  Equipo::findOrFail(Session::get('equipo'));
-                return view('equipo',compact('equipo'));
+                $listTorneosCombo = $equipo->ListTorneosParaCombo();
+                return view('equipo',compact('equipo','listTorneosCombo'));
             }
             else
             {
@@ -190,5 +191,56 @@ class WelcomeController extends Controller {
         {
 
         }
+    }
+
+    public function modificarclave(){
+        try
+        {
+            if(Input::get('clave-nueva')==''||Input::get('clave-nueva-2')=='')
+            {
+                Session::flash('mensajeError', 'Ingrese una clave nueva');
+                return redirect()->action('WelcomeController@equipo');
+            }
+            else if(Input::get('clave-nueva')!=Input::get('clave-nueva-2'))
+            {
+                Session::flash('mensajeError', 'Las claves nuevas no coinciden');
+                return redirect()->action('WelcomeController@equipo');
+            }
+            else{
+                $eq = Equipo::findOrFail(Request::input('idequipoC'));
+                if (Hash::check(Request::input('clave-actual'),$eq->clave))
+                {
+                    $eq->clave=Hash::make(Input::get('clave-nueva'));
+                    $eq->save();
+                    Session::flash('mensajeOk', 'Clave modificada Correctamente');
+                    return redirect()->action('WelcomeController@equipo');
+                }
+                else
+                {
+                    Session::flash('mensajeError', 'La clave actual es incorrecta');
+                    return redirect()->action('WelcomeController@equipo');
+                }
+
+            }
+            $equipo=Equipo::findOrFail(Input::get('idequipoC'));
+            $equipo->clave=Hash::make('12345678');
+            $equipo->save();
+
+            Session::flash('mensajeOk', 'Clave reseteada con Exito');
+            return redirect()->route('admin.equipos.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.equipos.index');
+        }
+    }
+
+
+    public function equipotorneo($idtorneo)
+    {
+        $equipo=  Equipo::findOrFail(Session::get('equipo'));
+        $torneo= Torneo::withTrashed()->where('idtorneo',$idtorneo)->first();
+        return view('include.equipotorneo',compact('equipo','torneo'));
     }
 }

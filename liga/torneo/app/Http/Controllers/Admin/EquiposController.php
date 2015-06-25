@@ -127,6 +127,11 @@ class EquiposController extends Controller {
                     $ar->nombre_usuario = strtolower( $request->nombre_usuario);
                 }
 
+                if ($request->autogestion <> null) {
+                    $ar->autogestion = 1;
+                } else {
+                    $ar->autogestion = 0;
+                }
 
                 if ($request->es_libre <> null) {
                     $ar->es_libre = 1;

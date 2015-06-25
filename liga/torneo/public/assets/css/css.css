@@ -200,7 +200,7 @@
 
     margin-bottom: 10px;
     background-color: rgba(0,0, 0, 0.3);
-    cursor: pointer;
+    /*cursor: pointer;*/
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -275,4 +275,36 @@
     font-size: 30px;
     font-family: 'Oswald', sans-serif;
     margin: 10px;
+}
+
+#equipo .dropdown-menu {
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+}
+
+#equipo .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #262626;
+}
+#equipo .alto50-o{
+    height: 50px;
+
+}
+#equipo select{
+    background-color: rgba(0,0,0,0.3);
+    color: rgb(228, 79, 79);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: none;
+    font-size: 20px;
+    min-height: 50px;
+    margin: 10px 0 0 0;
+}
+
+#equipo th{
+    font-family: 'Oswald', sans-serif;
+
 }

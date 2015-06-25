@@ -59,6 +59,8 @@
                             <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                 <tr>
                                     <th>Equipo</th>
+                                    <th>Usuario</th>
+                                    <th>Autogestion</th>
                                     <th>Observaciones</th>
                                     <th>Mensaje</th>
                                     <th>Libre</th>
@@ -66,6 +68,8 @@
                                 @foreach($listEquipos as $equipo)
                                     <tr >
                                         <td>{{$equipo->nombre_equipo}}</td>
+                                        <th>{{$equipo->nombre_usuario}}</th>
+                                        <th>{{$equipo->autogestionHabilitada()}}</th>
                                         <td>{{Illuminate\Support\Str::limit($equipo->observaciones,20, '...')}}</td>
                                          <td>{{Illuminate\Support\Str::limit($equipo->mensaje,20, '...')}}</td>
                                         <td>{{$equipo->esLibre()}}</td>
@@ -164,6 +168,8 @@
                                                           Nombre Usuario
                                                           {!!Form::Text('nombre_usuario',null,['class'=>' form-control','id'=>'nombre_usuarioU'])!!}
                                                          <span class="help-block with-errors"></span>
+                                                         Habilitar Autogestion
+                                                         <div>{!!Form::checkbox('autogestion','0',false,['id'=>'autogestionU'])!!}</div>
                                                     </div>
                                               </div>
                                          </div>
@@ -273,6 +279,14 @@
                         else{
                         $('#es_libreU').prop('checked',false);
                         }
+
+                        if(response.datos.autogestion==1){
+                        $('#autogestionU').prop('checked',true);
+                        }
+                        else{
+                        $('#autogestionU').prop('checked',false);
+                        }
+
                         $("#modalEquipoModificar").modal("show");
 
                     })
