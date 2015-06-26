@@ -3,7 +3,9 @@
 ..::Tifosi::..
 @endsection
 @section('css')
+
  <link href="/css/dropzone.css" rel="stylesheet" type="text/css" />
+  <script src="/assets/js/livevalidation_standalone.compressed.js" type="text/javascript"></script>
 @endsection
 @section('content')
 <div id="" class="margin-top">
@@ -153,7 +155,7 @@
 <div class="modal fade" id="modalJugador" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
             <div class="modal-content">
-                  {!!Form::open(['route'=>'admin.jugadores.store','method'=>'POST', 'data-toggle='>'validator'])!!}
+                  {!!Form::open(['url'=>'/agregarjugador','method'=>'POST','enctype'=>'multipart/form-data'])!!}
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                           <h4 class="modal-title" id="myModalLabel">Agregando Jugador</h4>
@@ -167,27 +169,45 @@
                                         <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipoJ">
                                         <div class="form-group">
                                             Nombre
-                                            {!!Form::Text('nombre_jugador',null,['class'=>'form-control','required'])!!}
-                                            <span class="help-block with-errors"></span>
+                                            {!!Form::Text('nombre_jugador',null,['class'=>'form-control','id'=>'nombre_jugador'])!!}
+                                            <script>
+                                                var f1= new LiveValidation('nombre_jugador', { validMessage: ' ', wait: 500});
+                                                f1.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                            </script>
                                         </div>
                                         <div class="form-group">
                                              Documento
-                                             {!!Form::Text('dni',null,['class'=>'form-control','required'])!!}
-                                            <span class="help-block with-errors"></span>
+                                             {!!Form::Text('dni',null,['class'=>'form-control','id'=>'dni'])!!}
+                                             <script>
+                                                 var f2= new LiveValidation('dni', { validMessage: ' ', wait: 500});
+                                                 f2.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                             </script>
                                         </div>
                                         <div class="form-group">
                                              Tel/Cel
-                                             {!!Form::Text('telefono',null,['class'=>'form-control','required'])!!}
-                                            <span class="help-block with-errors"></span>
+                                             {!!Form::Text('telefono',null,['class'=>'form-control','id'=>'telefono'])!!}
+                                            <script>
+                                                 var f3= new LiveValidation('telefono', { validMessage: ' ', wait: 500});
+                                                 f3.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                             </script>
                                         </div>
                                         <div class="form-group">
                                              Grupo Sanguineo
-                                             {!!Form::Text('grupo_sanguineo',null,['class'=>'form-control','required'])!!}
-                                            <span class="help-block with-errors"></span>
+                                             {!!Form::Text('grupo_sanguineo',null,['class'=>'form-control','id'=>'grupo_sanguineo'])!!}
+                                            <script>
+                                                 var f4= new LiveValidation('grupo_sanguineo', { validMessage: ' ', wait: 500});
+                                                 f4.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                             </script>
                                         </div>
                                         <div class="form-group">
                                              Mail
-                                             {!!Form::Text('mail',null,['class'=>'form-control'])!!}
+                                             {!!Form::Text('mail',null,['class'=>'form-control','id'=>'mail'])!!}
+                                              <script>
+                                                  var f5 = new LiveValidation('mail');
+                                                    f5.add( Validate.Email, {failureMessage: "Ingrese un mail Válido"} );
+                                              </script>
+
+
                                         </div>
                                         <div class="form-group">
                                              Direccion
@@ -204,7 +224,7 @@
                       </div>
                       <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                          {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                          {!!Form::submit('Aceptar', array('class' => 'btn btn-success','name'=>'submit'))!!}
                       </div>
                   {!! Form::close() !!}
             </div>
@@ -259,6 +279,7 @@
 </div>
 @endsection
 @section('script')
+
 <script src="/js/dropzone.js" type="text/javascript"></script>
 <script type="text/javascript">
 function buscarEquipoXTorneo()

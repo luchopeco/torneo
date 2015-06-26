@@ -22,6 +22,7 @@ Route::post('/equipoescudoguardar', 'WelcomeController@equipoescudoguardar');
 Route::post('/equipofotoguardar', 'WelcomeController@equipofotoguardar');
 Route::post('/modificarclave', 'WelcomeController@modificarclave');
 Route::get('/equipotorneo/{idtorneo}', 'WelcomeController@equipotorneo');
+Route::post('/agregarjugador', 'WelcomeController@agregarjugador');
 
 
 Route::get('/instalaciones', 'WelcomeController@instalaciones');

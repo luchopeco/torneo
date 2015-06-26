@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use torneo\Equipo;
 use torneo\Imagen;
+use torneo\Jugador;
 use torneo\Noticia;
 use torneo\TipoTorneo;
 use torneo\Torneo;
@@ -222,12 +223,6 @@ class WelcomeController extends Controller {
                 }
 
             }
-            $equipo=Equipo::findOrFail(Input::get('idequipoC'));
-            $equipo->clave=Hash::make('12345678');
-            $equipo->save();
-
-            Session::flash('mensajeOk', 'Clave reseteada con Exito');
-            return redirect()->route('admin.equipos.index');
         }
         catch(QueryException  $ex)
         {
@@ -242,5 +237,29 @@ class WelcomeController extends Controller {
         $equipo=  Equipo::findOrFail(Session::get('equipo'));
         $torneo= Torneo::withTrashed()->where('idtorneo',$idtorneo)->first();
         return view('include.equipotorneo',compact('equipo','torneo'));
+    }
+    public function agregarjugador(Request $request)
+    {
+        try{
+            $jugador = new Jugador();
+            $jugador->nombre_jugador=Input::get('nombre_jugador');
+            $jugador->dni=Input::get('dni');
+            $jugador->telefono=Input::get('telefono');
+            $jugador->grupo_sanguineo=Input::get('grupo_sanguineo');
+            $jugador->mail=Input::get('mail');
+            $jugador->direccion=Input::get('direccion');
+            $jugador->obra_social=Input::get('obra_social');
+            $jugador->idequipo=Session::get('equipo');
+            $jugador->save();
+
+            Session::flash('mensajeOk', 'Jugador Agregado Correctamente');
+            return redirect()->action('WelcomeController@equipo');
+        }
+        catch(\Exception  $ex)
+        {
+
+            Session::flash('mensajeError', 'El jugador No se pudo Agregar');
+            return redirect()->action('WelcomeController@equipo');
+        }
     }
 }
