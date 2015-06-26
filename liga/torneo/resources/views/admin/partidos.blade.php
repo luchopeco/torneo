@@ -5,7 +5,7 @@
         @endsection
 
         @section('breadcrumb')
-        <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/admin/home"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="/admin/torneos"><i class="fa fa-trophy"></i> Torneos</a></li>
         <li><a href="/admin/torneos/{{$fecha->Torneo->idtorneo}}"><i class="fa fa-trophy"></i>{{$fecha->Torneo->nombre_torneo}}- {{$fecha->Torneo->TipoTorneo->nombre_tipo_torneo}}</a></li>
         @endsection

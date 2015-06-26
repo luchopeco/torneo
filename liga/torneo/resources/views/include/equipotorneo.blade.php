@@ -8,9 +8,8 @@
     @endif
 
     <div class="equipos-wrapper">
-
-                <div class="table-responsive">
-                    <table class=" table table-hover">
+          <div class="table-responsive">
+                <table class=" table table-hover">
                        <tr>
                            <th>JUGADOR</th>
                            <th class="text-center">GOLES</th>
@@ -29,17 +28,87 @@
                                <td class="text-center">{{$j->fechasSancion($torneo->idtorneo)}}</td>
                            </tr>
                        @endforeach
-                    </table>
+                </table>
+          </div>
+    </div>
+
+        <div class="row">
+            @if($equipo->autogestion==1)
+                <div class="col-md-6">
+                    <a href="#" data-toggle="modal" data-target="#modalJugador" class=" btn btn-danger btn-block">AGREGAR JUGADORES</a>
                 </div>
-    </div>
-    <div class="wrapper">
-        @if($equipo->autogestion==1)
-            <div class="col-md-6">
-                <a href="#" data-toggle="modal" data-target="#modalJugador" class=" btn btn-danger btn-block">AGREGAR JUGADORES</a>
+                <div class="col-md-6">
+
+                </div>
+                <br/>
+            @endif
+        </div>
+
+        <?php $uf=null;
+              $pf=null;
+              $time = date("Y-m-d ", time());
+        ?>
+        @foreach($torneo->ListFechas as $fecha)
+            @if($fecha->fecha < $time )
+            <?php $uf = $fecha; ?>
+            @endif
+            @if($fecha->fecha >  $time)
+                @if($pf==null)
+                    <?php $pf = $fecha; ?>
+                @endif
+            @endif
+        @endforeach
+        <div class="row">
+            <br>
+            <div class="col-sm-6 col-xs-12">
+                  <div class="equipos-wrapper">
+                    <div class="text-center"> <h5>ÚLTIMA FECHA</h5> </div>
+                    <div class="resultado">
+                        @if($uf!=null)
+                            @foreach($uf->ListPartidos as $partido)
+                                @if($partido->EquipoLocal->idequipo == $equipo->idequipo || $partido->EquipoVisitante->idequipo == $equipo->idequipo)
+                                {{$partido->EquipoLocal->nombre_equipo}} <span class="text-danger">{{$partido->goles_local}}</span> -vs- <span class="text-danger">{{$partido->goles_visitante}}</span> {{$partido->EquipoVisitante->nombre_equipo}}
+                                @endif
+                            @endforeach
+                        @endif
+                    </div>
+
+                  </div>
             </div>
-            <br/>
-        @endif
-    </div>
+            <div class="col-sm-6 col-xs-12">
+                    <div class="equipos-wrapper">
+                        <div class="text-center">
+                            <h5>
+                                @if($pf!=null)
+                                   @foreach($pf->ListPartidos as $partido)
+                                      @if($partido->EquipoLocal->idequipo == $equipo->idequipo || $partido->EquipoVisitante->idequipo == $equipo->idequipo)
+                                      <small>{{date('d/m/Y', strtotime($pf->fecha))}} -</small>
+                                      @endif
+                                   @endforeach
+                                @endif
+                                PRÓXIMA FECHA
+                                @if($pf!=null)
+                                   @foreach($pf->ListPartidos as $partido)
+                                      @if($partido->EquipoLocal->idequipo == $equipo->idequipo || $partido->EquipoVisitante->idequipo == $equipo->idequipo)
+                                     <small>- {{$partido->hora}}</small>
+                                      @endif
+                                   @endforeach
+                                @endif
+                            </h5>
+                        </div>
+                        <div class="resultado">
+                            @if($pf!=null)
+                               @foreach($pf->ListPartidos as $partido)
+                                  @if($partido->EquipoLocal->idequipo == $equipo->idequipo || $partido->EquipoVisitante->idequipo == $equipo->idequipo)
+                                  {{$partido->EquipoLocal->nombre_equipo}} -<span class="text-danger">vs</span>- {{$partido->EquipoVisitante->nombre_equipo}}
+                                  @endif
+                               @endforeach
+                            @endif
+                        </div>
+                    </div>
+            </div>
+        </div>
+
 </div>
 <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-3 col-md-offset-0">
 @foreach($torneo->TablaPosiciones() as $pos=> $tabla)

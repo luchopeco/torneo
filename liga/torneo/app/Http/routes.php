@@ -23,6 +23,8 @@ Route::post('/equipofotoguardar', 'WelcomeController@equipofotoguardar');
 Route::post('/modificarclave', 'WelcomeController@modificarclave');
 Route::get('/equipotorneo/{idtorneo}', 'WelcomeController@equipotorneo');
 Route::post('/agregarjugador', 'WelcomeController@agregarjugador');
+Route::post('/mailinscripcion', 'WelcomeController@mailinscripcion');
+Route::post('/mailcontacto', 'WelcomeController@mailcontacto');
 
 
 Route::get('/instalaciones', 'WelcomeController@instalaciones');
@@ -40,6 +42,9 @@ Route::controllers([
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
+        Route::get('/','HomeController@index');
+        Route::get('home','HomeController@index');
+
         Route::resource('arbitros','ArbitrosController');
         Route::post('arbitros/buscar','ArbitrosController@buscar');
         Route::post('arbitros/mail','ArbitrosController@mail');

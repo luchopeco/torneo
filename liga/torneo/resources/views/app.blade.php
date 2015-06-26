@@ -28,7 +28,7 @@ $ruta= Route::currentRouteAction();
 <link href="assets/css/style-red.css" rel="stylesheet" />
 <link href="assets/css/css.css" rel="stylesheet" />
 
-
+<script src="/assets/js/livevalidation_standalone.compressed.js" type="text/javascript"></script>
 @yield('css')
 
 
@@ -114,8 +114,21 @@ $ruta= Route::currentRouteAction();
 
 </div>
 </div>
-
+@if(Session::has('mensajeOkContacto'))
+<div class="container" style="padding-top: 150px">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    {{Session::get('mensajeOkContacto')}}
+            </div>
+        </div>
+    </div>
+    </hr>
+</div>
+@endif
 @yield('content')
+
 <!--CONTACT SECTION START-->
 <section id="contact" >
     <div id="contacto">
@@ -130,27 +143,42 @@ $ruta= Route::currentRouteAction();
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="contact-wrapper text-center">
                         <h3>COMPLETE NUESTRO FORMULARIO</h3>
-                        <div class="row">
-                            <div class="col-md-12">
-                                {!!Form::Text('nombre',null,['class'=>' form-control','required','placeholder'=>'NOMBRE Y APELLIDO'])!!}
+                        {!!Form::open(['url'=>'/mailcontacto','method'=>'POST','enctype'=>'multipart/form-data'])!!}
+                        <input type="text" id="validador_contacto" name="validador_contacto" value=""  class="hidden">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {!!Form::Text('nombre_contacto',null,['class'=>' form-control','placeholder'=>'NOMBRE Y APELLIDO','id'=>'nombre_contacto'])!!}
+                                    <script>
+                                      var f1 = new LiveValidation('nombre_contacto');
+                                        f1.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                    </script>
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-6">
-                                {!!Form::Text('mail',null,['class'=>' form-control','required','placeholder'=>'MAIL'])!!}
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {!!Form::Text('mail_contacto',null,['class'=>' form-control','placeholder'=>'MAIL','id'=>'mail_contacto'])!!}
+                                    <script>
+                                      var f5 = new LiveValidation('mail_contacto');
+                                        f5.add( Validate.Email, {failureMessage: "Ingrese un mail Válido"} );
+                                        f5.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                    </script>
+                                </div>
+                                <div class="col-md-6">
+                                    {!!Form::Text('ciudad_contacto',null,['class'=>' form-control','placeholder'=>'CIUDAD','id'=>'ciudad_contacto'])!!}
+                                    <script>
+                                      var f2 = new LiveValidation('ciudad_contacto');
+                                        f2.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                    </script>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                {!!Form::Text('ciudad',null,['class'=>' form-control','required','placeholder'=>'CIUDAD'])!!}
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
-                            </div>
-                        </div>
-
+                        {!! Form::close() !!}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">

@@ -1,7 +1,7 @@
         @extends('admin.masterAdmin')
 
         @section('title')
-        <h1> Bienvenidos al Gestor de Contenidos del Sitio <small >www.tifossi.com</small></h1>
+        <h1> Bienvenidos al Sistema de Gestion de Torneos <small >www.tifossi.com</small></h1>
         @endsection
 
         @section('breadcrumb')

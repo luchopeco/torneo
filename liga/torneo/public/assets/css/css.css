@@ -308,8 +308,19 @@
     font-family: 'Oswald', sans-serif;
 
 }
+#equipo .row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+#equipo h5{
+    font-family: 'Oswald', sans-serif;
+}
 
-
+#equipo .resultado{
+    text-align: center;
+    font-size: 12px;
+}
+/*-----------------------Live Validation--------------------------------------------*/
 .LV_validation_message{
     font-weight:bold;
     margin:0 0 0 5px;
@@ -321,7 +332,7 @@
 }
 
 .LV_invalid {
-    color:#CC0000;
+    color: #E44F4F;
 }
 
 .LV_valid_field,
@@ -339,7 +350,53 @@ input.LV_invalid_field:hover,
 input.LV_invalid_field:active,
 textarea.LV_invalid_field:hover,
 textarea.LV_invalid_field:active {
-    border-color: #a94442;
+    color: #E44F4F;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+/*---------------------Inscripcion----------------------------*/
+#inscripcion h2{
+    font-family: 'Oswald', sans-serif;
+}
+
+#inscripcion h3{
+    font-family: 'Oswald', sans-serif;
+}
+
+#inscripcion .row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+#inscripcion p{
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: none;
+}
+#inscripcion select{
+    background-color: rgba(0,0,0,0.3);
+    color: rgb(228, 79, 79);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: none;
+    font-size: 20px;
+}
+
+#inscripcion hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-width: 1px 0px 0px;
+    border-style: solid none none;
+    border-color: rgb(228, 79, 79) -moz-use-text-color -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+}
+#inscripcion .form-control{
+    background-color: #818289;
+    color: #ffffff;
+}
+#inscripcion .altoMinimo{
+    min-height: 500px;
 }

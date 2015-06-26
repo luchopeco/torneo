@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
@@ -142,7 +143,7 @@ class WelcomeController extends Controller {
 
      public function inscripcion()
     {
-        return view('inscripcion');
+        return view('inscripcion-beta');
     }
 
     public function equipoescudoguardar(Request $request)
@@ -261,5 +262,72 @@ class WelcomeController extends Controller {
             Session::flash('mensajeError', 'El jugador No se pudo Agregar');
             return redirect()->action('WelcomeController@equipo');
         }
+    }
+
+
+    public function  mailinscripcion()
+    {
+        try{
+            if(Input::get('validador')=='')
+            {
+                $cuerpo="Nueva Inscripcion \n";
+                $cuerpo = $cuerpo . "Torneo: ". Request::get('torneo')."\n";
+                $cuerpo = $cuerpo . "Nombre Equipo: ".Input::get('nombre_equipo')."\n";
+                $cuerpo = $cuerpo . "Nombre Delegado: ".Input::get('nombre')."\n";
+                $cuerpo = $cuerpo . "DNI Delegado: ".Input::get('dni')."\n";
+                $cuerpo = $cuerpo . "Celular Delegado: ".Input::get('celular')."\n";
+                $cuerpo = $cuerpo . "Mail Delegado: ".Input::get('mail')."\n";
+                $cuerpo = $cuerpo . "Domicilio Delegado: ".Input::get('domicilio')."\n";
+                $cuerpo = $cuerpo . "Telefono Alternativo: ".Input::get('telefono_alternativo')."\n";
+
+                Mail::raw($cuerpo, function($message)
+                {
+                    $subjet = 'Inscripcion - Torneo: '.Request::get('torneo').' - Equipo: '.Input::get('nombre_equipo');
+
+                    $message->from('contacto@wiphalasistemas.com.ar', 'Wiphala');
+
+                    $message->to('luchopeco@gmail.com')->subject($subjet);
+                });
+            }
+
+            Session::flash('mensajeOk', 'Inscripcion Enviada Con Exito. En Breve nos pondremos en contacto.');
+            return redirect()->action('WelcomeController@inscripcion');
+        }
+        catch(\Exception $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.arbitros.index');
+        }
+
+    }
+    public function  mailcontacto()
+    {
+        try{
+            if(Input::get('validador_contacto')=='')
+            {
+                $cuerpo="Consuta desde el Formulario de Contacto de la Web \n";
+                $cuerpo = $cuerpo . "Nombre: ". Request::get('nombre_contacto')."\n";
+                $cuerpo = $cuerpo . "Ciudad: ".Input::get('ciudad_contacto')."\n";
+                $cuerpo = $cuerpo . "Mail: ".Input::get('mail_contacto')."\n";
+
+                Mail::raw($cuerpo, function($message)
+                {
+                    $subjet = 'Consulta desde la Web - '.Request::get('nombre_contacto');
+
+                    $message->from('contacto@wiphalasistemas.com.ar', 'Wiphala');
+
+                    $message->to('luchopeco@gmail.com')->subject($subjet);
+                });
+            }
+
+            Session::flash('mensajeOkContacto', 'Consulta Enviada Con Exito. En Breve nos pondremos en contacto.');
+            return redirect()->action('WelcomeController@index');
+        }
+        catch(\Exception $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.arbitros.index');
+        }
+
     }
 }
