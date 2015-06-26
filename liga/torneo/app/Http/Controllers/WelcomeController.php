@@ -295,8 +295,8 @@ class WelcomeController extends Controller {
         }
         catch(\Exception $ex)
         {
-            Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.arbitros.index');
+            Session::flash('mensajeErrorContacto', "Discuple las molestias. El pedido de inscripcion no se pudo realizar. Intente en otro momento");
+            return redirect()->action('WelcomeController@inscripcion');
         }
 
     }
@@ -325,8 +325,8 @@ class WelcomeController extends Controller {
         }
         catch(\Exception $ex)
         {
-            Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.arbitros.index');
+            Session::flash('mensajeErrorContacto',"Discuple las molestias. El mensaje no se pudo enviar. Intente en otro momento");
+            return redirect()->action('WelcomeController@index');
         }
 
     }

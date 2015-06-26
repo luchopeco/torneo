@@ -127,6 +127,19 @@ $ruta= Route::currentRouteAction();
     </hr>
 </div>
 @endif
+@if(Session::has('mensajeErrorContacto'))
+<div class="container" style="padding-top: 150px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                       {{Session::get('mensajeErrorContacto')}}
+                </div>
+            </div>
+        </div>
+</div>
+        </hr>
+@endif
 @yield('content')
 
 <!--CONTACT SECTION START-->
