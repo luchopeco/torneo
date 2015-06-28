@@ -41,16 +41,6 @@ $ruta= Route::currentRouteAction();
 </head>
 <body data-spy="scroll" data-target="#menu-section">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
 <!--MENU SECTION START-->
 <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section" >
 <div class="container">
@@ -246,13 +236,7 @@ $ruta= Route::currentRouteAction();
 
 <!--Social-->
 <div class="social-buton social-buton-f">
-    <a href="" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-</div>
-<div class="social-buton social-buton-t">
-    <a href="" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-</div>
-<div class=" social-buton social-buton-g">
-   <a href="" target="_blank"> <i class="fa fa-google-plus fa-2x"></i></a>
+    <a href="https://es-la.facebook.com/tifosi.rosario" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 </div>
 <!--Social Fin-->
 

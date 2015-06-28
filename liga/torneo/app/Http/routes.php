@@ -44,6 +44,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
     function(){
         Route::get('/','HomeController@index');
         Route::get('home','HomeController@index');
+        Route::post('modificarclave','HomeController@modificarclave');
 
         Route::resource('arbitros','ArbitrosController');
         Route::post('arbitros/buscar','ArbitrosController@buscar');

@@ -59,7 +59,7 @@
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4 col-md-3 col-lg-3">
                 <div class="team-wrapper">
                    <div class="team-inner" style="background-image: url('/imagenes/{{$noticia->imagen}}')" >
-                    <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.torneo.com/#team" href="#" target="_blank" >
+                    <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.ligatifosi.com/" href="#" target="_blank" >
                        <i class="fa fa-facebook-f" ></i>
                     </a>
 

@@ -66,6 +66,7 @@
               	<li class="dropdown">
               	    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" data-toggle="modal" data-target="#modalClave"><i class="fa fa-pencil-square-o"></i> Modificar Clave</a></li>
                         <li><a href="/auth/logout"><i class=" fa fa-power-off"></i> Salir</a></li>
               		</ul>
               	</li>
@@ -133,7 +134,73 @@ Route::current()->getName();
         </section>
         <!-- Main content -->
         <section class="content">
+                 @if(Session::has('mensajeOkSession'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        {{Session::get('mensajeOkSession')}}
+                                </div>
+                            </div>
+                        </div>
+                        </hr>
+                 @endif
+                @if(Session::has('mensajeErrorSession'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                       {{Session::get('mensajeErrorSession')}}
+                                </div>
+                            </div>
+                        </div>
+                        </hr>
+                @endif
             @yield('content')
+            <div class="modal fade" id="modalClave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                        <div class="modal-content">
+                              {!!Form::open(['url'=>'/admin/modificarclave','method'=>'POST', 'data-toggle='>'validator'])!!}
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                      <h4 class="modal-title" id="myModalLabel">Modificando Clave</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class=" panel panel-default">
+                                        <div class=" panel-heading">Clave</div>
+                                        <div class=" panel-body">
+                                          <div clas="row">
+                                              <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        Clave Actual
+                                                        <input type="password" class="form-control" name="clave-actual">
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         Clave Nueva
+                                                         <input type="password" class="form-control" name="clave-nueva">
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         Reingresar Clave Nueva
+                                                         <input type="password" class="form-control" name="clave-nueva-2">
+                                                        <span class="help-block with-errors"></span>
+                                                    </div>
+                                              </div>
+                                           </div>
+                                  </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                      {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                                  </div>
+                              {!! Form::close() !!}
+                        </div>
+                      <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+            </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">

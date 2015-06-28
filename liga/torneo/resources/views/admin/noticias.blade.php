@@ -172,13 +172,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                          Mostrar en home
-                                         {!!Form::checkbox('mostrar_en_home','0',false,['class'=>' form-control','id'=>'mostrar_en_homeU'])!!}
+                                         <div>{!!Form::checkbox('mostrar_en_home','0',false,['class'=>'','id'=>'mostrar_en_homeU'])!!}</div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                          Mostrar en Seccion
-                                         {!!Form::checkbox('mostrar_en_seccion','0',false,['class'=>' form-control','id'=>'mostrar_en_seccionU'])!!}
+                                         <div>{!!Form::checkbox('mostrar_en_seccion','0',false,['class'=>'','id'=>'mostrar_en_seccionU'])!!}</div>
                                         </div>
                                     </div>
                                      </div>
