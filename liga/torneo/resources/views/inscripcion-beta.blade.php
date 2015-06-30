@@ -85,22 +85,21 @@
                                     </script>
                                 </div>
                             </div>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                                 <h3>DATOS DELEGADO</h3>
                                 <hr />
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
-                                    {!!Form::Text('nombre',null,['class'=>' form-control','placeholder'=>'NOMBRE Y APELLIDO DELEGADO','id'=>'nombre'])!!}
+                                <div class="col-xs-12">
+                                    {!!Form::Text('nombre',null,['class'=>'form-control','placeholder'=>'NOMBRE Y APELLIDO DELEGADO','id'=>'nombre'])!!}
                                     <script>
                                         var f2= new LiveValidation('nombre', { validMessage: ' ', wait: 500});
                                         f2.add(Validate.Presence, {failureMessage: "Obligatorio"});
                                     </script>
                                 </div>
                             </div>
-                            <br>
+                            <div class="sep"></div>
                             <div class="row">
                                 <div class="col-md-6">
                                     {!!Form::Text('dni',null,['class'=>' form-control','placeholder'=>'DNI','id'=>'dni'])!!}
@@ -117,7 +116,7 @@
                                     </script>
                                 </div>
                             </div>
-                            <br>
+                            <div class="sep"></div>
                             <div class="row">
                                 <div class="col-md-6">
                                     {!!Form::Text('mail',null,['class'=>' form-control','placeholder'=>'EMAIL','id'=>'mail'])!!}
@@ -135,7 +134,7 @@
                                     </script>
                                 </div>
                             </div>
-                            <br>
+                            <div class="sep"></div>
                             <div class="row">
                                 <div class="col-md-12">
                                     {!!Form::Text('telefono_alternativo',null,['class'=>' form-control','placeholder'=>'TELÉFONO ALTERNATIVO','id'=>'telefono_alternativo'])!!}
@@ -145,16 +144,21 @@
                                     </script>
                                 </div>
                             </div>
-                            <br>
+                            <div class="sep"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea id="mensaje" name="mensaje" class="form-control" placeholder="MENSAJE" rows="1"></textarea>
+                                </div>
+                            </div>
+                            <div class="sep"></div>
                             <div class="row">
                                 <div class="col-xs-12">
                                     {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
                                 </div>
                             </div>
-                            <br>
+                            <div class="sep"></div>
                           {!! Form::close() !!}
                         </div>
-
                     </div>
                 </div>
             </div>

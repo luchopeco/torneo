@@ -87,6 +87,12 @@
     border-radius: 5px;
     /*margin-bottom: 40px;*/
 }
+#contact hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
 #estadisticas .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -399,4 +405,8 @@ textarea.LV_invalid_field:active {
 }
 #inscripcion .altoMinimo{
     min-height: 500px;
+}
+
+#inscripcion .sep{
+    margin-top: 10px;
 }

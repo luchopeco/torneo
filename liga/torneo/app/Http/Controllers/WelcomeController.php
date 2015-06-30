@@ -279,14 +279,15 @@ class WelcomeController extends Controller {
                 $cuerpo = $cuerpo . "Mail Delegado: ".Input::get('mail')."\n";
                 $cuerpo = $cuerpo . "Domicilio Delegado: ".Input::get('domicilio')."\n";
                 $cuerpo = $cuerpo . "Telefono Alternativo: ".Input::get('telefono_alternativo')."\n";
+                $cuerpo = $cuerpo . "Mensaje: ".Input::get('mensaje')."\n";
 
                 Mail::raw($cuerpo, function($message)
                 {
                     $subjet = 'Inscripcion - Torneo: '.Request::get('torneo').' - Equipo: '.Input::get('nombre_equipo');
 
-                    $message->from('contacto@wiphalasistemas.com.ar', 'Wiphala');
+                    $message->from('web@ligatifosi.com', 'Inscripcion Tifosi');
 
-                    $message->to('luchopeco@gmail.com')->subject($subjet);
+                    $message->to('ligatifosi@hotmail.com')->subject($subjet);
                 });
             }
 
@@ -309,14 +310,15 @@ class WelcomeController extends Controller {
                 $cuerpo = $cuerpo . "Nombre: ". Request::get('nombre_contacto')."\n";
                 $cuerpo = $cuerpo . "Ciudad: ".Input::get('ciudad_contacto')."\n";
                 $cuerpo = $cuerpo . "Mail: ".Input::get('mail_contacto')."\n";
+                $cuerpo = $cuerpo . "Mensaje: ".Input::get('mensaje_contacto')."\n";
 
                 Mail::raw($cuerpo, function($message)
                 {
                     $subjet = 'Consulta desde la Web - '.Request::get('nombre_contacto');
 
-                    $message->from('contacto@wiphalasistemas.com.ar', 'Wiphala');
+                    $message->from('web@ligatifosi.com', 'Contacto Tifosi');
 
-                    $message->to('luchopeco@gmail.com')->subject($subjet);
+                    $message->to('ligatifosi@hotmail.com')->subject($subjet);
                 });
             }
 

@@ -177,6 +177,16 @@ $ruta= Route::currentRouteAction();
                             </div>
                             <hr>
                             <div class="row">
+                                <div class="col-md-12">
+                                    <textarea id="mensaje_contacto" name="mensaje_contacto" class="form-control" placeholder="MENSAJE" rows="1"></textarea>
+                                    <script>
+                                      var f20 = new LiveValidation('mensaje_contacto');
+                                        f20.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                    </script>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
                                 <div class="col-xs-12">
                                     {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
                                 </div>
