@@ -38,9 +38,7 @@
                             <p>Inscribir a tu equipo es fácil, tienes que seguir los siguientes pasos:</p>
                              <p>- Completa el formulario a continuación, tienes que tener en cuenta que solo el delegado
                                 del equipo puede llenar este formulario.</p>
-                                <p>- Una vez que lo hayas llenado, espera a que nos contactemos con vos, o sino una vez
-                                que lo hayas llenado, llama al teléfono <span class="text-danger">(0341) 156-563365</span> para el torneo masculino o
-                                <span class="text-danger">(0341) 153-430596</span> para el torneo femenino. De esta manera podrás concretar una cita
+                                <p>- Una vez que lo hayas llenado, espera a que nos contactemos con vos. De esta manera podrás concretar una cita
                                 para abonar la inscripción al torneo.</p>
                                 <p>- En la reunión te brindaran un usuario y contraseña con el que podrás registrarte en esta
                                 web para poder llenar la lista de buena fe de tu equipo.</p>

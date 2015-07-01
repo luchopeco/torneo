@@ -25,99 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="2533" max-vertical-offset="5066">
-              <caret line="175" column="38" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inscripcion-beta.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inscripcion-beta.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.5" vertical-offset="1975" max-vertical-offset="2941">
+            <state vertical-scroll-proportion="0.5172798" vertical-offset="2069" max-vertical-offset="2992">
               <caret line="149" column="137" selection-start-line="149" selection-start-column="137" selection-end-line="149" selection-end-column="137" />
-              <folding>
-                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#2;tag#div#0;tag#section#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WelcomeController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07692308" vertical-offset="951" max-vertical-offset="1887">
-              <caret line="286" column="0" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
-              <folding>
-                <element signature="e#443#839#0#PHP" expanded="false" />
-                <element signature="e#842#909#0#PHP" expanded="false" />
-                <element signature="e#911#978#0#PHP" expanded="false" />
-                <element signature="e#981#1067#0#PHP" expanded="false" />
-                <element signature="e#1069#1376#0#PHP" expanded="false" />
-                <element signature="e#1382#1582#0#PHP" expanded="false" />
-                <element signature="e#1587#1734#0#PHP" expanded="false" />
-                <element signature="e#1740#1951#0#PHP" expanded="false" />
-                <element signature="e#1956#2113#0#PHP" expanded="false" />
-                <element signature="e#2118#2344#0#PHP" expanded="false" />
-                <element signature="e#2349#2578#0#PHP" expanded="false" />
-                <element signature="e#2583#2664#0#PHP" expanded="false" />
-                <element signature="e#2670#3232#0#PHP" expanded="false" />
-                <element signature="e#2709#3225#0#PHP" expanded="false" />
-                <element signature="e#2735#3130#0#PHP" expanded="false" />
-                <element signature="e#3018#3130#0#PHP" expanded="false" />
-                <element signature="e#3149#3225#0#PHP" expanded="false" />
-                <element signature="e#3237#3343#0#PHP" expanded="false" />
-                <element signature="e#3348#4242#0#PHP" expanded="false" />
-                <element signature="e#3392#4235#0#PHP" expanded="false" />
-                <element signature="e#3631#4033#0#PHP" expanded="false" />
-                <element signature="e#3850#4033#0#PHP" expanded="false" />
-                <element signature="e#4052#4235#0#PHP" expanded="false" />
-                <element signature="e#4250#4332#0#PHP" expanded="false" />
-                <element signature="e#4338#5186#0#PHP" expanded="false" />
-                <element signature="e#4406#5180#0#PHP" expanded="false" />
-                <element signature="e#4498#4968#0#PHP" expanded="false" />
-                <element signature="e#5133#5180#0#PHP" expanded="false" />
-                <element signature="e#5192#6032#0#PHP" expanded="false" />
-                <element signature="e#5258#6026#0#PHP" expanded="false" />
-                <element signature="e#5350#5814#0#PHP" expanded="false" />
-                <element signature="e#5979#6026#0#PHP" expanded="false" />
-                <element signature="e#6038#7492#0#PHP" expanded="false" />
-                <element signature="e#6080#7486#0#PHP" expanded="false" />
-                <element signature="e#6106#7297#0#PHP" expanded="false" />
-                <element signature="e#6364#7297#0#PHP" expanded="false" />
-                <element signature="e#6616#7297#0#PHP" expanded="false" />
-                <element signature="e#6709#7282#0#PHP" expanded="false" />
-                <element signature="e#7082#7282#0#PHP" expanded="false" />
-                <element signature="e#7316#7486#0#PHP" expanded="false" />
-                <element signature="e#7499#7762#0#PHP" expanded="false" />
-                <element signature="e#7767#8713#0#PHP" expanded="false" />
-                <element signature="e#7830#8707#0#PHP" expanded="false" />
-                <element signature="e#8520#8707#0#PHP" expanded="false" />
-                <element signature="e#10226#10488#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noticias.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/noticias.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.961538" vertical-offset="2346" max-vertical-offset="4879">
-              <caret line="167" column="124" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="124" />
               <folding />
             </state>
           </provider>
@@ -453,15 +365,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -847,15 +759,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40468228" vertical-offset="912" max-vertical-offset="5287">
           <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/noticias.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.961538" vertical-offset="2346" max-vertical-offset="4879">
+        <state vertical-scroll-proportion="0.5576923" vertical-offset="2346" max-vertical-offset="4879">
           <caret line="167" column="124" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="124" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,17 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.0" vertical-offset="2533" max-vertical-offset="5066">
           <caret line="175" column="38" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.5" vertical-offset="1975" max-vertical-offset="2941">
-          <caret line="149" column="137" selection-start-line="149" selection-start-column="137" selection-end-line="149" selection-end-column="137" />
-          <folding>
-            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#2;tag#div#0;tag#section#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,21 +780,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.88461536" vertical-offset="6188" max-vertical-offset="7089">
           <caret line="410" column="16" selection-start-line="410" selection-start-column="16" selection-end-line="410" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+        <state vertical-scroll-proportion="0.31310943" vertical-offset="0" max-vertical-offset="923">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07692308" vertical-offset="951" max-vertical-offset="1887">
+        <state vertical-scroll-proportion="0.3979933" vertical-offset="663" max-vertical-offset="1887">
           <caret line="286" column="0" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
           <folding>
             <element signature="e#443#839#0#PHP" expanded="false" />
@@ -944,6 +841,14 @@
             <element signature="e#8520#8707#0#PHP" expanded="false" />
             <element signature="e#10226#10488#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5172798" vertical-offset="2069" max-vertical-offset="2992">
+          <caret line="149" column="137" selection-start-line="149" selection-start-column="137" selection-end-line="149" selection-end-column="137" />
+          <folding />
         </state>
       </provider>
     </entry>
