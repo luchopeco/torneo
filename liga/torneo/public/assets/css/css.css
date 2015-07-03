@@ -410,3 +410,57 @@ textarea.LV_invalid_field:active {
 #inscripcion .sep{
     margin-top: 10px;
 }
+
+
+/*-------------Sucursales------------------*/
+#sucursales{
+    font-family: 'Oswald', sans-serif;
+}
+#sucursales h4{
+    color: rgb(228, 79, 79);
+}
+
+#sucursales  .alto {
+    min-height: 360px !important;
+}
+#sucursales  .altominimo {
+    min-height: 10px !important;
+}
+#sucursales  .row {
+    margin: 0px;
+}
+#sucursales  .contenedor {
+    padding: 5px 10px;
+}
+#sucursales .subtitulo
+{
+color: #969696;
+}
+
+#sucursales .flexslider {
+    border: none !important;
+    background: none !important;
+    margin-bottom: 20px;
+
+}
+#sucursales .telefono{
+    background: rgb(228, 79, 79);
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#sucursales .work-wrapper{
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}

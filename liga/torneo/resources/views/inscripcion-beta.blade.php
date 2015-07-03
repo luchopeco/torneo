@@ -49,6 +49,12 @@
                         <div class="col-xs-6"><img class="img-responsive" src="imagenes/logos/logos/tifosiprincipal.png"></div>
                         <div class="col-xs-6"><img class="img-responsive" src="imagenes/logos/logos/ragazza02.png"></div>
                     </div>
+                    <div class="row">
+
+                        <div class=" col-xs-offset-1 col-xs-10">
+                        <a class="btn btn-danger btn-block" href="/archivos/autorizaciondemenores2015.doc" title="Descargar Autorización para menores"><i class="fa fa-download"></i> Autorización para menores</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
