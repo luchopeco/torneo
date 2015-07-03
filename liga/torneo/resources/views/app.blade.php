@@ -64,9 +64,9 @@ $ruta= Route::currentRouteAction();
 <li><a href="/">HOME</a></li>
 @endif
 @if($ruta=='torneo\Http\Controllers\WelcomeController@instalaciones')
-<li class="active" ><a href="/instalaciones">SUCURSALES</a></li>
+<li class="active" ><a href="/sucursales">SUCURSALES</a></li>
 @else
-<li><a href="/instalaciones">SUCURSALES</a></li>
+<li><a href="/sucursales">SUCURSALES</a></li>
 @endif
 
 @if($ruta=='torneo\Http\Controllers\WelcomeController@inscripcion')

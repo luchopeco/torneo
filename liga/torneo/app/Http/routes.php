@@ -27,7 +27,7 @@ Route::post('/mailinscripcion', 'WelcomeController@mailinscripcion');
 Route::post('/mailcontacto', 'WelcomeController@mailcontacto');
 
 
-Route::get('/instalaciones', 'WelcomeController@instalaciones');
+Route::get('/sucursales', 'WelcomeController@instalaciones');
 Route::get('/inscripcion', 'WelcomeController@inscripcion');
 Route::get('/equipo', 'WelcomeController@equipo');
 Route::get('/equiposalir', 'WelcomeController@equiposalir');

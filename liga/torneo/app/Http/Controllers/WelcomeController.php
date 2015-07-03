@@ -83,7 +83,7 @@ class WelcomeController extends Controller {
     }
     public function instalaciones()
     {
-        return view('instalaciones');
+        return view('sucursales');
     }
 
     public function equipo()
