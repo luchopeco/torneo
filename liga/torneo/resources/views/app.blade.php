@@ -235,7 +235,7 @@ $ruta= Route::currentRouteAction();
              <div class="row animate-in" data-anim-type="fade-in-up">
                 <div class="col-xs-12">
                     <div class="powerby text-center">
-                    2015-TODOS LOS DERECHOS RESERVADOS -DISEÑO <a target="_blank" href="#">FABRICA</a> // DESARROLLO <a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a>
+                    2015-TODOS LOS DERECHOS RESERVADOS -DISEÑO <a target="_blank" href="http://shoutside.com.ar/contacto.php">FABRICA</a> // DESARROLLO <a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a>
                     </div>
                 </div>
             </div>
