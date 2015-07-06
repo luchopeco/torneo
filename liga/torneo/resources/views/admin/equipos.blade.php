@@ -109,7 +109,7 @@
                                                  Observaciones
                                                  {!!Form::Textarea('observaciones',null,['class'=>' form-control'])!!}
                                                  Mensaje
-                                                 {!!Form::Text('mensaje',null,['class'=>' form-control','required'])!!}
+                                                 {!!Form::Text('mensaje',null,['class'=>' form-control'])!!}
                                                 <span class="help-block with-errors"></span>
                                             </div>
 

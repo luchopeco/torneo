@@ -24,7 +24,7 @@ class EquiposController extends Controller {
 	 */
 	public function index()
 	{
-        $listEquipos = Equipo::where('aprobado','0')->orderBy('nombre_equipo','asc')->get();
+        $listEquipos = Equipo::where('aprobado','1')->orderBy('nombre_equipo','asc')->get();
         //$listEquipos= Equipo::orderBy('nombre_equipo', 'asc')->get()->lists('nombre_equipo', 'idequipo');
         //dd($listArbitros);
         return view('admin.equipos', compact('listTorneos','mensajeOK','listEquipos'));
@@ -54,6 +54,7 @@ class EquiposController extends Controller {
             } else {
                 $torneo->es_libre = 0;
             }
+            $torneo->aprobado = 1;
             $torneo->save();
 
             Session::flash('mensajeOk', 'Equipo Agregado con Exito');

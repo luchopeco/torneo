@@ -34,7 +34,7 @@
         </div>
         <div class="row animate-in" data-anim-type="fade-in-up">
             <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 scroll-me">
-                <a href="/instalaciones" class=" btn button-custom btn-custom-two">CONOCE NUESTRAS SUCURSALES</a>
+                <a href="/sucursales" class=" btn button-custom btn-custom-two">CONOCE NUESTRAS SUCURSALES</a>
             </div>
         </div>
     </div>

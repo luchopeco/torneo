@@ -92,7 +92,7 @@ class TorneosController extends Controller {
 	{
         $torneo = Torneo::withTrashed()->where('idtorneo', $id)->first();
         ///Le mando todos los equipos!!
-        $listEquipos= Equipo::orderBy('nombre_equipo', 'asc')->get()->lists('nombre_equipo', 'idequipo');
+        $listEquipos= Equipo::where('aprobado','1')->orderBy('nombre_equipo', 'asc')->get()->lists('nombre_equipo', 'idequipo');
         //dd($listArbitros);
         if($torneo->Activo()=='NO')
         {
