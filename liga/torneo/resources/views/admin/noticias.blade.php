@@ -62,7 +62,7 @@
                                     <tr >
                                         <td>{{$noticia->titulo}}</td>
                                         <td>{{$noticia->fecha}}</td>
-                                        <td>{{$noticia->texto}}</td>
+                                        <td>{{Illuminate\Support\Str::limit($noticia->texto,30, '...')}}</td>
                                         <td>{{$noticia->imagen}}</td>
                                         <td>{{$noticia->mostrar_en_home}}</td>
                                         <td>{{$noticia->mostrar_en_seccion}}</td>
