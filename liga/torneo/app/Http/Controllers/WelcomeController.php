@@ -332,4 +332,21 @@ class WelcomeController extends Controller {
         }
 
     }
+
+    public function noticias()
+    {
+        $listNoticias = Noticia::where('mostrar_en_seccion',1)->get();
+        return view('noticias',compact('listNoticias'));
+    }
+    public function noticia($id)
+    {
+        try {
+            $noticias = Noticia::findOrFail($id);
+            return view('noticia', compact('noticias'));
+        }
+        catch(\Exception $ex)
+        {
+            return redirect()->action('WelcomeController@index');
+        }
+    }
 }

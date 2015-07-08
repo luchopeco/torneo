@@ -15,18 +15,18 @@ $ruta= Route::currentRouteAction();
 <![endif]-->
 <title> @yield('title')</title>
 <!-- BOOTSTRAP CORE CSS -->
-<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="/assets/css/bootstrap.css" rel="stylesheet" />
 <!-- ION ICONS STYLES -->
-<link href="assets/css/ionicons.css" rel="stylesheet" />
+<link href="/assets/css/ionicons.css" rel="stylesheet" />
 <!-- FONT AWESOME ICONS STYLES -->
-<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<link href="/assets/css/font-awesome.css" rel="stylesheet" />
 <!-- FANCYBOX POPUP STYLES -->
-<link href="assets/js/source/jquery.fancybox.css" rel="stylesheet" />
+<link href="/assets/js/source/jquery.fancybox.css" rel="stylesheet" />
 <!-- STYLES FOR VIEWPORT ANIMATION -->
-<link href="assets/css/animations.min.css" rel="stylesheet" />
+<link href="/assets/css/animations.min.css" rel="stylesheet" />
 <!-- CUSTOM CSS -->
-<link href="assets/css/style-red.css" rel="stylesheet" />
-<link href="assets/css/css.css" rel="stylesheet" />
+<link href="/assets/css/style-red.css" rel="stylesheet" />
+<link href="/assets/css/css.css" rel="stylesheet" />
 
 <script src="/assets/js/livevalidation_standalone.compressed.js" type="text/javascript"></script>
 @yield('css')
@@ -40,7 +40,6 @@ $ruta= Route::currentRouteAction();
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#menu-section">
-
 <!--MENU SECTION START-->
 <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section" >
 <div class="container">
@@ -88,9 +87,9 @@ $ruta= Route::currentRouteAction();
 @endif
 
 @if($ruta=='torneo\Http\Controllers\WelcomeController@noticias')
-<li class="active"><a href="#">NOTICIAS</a></li>
+<li class="active"><a href="/noticias">NOTICIAS</a></li>
 @else
-<li><a href="#">NOTICIAS</a></li>
+<li><a href="/noticias">NOTICIAS</a></li>
 @endif
 
 @if($ruta=='torneo\Http\Controllers\WelcomeController@equipo')
@@ -160,7 +159,7 @@ $ruta= Route::currentRouteAction();
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    {!!Form::Text('mail_contacto',null,['class'=>' form-control','placeholder'=>'MAIL','id'=>'mail_contacto'])!!}
+                                    {!!Form::Text('mail_contacto',null,['class'=>' form-control mi-input','placeholder'=>'MAIL','id'=>'mail_contacto'])!!}
                                     <script>
                                       var f5 = new LiveValidation('mail_contacto');
                                         f5.add( Validate.Email, {failureMessage: "Ingrese un mail Válido"} );
@@ -215,18 +214,27 @@ $ruta= Route::currentRouteAction();
                     <div class="marcas row">
                         <div class="col-sm-6">
                             <div class="row">
-                                <div class="col-xs-3"><img src="imagenes/logo.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                <div class="col-xs-3"><img src="imagenes/footer/sts.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                <div class="col-xs-3"><img src="imagenes/footer/quilmes.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                <div class="col-xs-3"><img src="imagenes/footer/pepsi.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="/imagenes/logo.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="/imagenes/footer/sts.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="/imagenes/footer/quilmes.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-3"><img src="/imagenes/footer/pepsi.png" class="img-responsive inline" alt="Responsive image"/></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="row">
-                                <div class="col-xs-3"><img src="imagenes/footer/auckland.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                <div class="col-xs-3"><img src="imagenes/footer/photoclub.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                <div class="col-xs-3"><img src="imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                <div class="col-xs-3"><img src="imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                <div class="col-xs-6">
+                                    <div class="row">
+                                        <div class="col-xs-4"><img src="/imagenes/footer/auckland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                        <div class="col-xs-4"><img src="/imagenes/footer/photoclub.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                        <div class="col-xs-4"><img src="/imagenes/footer/laprida.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="row">
+                                         <div class="col-xs-6"><img src="/imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                         <div class="col-xs-6"><img src="/imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -252,35 +260,35 @@ $ruta= Route::currentRouteAction();
 
 <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
 <!-- CORE JQUERY -->
-<script src="assets/js/jquery-1.11.1.js"></script>
+<script src="/assets/js/jquery-1.11.1.js"></script>
 <!-- BOOTSTRAP SCRIPTS -->
-<script src="assets/js/bootstrap.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
 <!-- EASING SCROLL SCRIPTS PLUGIN -->
-<script src="assets/js/vegas/jquery.vegas.min.js"></script>
+<script src="/assets/js/vegas/jquery.vegas.min.js"></script>
 <!-- VEGAS SLIDESHOW SCRIPTS -->
-<script src="assets/js/jquery.easing.min.js"></script>
+<script src="/assets/js/jquery.easing.min.js"></script>
 <!-- FANCYBOX PLUGIN -->
-<script src="assets/js/source/jquery.fancybox.js"></script>
+<script src="/assets/js/source/jquery.fancybox.js"></script>
 <!-- ISOTOPE SCRIPTS -->
-<script src="assets/js/jquery.isotope.js"></script>
+<script src="/assets/js/jquery.isotope.js"></script>
 <!-- VIEWPORT ANIMATION SCRIPTS   -->
-<script src="assets/js/appear.min.js"></script>
-<script src="assets/js/animations.min.js"></script>
+<script src="/assets/js/appear.min.js"></script>
+<script src="/assets/js/animations.min.js"></script>
 <!-- CUSTOM SCRIPTS -->
-<script src="assets/js/custom.js"></script>
+<script src="/assets/js/custom.js"></script>
 
 <script>
   $(function () {
        $.vegas('slideshow', {
        backgrounds: [
            @foreach($listImagen as $imagen)
-          { src: 'imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
+          { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
            @endforeach
        //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
        ]
        })('overlay', {
        /** SLIDESHOW OVERLAY IMAGE **/
-       src: 'assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+       src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
        });
 });
 

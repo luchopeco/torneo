@@ -25,7 +25,8 @@ Route::get('/equipotorneo/{idtorneo}', 'WelcomeController@equipotorneo');
 Route::post('/agregarjugador', 'WelcomeController@agregarjugador');
 Route::post('/mailinscripcion', 'WelcomeController@mailinscripcion');
 Route::post('/mailcontacto', 'WelcomeController@mailcontacto');
-
+Route::get('/noticias', 'WelcomeController@noticias');
+Route::get('/noticia/{id}', 'WelcomeController@noticia');
 
 Route::get('/sucursales', 'WelcomeController@instalaciones');
 Route::get('/inscripcion', 'WelcomeController@inscripcion');
