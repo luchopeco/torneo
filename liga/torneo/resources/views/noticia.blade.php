@@ -1,5 +1,5 @@
 @extends('app')
-@section('css')
+@section('meta')
 <meta property="og:url" content="http://www.ligatifosi.com/noticia/{{$noticias->idnoticia}}" />
 <meta property="og:title" content="{{$noticias->titulo}}" />
 <meta property="og:description" content="{{Illuminate\Support\Str::limit($noticias->texto,150, '')}}" />

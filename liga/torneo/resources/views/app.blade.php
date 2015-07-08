@@ -9,7 +9,8 @@ $ruta= Route::currentRouteAction();
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="Tifosi" />
 <meta name="author" content="Wiphala Sistemas" />
-<link rel="shortcut icon" href="faviconPublico.ico" />
+@yield('meta')
+<link rel="shortcut icon" href="/faviconPublico.ico" />
 <!--[if IE]>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
