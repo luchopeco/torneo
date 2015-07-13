@@ -167,12 +167,10 @@
                         <div class=" panel-heading"><strong>Tarjetas</strong>
                         <div class="pull-right">
                             <div class="btn-group">
-                                <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="dropdown" title="Ayuda">
-                                    <i class="fa fa-question-circle"></i><b class="caret"></b>
+                                <button type="button" class="multiselect dropdown-toggle btn btn-xs btn-warning" data-toggle="modal" data-target="#modalAyudaTarjetas"  title="Ayuda">
+                                    <i class="fa fa-question-circle"></i>
                                 </button>
-                                <ul class="multiselect-container dropdown-menu pull-right">
-                                    <li>Ultima Fecha, indica la ultima fecha en la que el jugador fue apercibido por la respectiva tarjeta.</li>
-                                </ul>
+
                             </div>
                         </div>
                         </div>
@@ -190,15 +188,33 @@
                                         <th>Tar. Rojas</th>
                                     </tr>
                                     @foreach($torneo->Tarjetas() as $goleador)
+                                      <?php
+                                        $azulmasamarillo = 0;
+                                        if($goleador->ta != null && $goleador->ta % 4 !=0 && $goleador->ta % 2 ==0 && $goleador->taz % 2 !=0 && $goleador->taz!=null ){
+                                        $azulmasamarillo = 1;
+                                        }
+                                      ?>
                                         <tr >
                                             <td>{{$goleador->nombre_jugador}}</td>
                                             <td>{{$goleador->nombre_equipo}}</td>
-                                            <td @if($goleador->ta % 4 ==0 && $goleador->ta!=null) class="danger" @endif >@if($goleador->fecha_ta!=null) {{date('d/m/Y', strtotime($goleador->fecha_ta))}}@endif</td>
-                                            <td @if($goleador->ta % 4 ==0 && $goleador->ta!=null) class="danger" @endif >{{$goleador->ta}}</td>
-                                            <td @if($goleador->taz % 2 ==0 && $goleador->taz!=null) class="danger" @endif >@if($goleador->fecha_taz!=null)  {{date('d/m/Y', strtotime($goleador->fecha_taz))}} @endif</td>
-                                            <td @if($goleador->taz % 2 ==0 && $goleador->taz!=null) class="danger" @endif >{{$goleador->taz}}</td>
-                                            <td @if($goleador->tar!=null) class="danger" @endif >@if($goleador->fecha_tr!=null)  {{date('d/m/Y', strtotime($goleador->fecha_tr))}} @endif</td>
-                                            <td @if($goleador->tar!=null) class="danger" @endif >{{$goleador->tar}}</td>
+                                            <td @if($goleador->ta % 4 ==0 && $goleador->ta!=null) class="danger" @endif @if($azulmasamarillo ==1) class="danger" @endif>
+                                                @if($goleador->fecha_ta!=null) {{date('d/m/Y', strtotime($goleador->fecha_ta))}}@endif
+                                            </td>
+                                            <td @if($goleador->ta % 4 ==0 && $goleador->ta!=null)  class="danger" @endif @if($azulmasamarillo ==1) class="danger" @endif>
+                                                {{$goleador->ta}}
+                                            </td>
+                                            <td @if($goleador->taz % 2 ==0 && $goleador->taz!=null) class="danger" @endif @if($azulmasamarillo ==1) class="danger" @endif>
+                                                @if($goleador->fecha_taz!=null)  {{date('d/m/Y', strtotime($goleador->fecha_taz))}} @endif
+                                            </td>
+                                            <td @if($goleador->taz % 2 ==0 && $goleador->taz!=null) class="danger" @endif @if($azulmasamarillo ==1) class="danger" @endif>
+                                                {{$goleador->taz}}
+                                            </td>
+                                            <td @if($goleador->tar!=null) class="danger" @endif >
+                                                @if($goleador->fecha_tr!=null)  {{date('d/m/Y', strtotime($goleador->fecha_tr))}} @endif
+                                            </td>
+                                            <td @if($goleador->tar!=null) class="danger" @endif >
+                                                {{$goleador->tar}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </table>
@@ -454,6 +470,58 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+
+        <div class="modal fade" id="modalAyudaTarjetas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">Acerca de las Tarjetas</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                  <i class="fa fa-question-circle"></i>
+                                                  <h3 class="box-title">Se colorean de ROJO.</h3>
+                                                </div><!-- /.box-header -->
+                                                <div class="box-body">
+                                                  <ul>
+                                                    <li>Los jugadores que sumen tarjetas rojas multipos de 1</li>
+                                                    <li>Los jugadores que sumen tarjestas amarillas multiplos de 4</li>
+                                                    <li>Los jugadores que sumen tarjetas azules multiplos de 2</li>
+                                                    <li>Los jugadores que sumen tarjetas azules impares, y tarjetas amarillas multiplo de 2 pero no de 4. </li>
+                                                  </ul>
+                                                </div><!-- /.box-body -->
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="text-danger">
+                                                Cabe aclarar que las tarjetas se acumulan. Que esten coloreados en rojo, no quiere decir que el jugador este inhabilitado de jugar.
+                                                Para esto se indica la ultima fecha en la que recibio la tarjeta, para que exista mas informacion al respecto.
+                                            </p>
+                                            <p class="text-danger"> Por ejemplo, el jugador puede acumular 4 tarjetas amarillas durante las cuatro primeras fechas, pero luego no recibir mas tarjetas. En este caso,
+                                            el jugador siempre aparecera coloreado de rojo, luego de la fecha 4.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
         @endsection
         @section('script')
         <script src="/js/dropzone.js" type="text/javascript"></script>
