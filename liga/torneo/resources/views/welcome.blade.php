@@ -1,4 +1,16 @@
 @extends('app')
+<meta property="og:url" content="http://www.ligatifosi.com" />
+<meta property="og:title" content="Tifosi" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/home/ragazza02.jpg" />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/home/escudotifosi.jpg" />
+ @foreach($listFiguras as $fig)
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/{{$fig->imagen}}" />
+@endforeach
+@foreach($listEquipoIdeal as $fig)
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/{{$fig->imagen}}" />
+@endforeach
+<meta property="og:type" content="website" />
 @section('title')
 ..::Tifosi::..
 @endsection

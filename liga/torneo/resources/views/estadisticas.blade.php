@@ -1,4 +1,12 @@
 @extends('app')
+@section('meta')
+<meta property="og:url" content="http://www.ligatifosi.com/estadisticas" />
+<meta property="og:title" content="Estadísticas de la Liga" />
+<meta property="og:description" content="Visite las estádisticas de la liga" />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/home/ragazza02.jpg" />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/home/escudotifosi.jpg" />
+<meta property="og:type" content="website" />
+@endsection
 @section('title')
 ..::Tifosi::..
 @endsection
