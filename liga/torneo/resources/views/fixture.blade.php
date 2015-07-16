@@ -1,4 +1,11 @@
 @extends('app')
+@section('meta')
+<meta property="og:url" content="http://www.ligatifosi.com/fixture" />
+<meta property="og:title" content="Fixture de la Liga" />
+<meta property="og:description" content="Visite el fixture de la liga" />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/fb/fb-fixture.JPG" />
+<meta property="og:type" content="website" />
+@endsection
 @section('title')
 ..::Tifosi::..
 @endsection

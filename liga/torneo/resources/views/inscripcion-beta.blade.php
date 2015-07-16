@@ -1,4 +1,15 @@
 @extends('app')
+@section('meta')
+<meta property="og:url" content="http://ligatifosi.com/inscripcion" />
+<meta property="og:title" content="Inscripción a la liga" />
+<meta property="og:description" content="Inscribir a tu equipo es fácil, tienes que seguir los siguientes pasos:
+- Completa el formulario a continuación, tienes que tener en cuenta que solo el delegado del equipo puede llenar este formulario.
+- Una vez que lo hayas llenado, espera a que nos contactemos con vos. De esta manera podrás concretar una cita para abonar la inscripción al torneo.
+- En la reunión te brindaran un usuario y contraseña con el que podrás registrarte en esta web para poder llenar la lista de buena fe de tu equipo." />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/fb/fb-inscripcion.JPG" />
+<meta property="og:type" content="website" />
+@endsection
+
 @section('title')
 ..::Tifosi::..
 @endsection

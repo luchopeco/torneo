@@ -1,4 +1,11 @@
 @extends('app')
+@section('meta')
+<meta property="og:url" content="http://ligatifosi.com/equipo" />
+<meta property="og:title" content="Inicia sesion con tu equipo" />
+<meta property="og:description" content="Inicia sesion con tu equipo, solicita el usuario y la contraseña, enterate de novedades, y consulta los datos de tu equipo en los torneos que participaste." />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/fb/fb-equipo.JPG" />
+<meta property="og:type" content="website" />
+@endsection
 @section('title')
 ..::Tifosi::..
 @endsection
