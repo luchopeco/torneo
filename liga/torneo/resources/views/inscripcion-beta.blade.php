@@ -66,7 +66,7 @@
                             <hr />
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                         {!!Form::open(['url'=>'/mailinscripcion','method'=>'POST','enctype'=>'multipart/form-data'])!!}
+                         {!!Form::open(['url'=>'/inscribirequipo','method'=>'POST','enctype'=>'multipart/form-data'])!!}
                          <input type="text" id="validador" name="validador" value=""  class="hidden">
                             <div class="row">
                                 <div class="col-md-6">

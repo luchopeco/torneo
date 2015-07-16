@@ -265,6 +265,80 @@ class WelcomeController extends Controller {
     }
 
 
+    public function  inscribirequipo()
+    {
+        try{
+            if(Input::get('validador')=='')
+            {
+                //BUSCAR SI EXISTE EQUIPO CON ESE NOMBRE
+               
+                $equipo=Equipo::where('nombre_equipo' , '=', Input::get('nombre_equipo'))->first();
+
+                if (empty($equipo)) {
+                
+                    //Crear un equipo en la BD
+                    $equipoNuevo = new Equipo;
+                    $equipoNuevo->nombre_equipo = Input::get('nombre_equipo');
+                    $equipoNuevo->observaciones = "Desea anotarse en el torneo: ". Request::get('torneo');
+                    $equipoNuevo->save();
+
+                    // Agregar jugador delegado
+
+                    $delegado = new Jugador;
+
+                    $delegado->nombre_jugador = Input::get('nombre');
+                    $delegado->dni = Input::get('dni');
+                    $delegado->idequipo = $equipoNuevo->idequipo;
+                    $delegado->observaciones = "delegado";
+                    $delegado->telefono = Input::get('celular')." - ".Input::get('telefono_alternativo');
+                    $delegado->delegado = 1 ;
+                    $delegado->mail = Input::get('mail') ;
+                    $delegado->direccion = Input::get('domicilio') ;
+
+                    $delegado->save();
+
+                    //armo el correo para enviar
+
+                    $cuerpo="Nueva Inscripcion \n";
+                    $cuerpo = $cuerpo . "Torneo: ". Request::get('torneo')."\n";
+                    $cuerpo = $cuerpo . "Nombre Equipo: ".Input::get('nombre_equipo')."\n";
+                    $cuerpo = $cuerpo . "Nombre Delegado: ".Input::get('nombre')."\n";
+                    $cuerpo = $cuerpo . "DNI Delegado: ".Input::get('dni')."\n";
+                    $cuerpo = $cuerpo . "Celular Delegado: ".Input::get('celular')."\n";
+                    $cuerpo = $cuerpo . "Mail Delegado: ".Input::get('mail')."\n";
+                    $cuerpo = $cuerpo . "Domicilio Delegado: ".Input::get('domicilio')."\n";
+                    $cuerpo = $cuerpo . "Telefono Alternativo: ".Input::get('telefono_alternativo')."\n";
+                    $cuerpo = $cuerpo . "Mensaje: ".Input::get('mensaje')."\n";
+
+                    Mail::raw($cuerpo, function($message)
+                    {
+                        $subjet = 'Inscripcion - Torneo: '.Request::get('torneo').' - Equipo: '.Input::get('nombre_equipo');
+
+                        $message->from('web@ligatifosi.com', 'Inscripcion Tifosi');
+
+                        $message->to('ligatifosi@hotmail.com')->subject($subjet);
+                    });
+                
+                } else{
+                    Session::flash('mensajeErrorContacto', "Ya existe un equipo con ese nombre");
+                     return redirect()->action('WelcomeController@inscripcion');
+        
+                }
+                
+            }
+
+            Session::flash('mensajeOk', 'Inscripcion Enviada Con Exito. En Breve nos pondremos en contacto.');
+            return redirect()->action('WelcomeController@inscripcion');
+        }
+        catch(Exception $ex)
+        {
+            Session::flash('mensajeErrorContacto', "Discuple las molestias. El pedido de inscripcion no se pudo realizar. Intente en otro momento");
+            return redirect()->action('WelcomeController@inscripcion');
+        }
+
+    }
+
+
     public function  mailinscripcion()
     {
         try{

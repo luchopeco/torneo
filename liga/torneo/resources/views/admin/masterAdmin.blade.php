@@ -89,6 +89,7 @@
             <li <?php if('admin.equipos.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li <?php if('admin.torneos.index'== Route::current()->getName()){echo 'class="active"';} ?>> <a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
             <li <?php if('admin.noticias.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
+            <li <?php if('admin.inscripcion.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/inscripcion"><i class="fa fa-plus-circle"></i>Inscripción</a></li>
             
             <li><a href="#">
 
