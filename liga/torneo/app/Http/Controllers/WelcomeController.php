@@ -280,6 +280,7 @@ class WelcomeController extends Controller {
                     $equipoNuevo = new Equipo;
                     $equipoNuevo->nombre_equipo = Input::get('nombre_equipo');
                     $equipoNuevo->observaciones = "Desea anotarse en el torneo: ". Request::get('torneo');
+                    $equipoNuevo->aprobado = 0;
                     $equipoNuevo->save();
 
                     // Agregar jugador delegado
@@ -317,9 +318,11 @@ class WelcomeController extends Controller {
                         $message->from('web@ligatifosi.com', 'Inscripcion Tifosi');
 
                         $message->to('ligatifosi@hotmail.com')->subject($subjet);
+
                     });
                 
-                } else{
+                }
+                else{
                     Session::flash('mensajeErrorContacto', "Ya existe un equipo con ese nombre");
                      return redirect()->action('WelcomeController@inscripcion');
         

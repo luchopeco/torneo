@@ -169,7 +169,6 @@ class EquiposController extends Controller {
 	{
         try
         {
-
             Equipo::destroy($request->idequipo);
             Session::flash('mensajeOk', 'Equipo Eliminado con Exito');
             return redirect()->route('admin.equipos.index');

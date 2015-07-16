@@ -169,16 +169,15 @@ class InscripcionController extends Controller {
 	{
         try
         {
-
             Equipo::destroy($request->idequipo);
             Session::flash('mensajeOk', 'Equipo Eliminado con Exito');
-            return redirect()->route('admin.equipos.index');
+            return redirect()->route('admin.inscripcion.index');
         }
         catch(QueryException  $ex)
         {
             $par = Equipo::findOrFail($request->idequipo);
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.equipos.index');
+            return redirect()->route('admin.inscripcion.index');
         }
 	}
 
@@ -310,6 +309,22 @@ class InscripcionController extends Controller {
         }
     }
 
+    public function aceptarinscripcion($id)
+    {
+        try {
+                $ar = Equipo::findOrFail($id);
+                $ar->aprobado = 1;
+                $ar->save();
+                Session::flash('mensajeOk', 'Equipo Aceptado con Exito');
+                return redirect()->route('admin.inscripcion.index');
+        }
+        catch(QueryException  $ex)
+        {
+            Session::flash('mensajeError', $ex->getMessage());
+            return redirect()->route('admin.inscripcion.index');
+        }
+
+    }
 
 
 }

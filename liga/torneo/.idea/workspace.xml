@@ -34,8 +34,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/include/fixture.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/imagenes.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/paginainicio.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/instalaciones.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/include/estadisticas.blade.php" />
@@ -64,16 +62,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/JugadoresController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NoticiasController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PartidosController.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/sucursales.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TorneosController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/EquiposController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/equipos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/noticias.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/masterAdmin.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/style-red.css" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
         <option value="$PROJECT_DIR$/public/assets/css/css.css" />
         <option value="$PROJECT_DIR$/resources/views/noticias.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
@@ -85,6 +78,13 @@
         <option value="$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/equipo.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/masterAdmin.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/EquiposController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/InscripcionController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/inscripcion.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -129,6 +129,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -157,11 +158,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -175,13 +172,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,15 +246,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -268,7 +290,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -301,57 +323,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="72" />
+      <option name="time" value="83" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipoimagen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="2975">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/noticiaimagen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="2040">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/paginainicio.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4046">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partido.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="7123">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partidos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="5593">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/torneos.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13461539" vertical-offset="0" max-vertical-offset="5253">
           <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.047619" vertical-offset="1664" max-vertical-offset="2210">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -390,13 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ArbitrosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33452594" vertical-offset="0" max-vertical-offset="2788">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FechasController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27370304" vertical-offset="0" max-vertical-offset="5049">
@@ -408,13 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.038462" vertical-offset="102" max-vertical-offset="1564">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/JugadoresController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2941">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -446,13 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31310943" vertical-offset="0" max-vertical-offset="923">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/instalaciones.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45617172" vertical-offset="0" max-vertical-offset="1309">
@@ -478,13 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.25913242" vertical-offset="737" max-vertical-offset="5287">
           <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/EquiposController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6633222" vertical-offset="153" max-vertical-offset="5287">
-          <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -523,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/masterAdmin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3128" max-vertical-offset="4641">
-          <caret line="184" column="29" selection-start-line="184" selection-start-column="29" selection-end-line="184" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style-red.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.743007" vertical-offset="6630" max-vertical-offset="8891">
@@ -562,13 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43891403" vertical-offset="4593" max-vertical-offset="6766">
           <caret line="493" column="57" selection-start-line="493" selection-start-column="57" selection-end-line="493" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1853">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -607,13 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7948718" vertical-offset="1" max-vertical-offset="901">
-          <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1730769" vertical-offset="1615" max-vertical-offset="3927">
@@ -629,14 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5192308" vertical-offset="3621" max-vertical-offset="5219">
-          <caret line="240" column="26" selection-start-line="240" selection-start-column="26" selection-end-line="240" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/equipo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="5287">
@@ -645,21 +568,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018952062" vertical-offset="0" max-vertical-offset="3247">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/fixture.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018952062" vertical-offset="0" max-vertical-offset="2176">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <marker date="1437045896529" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -667,9 +580,350 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018952062" vertical-offset="0" max-vertical-offset="2193">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/arbitros.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8076923" vertical-offset="714" max-vertical-offset="3570">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Equipo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7012263" vertical-offset="0" max-vertical-offset="969">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="35" />
           <folding>
-            <marker date="1437045535659" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1435261616808" expanded="true" signature="-1:-1" placeholder="SELECT t.idt..torneos..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Jugador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17056856" vertical-offset="0" max-vertical-offset="897">
+          <caret line="10" column="155" selection-start-line="10" selection-start-column="147" selection-end-line="10" selection-end-column="155" />
+          <folding>
+            <element signature="e#390#496#0#PHP" expanded="false" />
+            <element signature="e#634#760#0#PHP" expanded="false" />
+            <element signature="e#711#760#0#PHP" expanded="false" />
+            <element signature="e#771#957#0#PHP" expanded="false" />
+            <element signature="e#822#951#0#PHP" expanded="false" />
+            <element signature="e#902#951#0#PHP" expanded="false" />
+            <element signature="e#962#1600#0#PHP" expanded="false" />
+            <element signature="e#1020#1492#0#PHP" expanded="false" />
+            <element signature="e#1031#1439#0#PHP" expanded="false" />
+            <element signature="e#1502#1573#0#PHP" expanded="false" />
+            <element signature="e#1606#2429#0#PHP" expanded="false" />
+            <element signature="e#1672#2319#0#PHP" expanded="false" />
+            <element signature="e#1683#2266#0#PHP" expanded="false" />
+            <element signature="e#2329#2398#0#PHP" expanded="false" />
+            <element signature="e#2434#3250#0#PHP" expanded="false" />
+            <element signature="e#2497#3140#0#PHP" expanded="false" />
+            <element signature="e#2508#3087#0#PHP" expanded="false" />
+            <element signature="e#3150#3219#0#PHP" expanded="false" />
+            <element signature="e#3255#4070#0#PHP" expanded="false" />
+            <element signature="e#3317#3960#0#PHP" expanded="false" />
+            <element signature="e#3328#3907#0#PHP" expanded="false" />
+            <element signature="e#3970#4039#0#PHP" expanded="false" />
+            <element signature="e#4075#5716#0#PHP" expanded="false" />
+            <element signature="e#4137#5582#0#PHP" expanded="false" />
+            <element signature="e#4148#5494#0#PHP" expanded="false" />
+            <element signature="e#5612#5685#0#PHP" expanded="false" />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT COALE..partido_has_jugador..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT COALE..partido_has_jugador..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT COALE..partido_has_jugador..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT COALE..partido_has_jugador..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT COALE..jugador..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT count..fechas..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT jugad..nombre_jugador..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT j.nom..partidos..." />
+            <marker date="1435261616818" expanded="false" signature="-1:-1" placeholder="SELECT count..fechas..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/inscripcion.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.884615" vertical-offset="1467" max-vertical-offset="4063">
+          <caret line="106" column="67" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
+          <folding>
+            <element signature="tag#div#3" expanded="false" />
+            <element signature="tag#div#4" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/InscripcionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.923077" vertical-offset="851" max-vertical-offset="1751">
+          <caret line="312" column="5" selection-start-line="312" selection-start-column="5" selection-end-line="312" selection-end-column="5" />
+          <folding>
+            <element signature="e#451#527#0#PHP" expanded="false" />
+            <element signature="e#529#601#0#PHP" expanded="false" />
+            <element signature="e#603#954#0#PHP" expanded="false" />
+            <element signature="e#957#1037#0#PHP" expanded="false" />
+            <element signature="e#1039#1074#0#PHP" expanded="false" />
+            <element signature="e#1077#1157#0#PHP" expanded="false" />
+            <element signature="e#1638#1809#0#PHP" expanded="false" />
+            <element signature="e#1939#2073#0#PHP" expanded="false" />
+            <element signature="e#2204#2294#0#PHP" expanded="false" />
+            <element signature="e#2296#2434#0#PHP" expanded="false" />
+            <element signature="e#2437#2545#0#PHP" expanded="false" />
+            <element signature="e#2547#2583#0#PHP" expanded="false" />
+            <element signature="e#2586#2686#0#PHP" expanded="false" />
+            <element signature="e#2688#4312#0#PHP" expanded="false" />
+            <element signature="e#2828#4119#0#PHP" expanded="false" />
+            <element signature="e#3344#3580#0#PHP" expanded="false" />
+            <element signature="e#3476#3580#0#PHP" expanded="false" />
+            <element signature="e#3598#3761#0#PHP" expanded="false" />
+            <element signature="e#3695#3761#0#PHP" expanded="false" />
+            <element signature="e#3779#3933#0#PHP" expanded="false" />
+            <element signature="e#3870#3933#0#PHP" expanded="false" />
+            <element signature="e#4139#4309#0#PHP" expanded="false" />
+            <element signature="e#4319#4421#0#PHP" expanded="false" />
+            <element signature="e#4935#4994#0#PHP" expanded="false" />
+            <element signature="e#4999#5599#0#PHP" expanded="false" />
+            <element signature="e#5062#5593#0#PHP" expanded="false" />
+            <element signature="e#5406#5593#0#PHP" expanded="false" />
+            <element signature="e#5605#5749#0#PHP" expanded="false" />
+            <element signature="e#5755#6712#0#PHP" expanded="false" />
+            <element signature="e#5821#6706#0#PHP" expanded="false" />
+            <element signature="e#5908#6372#0#PHP" expanded="false" />
+            <element signature="e#6537#6706#0#PHP" expanded="false" />
+            <element signature="e#6717#7277#0#PHP" expanded="false" />
+            <element signature="e#6782#7271#0#PHP" expanded="false" />
+            <element signature="e#7103#7271#0#PHP" expanded="false" />
+            <element signature="e#7283#8241#0#PHP" expanded="false" />
+            <element signature="e#7351#8235#0#PHP" expanded="false" />
+            <element signature="e#7438#7908#0#PHP" expanded="false" />
+            <element signature="e#8073#8235#0#PHP" expanded="false" />
+            <element signature="e#8246#8811#0#PHP" expanded="false" />
+            <element signature="e#8313#8805#0#PHP" expanded="false" />
+            <element signature="e#8637#8805#0#PHP" expanded="false" />
+            <element signature="e#8816#9358#0#PHP" expanded="false" />
+            <element signature="e#8878#9352#0#PHP" expanded="false" />
+            <element signature="e#9182#9352#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/masterAdmin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7692308" vertical-offset="816" max-vertical-offset="4675">
+          <caret line="88" column="44" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4548495" vertical-offset="0" max-vertical-offset="1955">
+          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/JugadoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47380155" vertical-offset="0" max-vertical-offset="897">
+          <caret line="112" column="44" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="44" />
+          <folding>
+            <element signature="e#328#404#0#PHP" expanded="false" />
+            <element signature="e#406#478#0#PHP" expanded="false" />
+            <element signature="e#480#514#0#PHP" expanded="false" />
+            <element signature="e#517#597#0#PHP" expanded="false" />
+            <element signature="e#599#634#0#PHP" expanded="false" />
+            <element signature="e#640#1025#0#PHP" expanded="false" />
+            <element signature="e#763#897#0#PHP" expanded="false" />
+            <element signature="e#1028#1108#0#PHP" expanded="false" />
+            <element signature="e#1110#1954#0#PHP" expanded="false" />
+            <element signature="e#1161#1951#0#PHP" expanded="false" />
+            <element signature="e#1232#1380#0#PHP" expanded="false" />
+            <element signature="e#1320#1380#0#PHP" expanded="false" />
+            <element signature="e#1394#1551#0#PHP" expanded="false" />
+            <element signature="e#1488#1551#0#PHP" expanded="false" />
+            <element signature="e#1757#1951#0#PHP" expanded="false" />
+            <element signature="e#1957#2047#0#PHP" expanded="false" />
+            <element signature="e#2049#2085#0#PHP" expanded="false" />
+            <element signature="e#2088#2196#0#PHP" expanded="false" />
+            <element signature="e#2198#2234#0#PHP" expanded="false" />
+            <element signature="e#2237#2337#0#PHP" expanded="false" />
+            <element signature="e#2339#3571#0#PHP" expanded="false" />
+            <element signature="e#2391#3568#0#PHP" expanded="false" />
+            <element signature="e#2871#3009#0#PHP" expanded="false" />
+            <element signature="e#2954#3009#0#PHP" expanded="false" />
+            <element signature="e#3023#3170#0#PHP" expanded="false" />
+            <element signature="e#3112#3170#0#PHP" expanded="false" />
+            <element signature="e#3375#3568#0#PHP" expanded="false" />
+            <element signature="e#3574#3676#0#PHP" expanded="false" />
+            <element signature="e#3678#4166#0#PHP" expanded="false" />
+            <element signature="e#3731#4163#0#PHP" expanded="false" />
+            <element signature="e#3970#4163#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ArbitrosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20847268" vertical-offset="0" max-vertical-offset="2788">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/EquiposController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56856185" vertical-offset="0" max-vertical-offset="897">
+          <caret line="202" column="5" selection-start-line="202" selection-start-column="5" selection-end-line="202" selection-end-column="5" />
+          <folding>
+            <element signature="e#447#523#0#PHP" expanded="false" />
+            <element signature="e#525#597#0#PHP" expanded="false" />
+            <element signature="e#599#946#0#PHP" expanded="false" />
+            <element signature="e#949#1029#0#PHP" expanded="false" />
+            <element signature="e#1031#1066#0#PHP" expanded="false" />
+            <element signature="e#1069#1149#0#PHP" expanded="false" />
+            <element signature="e#1151#1804#0#PHP" expanded="false" />
+            <element signature="e#1202#1801#0#PHP" expanded="false" />
+            <element signature="e#1270#1415#0#PHP" expanded="false" />
+            <element signature="e#1356#1415#0#PHP" expanded="false" />
+            <element signature="e#1630#1801#0#PHP" expanded="false" />
+            <element signature="e#1810#2194#0#PHP" expanded="false" />
+            <element signature="e#1931#2065#0#PHP" expanded="false" />
+            <element signature="e#2196#2286#0#PHP" expanded="false" />
+            <element signature="e#2288#2426#0#PHP" expanded="false" />
+            <element signature="e#2429#2537#0#PHP" expanded="false" />
+            <element signature="e#2539#2575#0#PHP" expanded="false" />
+            <element signature="e#2578#2678#0#PHP" expanded="false" />
+            <element signature="e#2680#4304#0#PHP" expanded="false" />
+            <element signature="e#3336#3572#0#PHP" expanded="false" />
+            <element signature="e#3468#3572#0#PHP" expanded="false" />
+            <element signature="e#3590#3753#0#PHP" expanded="false" />
+            <element signature="e#3687#3753#0#PHP" expanded="false" />
+            <element signature="e#3771#3925#0#PHP" expanded="false" />
+            <element signature="e#3862#3925#0#PHP" expanded="false" />
+            <element signature="e#4311#4413#0#PHP" expanded="false" />
+            <element signature="e#4415#4913#0#PHP" expanded="false" />
+            <element signature="e#4468#4910#0#PHP" expanded="false" />
+            <element signature="e#4681#4910#0#PHP" expanded="false" />
+            <element signature="e#4919#4978#0#PHP" expanded="false" />
+            <element signature="e#4983#5583#0#PHP" expanded="false" />
+            <element signature="e#5046#5577#0#PHP" expanded="false" />
+            <element signature="e#5390#5577#0#PHP" expanded="false" />
+            <element signature="e#5589#5733#0#PHP" expanded="false" />
+            <element signature="e#5739#6696#0#PHP" expanded="false" />
+            <element signature="e#5805#6690#0#PHP" expanded="false" />
+            <element signature="e#5892#6356#0#PHP" expanded="false" />
+            <element signature="e#6521#6690#0#PHP" expanded="false" />
+            <element signature="e#6701#7261#0#PHP" expanded="false" />
+            <element signature="e#6766#7255#0#PHP" expanded="false" />
+            <element signature="e#7087#7255#0#PHP" expanded="false" />
+            <element signature="e#7267#8225#0#PHP" expanded="false" />
+            <element signature="e#7335#8219#0#PHP" expanded="false" />
+            <element signature="e#7422#7892#0#PHP" expanded="false" />
+            <element signature="e#8057#8219#0#PHP" expanded="false" />
+            <element signature="e#8230#8795#0#PHP" expanded="false" />
+            <element signature="e#8297#8789#0#PHP" expanded="false" />
+            <element signature="e#8621#8789#0#PHP" expanded="false" />
+            <element signature="e#8800#9342#0#PHP" expanded="false" />
+            <element signature="e#9166#9336#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.5079186" vertical-offset="979" max-vertical-offset="5219">
+          <caret line="240" column="26" selection-start-line="240" selection-start-column="26" selection-end-line="240" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4548495" vertical-offset="357" max-vertical-offset="2176">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.47380155" vertical-offset="1989" max-vertical-offset="3247">
+          <caret line="92" column="45" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46934226" vertical-offset="327" max-vertical-offset="1224">
+          <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding>
+            <element signature="e#443#839#0#PHP" expanded="false" />
+            <element signature="e#842#909#0#PHP" expanded="false" />
+            <element signature="e#911#978#0#PHP" expanded="false" />
+            <element signature="e#981#1067#0#PHP" expanded="false" />
+            <element signature="e#1069#1376#0#PHP" expanded="false" />
+            <element signature="e#1382#1582#0#PHP" expanded="false" />
+            <element signature="e#1587#1734#0#PHP" expanded="false" />
+            <element signature="e#1740#1951#0#PHP" expanded="false" />
+            <element signature="e#1956#2113#0#PHP" expanded="false" />
+            <element signature="e#2118#2344#0#PHP" expanded="false" />
+            <element signature="e#2349#2578#0#PHP" expanded="false" />
+            <element signature="e#2583#2661#0#PHP" expanded="false" />
+            <element signature="e#2667#3229#0#PHP" expanded="false" />
+            <element signature="e#2706#3222#0#PHP" expanded="false" />
+            <element signature="e#2732#3127#0#PHP" expanded="false" />
+            <element signature="e#3015#3127#0#PHP" expanded="false" />
+            <element signature="e#3146#3222#0#PHP" expanded="false" />
+            <element signature="e#3234#3340#0#PHP" expanded="false" />
+            <element signature="e#3345#4239#0#PHP" expanded="false" />
+            <element signature="e#3389#4232#0#PHP" expanded="false" />
+            <element signature="e#3628#4030#0#PHP" expanded="false" />
+            <element signature="e#3847#4030#0#PHP" expanded="false" />
+            <element signature="e#4049#4232#0#PHP" expanded="false" />
+            <element signature="e#4335#5183#0#PHP" expanded="false" />
+            <element signature="e#4403#5177#0#PHP" expanded="false" />
+            <element signature="e#4495#4965#0#PHP" expanded="false" />
+            <element signature="e#5130#5177#0#PHP" expanded="false" />
+            <element signature="e#5189#6029#0#PHP" expanded="false" />
+            <element signature="e#5255#6023#0#PHP" expanded="false" />
+            <element signature="e#5347#5811#0#PHP" expanded="false" />
+            <element signature="e#5976#6023#0#PHP" expanded="false" />
+            <element signature="e#6035#7489#0#PHP" expanded="false" />
+            <element signature="e#6077#7483#0#PHP" expanded="false" />
+            <element signature="e#6103#7294#0#PHP" expanded="false" />
+            <element signature="e#6361#7294#0#PHP" expanded="false" />
+            <element signature="e#6613#7294#0#PHP" expanded="false" />
+            <element signature="e#6706#7279#0#PHP" expanded="false" />
+            <element signature="e#7079#7279#0#PHP" expanded="false" />
+            <element signature="e#7313#7483#0#PHP" expanded="false" />
+            <element signature="e#7496#7759#0#PHP" expanded="false" />
+            <element signature="e#7764#8710#0#PHP" expanded="false" />
+            <element signature="e#7827#8704#0#PHP" expanded="false" />
+            <element signature="e#8517#8704#0#PHP" expanded="false" />
+            <element signature="e#8717#12153#0#PHP" expanded="false" />
+            <element signature="e#12160#13935#0#PHP" expanded="false" />
+            <element signature="e#13986#15265#0#PHP" expanded="false" />
+            <element signature="e#14003#14824#0#PHP" expanded="false" />
+            <element signature="e#14488#14809#0#PHP" expanded="false" />
+            <element signature="e#14507#14808#1#PHP" expanded="false" />
+            <element signature="e#15026#15265#0#PHP" expanded="false" />
+            <element signature="e#15492#15730#0#PHP" expanded="false" />
+            <element signature="e#15623#15730#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29469123" vertical-offset="0" max-vertical-offset="923">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

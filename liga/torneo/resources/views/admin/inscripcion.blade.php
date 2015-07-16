@@ -41,7 +41,7 @@
                                     <i class="fa fa-question-circle"></i><b class="caret"></b>
                                 </button>
                                 <ul class="multiselect-container dropdown-menu pull-right">
-                                    <li>::Desde Aqui Puede inscribir un Equipo:</li>
+                                    <li>::Desde aqui puede aceptar la inscripcion de un equipo:</li>
                                    
                                 </ul>
 
@@ -53,38 +53,59 @@
                             <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                 <tr>
                                     <th>Nombre Equipo</th>
+                                    <th>Observaciones</th>
                                     <th>Nombre Delegado</th>
+                                    <th>DNI</th>
                                     <th>Teléfono</th>
-                                   
-                                    
+                                    <th>Mail</th>
+                                    <th>Direccion</th>
                                 </tr>
                                 @foreach($listEquipos as $equipo)
-
-                                <?php 
-
-                                 // $delegado = Jugador::where('idequipo' , '=', $equipo->idequipo)->first();    // no me funciono esta linea
-
-                                $delegado = DB::table('jugadores')
-                                           ->select(DB::raw('*'))
-                                           ->where('idequipo', '<>', $equipo->idequipo)                                           
-                                           ->get();
-
-
-                                  $nombreDelegado= "";
-                                  $telefono="";
-                                  if (!empty($delegado)) {
-                                  //  $nombreDelegado=$delegado[0]['nombre_jugador'];
-                                   // $telefono = $delegado[0]['telefono'];
-                                  }
-                                 ?>
                                     <tr >
-                                        <td>{{$equipo->nombre_equipo}}</td>
-                                        <th>{{$nombreDelegado}}</th>
-                                        <th>{{$telefono}}</th>
-                                      
-                                        
-                                        <td><a href="aceptarEquipo/{{$equipo->idequipo}}" title="ACEPTAR EQUIPO" class=" btn-xs btn btn-success" ><i class=" fa fa-plus"></i></a></td>
-                                        <td><a href="eliminarInscripcion/{{$equipo->idequipo}}" class="btn btn-xs btn-danger eliminar" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
+                                    <td>{{$equipo->nombre_equipo}}</td>
+                                    <td>{{$equipo->observaciones}}</td>
+                                       <!-- el for dentro del td por las dudas q existan varios delegados -->
+                                    <td>
+                                        @foreach($equipo->ListJugadores as $delegado)
+                                            @if($delegado->delegado==1)
+                                                {{$delegado->nombre_jugador.' - '}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <!-- el for dentro del td por las dudas q existan varios delegados -->
+                                    <td>
+                                        @foreach($equipo->ListJugadores as $delegado)
+                                            @if($delegado->delegado==1)
+                                                {{$delegado->dni.' - '}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <!-- el for dentro del td por las dudas q existan varios delegados -->
+                                    <td>
+                                        @foreach($equipo->ListJugadores as $delegado)
+                                            @if($delegado->delegado==1)
+                                                {{$delegado->telefono.' - '}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                     <!-- el for dentro del td por las dudas q existan varios delegados -->
+                                    <td>
+                                        @foreach($equipo->ListJugadores as $delegado)
+                                            @if($delegado->delegado==1)
+                                                {{$delegado->mail.' - '}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                     <!-- el for dentro del td por las dudas q existan varios delegados -->
+                                    <td>
+                                        @foreach($equipo->ListJugadores as $delegado)
+                                            @if($delegado->delegado==1)
+                                                {{$delegado->direccion.' - '}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td><a href="aceptarinscripcion/{{$equipo->idequipo}}" title="Aceptar Equipo" class=" btn-xs btn btn-success" ><i class="fa fa-check"></i></a></td>
+                                    <td><a href="#" class="btn btn-xs btn-danger eliminar" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar Inscripcion"> <i class=" fa fa-close"></i></a></td>
                                     </tr>
                                 @endforeach
                             </table>
@@ -198,37 +219,36 @@
           </div>
         </div>
         <div class="modal fade" id="modalArbitroEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog">
-                                                 <div class="modal-content">
-                                                    {!!Form::open(['route'=>['admin.equipos.destroy'],'method'=>'DELETE'])!!}
-                                                      <div class="modal-header">
-                                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                          <h4 class="modal-title" id="myModalLabel">Eliminando Equipo</h4>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                             <div class="row">
-                                                                  <div class="col-md-12">
-                                                                      {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoD'])!!}
-                                                                      <h3>¿Desea Eliminar el Equipo?</h3>
-                                                                      <div id="caca"></div>
-                                                                  </div>
-                                                             </div>
-                                                      <div class="modal-footer">
-                                                          <div class="row ">
-                                                              <div class="col-md-12">
-                                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                                                  {!!Form::submit('Eliminar', array('class' => 'btn btn-success'))!!}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                    {!! Form::close() !!}
-                                                 </div>
-                                                  <!-- /.modal-content -->
-                                              </div>
-                                              <!-- /.modal-dialog -->
-                                        </div>
+                  <div class="modal-dialog">
+                     <div class="modal-content">
+                        {!!Form::open(['route'=>['admin.inscripcion.destroy'],'method'=>'DELETE'])!!}
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                              <h4 class="modal-title" id="myModalLabel">Eliminando Equipo Inscripto</h4>
+                          </div>
+                          <div class="modal-body">
+                                 <div class="row">
+                                      <div class="col-md-12">
+                                          {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoD'])!!}
+                                          <h3>¿Desea Eliminar el Equipo Inscripto?</h3>
+                                          <div id="caca"></div>
                                       </div>
-
+                                 </div>
+                          <div class="modal-footer">
+                              <div class="row ">
+                                  <div class="col-md-12">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                      {!!Form::submit('Eliminar', array('class' => 'btn btn-success'))!!}
+                                  </div>
+                              </div>
+                          </div>
+                        {!! Form::close() !!}
+                     </div>
+                      <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+            </div>
+          </div>
         <div class="modal fade" id="modalCalveResetear" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                    <div class="modal-content">
@@ -307,16 +327,6 @@
                 $("#idequipoD").val(id_arbitro);
                 $("#modalArbitroEliminar").modal("show");
             });
-
-            $('body').on('click', '.clave', function (event) {
-                event.preventDefault();
-                var id_equipo=$(this).attr('data-idequipo');
-                var equipo=$(this).attr('data-equipo');
-                $("#idequipoC").val(id_equipo);
-                $("#equipoC").html(equipo);
-                $("#modalCalveResetear").modal("show");
-            });
-
         });
 
         </script>

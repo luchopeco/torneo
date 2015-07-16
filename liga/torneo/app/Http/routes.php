@@ -23,9 +23,6 @@ Route::post('/equipofotoguardar', 'WelcomeController@equipofotoguardar');
 Route::post('/modificarclave', 'WelcomeController@modificarclave');
 Route::get('/equipotorneo/{idtorneo}', 'WelcomeController@equipotorneo');
 Route::post('/agregarjugador', 'WelcomeController@agregarjugador');
-Route::post('/mailinscripcion', 'WelcomeController@mailinscripcion');
-Route::post('/inscribirequipo', 'WelcomeController@inscribirequipo');
-
 
 Route::post('/mailcontacto', 'WelcomeController@mailcontacto');
 Route::get('/noticias', 'WelcomeController@noticias');
@@ -33,6 +30,8 @@ Route::get('/noticia/{id}', 'WelcomeController@noticia');
 
 Route::get('/sucursales', 'WelcomeController@instalaciones');
 Route::get('/inscripcion', 'WelcomeController@inscripcion');
+Route::post('/mailinscripcion', 'WelcomeController@mailinscripcion');
+Route::post('/inscribirequipo', 'WelcomeController@inscribirequipo');
 Route::get('/equipo', 'WelcomeController@equipo');
 Route::get('/equiposalir', 'WelcomeController@equiposalir');
 Route::post('/loginequipo', 'WelcomeController@loginequipo');
@@ -68,6 +67,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::post('equipos/resetearclave','EquiposController@resetearclave');
 
         Route::resource('inscripcion','InscripcionController');
+        Route::get('aceptarinscripcion/{id}','InscripcionController@aceptarinscripcion');
+
 
         Route::get('equipoimagen/{id}','EquiposController@equipoimagen');
         Route::post('equipoimagen/equipofotoborrar','EquiposController@equipofotoborrar');

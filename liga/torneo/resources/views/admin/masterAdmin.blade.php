@@ -86,10 +86,11 @@
 
             <li <?php if('admin.imagenes.index'== Route::current()->getName()||'admin.imagenes.show'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/imagenes"><i class="fa fa-picture-o"></i>Imagenes</a></li>
             <li <?php if('admin.arbitros.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
+             <li <?php if('admin.inscripcion.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/inscripcion"><i class="fa fa-pencil-square-o"></i>Inscripciones</a></li>
             <li <?php if('admin.equipos.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li <?php if('admin.torneos.index'== Route::current()->getName()){echo 'class="active"';} ?>> <a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
             <li <?php if('admin.noticias.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
-            <li <?php if('admin.inscripcion.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/inscripcion"><i class="fa fa-plus-circle"></i>Inscripción</a></li>
+
             
             <li><a href="#">
 
