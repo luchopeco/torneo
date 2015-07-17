@@ -42,7 +42,7 @@
                                 </button>
                                 <ul class="multiselect-container dropdown-menu pull-right">
                                     <li>Desde Aqui Puede Agregar (Click en "+"), editar , inactivar o eliminar un Torneo</li>
-                                    <li>Un torneo inactivado no se muestra en la web publica</li>
+                                    <li>Un torneo inactivo no se muestra en la web publica</li>
                                     <li>Haciendo click en configurar torneo,puede configurarlo, agregando fechas equipos, Resultados,etc</li>
                                 </ul>
                             </div>

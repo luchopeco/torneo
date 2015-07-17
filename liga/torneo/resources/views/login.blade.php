@@ -17,7 +17,9 @@
             <div class="row text-center header animate-in" data-anim-type="fade-in-up">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h3>LOGIN EQUIPOS</h3>
-                    <hr />
+                     <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 scroll-me">
+                        <a href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.ligatifosi.com/equipo" class=" btn button-custom btn-custom-two"><i class="fa fa-facebook"></i> Comparitr</a>
+                    </div>
                 </div>
             </div>
              @if(Session::has('mensajeError'))
