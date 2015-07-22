@@ -3,7 +3,7 @@
 <meta property="og:url" content="http://www.ligatifosi.com/estadisticas" />
 <meta property="og:title" content="Estadísticas de la Liga" />
 <meta property="og:description" content="Visite las estádisticas de la liga" />
-<meta property="og:image" content="http://www.ligatifosi.com/imagenes/fb/fb-estadisticas.JPG" />
+<meta property="og:image" content="http://www.ligatifosi.com/imagenes/fb/fb-estadisticas1.JPG" />
 <meta property="og:type" content="website" />
 @endsection
 @section('title')
