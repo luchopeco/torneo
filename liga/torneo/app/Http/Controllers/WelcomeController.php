@@ -426,4 +426,15 @@ class WelcomeController extends Controller {
             return redirect()->action('WelcomeController@index');
         }
     }
+
+    public function jugadoresfecha()
+    {
+        $listFiguras=Imagen::where('idtipo_imagen',2)->get();
+        return view('jugadores-fecha',compact('listFiguras'));
+    }
+    public function equipoideal()
+    {
+        $listEquipoIdeal=Imagen::where('idtipo_imagen',3)->get();
+        return view('equipo-ideal',compact('listEquipoIdeal'));
+    }
 }
