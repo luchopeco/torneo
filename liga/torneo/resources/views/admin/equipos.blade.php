@@ -70,8 +70,8 @@
                                         <td>{{$equipo->nombre_equipo}}</td>
                                         <th>{{$equipo->nombre_usuario}}</th>
                                         <th>{{$equipo->autogestionHabilitada()}}</th>
-                                        <td>{{Illuminate\Support\Str::limit($equipo->observaciones,20, '...')}}</td>
-                                         <td>{{Illuminate\Support\Str::limit($equipo->mensaje,20, '...')}}</td>
+                                        <td>{{Illuminate\Support\Str::limit($equipo->observaciones,40, '...')}}</td>
+                                         <td>{{Illuminate\Support\Str::limit($equipo->mensaje,40, '...')}}</td>
                                         <td>{{$equipo->esLibre()}}</td>
                                         <td><a href="equipos/{{$equipo->idequipo}}"  class="btn btn-xs btn-primary " data-idequipo="{{$equipo->idequipo}}"  title="Editar Jugadores"> <i class="fa fa-user"></i></a></td>
                                         <td><a href="#"  class="btn btn-xs btn-info editar" data-idequipo="{{$equipo->idequipo}}"  title="Editar Equipo"> <i class=" fa fa-edit"></i></a></td>

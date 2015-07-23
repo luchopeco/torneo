@@ -62,7 +62,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PartidosController.php" />
         <option value="$PROJECT_DIR$/resources/views/sucursales.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TorneosController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/equipos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/noticias.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/style-red.css" />
         <option value="$PROJECT_DIR$/public/assets/css/css.css" />
@@ -79,12 +78,13 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/torneos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/fixture.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/estadisticas.blade.php" />
         <option value="$PROJECT_DIR$/app/Torneo.php" />
+        <option value="$PROJECT_DIR$/resources/views/estadisticas.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/fixture.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/equipos.blade.php" />
       </list>
     </option>
   </component>
@@ -129,6 +129,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,7 +240,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -282,15 +282,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -326,7 +326,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -455,13 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17307693" vertical-offset="1071" max-vertical-offset="5474">
-          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/fecha.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.606466" vertical-offset="1173" max-vertical-offset="3893">
@@ -494,13 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.743007" vertical-offset="6630" max-vertical-offset="8891">
           <caret line="415" column="0" selection-start-line="342" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sucursales.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77472526" vertical-offset="1430" max-vertical-offset="2958">
-          <caret line="109" column="120" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="120" />
         </state>
       </provider>
     </entry>
@@ -644,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="3281">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-146.65384" vertical-offset="794" max-vertical-offset="5219">
@@ -686,36 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8528428" vertical-offset="0" max-vertical-offset="2176">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/fixture.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2210">
-          <caret line="5" column="84" selection-start-line="5" selection-start-column="84" selection-end-line="5" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/estadisticas.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="2227">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <marker date="1437572263538" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077" vertical-offset="204" max-vertical-offset="3927">
           <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,34 +676,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5875139" vertical-offset="1377" max-vertical-offset="5015">
           <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sucursales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8361204" vertical-offset="155" max-vertical-offset="2958">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion-beta.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="3281">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inscripcion.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07580825" vertical-offset="0" max-vertical-offset="2176">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipos.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769" vertical-offset="816" max-vertical-offset="5474">
+          <caret line="69" column="72" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/estadisticas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3979933" vertical-offset="0" max-vertical-offset="2227">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/fixture.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26532888" vertical-offset="85" max-vertical-offset="2210">
+          <caret line="19" column="194" selection-start-line="19" selection-start-column="194" selection-end-line="19" selection-end-column="194" />
           <folding>
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT sum(e..sum..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT sum(p..partidos..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT sum(p..partidos..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT sum(p..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT aux1...jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT count..fechas..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT jugad..nombre_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT j.nom..partidos..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT count..fechas..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fecha_ta..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..max..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..max..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fecha_ta..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..max..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..max..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
-            <marker date="1437650029116" expanded="true" signature="-1:-1" placeholder="SELECT max(f..partido_has_jugador..." />
+            <marker date="1437675394506" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
