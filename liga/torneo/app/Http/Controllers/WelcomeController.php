@@ -104,6 +104,7 @@ class WelcomeController extends Controller {
         }
         catch(\Exception $ex )
         {
+            Session::flash('mensajeError', $ex->getMessage());
             return view('login');
         }
 
@@ -272,9 +273,9 @@ class WelcomeController extends Controller {
             {
                 //BUSCAR SI EXISTE EQUIPO CON ESE NOMBRE
                
-                $equipo=Equipo::where('nombre_equipo' , '=', Input::get('nombre_equipo'))->first();
+                //$equipo=Equipo::where('nombre_equipo' , '=', Input::get('nombre_equipo'))->first();
 
-                if (empty($equipo)) {
+                //if (empty($equipo)) {
                 
                     //Crear un equipo en la BD
                     $equipoNuevo = new Equipo;
@@ -321,12 +322,12 @@ class WelcomeController extends Controller {
 
                     });
                 
-                }
-                else{
-                    Session::flash('mensajeErrorContacto', "Ya existe un equipo con ese nombre");
-                     return redirect()->action('WelcomeController@inscripcion');
+               // }
+               //else{
+               //     Session::flash('mensajeErrorContacto', "Ya existe un equipo con ese nombre");
+               //      return redirect()->action('WelcomeController@inscripcion');
         
-                }
+               // }
                 
             }
 

@@ -43,10 +43,9 @@ class Equipo extends Model{
 
     public function ListTorneosParaCombo()
     {
-        $tabla = DB::select(DB::raw("SELECT t.idtorneo, t.nombre_torneo FROM torneos t INNER JOIN liga.torneo_equipo te ON te.torneo_idtorneo = t.idtorneo
+        $tabla = DB::select(DB::raw("SELECT t.idtorneo, t.nombre_torneo FROM torneos t INNER JOIN torneo_equipo te ON te.torneo_idtorneo = t.idtorneo
                                         WHERE te.equipo_idequipo = :p1
-                                        ORDER BY t.deleted_at ASC , t.created_at DESC"), array(
-                                        'p1' => $this->idequipo));
+                                        ORDER BY t.deleted_at ASC , t.created_at DESC"), array('p1' => $this->idequipo));
         return $tabla;
     }
 

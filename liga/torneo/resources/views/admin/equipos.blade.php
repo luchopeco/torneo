@@ -49,6 +49,7 @@
                                     <li>:Un equipo posee un Nombre de usuario, para que puedan iniciar session.
                                     Este nombre de usuario se puede gestionar en la edicion del equipo. una vez Agregado este:</li>
                                     <li>Haciendo click en resetear clave (icono de la llave)reseteara la clave del equipo. Por defecto es 12345678::</li>
+                                     <li>Torneo; indica los torneos en los que se encuentra inscripto</li>
                                 </ul>
 
                             </div>
@@ -59,6 +60,7 @@
                             <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                 <tr>
                                     <th>Equipo</th>
+                                    <th title="Torneos En lo Que esta Inscripto">Torneos</th>
                                     <th>Usuario</th>
                                     <th>Autogestion</th>
                                     <th>Observaciones</th>
@@ -68,6 +70,11 @@
                                 @foreach($listEquipos as $equipo)
                                     <tr >
                                         <td>{{$equipo->nombre_equipo}}</td>
+                                        <td>
+                                              @foreach($equipo->ListTorneosParaCombo() as $torneo)
+                                                 {{$torneo->nombre_torneo.' - '}}
+                                              @endforeach
+                                        </td>
                                         <th>{{$equipo->nombre_usuario}}</th>
                                         <th>{{$equipo->autogestionHabilitada()}}</th>
                                         <td>{{Illuminate\Support\Str::limit($equipo->observaciones,40, '...')}}</td>
