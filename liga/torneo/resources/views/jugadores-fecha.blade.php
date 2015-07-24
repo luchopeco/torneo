@@ -1,7 +1,7 @@
 @extends('app')
 @section('meta')
 <meta property="og:url" content="http://www.ligatifosi.com/jugadores-de-la-fecha" />
-<meta property="og:title" content="Jugadadores de la Última Fecha" />
+<meta property="og:title" content="Jugadores de la Última Fecha" />
 <meta property="og:description" content="Visitá los jugadores de la última fecha" />
 @foreach($listFiguras as $fig)
 <meta property="og:image" content="http://www.ligatifosi.com/imagenes/{{$fig->imagen}}" />
