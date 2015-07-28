@@ -168,7 +168,7 @@
                                   <div class="col-md-12">
                                         <input type="hidden" value="{{ $equipo->idequipo }}" name="idequipoJ">
                                         <div class="form-group">
-                                            Nombre
+                                            Nombre y Apellido
                                             {!!Form::Text('nombre_jugador',null,['class'=>'form-control','id'=>'nombre_jugador'])!!}
                                             <script>
                                                 var f1= new LiveValidation('nombre_jugador', { validMessage: ' ', wait: 500});

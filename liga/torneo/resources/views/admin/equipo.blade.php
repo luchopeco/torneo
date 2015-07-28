@@ -93,7 +93,7 @@
                                           <div class="col-md-12">
                                                 {!!Form::Text('idequipo',$equipo->idequipo,['class'=>'hidden'])!!}
                                                 <div class="form-group">
-                                                    Nombre
+                                                    Nombre y Apellido
                                                     {!!Form::Text('nombre_jugador',null,['class'=>'form-control','required'])!!}
                                                     <span class="help-block with-errors"></span>
                                                 </div>
@@ -161,7 +161,7 @@
                                                     {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoU'])!!}
                                                     {!!Form::Text('idjugador',null,['class'=>'hidden','id'=>'idjugadorU'])!!}
                                                     <div class="form-group">
-                                                        Nombre
+                                                        Nombre y Apellido
                                                         {!!Form::Text('nombre_jugador',null,['class'=>'form-control','id'=>'nombre_jugadorU','required'])!!}
                                                         <span class="help-block with-errors"></span>
                                                     </div>
