@@ -31,31 +31,7 @@
     <favorites_list name="torneo" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="equipo.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/equipo.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.269231" vertical-offset="641" max-vertical-offset="3434">
-              <caret line="167" column="61" selection-start-line="167" selection-start-column="61" selection-end-line="167" selection-end-column="61" />
-              <folding>
-                <element signature="tag#div#2" expanded="false" />
-                <element signature="tag#div#3" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="equipo.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/equipo.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45970696" vertical-offset="2639" max-vertical-offset="5287">
-              <caret line="170" column="61" selection-start-line="170" selection-start-column="61" selection-end-line="170" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -113,9 +89,9 @@
         <option value="$PROJECT_DIR$/resources/views/equipo-ideal.blade.php" />
         <option value="$PROJECT_DIR$/app/Equipo.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/equipos.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/equipo.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/equipo.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
       </list>
     </option>
   </component>
@@ -129,10 +105,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -210,6 +186,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="torneo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -255,15 +285,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -289,7 +319,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -299,7 +329,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18759455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -332,39 +362,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="85" />
+      <option name="time" value="87" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5083">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#443#839#0#PHP" expanded="false" />
-            <element signature="e#842#909#0#PHP" expanded="false" />
-            <element signature="e#911#978#0#PHP" expanded="false" />
-            <element signature="e#981#1067#0#PHP" expanded="false" />
-            <element signature="e#1382#1582#0#PHP" expanded="false" />
-            <element signature="e#1587#1734#0#PHP" expanded="false" />
-            <element signature="e#1740#1951#0#PHP" expanded="false" />
-            <element signature="e#1956#2113#0#PHP" expanded="false" />
-            <element signature="e#2118#2344#0#PHP" expanded="false" />
-            <element signature="e#2349#2578#0#PHP" expanded="false" />
-            <element signature="e#2583#2661#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="5474">
-          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/equipo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="733" max-vertical-offset="5287">
@@ -681,49 +683,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipos.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="5593">
+          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Noticia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5814" max-vertical-offset="6596">
-          <caret line="401" column="0" selection-start-line="401" selection-start-column="0" selection-end-line="401" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4730195" vertical-offset="13" max-vertical-offset="1292">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding>
             <element signature="e#443#839#0#PHP" expanded="false" />
             <element signature="e#842#909#0#PHP" expanded="false" />
             <element signature="e#911#978#0#PHP" expanded="false" />
             <element signature="e#981#1067#0#PHP" expanded="false" />
-            <element signature="e#1382#1582#0#PHP" expanded="false" />
-            <element signature="e#1587#1734#0#PHP" expanded="false" />
-            <element signature="e#1740#1951#0#PHP" expanded="false" />
-            <element signature="e#1956#2113#0#PHP" expanded="false" />
-            <element signature="e#2118#2344#0#PHP" expanded="false" />
-            <element signature="e#2349#2578#0#PHP" expanded="false" />
-            <element signature="e#2583#2661#0#PHP" expanded="false" />
+            <element signature="e#1411#1611#0#PHP" expanded="false" />
+            <element signature="e#1616#1763#0#PHP" expanded="false" />
+            <element signature="e#1769#1980#0#PHP" expanded="false" />
+            <element signature="e#1985#2142#0#PHP" expanded="false" />
+            <element signature="e#2147#2373#0#PHP" expanded="false" />
+            <element signature="e#2378#2607#0#PHP" expanded="false" />
+            <element signature="e#2612#2690#0#PHP" expanded="false" />
+            <element signature="e#2696#3321#0#PHP" expanded="false" />
+            <element signature="e#2735#3314#0#PHP" expanded="false" />
+            <element signature="e#2761#3156#0#PHP" expanded="false" />
+            <element signature="e#3044#3156#0#PHP" expanded="false" />
+            <element signature="e#3175#3314#0#PHP" expanded="false" />
+            <element signature="e#3326#3432#0#PHP" expanded="false" />
+            <element signature="e#3437#4331#0#PHP" expanded="false" />
+            <element signature="e#3481#4324#0#PHP" expanded="false" />
+            <element signature="e#3720#4122#0#PHP" expanded="false" />
+            <element signature="e#3939#4122#0#PHP" expanded="false" />
+            <element signature="e#4141#4324#0#PHP" expanded="false" />
+            <element signature="e#4339#4421#0#PHP" expanded="false" />
+            <element signature="e#4427#5275#0#PHP" expanded="false" />
+            <element signature="e#4495#5269#0#PHP" expanded="false" />
+            <element signature="e#4587#5057#0#PHP" expanded="false" />
+            <element signature="e#5222#5269#0#PHP" expanded="false" />
+            <element signature="e#5281#6121#0#PHP" expanded="false" />
+            <element signature="e#5347#6115#0#PHP" expanded="false" />
+            <element signature="e#5439#5903#0#PHP" expanded="false" />
+            <element signature="e#6068#6115#0#PHP" expanded="false" />
+            <element signature="e#6127#7581#0#PHP" expanded="false" />
+            <element signature="e#6169#7575#0#PHP" expanded="false" />
+            <element signature="e#6195#7386#0#PHP" expanded="false" />
+            <element signature="e#6453#7386#0#PHP" expanded="false" />
+            <element signature="e#6705#7386#0#PHP" expanded="false" />
+            <element signature="e#6798#7371#0#PHP" expanded="false" />
+            <element signature="e#7171#7371#0#PHP" expanded="false" />
+            <element signature="e#7405#7575#0#PHP" expanded="false" />
+            <element signature="e#7588#7851#0#PHP" expanded="false" />
+            <element signature="e#7856#8802#0#PHP" expanded="false" />
+            <element signature="e#7919#8796#0#PHP" expanded="false" />
+            <element signature="e#8609#8796#0#PHP" expanded="false" />
+            <element signature="e#8809#12258#0#PHP" expanded="false" />
+            <element signature="e#8858#12251#0#PHP" expanded="false" />
+            <element signature="e#8875#11787#0#PHP" expanded="false" />
+            <element signature="e#11107#11483#0#PHP" expanded="false" />
+            <element signature="e#11126#11482#1#PHP" expanded="false" />
+            <element signature="e#11517#11521#0#PHP" expanded="false" />
+            <element signature="e#11990#12251#0#PHP" expanded="false" />
+            <element signature="e#12265#14040#0#PHP" expanded="false" />
+            <element signature="e#12314#14033#0#PHP" expanded="false" />
+            <element signature="e#12331#13568#0#PHP" expanded="false" />
+            <element signature="e#13198#13553#0#PHP" expanded="false" />
+            <element signature="e#13217#13552#1#PHP" expanded="false" />
+            <element signature="e#13771#14033#0#PHP" expanded="false" />
+            <element signature="e#14045#15377#0#PHP" expanded="false" />
+            <element signature="e#14091#15370#0#PHP" expanded="false" />
+            <element signature="e#14108#14929#0#PHP" expanded="false" />
+            <element signature="e#14593#14914#0#PHP" expanded="false" />
+            <element signature="e#14612#14913#1#PHP" expanded="false" />
+            <element signature="e#15131#15370#0#PHP" expanded="false" />
+            <element signature="e#15757#15864#0#PHP" expanded="false" />
+            <element signature="e#15876#16045#0#PHP" expanded="false" />
+            <element signature="e#16050#16221#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipos.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/noticias.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="5593">
-          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/equipo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27982163" vertical-offset="2656" max-vertical-offset="5287">
+          <caret line="171" column="50" selection-start-line="171" selection-start-column="50" selection-end-line="171" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/equipo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.269231" vertical-offset="641" max-vertical-offset="3434">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="2839" max-vertical-offset="5287">
           <caret line="167" column="61" selection-start-line="167" selection-start-column="61" selection-end-line="167" selection-end-column="61" />
-          <folding>
-            <element signature="tag#div#2" expanded="false" />
-            <element signature="tag#div#3" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/equipo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45970696" vertical-offset="2639" max-vertical-offset="5287">
-          <caret line="170" column="61" selection-start-line="170" selection-start-column="61" selection-end-line="170" selection-end-column="61" />
           <folding />
         </state>
       </provider>
