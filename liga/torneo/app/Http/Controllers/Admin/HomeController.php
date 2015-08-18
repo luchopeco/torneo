@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpKernel\Tests\Controller;
+use torneo\Equipo;
+use torneo\Torneo;
 use torneo\User;
 
 class HomeController extends \Illuminate\Routing\Controller {
@@ -39,7 +41,9 @@ class HomeController extends \Illuminate\Routing\Controller {
 	 */
 	public function index()
 	{
-		return view('admin.home');
+        $listEquipos = Equipo::EquiposSinInscripcion();
+        $listTorneos = Torneo::all();
+		return view('admin.home', compact('listTorneos','listEquipos'));
 	}
 
     public function modificarclave()

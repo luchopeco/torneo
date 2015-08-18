@@ -60,7 +60,8 @@
                             <table id="editar"  class=" table table-bordered table-condensed table-hover">
                                 <tr>
                                     <th>Equipo</th>
-                                    <th title="Torneos En lo Que esta Inscripto">Torneos</th>
+                                    <th title="Torneos en los que esta Inscripto">Torneos</th>
+                                    <th title="Cantidad Jugadores">Jugadores</th>
                                     <th>Usuario</th>
                                     <th>Autogestion</th>
                                     <th>Observaciones</th>
@@ -75,8 +76,9 @@
                                                  {{$torneo->nombre_torneo.' - '}}
                                               @endforeach
                                         </td>
-                                        <th>{{$equipo->nombre_usuario}}</th>
-                                        <th>{{$equipo->autogestionHabilitada()}}</th>
+                                        <td>{{$equipo->ListJugadores()->count()}}</td>
+                                        <td>{{$equipo->nombre_usuario}}</td>
+                                        <td>{{$equipo->autogestionHabilitada()}}</td>
                                         <td>{{Illuminate\Support\Str::limit($equipo->observaciones,40, '...')}}</td>
                                          <td>{{Illuminate\Support\Str::limit($equipo->mensaje,40, '...')}}</td>
                                         <td>{{$equipo->esLibre()}}</td>

@@ -80,6 +80,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
 
         Route::resource('jugadores','JugadoresController');
         Route::post('jugadores/buscar','JugadoresController@buscar');
+        Route::post('jugadores/baja','JugadoresController@baja');
+        Route::post('jugadores/alta','JugadoresController@alta');
+        Route::get('listanegra','JugadoresController@listanegra');
+        Route::post('listanegra/imagenjugadorguardar','JugadoresController@imagenjugadorguardar');
+        Route::post('listanegra/imagenjugadorborrar','JugadoresController@imagenjugadorborrar');
 
         Route::resource('fechas','FechasController');
         Route::post('fechas/buscar','FechasController@buscar');

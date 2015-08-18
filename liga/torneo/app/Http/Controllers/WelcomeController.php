@@ -252,6 +252,7 @@ class WelcomeController extends Controller {
             $jugador->direccion=Input::get('direccion');
             $jugador->obra_social=Input::get('obra_social');
             $jugador->idequipo=Session::get('equipo');
+            $jugador->validaralta();
             $jugador->save();
 
             Session::flash('mensajeOk', 'Jugador Agregado Correctamente');
@@ -259,9 +260,17 @@ class WelcomeController extends Controller {
         }
         catch(\Exception  $ex)
         {
+            if ($ex->getMessage()==env('MSJ_ERRORJUGADOR'))
+            {
+                Session::flash('mensajeError', $ex->getMessage());
+                return redirect()->action('WelcomeController@equipo');
+            }
+            else
+            {
+                Session::flash('mensajeError', 'El jugador No se pudo Agregar');
+                return redirect()->action('WelcomeController@equipo');
+            }
 
-            Session::flash('mensajeError', 'El jugador No se pudo Agregar');
-            return redirect()->action('WelcomeController@equipo');
         }
     }
 
@@ -276,7 +285,13 @@ class WelcomeController extends Controller {
                 //$equipo=Equipo::where('nombre_equipo' , '=', Input::get('nombre_equipo'))->first();
 
                 //if (empty($equipo)) {
-                
+
+                    //primero verifico que el jugador no este en lista negra
+                    $delegado = new Jugador;
+                    $delegado->nombre_jugador = Input::get('nombre');
+                    $delegado->dni = Input::get('dni');
+                    $delegado->validaralta();
+
                     //Crear un equipo en la BD
                     $equipoNuevo = new Equipo;
                     $equipoNuevo->nombre_equipo = Input::get('nombre_equipo');
@@ -285,17 +300,12 @@ class WelcomeController extends Controller {
                     $equipoNuevo->save();
 
                     // Agregar jugador delegado
-
-                    $delegado = new Jugador;
-
-                    $delegado->nombre_jugador = Input::get('nombre');
-                    $delegado->dni = Input::get('dni');
                     $delegado->idequipo = $equipoNuevo->idequipo;
                     $delegado->observaciones = "delegado";
                     $delegado->telefono = Input::get('celular')." - ".Input::get('telefono_alternativo');
                     $delegado->delegado = 1 ;
                     $delegado->mail = Input::get('mail') ;
-                    $delegado->direccion = Input::get('domicilio') ;
+                    $delegado->direccion = Input::get('domicilio');
 
                     $delegado->save();
 
@@ -334,10 +344,14 @@ class WelcomeController extends Controller {
             Session::flash('mensajeOk', 'Inscripcion Enviada Con Exito. En Breve nos pondremos en contacto.');
             return redirect()->action('WelcomeController@inscripcion');
         }
-        catch(Exception $ex)
-        {
+        catch(\Exception $ex) {
+            if ($ex->getMessage()==env('MSJ_ERRORJUGADOR')) {
+                Session::flash('mensajeErrorContacto',$ex->getMessage());
+                return redirect()->action('WelcomeController@inscripcion');
+            } else {
             Session::flash('mensajeErrorContacto', "Discuple las molestias. El pedido de inscripcion no se pudo realizar. Intente en otro momento");
             return redirect()->action('WelcomeController@inscripcion');
+            }
         }
 
     }

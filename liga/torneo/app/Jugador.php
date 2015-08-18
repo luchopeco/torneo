@@ -1,10 +1,12 @@
 <?php
 namespace torneo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 class Jugador extends Model{
 
+    use SoftDeletes;
 
     protected $table='jugadores';
 
@@ -129,6 +131,15 @@ class Jugador extends Model{
             $tarjeta = $t->fechas;
         }
         return $tarjeta;
+    }
+
+    public  function validaralta()
+    {
+        $jug = Jugador::onlyTrashed()->where('dni', $this->dni)->first();
+        if($jug!=null)
+        {
+            throw new \Exception(env('MSJ_ERRORJUGADOR'));
+        }
     }
 
 }

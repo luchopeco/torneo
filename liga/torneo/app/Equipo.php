@@ -49,4 +49,19 @@ class Equipo extends Model{
         return $tabla;
     }
 
+    public function ListTorneos()
+    {
+        return $this->belongsToMany('torneo\Torneo','torneo_equipo','equipo_idequipo','torneo_idtorneo')->orderBy('nombre_torneo');
+    }
+
+    public static  function EquiposSinInscripcion()
+    {
+        $tabla = DB::select(DB::raw("SELECT e.idequipo, e.nombre_equipo  FROM equipos e
+                                        WHERE e.idequipo NOT IN
+                                        ( SELECT te.equipo_idequipo FROM torneo_equipo te INNER JOIN torneos t ON t.idtorneo = te.torneo_idtorneo
+                                          WHERE t.deleted_at IS NULL)
+                                        ORDER BY e.nombre_equipo"));
+        return $tabla;
+    }
+
 }

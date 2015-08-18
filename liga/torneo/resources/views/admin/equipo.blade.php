@@ -44,6 +44,7 @@
                                 </button>
                                 <ul class="multiselect-container dropdown-menu pull-right">
                                     <li>Desde Aqui Puede Agregar modificar o eliminar los jugadores del equipo</li>
+                                       <li>Tambien puede poner el jugador en lista negra</li>
                                 </ul>
                             </div>
                         </div>
@@ -65,6 +66,7 @@
                                     <td>{{$jugador->esDelegado()}}</td>
                                     <td>{{$jugador->entregoCertificado()}}</td>
                                     <td>{{$jugador->observaciones}}</td>
+                                    <td><a href="#"  class="btn btn-xs btn-lista-negra listanegra" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Poner en Lista Negra"><i class="fa fa-thumbs-down"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-info editar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Modificar"> <i class=" fa fa-edit"></i></a></td>
                                     <td><a href="" class="btn btn-xs btn-danger eliminar" data-idjugador="{{$jugador->idjugador}}" data-idequipo="{{$equipo->idequipo}}"  title="Eliminar"> <i class=" fa fa-close"></i></a></td>
                                 </tr>
@@ -210,37 +212,72 @@
                       <!-- /.modal-dialog -->
                 </div>
         <div class="modal fade" id="modalJugadorEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                           <div class="modal-content">
-                              {!!Form::open(['route'=>['admin.jugadores.destroy'],'method'=>'DELETE'])!!}
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h4 class="modal-title" id="myModalLabel">Eliminando Jugador</h4>
-                                </div>
-                                <div class="modal-body">
-                                       <div class="row">
-                                            <div class="col-md-12">
-                                                {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoD'])!!}
-                                                {!!Form::Text('idjugador',null,['class'=>'hidden','id'=>'idjugadorD'])!!}
-                                                <h3>¿Desea Eliminar el Jugador del Equipo?</h3>
-                                                <div id="caca"></div>
-                                            </div>
-                                       </div>
-                                <div class="modal-footer">
-                                    <div class="row ">
-                                        <div class="col-md-12">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                            {!!Form::submit('Eliminar', array('class' => 'btn btn-success'))!!}
-                                        </div>
-                                    </div>
-                                </div>
-                              {!! Form::close() !!}
-                           </div>
-                            <!-- /.modal-content -->
+                <div class="modal-dialog">
+                   <div class="modal-content">
+                      {!!Form::open(['route'=>['admin.jugadores.destroy'],'method'=>'DELETE'])!!}
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Eliminando Jugador</h4>
                         </div>
-                        <!-- /.modal-dialog -->
-                  </div>
+                        <div class="modal-body">
+                               <div class="row">
+                                    <div class="col-md-12">
+                                        {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoD'])!!}
+                                        {!!Form::Text('idjugador',null,['class'=>'hidden','id'=>'idjugadorD'])!!}
+                                        <h3>¿Desea Eliminar el Jugador del Equipo?</h3>
+                                        <div id="caca"></div>
+                                    </div>
+                               </div>
+                        <div class="modal-footer">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    {!!Form::submit('Eliminar', array('class' => 'btn btn-success'))!!}
+                                </div>
+                            </div>
+                        </div>
+                      {!! Form::close() !!}
+                   </div>
+                    <!-- /.modal-content -->
                 </div>
+                <!-- /.modal-dialog -->
+          </div>
+        </div>
+
+
+        <div class="modal fade" id="modalJugadorListaNegra" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    {!!Form::open(['url'=>['admin/jugadores/baja'],'method'=>'POST'])!!}
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Poniendo Jugador En Lista Negra</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {!!Form::Text('idequipo',null,['class'=>'hidden','id'=>'idequipoL'])!!}
+                                    {!!Form::Text('idjugador',null,['class'=>'hidden','id'=>'idjugadorL'])!!}
+                                    <h3>¿Desea poner el Jugador en Lista Negra?</h3>
+                                    <div id="caca"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    {!!Form::submit('Aceptar', array('class' => 'btn btn-success'))!!}
+                                </div>
+                            </div>
+                        </div>
+                    {!! Form::close() !!}
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+          </div>
+        </div>
 
         @endsection
         @section('script')
@@ -298,6 +335,14 @@
                 $("#idequipoD").val(id_equipo);
                 $("#modalJugadorEliminar").modal("show");
             });
+                $('body').on('click', '.listanegra', function (event) {
+                            event.preventDefault();
+                            var id_jugador=$(this).attr('data-idjugador');
+                            var id_equipo=$(this).attr('data-idequipo');
+                            $("#idjugadorL").val(id_jugador);
+                            $("#idequipoL").val(id_equipo);
+                            $("#modalJugadorListaNegra").modal("show");
+                        });
 
         });
 

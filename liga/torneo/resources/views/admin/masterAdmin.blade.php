@@ -38,6 +38,9 @@
 
      <link href="/css/dropzone.css" rel="stylesheet" type="text/css" />
 
+     <!-- CSS Propiooo-->
+      <link href="/dist/css/css.css" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,11 +90,12 @@
             <li <?php if('admin.imagenes.index'== Route::current()->getName()||'admin.imagenes.show'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/imagenes"><i class="fa fa-picture-o"></i>Imagenes</a></li>
             <li <?php if('admin.arbitros.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/arbitros"><i class="fa fa-gavel"></i></i> Arbitros</a></li>
              <li <?php if('admin.inscripcion.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/inscripcion"><i class="fa fa-pencil-square-o"></i>Inscripciones</a></li>
+             <li <?php if('torneo\Http\Controllers\Admin\JugadoresController'==substr(\Illuminate\Support\Facades\Route::getCurrentRoute()->getActionName(), 0, -11)){echo 'class="active"';} ?>><a href="/admin/listanegra"> <i class="fa fa-male"></i> Lista Negra</a></li>
             <li <?php if('admin.equipos.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/equipos"><i class="fa fa-futbol-o"></i> Equipos</a></li>
             <li <?php if('admin.torneos.index'== Route::current()->getName()){echo 'class="active"';} ?>> <a href="/admin/torneos"><i class="fa fa-trophy"></i>Torneos</a></li>
             <li <?php if('admin.noticias.index'== Route::current()->getName()){echo 'class="active"';} ?>><a href="/admin/noticias"><i class="fa fa-newspaper-o"></i>Noticias</a></li>
 
-            
+
             <li><a href="#">
 
             
