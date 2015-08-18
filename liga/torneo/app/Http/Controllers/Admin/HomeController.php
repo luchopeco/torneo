@@ -42,7 +42,10 @@ class HomeController extends \Illuminate\Routing\Controller {
 	public function index()
 	{
         $listEquipos = Equipo::EquiposSinInscripcion();
-        $listTorneos = Torneo::all();
+        $listTorneos = Torneo::all()->sortBy(function($hackathon)
+        {
+            return $hackathon->ListEquipos->count();
+        });
 		return view('admin.home', compact('listTorneos','listEquipos'));
 	}
 

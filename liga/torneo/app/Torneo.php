@@ -14,6 +14,7 @@ class Torneo extends Model{
 
     protected $primaryKey = 'idtorneo';
 
+
     public function TipoTorneo()
     {
         return $this->hasOne('torneo\TipoTorneo', 'idtipo_torneo','idtipo_torneo');

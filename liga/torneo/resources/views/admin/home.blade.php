@@ -70,7 +70,7 @@
                                         <div class="table-responsive">
                                             <table id="editar"  class=" table table-bordered table-condensed table-hover table-responsive">
                                                 <tr>
-                                                    <th>Equipo</th>
+                                                    <th>{{$torneo->ListEquipos->count()}} -  Equipos</th>
                                                 </tr>
                                                 @foreach($torneo->ListEquipos as $equipo)
                                                 <tr >
@@ -104,7 +104,7 @@
                                         <div class="table-responsive">
                                             <table  class=" table table-bordered table-condensed table-hover table-responsive">
                                                 <tr>
-                                                    <th>Equipo</th>
+                                                    <th>{{count($listEquipos)}} -  Equipo</th>
                                                 </tr>
                                                 @foreach($listEquipos as $equipo)
                                                 <tr >

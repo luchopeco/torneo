@@ -43,6 +43,7 @@
                                 <ul class="multiselect-container dropdown-menu pull-right">
                                     <li>Los Jugadores en lista negra no pueden volver a inscribirse. Esto se valida mediante el numero de documento.</li>
                                     <li>Desde aqui los puede consultar y los puede volver a activar</li>
+                                    <li>Para poner un jugador en lista negra, busquelo en el equipo y haga click en poner en lista negra.</li>
                                 </ul>
                             </div>
                         </div>
