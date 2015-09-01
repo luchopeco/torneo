@@ -78,6 +78,7 @@
 <script type="text/javascript">
 function buscarTorneoXTipoTorneo()
  {
+    $('#cargando').html('<button class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i>Cargando....</button>');
     var id_articulo=$("#idtipo_torneo").val();
     $.ajax({
          url:"/torneoportipotorneo/"+id_articulo,
@@ -94,15 +95,18 @@ function buscarTorneoXTipoTorneo()
            {
                $("#imagentorneo").html("<img class='img-responsive center-block' style='padding-top: 5px' src='/imagenes/home/ragazza02.png'>");
            }
+           $('#cargando').html('');
            buscarEstadisticaXTorneo();
         })
         .fail(function(){
+            $('#cargando').html('');
             alert(id_articulo);
         });
 
  }
 function buscarEstadisticaXTorneo()
  {
+    $('#cargando').html('<button class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i>Cargando....</button>');
     var id_articulo=$("#idtorneo").val();
     $.ajax({
          url:"/estadisticastorneo/"+id_articulo,
@@ -110,9 +114,11 @@ function buscarEstadisticaXTorneo()
          dataType: "HTML"
         })
     .done(function(response){
+            $('#cargando').html('');
            $("#contenidoEstadistica").html(response);
         })
         .fail(function(){
+            $('#cargando').html('');
            // alert(id_articulo);
              $("#contenidoEstadistica").html('');
               $("#modalMensaje").modal("show");

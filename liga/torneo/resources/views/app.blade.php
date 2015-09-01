@@ -130,6 +130,9 @@ $ruta= Route::currentRouteAction();
 </div>
         </hr>
 @endif
+<div id="cargando" style="position: fixed; top: 2%; left: 50%; z-index: 1051;">
+
+</div>
 @yield('content')
 
 <!--CONTACT SECTION START-->

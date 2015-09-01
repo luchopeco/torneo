@@ -78,6 +78,9 @@
 <script type="text/javascript">
 function buscarTorneoXTipoTorneo()
  {
+  //Añadimos la imagen de carga en el contenedor
+  $('#cargando').html('<button class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i>Cargando....</button>');
+
     var id_articulo=$("#idtipo_torneo").val();
     $.ajax({
          url:"/torneoportipotorneofixture/"+id_articulo,
@@ -95,14 +98,17 @@ function buscarTorneoXTipoTorneo()
                $("#imagentorneo").html("<img class='img-responsive center-block' style='padding-top: 5px' src='/imagenes/home/ragazza02.png'>");
            }
            buscarFixtureXTorneo();
+           $('#cargando').html('');
         })
         .fail(function(){
+            $('#cargando').html('');
             alert(id_articulo);
         });
 
  }
 function buscarFixtureXTorneo()
  {
+    $('#cargando').html('<button class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i>Cargando....</button>');
     var id_articulo=$("#idtorneo").val();
     $.ajax({
          url:"/fixturetorneo/"+id_articulo,
@@ -110,9 +116,11 @@ function buscarFixtureXTorneo()
          dataType: "HTML"
         })
     .done(function(response){
+            $('#cargando').html('');
            $("#contenidoFixture").html(response);
         })
         .fail(function(){
+            $('#cargando').html('');
             //alert(id_articulo);
              $("#contenidoFixture").html('');
               $("#modalMensaje").modal("show");
