@@ -1,4 +1,5 @@
 <?php namespace torneo\Http\Controllers\Admin;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
@@ -29,6 +30,19 @@ class EquiposController extends Controller {
         //dd($listArbitros);
         return view('admin.equipos', compact('listTorneos','mensajeOK','listEquipos'));
 	}
+
+    public function equiposxtorneos()
+    {
+        $caca = Equipo::EquiposSinInscripcion();
+        $listEquipos = new Collection();
+        foreach($caca as $c)
+        {
+            $e=Equipo::findOrFail($c->idequipo);
+            $listEquipos->push($e);
+        }
+        $listTorneos = Torneo::all();
+        return view('admin.equiposxtorneos', compact('listTorneos','mensajeOK','listEquipos'));
+    }
 
 	/**
 	 * Show the form for creating a new resource.

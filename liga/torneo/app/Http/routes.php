@@ -65,6 +65,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::post('torneos/torneoimagenborrar','TorneosController@torneoimagenborrar');
 
         Route::resource('equipos','EquiposController');
+        Route::get('equiposxtorneos','EquiposController@equiposxtorneos');
         Route::post('equipos/buscar','EquiposController@buscar');
         Route::post('equipos/resetearclave','EquiposController@resetearclave');
 
