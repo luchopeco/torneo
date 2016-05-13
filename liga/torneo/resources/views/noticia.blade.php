@@ -24,7 +24,7 @@
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
                 <div class="team-wrapperr">
                    <div class="team-innerr" style="background-image: url('/imagenes/{{$noticias->imagen}}')" >
-                    <a  href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.ligatifosi.com/noticia/{{$noticias->idnoticia}}&p[title]={{$noticias->titulo}}&p[summary]={{Illuminate\Support\Str::limit($noticias->texto,150, '')}}&p[images][0]=http://www.ligatifosi.com/imagenes/{{$noticias->imagen}}">
+                    <a  href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.ligatifosi.com/noticia/{{$noticias->idnoticia}}">
                        <i class="fa fa-facebook-f" ></i>
                     </a>
                     </div>

@@ -71,7 +71,7 @@
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4 col-md-3 col-lg-3">
                 <div class="team-wrapper">
                    <div class="team-inner" style="background-image: url('/imagenes/{{$noticia->imagen}}')" >
-                      <a  href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.ligatifosi.com/noticia/{{$noticia->idnoticia}}&p[title]={{$noticia->titulo}}&p[summary]={{$noticia->texto}}&p[images][0]=http://www.ligatifosi.com/imagenes/{{$noticia->imagen}}">
+                      <a  href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.ligatifosi.com/noticia/{{$noticia->idnoticia}}">
                        <i class="fa fa-facebook-f" ></i>
                     </a>
 
