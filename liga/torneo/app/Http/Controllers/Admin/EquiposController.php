@@ -68,17 +68,19 @@ class EquiposController extends Controller {
             } else {
                 $torneo->es_libre = 0;
             }
+
             $torneo->aprobado = 1;
             $torneo->save();
 
             Session::flash('mensajeOk', 'Equipo Agregado con Exito');
-            return redirect()->route('admin.equipos.index');
+            return redirect()->back();
+
         }
         catch(QueryException  $ex)
         {
 
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.equipos.index');
+            return redirect()->back();
         }
 	}
 
@@ -160,7 +162,7 @@ class EquiposController extends Controller {
                 $ar->save();
 
                 Session::flash('mensajeOk', 'Equipo Modificado con Exito');
-                return redirect()->route('admin.equipos.index');
+                return redirect()->back();
 
             }
 
@@ -168,7 +170,7 @@ class EquiposController extends Controller {
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.equipos.index');
+            return redirect()->back();
         }
 	}
 
@@ -255,12 +257,12 @@ class EquiposController extends Controller {
             $equipo->save();
 
             Session::flash('mensajeOk', 'Foto del Equipo '.$equipo->nombre_equipo.' Eliminada con exito');
-            return  Redirect::route('admin.equipos.index');
+            return redirect()->back();
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return Redirect::route('admin.equipos.index');
+            return redirect()->back();
         }
     }
 
@@ -297,12 +299,12 @@ class EquiposController extends Controller {
             $equipo->save();
 
             Session::flash('mensajeOk', 'Escudo del Equipo '.$equipo->nombre_equipo.' Eliminada con exito');
-            return Redirect::route('admin.equipos.index');
+            return redirect()->back();
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return Redirect::route('admin.equipos.index');
+            return redirect()->back();
         }
     }
     public function resetearclave(Request $request)
@@ -314,12 +316,12 @@ class EquiposController extends Controller {
             $equipo->save();
 
             Session::flash('mensajeOk', 'Clave reseteada con Exito');
-            return redirect()->route('admin.equipos.index');
+            return redirect()->back();
         }
         catch(QueryException  $ex)
         {
             Session::flash('mensajeError', $ex->getMessage());
-            return redirect()->route('admin.equipos.index');
+            return redirect()->back();
         }
     }
 
