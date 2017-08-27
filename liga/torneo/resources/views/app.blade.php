@@ -135,7 +135,10 @@ $ruta= Route::currentRouteAction();
 
     <div id="app-android"  style="position: fixed; top: 30px; z-index: 10000"  class="alert alert-danger alert-dismissable hidden">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>Proximamente</strong> Descarga nuestra App Android y disfruta de nuestra liga.
+       <a href="https://play.google.com/store/apps/details?id=ar.com.wiphalasistemas.ligatifosi.ligatifosi">
+           <strong>¡¡¡Descargá nuestra nueva App!!!</strong> Navegá mas cómodo y mantenete informado.
+       </a>
+
     </div>
 
 @yield('content')
@@ -301,6 +304,17 @@ $ruta= Route::currentRouteAction();
 
     $(function () {
         var userAgent = navigator.userAgent || window.opera;
+        $.vegas('slideshow', {
+            backgrounds: [
+                @foreach($listImagen as $imagen)
+                { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
+                @endforeach
+            //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
+            ]
+        })('overlay', {
+            /** SLIDESHOW OVERLAY IMAGE **/
+            // src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+        });
 
         if (/android/i.test(userAgent)) {
             var valor = obtenerValorParametro('d');
@@ -318,33 +332,12 @@ $ruta= Route::currentRouteAction();
             else{
                 $('#menu-section').removeClass('hidden');
                 $('#app-android').removeClass('hidden');
-                $.vegas('slideshow', {
-                    backgrounds: [
-                        @foreach($listImagen as $imagen)
-                        { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
-                        @endforeach
-                    //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
-                    ]
-                })('overlay', {
-                    /** SLIDESHOW OVERLAY IMAGE **/
-                    src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
-                });
             }
         }
         else
         {
             $('#menu-section').removeClass('hidden');
-            $.vegas('slideshow', {
-                backgrounds: [
-                    @foreach($listImagen as $imagen)
-                    { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
-                    @endforeach
-                //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
-                ]
-            })('overlay', {
-                /** SLIDESHOW OVERLAY IMAGE **/
-               // src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
-            });
+
         }
 
     });

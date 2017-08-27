@@ -133,10 +133,10 @@ font-family: 'Oswald', sans-serif;
 border-color: transparent;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-background-color: rgb(228, 79, 79);
+background-color: #333333;
 }
 .navbar-inverse .navbar-toggle {
-border-color: rgb(228, 79, 79);
+border-color: #333333;
 }
 
 
@@ -469,7 +469,7 @@ text-decoration:none;
     overflow: hidden;
 }
 .col-fechas{
-     min-height: 300px;
+     min-height: 370px;
      overflow: hidden;
  }
 .col-resultado{

@@ -134,7 +134,7 @@
                                                          Tipo Imagen
                                                             {!!Form::select('idtipo_imagen', $listTipoImagen,null,array('class' => 'form-control','id'=>'idtipo_imagenU'))!!}
                                                          Activado
-                                                         {!!Form::checkbox('mostrar','0',false,['class'=>' form-control','id'=>'mostrarU'])!!}
+                                                         {!!Form::checkbox('mostrar','0',false,['class'=>'','id'=>'mostrarU'])!!}
                                                          <span class="help-block with-errors"></span>
                                                     </div>
 
