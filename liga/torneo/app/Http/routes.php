@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/index', 'WelcomeController@index');
 Route::get('/fixture', 'WelcomeController@fixture');
 Route::get('/fixturetorneo/{id}', 'WelcomeController@fixturetorneo');
 Route::get('/estadisticas', 'WelcomeController@estadisticas');
@@ -96,6 +97,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],
         Route::post('fecha/imagenequipoborrar','FechasController@imagenequipoborrar');
         Route::post('fecha/imagenfiguraguardar','FechasController@imagenfiguraguardar');
         Route::post('fecha/imagenfiguraborrar','FechasController@imagenfiguraborrar');
+        Route::get('fechas/planilla/{id}','FechasController@planilla');
 
         Route::resource('partidos','PartidosController');
         Route::post('partidos/buscar','PartidosController@buscar');

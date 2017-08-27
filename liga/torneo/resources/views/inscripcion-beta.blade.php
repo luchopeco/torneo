@@ -59,8 +59,9 @@
                      </div>
                      <br>
                     <div class="row">
+                        <div class="col-xs-3"></div>
                         <div class="col-xs-6"><img class="img-responsive" src="imagenes/logos/logos/tifosiprincipal.png"></div>
-                        <div class="col-xs-6"><img class="img-responsive" src="imagenes/logos/logos/ragazza02.png"></div>
+
                     </div>
                     <div class="row">
                         <div class=" col-xs-offset-1 col-xs-10">
@@ -91,7 +92,6 @@
                                     <select name="torneo" class="form-control" id="torneo">
                                         <option value="" selected="selected"> Torneo a inscribirse </option>
                                         <option value="Tifosi">Tifosi</option>
-                                        <option value="Ragazza">Ragazza</option>
                                         <option value="Nocturno">Nocturno</option>
                                     </select>
                                     <script>

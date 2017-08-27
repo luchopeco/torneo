@@ -5,134 +5,139 @@ $ruta= Route::currentRouteAction();
 <!DOCTYPE html>
 <html lang="es" class="no-js" >
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="Tifosi" />
-<meta name="author" content="Wiphala Sistemas" />
-@yield('meta')
-<link rel="shortcut icon" href="/faviconPublico.ico" />
-<!--[if IE]>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<![endif]-->
-<title> @yield('title')</title>
-<!-- BOOTSTRAP CORE CSS -->
-<link href="/assets/css/bootstrap.css" rel="stylesheet" />
-<!-- ION ICONS STYLES -->
-<link href="/assets/css/ionicons.css" rel="stylesheet" />
-<!-- FONT AWESOME ICONS STYLES -->
-<link href="/assets/css/font-awesome.css" rel="stylesheet" />
-<!-- FANCYBOX POPUP STYLES -->
-<link href="/assets/js/source/jquery.fancybox.css" rel="stylesheet" />
-<!-- STYLES FOR VIEWPORT ANIMATION -->
-<link href="/assets/css/animations.min.css" rel="stylesheet" />
-<!-- CUSTOM CSS -->
-<link href="/assets/css/style-red.css" rel="stylesheet" />
-<link href="/assets/css/css.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Tifosi" />
+    <meta name="author" content="Wiphala Sistemas" />
+    @yield('meta')
+    <link rel="shortcut icon" href="/faviconPublico.ico" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title> @yield('title')</title>
+    <!-- BOOTSTRAP CORE CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- ION ICONS STYLES -->
+    <link href="/assets/css/ionicons.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICONS STYLES -->
+    <link href="/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- FANCYBOX POPUP STYLES -->
+    <link href="/assets/js/source/jquery.fancybox.css" rel="stylesheet" />
+    <!-- STYLES FOR VIEWPORT ANIMATION -->
+    <link href="/assets/css/animations.min.css" rel="stylesheet" />
+    <!-- CUSTOM CSS -->
+    <link href="/assets/css/style-red.css" rel="stylesheet" />
+    <link href="/assets/css/css.css" rel="stylesheet" />
 
-<script src="/assets/js/livevalidation_standalone.compressed.js" type="text/javascript"></script>
-@yield('css')
+    <script src="/assets/js/livevalidation_standalone.compressed.js" type="text/javascript"></script>
+    @yield('css')
 
-
-<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#menu-section">
 <!--MENU SECTION START-->
-<div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section" >
-<div class="container">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="/">
+<div class="navbar navbar-inverse navbar-fixed-top scroll-me hidden" id="menu-section" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
 
-<img src="/imagenes/logo.png">
+                <img src="/imagenes/logo.png">
 
-</a>
-</div>
-<div class="navbar-collapse collapse">
-<ul class="nav navbar-nav navbar-right">
-@if($ruta=='torneo\Http\Controllers\WelcomeController@index')
-<li class="active"><a href="/">HOME</a></li>
-@else
-<li><a href="/">HOME</a></li>
-@endif
-@if($ruta=='torneo\Http\Controllers\WelcomeController@instalaciones')
-<li class="active" ><a href="/sucursales">SUCURSALES</a></li>
-@else
-<li><a href="/sucursales">SUCURSALES</a></li>
-@endif
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@index')
+                    <li class="active"><a href="/">HOME</a></li>
+                @else
+                    <li><a href="/">HOME</a></li>
+                @endif
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@instalaciones')
+                    <li class="active" ><a href="/sucursales">SUCURSALES</a></li>
+                @else
+                    <li><a href="/sucursales">SUCURSALES</a></li>
+                @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@inscripcion')
-<li class="active"><a href="/inscripcion">INSCRIPCION</a></li>
-@else
-<li><a href="/inscripcion">INSCRIPCION</a></li>
-@endif
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@inscripcion')
+                    <li class="active"><a href="/inscripcion">INSCRIPCION</a></li>
+                @else
+                    <li><a href="/inscripcion">INSCRIPCION</a></li>
+                @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@fixture')
-<li class="active"><a href="/fixture">FIXTURE</a></li>
-@else
-<li><a href="/fixture">FIXTURE</a></li>
-@endif
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@fixture')
+                    <li class="active"><a href="/fixture">FIXTURE</a></li>
+                @else
+                    <li><a href="/fixture">FIXTURE</a></li>
+                @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
-<li class="active"><a href="/estadisticas">ESTADISTICAS</a></li>
-@else
-<li><a href="/estadisticas">ESTADISTICAS</a></li>
-@endif
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@estadisticas')
+                    <li class="active"><a href="/estadisticas">ESTADISTICAS</a></li>
+                @else
+                    <li><a href="/estadisticas">ESTADISTICAS</a></li>
+                @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@noticias')
-<li class="active"><a href="/noticias">NOTICIAS</a></li>
-@else
-<li><a href="/noticias">NOTICIAS</a></li>
-@endif
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@noticias')
+                    <li class="active"><a href="/noticias">NOTICIAS</a></li>
+                @else
+                    <li><a href="/noticias">NOTICIAS</a></li>
+                @endif
 
-@if($ruta=='torneo\Http\Controllers\WelcomeController@equipo')
-<li class="active"><a href="/equipo">EQUIPOS</a></li>
-@else
-<li><a href="/equipo">EQUIPOS</a></li>
-@endif
+                @if($ruta=='torneo\Http\Controllers\WelcomeController@equipo')
+                    <li class="active"><a href="/equipo">EQUIPOS</a></li>
+                @else
+                    <li><a href="/equipo">EQUIPOS</a></li>
+                @endif
 
-</ul>
-</div>
+            </ul>
+        </div>
 
-</div>
+    </div>
 </div>
 @if(Session::has('mensajeOkContacto'))
-<div class="container" style="padding-top: 150px">
-    <div class="row">
-        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-            <div class="alert alert-success alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <div class="container" style="padding-top: 150px">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     {{Session::get('mensajeOkContacto')}}
+                </div>
             </div>
         </div>
+        </hr>
     </div>
-    </hr>
-</div>
 @endif
 @if(Session::has('mensajeErrorContacto'))
-<div class="container" style="padding-top: 150px">
+    <div class="container" style="padding-top: 150px">
         <div class="row">
             <div class="col-md-12">
                 <div class="alert alert-danger alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                       {{Session::get('mensajeErrorContacto')}}
+                    {{Session::get('mensajeErrorContacto')}}
                 </div>
             </div>
         </div>
-</div>
-        </hr>
+    </div>
+    </hr>
 @endif
 <div id="cargando" style="position: fixed; top: 2%; left: 50%; z-index: 1051;">
 
 </div>
+
+    <div id="app-android"  style="position: fixed; top: 30px; z-index: 10000"  class="alert alert-danger alert-dismissable hidden">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>Proximamente</strong> Descarga nuestra App Android y disfruta de nuestra liga.
+    </div>
+
 @yield('content')
 
 <!--CONTACT SECTION START-->
@@ -151,49 +156,49 @@ $ruta= Route::currentRouteAction();
                         <h3>COMPLETE NUESTRO FORMULARIO</h3>
                         {!!Form::open(['url'=>'/mailcontacto','method'=>'POST','enctype'=>'multipart/form-data'])!!}
                         <input type="text" id="validador_contacto" name="validador_contacto" value=""  class="hidden">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {!!Form::Text('nombre_contacto',null,['class'=>' form-control','placeholder'=>'NOMBRE Y APELLIDO','id'=>'nombre_contacto'])!!}
-                                    <script>
-                                      var f1 = new LiveValidation('nombre_contacto');
-                                        f1.add(Validate.Presence, {failureMessage: "Obligatorio"});
-                                    </script>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {!!Form::Text('nombre_contacto',null,['class'=>' form-control','placeholder'=>'NOMBRE Y APELLIDO','id'=>'nombre_contacto'])!!}
+                                <script>
+                                    var f1 = new LiveValidation('nombre_contacto');
+                                    f1.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                </script>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    {!!Form::Text('mail_contacto',null,['class'=>' form-control mi-input','placeholder'=>'MAIL','id'=>'mail_contacto'])!!}
-                                    <script>
-                                      var f5 = new LiveValidation('mail_contacto');
-                                        f5.add( Validate.Email, {failureMessage: "Ingrese un mail Válido"} );
-                                        f5.add(Validate.Presence, {failureMessage: "Obligatorio"});
-                                    </script>
-                                </div>
-                                <div class="col-md-6">
-                                    {!!Form::Text('ciudad_contacto',null,['class'=>' form-control','placeholder'=>'CIUDAD','id'=>'ciudad_contacto'])!!}
-                                    <script>
-                                      var f2 = new LiveValidation('ciudad_contacto');
-                                        f2.add(Validate.Presence, {failureMessage: "Obligatorio"});
-                                    </script>
-                                </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {!!Form::Text('mail_contacto',null,['class'=>' form-control mi-input','placeholder'=>'MAIL','id'=>'mail_contacto'])!!}
+                                <script>
+                                    var f5 = new LiveValidation('mail_contacto');
+                                    f5.add( Validate.Email, {failureMessage: "Ingrese un mail Válido"} );
+                                    f5.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                </script>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <textarea id="mensaje_contacto" name="mensaje_contacto" class="form-control" placeholder="MENSAJE" rows="1"></textarea>
-                                    <script>
-                                      var f20 = new LiveValidation('mensaje_contacto');
-                                        f20.add(Validate.Presence, {failureMessage: "Obligatorio"});
-                                    </script>
-                                </div>
+                            <div class="col-md-6">
+                                {!!Form::Text('ciudad_contacto',null,['class'=>' form-control','placeholder'=>'CIUDAD','id'=>'ciudad_contacto'])!!}
+                                <script>
+                                    var f2 = new LiveValidation('ciudad_contacto');
+                                    f2.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                </script>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
-                                </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea id="mensaje_contacto" name="mensaje_contacto" class="form-control" placeholder="MENSAJE" rows="1"></textarea>
+                                <script>
+                                    var f20 = new LiveValidation('mensaje_contacto');
+                                    f20.add(Validate.Presence, {failureMessage: "Obligatorio"});
+                                </script>
                             </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                {!!Form::submit('Enviar', array('class' => 'btn btn-danger btn-block'))!!}
+                            </div>
+                        </div>
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -209,7 +214,7 @@ $ruta= Route::currentRouteAction();
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                     <div class="contact-wrapper" >
-                         <img class="img-responsive center-block " src="/imagenes/footer/gatorade.png">
+                        <img class="img-responsive center-block " src="/imagenes/footer/gatorade.png">
                     </div>
                 </div>
             </div>
@@ -235,8 +240,8 @@ $ruta= Route::currentRouteAction();
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="row">
-                                         <div class="col-xs-6"><img src="/imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
-                                         <div class="col-xs-6"><img src="/imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                        <div class="col-xs-6"><img src="/imagenes/footer/nassau.png" class="img-responsive inline" alt="Responsive image"/></div>
+                                        <div class="col-xs-6"><img src="/imagenes/footer/northland.png" class="img-responsive inline" alt="Responsive image"/></div>
                                     </div>
                                 </div>
                             </div>
@@ -244,10 +249,10 @@ $ruta= Route::currentRouteAction();
                     </div>
                 </div>
             </div>
-             <div class="row animate-in" data-anim-type="fade-in-up">
+            <div class="row animate-in" data-anim-type="fade-in-up">
                 <div class="col-xs-12">
                     <div class="powerby text-center">
-                    2015-TODOS LOS DERECHOS RESERVADOS -DISEÑO <a target="_blank" href="http://shoutside.com.ar/contacto.php">FABRICA</a> // DESARROLLO <a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a>
+                        2015-TODOS LOS DERECHOS RESERVADOS -DISEÑO <a target="_blank" href="http://shoutside.com.ar/contacto.php">FABRICA</a> // DESARROLLO <a target="_blank" href="http://www.wiphalasistemas.com.ar">Wiphala Sistemas</a>
                     </div>
                 </div>
             </div>
@@ -282,23 +287,71 @@ $ruta= Route::currentRouteAction();
 <script src="/assets/js/custom.js"></script>
 
 <script>
-  $(function () {
-       $.vegas('slideshow', {
-       backgrounds: [
-           @foreach($listImagen as $imagen)
-          { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
-           @endforeach
-       //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
-       ]
-       })('overlay', {
-       /** SLIDESHOW OVERLAY IMAGE **/
-       src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
-       });
-});
+    function obtenerValorParametro(sParametroNombre) {
+        var sPaginaURL = window.location.search.substring(1);
+        var sURLVariables = sPaginaURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParametro = sURLVariables[i].split('=');
+            if (sParametro[0] == sParametroNombre) {
+                return sParametro[1];
+            }
+        }
+        return null;
+    }
+
+    $(function () {
+        var userAgent = navigator.userAgent || window.opera;
+
+        if (/android/i.test(userAgent)) {
+            var valor = obtenerValorParametro('d');
+            if (valor) {
+                $('section').removeClass('margin-top');
+                $('#estadisticas').removeClass('margin-top');
+                $('#login').parent().removeClass('margin-top');
+                $('#fixture').removeClass('hidden');
+                $('#fixture').removeClass('hidden');
+                $('#home').css({
+                    'padding-top': '0px'
+                });
+
+            }
+            else{
+                $('#menu-section').removeClass('hidden');
+                $('#app-android').removeClass('hidden');
+                $.vegas('slideshow', {
+                    backgrounds: [
+                        @foreach($listImagen as $imagen)
+                        { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
+                        @endforeach
+                    //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
+                    ]
+                })('overlay', {
+                    /** SLIDESHOW OVERLAY IMAGE **/
+                    src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+                });
+            }
+        }
+        else
+        {
+            $('#menu-section').removeClass('hidden');
+            $.vegas('slideshow', {
+                backgrounds: [
+                    @foreach($listImagen as $imagen)
+                    { src: '/imagenes/{{$imagen->imagen}}', fade: 1000, delay: 9000},
+                    @endforeach
+                //{ src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
+                ]
+            })('overlay', {
+                /** SLIDESHOW OVERLAY IMAGE **/
+               // src: '/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+            });
+        }
+
+    });
 
 </script>
 
-    @yield('script')
+@yield('script')
 </body>
 
 </html>

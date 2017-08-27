@@ -24,16 +24,15 @@
                       <div class="carousel-inner">
                           <div class="item active ">
                                 <div class="row">
+                                    <div class="col-xs-3"></div>
                                     <div class="col-xs-6"><img class="img-responsive center-block" src="/imagenes/home/escudotifosi.png"></div>
-                                    <div class="col-xs-6"><img class="img-responsive center-block" src="/imagenes/home/ragazza02.png"></div>
-
                                 </div>
                               <h1>
-                              <strong>10 AÑOS DE EXPERIENCIA VINCULANDO
+                              <strong class="texto-azul">10 AÑOS DE EXPERIENCIA VINCULANDO
                                       EL ENTRETENIMIENTO Y EL DEPORTE
                                       EN LA CIUDAD DE ROSARIO.</strong>
                               </h1>
-                              <p>
+                              <p class="texto-gris">
                               En nuestros complejos vas a poder encontrar instalaciones pensadas y preparadas
                               profesionalmente, con cocheras privadas, vestuarios personalizados, canchas con
                               medidas reglamentarias, una zona de bufete y parrilleros al aire libre y techados

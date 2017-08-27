@@ -266,7 +266,9 @@ Route::current()->getName();
              timepicker:false,
              format:'d/m/Y'
             });
+
         });
+
 
         </script>
     @yield('script')

@@ -297,4 +297,18 @@ class FechasController extends Controller {
         }
 	}
 
+    public function planilla(Request $request)
+    {
+        $fecha=Fecha::findOrFail($request->id);
+        $torneo=$fecha->Torneo->nombre_torneo;
+        //$view = \View::make('admin.pdf.planillafecha',compact('fecha'))->render();
+        $view = \View::make('admin.pdf.pl',compact('fecha','torneo'))->render();
+        $pdf =  \App::make('dompdf.wrapper');
+        $pdf->setPaper("A4", "landscape");
+        $pdf->loadHTML($view);
+        //return $pdf->stream('Planilla.pdf');
+        return $pdf->download('Planilla.pdf');
+        //return view('admin.pdf.pl', compact('fecha','torneo'));
+    }
+
 }

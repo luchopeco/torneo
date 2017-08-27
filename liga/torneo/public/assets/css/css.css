@@ -13,7 +13,7 @@
     height: 40px;
     display: block;
     border-radius: 0px 2px 2px 0px;
-    background: #444 none no-repeat scroll center center;
+    background: #3b5998 none no-repeat scroll center center;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     width: 40px;
     text-align: center;
@@ -25,7 +25,8 @@
 
 }
 .social-buton a:hover {
-    color: rgb(228, 79, 79);
+    /*color: rgb(228, 79, 79);*/
+    color:#333333;
 
 }
 
@@ -40,7 +41,7 @@
 }
 #fixture select{
     background-color: rgba(0,0,0,0.3);
-    color: rgb(228, 79, 79);
+    color: #fff;
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
@@ -54,7 +55,7 @@
 }
 #estadisticas select{
     background-color: rgba(0,0,0,0.3);
-    color: rgb(228, 79, 79);
+    color: #fff;
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
@@ -79,7 +80,7 @@
 }
 
 #contact .powerby a {
-    color: rgb(228, 79, 79);
+    color: #333333;
 }
 #contact .marcas {
     background-color: rgba(255, 255, 255, 0.1);
@@ -106,7 +107,7 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     margin-bottom: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color:rgba(255, 255, 255, 0.4);
     cursor: pointer;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -122,7 +123,7 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     margin-bottom: 40px;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -140,7 +141,7 @@
 }
 
 .team-wrapper .description a {
-    color: rgb(228, 79, 79);
+    color:#333333;
 }
 .modal-content {
     border-radius: 0px;
@@ -192,7 +193,7 @@
     min-height:280px;
 }
 #login .contact-wrapper h3 {
-    color:rgb(228, 79, 79);
+    color:#333333;
 }
 
 #equipo .equipos-wrapper {
@@ -247,7 +248,7 @@
 
 }
 #equipo .equipos-wrapper-redondo span {
-    color:rgb(228, 79, 79);
+    color:#333333;
 }
 #equipo .equipos-wrapper-redondo .row{
     margin: 0px ;
@@ -273,7 +274,7 @@
     border-radius: 5px;
     font-size: 30px;
     font-family: 'Oswald', sans-serif;
-    color:rgb(228, 79, 79);
+    color: #333333;
     overflow: hidden;
 }
 #equipo .estadistica{
@@ -300,7 +301,7 @@
 }
 #equipo select{
     background-color: rgba(0,0,0,0.3);
-    color: rgb(228, 79, 79);
+    color: #333333;
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
@@ -417,7 +418,8 @@ textarea.LV_invalid_field:active {
     font-family: 'Oswald', sans-serif;
 }
 #sucursales h4{
-    color: rgb(228, 79, 79);
+
+    color: #333333;
 }
 
 #sucursales  .alto {
@@ -444,11 +446,12 @@ color: #969696;
 
 }
 #sucursales .telefono{
-    background: rgb(228, 79, 79);
+    background:#333333;
     padding: 5px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    color:#fff;
 }
 
 #sucursales .work-wrapper{
@@ -530,4 +533,18 @@ Noticia SOLAAAAA
 
 .team-wrapperr h3 {
     color: rgb(228, 79, 79);
+}
+.texto-azul{
+    color:#000067;
+}
+.texto-gris{
+    color:#333333 !important;
+}
+.btn-danger{
+    background-color: #444 !important;
+    border-color: #444 !important;
+}
+.btn-danger:hover{
+    background-color: #445 !important;
+    border-color: #445 !important;
 }
