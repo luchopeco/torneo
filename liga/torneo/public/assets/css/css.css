@@ -96,7 +96,7 @@
 
 
 #estadisticas .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid rgba(0, 0, 103, 0.4);
 }
 #estadisticas .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th, .table-hover>tbody>tr:hover {
 
@@ -116,7 +116,7 @@
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid rgb(0,0,103);
     min-height: 240px;
 }
 
@@ -187,7 +187,8 @@
 
 /*-------------------LOGIN---------------------------*/
 #login .contact-wrapper {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.5);
+    border:   2px solid rgb(0, 0, 103);
     padding: 20px;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -209,13 +210,13 @@
     border-bottom-left-radius: 10px;
 
     margin-bottom: 10px;
-    background-color: rgba(0,0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     /*cursor: pointer;*/
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    border:   2px solid rgba(255, 255, 255, 0.3);
+    border:   2px solid rgb(0, 0, 103);
     background-clip: padding-box;
 
 
@@ -239,13 +240,13 @@
     border-top-right-radius: 5px;
 
     margin-bottom: 10px;
-    background-color: rgba(0,0, 0, 0.3);
+    background-color: rgba(255,255, 255, 0.4);
     cursor: pointer;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    border:   2px solid rgba(255, 255, 255, 0.3);
+    border:   2px solid rgb(0, 0, 103);
     background-clip: padding-box;
 
 
@@ -257,7 +258,7 @@
     margin: 0px ;
 }
 #equipo a {
-    color: #FFFFFF;
+    color: #333333;
 }
 #equipo h1{
     font-family: 'Oswald', sans-serif;
@@ -396,7 +397,7 @@ textarea.LV_invalid_field:active {
     margin-bottom: 20px;
     border-width: 1px 0px 0px;
     border-style: solid none none;
-    border-color: rgb(228, 79, 79) -moz-use-text-color -moz-use-text-color;
+    border-color: rgba(0, 0, 103,0.4) !important;
     -moz-border-top-colors: none;
     -moz-border-right-colors: none;
     -moz-border-bottom-colors: none;
@@ -439,7 +440,7 @@ textarea.LV_invalid_field:active {
 }
 #sucursales .subtitulo
 {
-color: #969696;
+color: #444;
 }
 
 #sucursales .flexslider {

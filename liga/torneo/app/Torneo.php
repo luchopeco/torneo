@@ -14,7 +14,6 @@ class Torneo extends Model{
 
     protected $primaryKey = 'idtorneo';
 
-
     public function TipoTorneo()
     {
         return $this->hasOne('torneo\TipoTorneo', 'idtipo_torneo','idtipo_torneo');
@@ -109,8 +108,13 @@ class Torneo extends Model{
                                     left JOIN jugadores j ON j.idjugador = phj.idjugador
                                     LEFT JOIN equipos e ON e.idequipo = j.idequipo
                                     WHERE p.fue_jugado=1 and f.fecha<= CURRENT_DATE AND f.idtorneo=:p2
-                                    GROUP BY j.nombre_jugador, phj.cantidad_fechas_sancion, f.fecha) AS aux
-                                    WHERE EXISTS (SELECT count(*) FROM fechas f WHERE f.fecha BETWEEN aux.fecha AND CURRENT_DATE AND f.idtorneo=:p3 HAVING count(*) <=aux.sancion )
+                                    GROUP BY j.nombre_jugador, f.fecha, e.nombre_equipo) AS aux
+                                    WHERE EXISTS
+                                    (SELECT count(*)
+                                     FROM fechas f
+                                     WHERE f.fecha BETWEEN aux.fecha AND CURRENT_DATE
+                                     AND f.idtorneo=:p3
+                                     HAVING count(*) <=aux.sancion )
 
                                     )AS aux1
 
